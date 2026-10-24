@@ -1,0 +1,16 @@
+[job] score_controls start 2026-10-09T21:05:56Z commit 372258a60b132d60003abdf3ac57ca894a56ac1a
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_controls", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files: 100%|██████████| 10/10 [00:00<00:00, 3357.86it/s]
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  7.41it/s]Fetching 10 files:  70%|███████   | 7/10 [00:01<00:00,  3.96it/s]Fetching 10 files: 100%|██████████| 10/10 [00:01<00:00,  5.77it/s]
+untrained_gptbert AutoModelForCausalLM nan params: 0
+untrained_gptbert AutoModelForMaskedLM nan params: 0
+nan_gptbert AutoModelForCausalLM nan params: 128
+nan_gptbert AutoModelForMaskedLM nan params: 128
+controls written to /opt/babylm/controls
+[job] evaluated ctl_untrained_gpt2 (causal) 21:27:43

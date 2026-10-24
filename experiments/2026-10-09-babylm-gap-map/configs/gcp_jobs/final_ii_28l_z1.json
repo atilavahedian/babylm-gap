@@ -1,0 +1,23 @@
+{
+ "name": "final-ii-28l-z1",
+ "commit": "4cadd917171976f12d9ccf671e09820e33bb9822",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ },
+ "note": "Ruler final table priority (ii), 28L retrain set (torch 2.9.1 training; official eval in the pipeline venv). Code @ref-0171. Executor fills __URI_<member>__ = <retrain VM out>/babylm/runs/<member>/score/hf and __MIX_REF_pXY__ = the reads/rt28 full raw mixture DEV. GLUE is sequential (FT_PARALLEL=0): the S identity check was MISMATCH on multirc (ftverify @ref-0194), so no concurrent GLUE and no 28L identity check. Guard caveat: MIX_REF comes from the retrain VM's twin (torch 2.9.1); the guard recomputes it in the pipeline venv; a FAIL at |diff| ~1e-5..1e-4 would be a torch-eval difference, report it before voiding. bin Z1 (GLUE only): K=2 mixture p01 GLUE ens2 (m0 seed 42, m1 seed 43) via GLUE_PREV (reuses bin ZS zero-shot + guard; GLUE_RERUN=none). __ZS28_OUT__ = bin ZS synced out dir. maxdur 6. Pool ruler. EXECUTOR: project-c only.",
+ "jobs": [
+  {
+   "name": "glue_mix_28L_p01",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 GLUE_RERUN=none GLUE_PREV=${BUCKET}/babylm/vms/bl-final-ii-28l-zs-1011-151920/out/out/zs_mix_28L_p01 HF_URI='${BUCKET}/babylm/vms/bl-ms-28l-retrain-zs-1011-093615/out/babylm/runs/ms_menu_28L384d_e5_wd0p4_s0_rt/score/hf ${BUCKET}/babylm/vms/bl-ms-28l-retrain-zs-1011-093615/out/babylm/runs/ms_menu_28L384d_e5_wd0p4_s1_rt/score/hf' HF_NAME=mix28L_p01 bash babylm/jobs/vm_job.sh score_mix out/glue_mix_28L_p01",
+   "timeout_s": 19800
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+concurrent GLUE finished 3/7 tasks; errors:
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 9.50 MiB is free. Process 64196 has 8.34 GiB memory in use. Process 64197 has 
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 9.50 MiB is free. Process 64196 has 8.34 GiB memory in use. Process 64197 has 
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 15.50 MiB is free. Process 64196 has 8.87 GiB memory in use. Process 64197 has
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 32.00 MiB. GPU 0 has a total capacity of 39.49 GiB of which 17.94 MiB is free. Process 64196 has 9.80 GiB memory in use. Process 64197 has

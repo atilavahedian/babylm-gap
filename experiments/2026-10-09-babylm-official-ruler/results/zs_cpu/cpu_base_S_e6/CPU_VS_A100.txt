@@ -1,0 +1,13 @@
+# cpu_base_S_e6 (CPU torch 2.7.0+cpu, 4 threads, vm_job ref-0403 ZS_ONLY DEV_BPW=0) vs A100 certify_b score_hf_base_S_e6 (same export, same upstream pipeline bf55c1131e53654c2a87418f5629c26959acd710); value-level compare of every report
+DIFF  causal/blimp/blimp_filtered/best_temperature_report.txt: 85 values, 3 differ, max |d| 0.12
+    syntax [### FIELD ACCURACY] gpu 65.18 cpu 65.19
+    argument_structure [### LINGUISTICS_TERM ACCURACY] gpu 70.97 cpu 70.98
+    passive_1 [### UID ACCURACY] gpu 80.48 cpu 80.6
+EXACT causal/blimp/supplement_filtered/best_temperature_report.txt: 8 values, 0 differ, max |d| 0.00
+EXACT causal/comps/comps/best_temperature_report.txt: 5 values, 0 differ, max |d| 0.00
+EXACT causal/entity_tracking/entity_tracking/best_temperature_report.txt: 22 values, 0 differ, max |d| 0.00
+EXACT causal/ewok/ewok_filtered/best_temperature_report.txt: 25 values, 0 differ, max |d| 0.00
+EXACT causal/reading/correlations.txt: 0 values, 0 differ, max |d| 0.00
+EXACT causal/reading/report.txt: 2 values, 0 differ, max |d| 0.00
+EXACT causal/wug_adj/wug_adj_nominalization/best_temperature_report.txt: 2 values, 0 differ, max |d| 0.00
+EXACT causal/wug_past/wug_past_tense/best_temperature_report.txt: 2 values, 0 differ, max |d| 0.00

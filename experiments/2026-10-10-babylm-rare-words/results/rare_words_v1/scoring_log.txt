@@ -1,0 +1,6 @@
+sample: 287 pieces, 215,312 words
+counting train_10M / train_100M normal forms
+babylm-baseline-10m-gpt-bert-causal-focus: gpt_bert 33.0M params loaded in 5s
+babylm-baseline-10m-gpt-bert-causal-focus: scored 347,063 tokens in 342s (1014 tok/s); nats/word 5.0189
+babylm-baseline-100m-gpt-bert-causal-focus: gpt_bert 119.5M params loaded in 8s
+babylm-baseline-100m-gpt-bert-causal-focus: scored 344,227 tokens in 824s (418 tok/s); nats/word 4.0542

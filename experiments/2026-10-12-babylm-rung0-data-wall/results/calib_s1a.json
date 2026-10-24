@@ -1,0 +1,53 @@
+{
+ "paths": {
+  "C04": "scratch/cs/dw0/dw0_C_wd0p4_s0.npz",
+  "W02": "scratch/cs/dw0/dw0_W_wd0p2_s0.npz",
+  "W08": "scratch/cs/dw0/dw0_W_wd0p8_s0.npz"
+ },
+ "mixes": {},
+ "single": {
+  "C04": {
+   "full": {
+    "raw": 5.072300433095322,
+    "calibrated": 5.047660496565413,
+    "calibrated_t": 5.011242251899009,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 5.037999442806983,
+    "calibrated": 5.015692405687465,
+    "calibrated_t": 4.980560496163171,
+    "t": 1.1
+   }
+  },
+  "W02": {
+   "full": {
+    "raw": 5.224786956118808,
+    "calibrated": 5.155012602343854,
+    "calibrated_t": 5.08199274939797,
+    "t": 1.2
+   },
+   "guarded": {
+    "raw": 5.178179499091216,
+    "calibrated": 5.113574225797395,
+    "calibrated_t": 5.04308554483437,
+    "t": 1.2
+   }
+  },
+  "W08": {
+   "full": {
+    "raw": 5.102840827985063,
+    "calibrated": 5.090879757300866,
+    "calibrated_t": 5.067666350503332,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 5.070763700671058,
+    "calibrated": 5.0600756881208815,
+    "calibrated_t": 5.038055384491707,
+    "t": 1.1
+   }
+  }
+ },
+ "mix": {}
+}

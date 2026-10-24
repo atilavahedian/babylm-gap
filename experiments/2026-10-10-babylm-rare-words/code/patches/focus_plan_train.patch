@@ -1,0 +1,142 @@
+diff --git a/babylm/harness/train.py b/babylm/harness/train.py
+index ref-0436..adb2b34c 100644
+--- a/babylm/harness/train.py
++++ b/babylm/harness/train.py
+@@ -21,7 +21,8 @@ Run dir: config.json, train_log.csv, log.jsonl, curves.csv, result.json, pt/, ch
+ Attack-base levers (babylm.harness.levers; each off by default, and off leaves this file's port path unchanged):
+   --lr_scale S (every base LR x S), --window_plan (per-epoch line/stream windows and lengths), --mntp_frac (GPT-BERT
+   MNTP hybrid; pads the model vocab to --vocab_pad, MASK = 16384), --ema_decay (EMA weights for every eval and for
+-  checkpoints; raw weights kept as model_raw).
++  checkpoints; raw weights kept as model_raw), --focus_plan E:BETA (attack A5: from epoch E, causal targets outside
++  the rare-word focus mask of babylm.data.focus_mask leave the loss with probability 1 - BETA; --focus_null = twin).
+ Devices (--device auto = cuda > mps > cpu): cuda = bf16 autocast (+ --compile); mps = fp32 by default
+ (--amp_dtype bf16|fp16 untested), never compiled, PYTORCH_ENABLE_MPS_FALLBACK must be unset; cpu = fp32.
+ """
+@@ -48,6 +49,7 @@ import torch
+ import torch.nn as nn
+ 
+ from babylm.data import corpus as C
++from babylm.data import focus_mask as FM
+ from babylm.harness import levers as LV
+ from babylm.harness.stream import (MILESTONES, EpochSampler, gather_windows, milestone_label, stream_batches,
+                                    words_in_targets)
+@@ -165,6 +167,13 @@ def build_parser() -> argparse.ArgumentParser:
+                    help="AdamW weight decay of the untied head group only (default: --adam_wd); decay per step = lr x wd")
+     v.add_argument("--embed_wd", type=float, default=None,
+                    help="AdamW weight decay of the embedding group only (default: --adam_wd); lr_embed is 0.78, keep tiny")
++    v.add_argument("--focus_plan", default=None, metavar="E:BETA",
++                   help="A5 rare-word loss focusing: from epoch E (1-based) every causal target outside the focus "
++                        "mask (babylm.data.focus_mask, <split>.<tag>.bin) stays in the loss with probability BETA, "
++                        "focus targets always; inputs, exposure and FLOPs unchanged, e.g. 7:0.25")
++    v.add_argument("--focus_mask", default=FM.DEFAULT_TAG, help="focus mask tag (file <split>.<tag>.bin), e.g. focus_a0")
++    v.add_argument("--focus_null", action="store_true",
++                   help="null twin of --focus_plan: ignore the mask, keep every target with the plan's expected share")
+     return ap
+ 
+ 
+@@ -478,6 +487,13 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+     word_init = C.word_initial(np.asarray(train.words))
+     N = train.n_tokens
+     total_tokens = args.epochs * N
++    focus = focus_meta = None
++    focus_start, focus_beta, focus_q = 0, 1.0, 1.0
++    if args.focus_plan:
++        focus_start, focus_beta = LV.parse_focus(args.focus_plan, args.epochs)
++        focus, focus_meta = FM.load_focus(args.data_dir, args.split, args.focus_mask)
++        focus_q = LV.focus_expected_keep(focus_meta["focus_token_share"], focus_beta)
++    fgen = torch.Generator().manual_seed(data_seed + 11_000_009)  # focus draws; saved in resume.pt
+     plan = None
+     if args.window_plan:
+         if args.epochs != int(args.epochs):
+@@ -587,6 +603,8 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+         if ck.get("scaler"):
+             scaler.load_state_dict(ck["scaler"])
+         set_rng_state(ck["rng"], device)
++        if ck.get("focus_rng") is not None:
++            fgen.set_state(ck["focus_rng"])
+         st.update(ck["state"])
+         truncate_logs(out, st["step"])
+         print(f"[train] resumed from {resume_path} at step {st['step']} ({st['words_seen']:,} words)", flush=True)
+@@ -617,6 +635,12 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+                          "ema_decay": args.ema_decay, "head_wd": args.head_wd, "embed_wd": args.embed_wd,
+                          "adam_group_wd": {g.get("name"): g.get("weight_decay") for g in optimizer.param_groups
+                                            if g.get("kind") == "adam"},
++                         "focus": None if focus is None else {
++                             "plan": args.focus_plan, "start_epoch": focus_start, "beta": focus_beta,
++                             "null": bool(args.focus_null), "mask_tag": args.focus_mask,
++                             "mask_sha256": focus_meta["sha256"], "count_max": focus_meta["count_max"],
++                             "after": focus_meta["after"], "focus_token_share": focus_meta["focus_token_share"],
++                             "expected_kept_share_arm": focus_q},
+                          "levers_sha256": C.sha256_file(Path(LV.__file__))}}
+     write_json(out / "config.json", config)
+     print(f"[train] {args.model} size={args.size} params={params_total:,} non-emb={params_nonemb:,} "
+@@ -633,6 +657,7 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+         atomic_save({"model": raw_model.state_dict(), "optimizer": optimizer.state_dict(),
+                      "ema": ema.state_dict() if ema is not None else None,
+                      "sampler": sampler.state_dict(), "rng": rng_state(device), "state": dict(st),
++                     "focus_rng": fgen.get_state() if focus is not None else None,
+                      "scaler": scaler.state_dict(),
+                      "total_steps": total_steps, "split": args.split, "cfg": cfg.to_dict(),
+                      "git_commit": git_commit()}, out / "resume.pt")
+@@ -670,7 +695,7 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+                          {k: v.detach().float().cpu() for k, v in raw_model.state_dict().items()},
+                          "ema_decay": args.ema_decay or None,
+                          "mntp_frac": args.mntp_frac, "window_plan": args.window_plan, "lr_scale": args.lr_scale,
+-                         "cfg": cfg.to_dict(), "model_name": args.model, "words_seen": st["words_seen"],
++                         "focus_plan": args.focus_plan, "cfg": cfg.to_dict(), "model_name": args.model, "words_seen": st["words_seen"],
+                          "words_nominal": words_nominal, "tokens_seen": st["tokens_seen"], "step": st["step"],
+                          "label": milestone_label(words_nominal) if words_nominal else label,
+                          "tokenizer_sha256": train.meta["tokenizer_sha256"], "git_commit": git_commit()},
+@@ -695,6 +720,25 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+         mic = micro if plan is None else micro_for(nb, Tw)
+         k_m = LV.mntp_rows(mic, args.mntp_frac)
+         p_m = LV.mntp_p(st["step"], total_steps, args.mntp_p_start, args.mntp_p_end)
++        y_causal, focus_kept = y_all, None  # A5: causal targets outside the focus set may leave the loss
++        if focus is not None:
++            real = y_all >= 0
++            if st["tokens_seen"] >= (focus_start - 1) * N:
++                if plan is None:
++                    fo = LV.focus_gather(focus, starts, T)
++                else:
++                    fo = torch.zeros(y_all.shape, dtype=torch.bool)
++                    fo[real] = torch.from_numpy(np.asarray(focus[tpos], dtype=np.bool_))
++                kept = LV.focus_keep(fo, real, focus_beta, fgen, focus_q if args.focus_null else None)
++                y_causal = y_all.masked_fill(~kept, -1)
++                focus_kept = float(kept.sum()) / max(1, int(real.sum()))
++                if not st.get("focus_started"):
++                    st["focus_started"] = True
++                    print(f"[train] focus plan {args.focus_plan} active from step {st['step']} "
++                          f"(epoch {st['tokens_seen'] / N:.3f}); kept share this step {focus_kept:.3f}"
++                          f"{' (null twin)' if args.focus_null else ''}", flush=True)
++            else:
++                focus_kept = 1.0
+         while True:
+             try:
+                 loss_acc = torch.zeros((), device=device)
+@@ -703,7 +747,7 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+                 if k_m == 0:  # the port's step, unchanged
+                     for i in range(n_micro):
+                         xb = x_all[i * mic:(i + 1) * mic].to(device, non_blocking=True)
+-                        yb = y_all[i * mic:(i + 1) * mic].to(device, non_blocking=True)
++                        yb = y_causal[i * mic:(i + 1) * mic].to(device, non_blocking=True)
+                         if reset:
+                             raw_model.reset_state()
+                         with amp:
+@@ -722,7 +766,7 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+                         if n_c > 0:
+                             with amp:
+                                 loss, _ = model(xb[:n_c].to(device, non_blocking=True),
+-                                                yb[:n_c].to(device, non_blocking=True))
++                                                y_causal[i * mic:(i + 1) * mic][:n_c].to(device, non_blocking=True))
+                             tot = tot + loss * (n_c / mic)
+                             loss_acc += loss.detach().float() / n_micro
+                         xm, ym = LV.mntp_corrupt(xb[n_c:], yb[n_c:], p_m, mask_id, C.VOCAB_SIZE, mgen,
+@@ -751,6 +795,8 @@ def main(argv: list[str] | None = None) -> dict[str, Any]:
+                 config["micro_batch_size"] = micro
+                 write_json(out / "config.json", config)
+                 print(f"[train] OOM at step {st['step']}: micro batch -> {micro}", file=sys.stderr, flush=True)
++        if focus_kept is not None:
++            aux_acc["focus_kept"] = focus_kept
+         step = st["step"]
+         f = lr_factor(step, total_steps, args.warmup_steps, args.cooldown_frac, args.lr_floor)
+         mfrac = min(1.0, step / args.muon_momentum_warmup_steps) if args.muon_momentum_warmup_steps > 0 else 1.0

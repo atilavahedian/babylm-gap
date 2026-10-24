@@ -1,0 +1,6 @@
+raw28 full: g2 mean 0.1535 sd 0.0027 min 0.1479 max 0.1578 (n 28)
+raw28 guarded: g2 mean 0.1497 sd 0.0024 min 0.1448 max 0.1533 (n 28)
+cal10 full raw: g2 mean 0.1534 sd 0.0031 min 0.1486 max 0.1578 (n 10)
+cal10 full calibrated_t: g2 mean 0.1331 sd 0.0024 min 0.1297 max 0.1364 (n 10)
+cal10 guarded raw: g2 mean 0.1502 sd 0.0028 min 0.1458 max 0.1542 (n 10)
+cal10 guarded calibrated_t: g2 mean 0.1313 sd 0.0022 min 0.1281 max 0.1343 (n 10)

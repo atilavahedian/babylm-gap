@@ -1,0 +1,2 @@
+c3s1_a2a: g2_raw=0.1564 g2_raw_guarded=0.1523 g_full_raw=0.1564 g_full_calibrated=0.1496 g_full_calibrated_t=0.1390 g_guarded_raw=0.1523 g_guarded_calibrated=0.1461 g_guarded_calibrated_t=0.1359 members=4.9996,4.9884
+c3s2_a2a: g2_raw=0.1566 g2_raw_guarded=0.1529 g_full_raw=0.1566 g_full_calibrated=0.1501 g_full_calibrated_t=0.1399 g_guarded_raw=0.1529 g_guarded_calibrated=0.1470 g_guarded_calibrated_t=0.1372 members=4.9987,4.9884

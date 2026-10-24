@@ -1,0 +1,1 @@
+${BUCKET}/babylm/vms/bl-exp-p2v2d-estar-1010-154711/out/babylm/runs/v2_S_10M_e6_s2/score/hf

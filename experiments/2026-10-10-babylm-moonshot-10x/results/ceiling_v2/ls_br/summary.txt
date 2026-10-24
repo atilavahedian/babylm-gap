@@ -1,0 +1,18 @@
+STATUS: read under ENV_SYS 21:35Z, see ENV_SYS_READ.md (branch dominated by plain K=2). Originally: cross-env, held (experimenter 16:09Z).
+
+== ls_BR_vs_e10: 2 members, 5 refs
+  full: g(2)=0.0863
+  full: ref mean 5.0006 (sd 0.0029), mixture 4.8934, gain +0.1072
+  guarded: g(2)=0.0847
+  guarded: ref mean 4.9697 (sd 0.0030), mixture 4.8665, gain +0.1032
+  calibrated K=1 g_full_raw=0.0000 g_full_calibrated=0.0000 g_full_calibrated_t=0.0000 g_guarded_raw=0.0000 g_guarded_calibrated=0.0000 g_guarded_calibrated_t=0.0000
+  calibrated K=2 g_full_raw=0.0863 g_full_calibrated=0.0828 g_full_calibrated_t=0.0756 g_guarded_raw=0.0847 g_guarded_calibrated=0.0815 g_guarded_calibrated_t=0.0749
+  calibrated vs_ref gain_full_raw=0.1072 gain_full_calibrated=0.0992 gain_full_calibrated_t=0.0887 gain_guarded_raw=0.1032 gain_guarded_calibrated=0.0959 gain_guarded_calibrated_t=0.0862
+== ls_BR_vs_estar: 2 members, 2 refs
+  full: g(2)=0.0863
+  full: ref mean 4.9744 (sd 0.0089), mixture 4.8934, gain +0.0810
+  guarded: g(2)=0.0847
+  guarded: ref mean 4.9444 (sd 0.0080), mixture 4.8665, gain +0.0779
+  calibrated K=1 g_full_raw=0.0000 g_full_calibrated=0.0000 g_full_calibrated_t=0.0000 g_guarded_raw=0.0000 g_guarded_calibrated=0.0000 g_guarded_calibrated_t=0.0000
+  calibrated K=2 g_full_raw=0.0863 g_full_calibrated=0.0828 g_full_calibrated_t=0.0756 g_guarded_raw=0.0847 g_guarded_calibrated=0.0815 g_guarded_calibrated_t=0.0749
+  calibrated vs_ref gain_full_raw=0.0810 gain_full_calibrated=0.0812 gain_full_calibrated_t=0.0795 gain_guarded_raw=0.0779 gain_guarded_calibrated=0.0780 gain_guarded_calibrated_t=0.0765

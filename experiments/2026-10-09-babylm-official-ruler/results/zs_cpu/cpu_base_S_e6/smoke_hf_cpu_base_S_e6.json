@@ -1,0 +1,51 @@
+{
+ "hf_dir": "scratch/bw/hf/cpu_base_S_e6",
+ "padding_side_right": {
+  "ok": true,
+  "info": "right"
+ },
+ "has_pad_token": {
+  "ok": true,
+  "info": "<|endoftext|>"
+ },
+ "bos_id": 0,
+ "first_ids": [
+  0,
+  434,
+  1226,
+  1835
+ ],
+ "tokens_roundtrip": {
+  "ok": true,
+  "info": "<|endoftext|>The cat sat on the mat."
+ },
+ "causal_logits_finite": {
+  "ok": true,
+  "info": [
+   2,
+   8,
+   16384
+  ]
+ },
+ "causal_logits_vocab": {
+  "ok": true,
+  "info": [
+   16384,
+   16384
+  ]
+ },
+ "causal_class": "HintonForCausalLM",
+ "automodel_hidden": {
+  "ok": true,
+  "info": [
+   [
+    2,
+    8,
+    384
+   ],
+   384
+  ]
+ },
+ "automodel_class": "HintonModel",
+ "ok": true
+}

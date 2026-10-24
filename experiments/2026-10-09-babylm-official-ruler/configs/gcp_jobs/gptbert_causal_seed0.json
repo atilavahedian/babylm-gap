@@ -1,0 +1,19 @@
+{
+ "name": "gptbert_causal_seed0",
+ "commit": "aa7b108938b99f04464a7a07684a0dd6c2d81b3e",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "gptbert_causal_seed0",
+   "cmd": "bash babylm/jobs/vm_job.sh gptbert_causal_seed0 out/gptbert_causal_seed0",
+   "timeout_s": 17400
+  }
+ ],
+ "outputs": [
+  "out"
+ ]
+}

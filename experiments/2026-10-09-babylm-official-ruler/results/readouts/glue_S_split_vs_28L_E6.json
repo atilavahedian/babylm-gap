@@ -1,0 +1,304 @@
+{
+ "spec": "critic ref-0185 (B official): composite = unweighted mean of every zero-shot task score below with composite=true; Entity is reported only; GLUE7 (final-token, matched 2-FT ensemble) is its own column, never in the composite",
+ "models": {
+  "mixS_p01": {
+   "model": "mixS_p01",
+   "valid": true,
+   "notes": [],
+   "guard": "PASS export 4.844270 vs read 4.844270 nats/word, |diff| 8.67e-10 (tolerance 1e-4)",
+   "BLiMP": 68.34,
+   "Supplement": 58.98,
+   "EWoK": 49.96,
+   "COMPS": 53.89,
+   "WUG_adj": 45.0,
+   "WUG_past": 19.0,
+   "Reading_rt": 0.16,
+   "Reading_spr": 0.0,
+   "Entity": 25.32,
+   "composite": 36.91625,
+   "glue_source": "mixS_p01_ens2",
+   "GLUE7": 67.29372683543951,
+   "Reading_rt_amended": 8.27,
+   "Reading_spr_amended": 3.13,
+   "composite_amended": 38.32125
+  },
+  "mixS_p23": {
+   "model": "mixS_p23",
+   "valid": true,
+   "notes": [],
+   "guard": "PASS export 4.851141 vs read 4.851141 nats/word, |diff| 2.73e-09 (tolerance 1e-4)",
+   "BLiMP": 69.61,
+   "Supplement": 58.28,
+   "EWoK": 50.99,
+   "COMPS": 53.7,
+   "WUG_adj": 44.0,
+   "WUG_past": 25.0,
+   "Reading_rt": 0.21,
+   "Reading_spr": 0.0,
+   "Entity": 28.19,
+   "composite": 37.72375,
+   "glue_source": "mixS_p23_ens2",
+   "GLUE7": 67.97438905215316,
+   "Reading_rt_amended": 8.74,
+   "Reading_spr_amended": 2.96,
+   "composite_amended": 39.160000000000004
+  },
+  "mixS_p45": {
+   "model": "mixS_p45",
+   "valid": true,
+   "notes": [],
+   "guard": "PASS export 4.842997 vs read 4.842997 nats/word, |diff| 2.51e-10 (tolerance 1e-4)",
+   "BLiMP": 67.95,
+   "Supplement": 58.14,
+   "EWoK": 50.91,
+   "COMPS": 54.08,
+   "WUG_adj": 49.0,
+   "WUG_past": 21.0,
+   "Reading_rt": 0.18,
+   "Reading_spr": 0.01,
+   "Entity": 25.89,
+   "composite": 37.65875,
+   "glue_source": "mixS_p45_ens2",
+   "GLUE7": 68.28072156209744,
+   "Reading_rt_amended": 8.9,
+   "Reading_spr_amended": 3.17,
+   "composite_amended": 39.14375
+  },
+  "L28_e6_s0": {
+   "model": "L28_e6_s0",
+   "valid": true,
+   "notes": [
+    "zero-shot incomplete: BLiMP,Supplement,EWoK,COMPS,WUG_adj,WUG_past,Reading_rt,Reading_spr"
+   ],
+   "BLiMP": null,
+   "Supplement": null,
+   "EWoK": null,
+   "COMPS": null,
+   "WUG_adj": null,
+   "WUG_past": null,
+   "Reading_rt": null,
+   "Reading_spr": null,
+   "Entity": null,
+   "composite": null,
+   "glue_source": "L28_e6_s0_lastpool_ens2",
+   "GLUE7": 67.63388213400897,
+   "Reading_rt_amended": null,
+   "Reading_spr_amended": null,
+   "composite_amended": null
+  },
+  "L28_e6_s1": {
+   "model": "L28_e6_s1",
+   "valid": true,
+   "notes": [
+    "zero-shot incomplete: BLiMP,Supplement,EWoK,COMPS,WUG_adj,WUG_past,Reading_rt,Reading_spr"
+   ],
+   "BLiMP": null,
+   "Supplement": null,
+   "EWoK": null,
+   "COMPS": null,
+   "WUG_adj": null,
+   "WUG_past": null,
+   "Reading_rt": null,
+   "Reading_spr": null,
+   "Entity": null,
+   "composite": null,
+   "glue_source": "L28_e6_s1_lastpool_ens2",
+   "GLUE7": 66.81911387349007,
+   "Reading_rt_amended": null,
+   "Reading_spr_amended": null,
+   "composite_amended": null
+  },
+  "L28_e6_s2": {
+   "model": "L28_e6_s2",
+   "valid": true,
+   "notes": [
+    "zero-shot incomplete: BLiMP,Supplement,EWoK,COMPS,WUG_adj,WUG_past,Reading_rt,Reading_spr"
+   ],
+   "BLiMP": null,
+   "Supplement": null,
+   "EWoK": null,
+   "COMPS": null,
+   "WUG_adj": null,
+   "WUG_past": null,
+   "Reading_rt": null,
+   "Reading_spr": null,
+   "Entity": null,
+   "composite": null,
+   "glue_source": "L28_e6_s2_lastpool_ens2",
+   "GLUE7": 67.19742214998065,
+   "Reading_rt_amended": null,
+   "Reading_spr_amended": null,
+   "composite_amended": null
+  }
+ },
+ "arms": {
+  "S_split": {
+   "BLiMP": {
+    "mean": 68.63333333333334,
+    "sd": 0.8680053763274337,
+    "n": 3
+   },
+   "Supplement": {
+    "mean": 58.46666666666667,
+    "sd": 0.45003703551300234,
+    "n": 3
+   },
+   "EWoK": {
+    "mean": 50.620000000000005,
+    "sd": 0.5729746940310708,
+    "n": 3
+   },
+   "COMPS": {
+    "mean": 53.89000000000001,
+    "sd": 0.18999999999999773,
+    "n": 3
+   },
+   "WUG_adj": {
+    "mean": 46.0,
+    "sd": 2.6457513110645907,
+    "n": 3
+   },
+   "WUG_past": {
+    "mean": 21.666666666666668,
+    "sd": 3.0550504633038935,
+    "n": 3
+   },
+   "Reading_rt": {
+    "mean": 0.18333333333333335,
+    "sd": 0.02516611478423583,
+    "n": 3
+   },
+   "Reading_spr": {
+    "mean": 0.0033333333333333335,
+    "sd": 0.005773502691896258,
+    "n": 3
+   },
+   "Entity": {
+    "mean": 26.46666666666667,
+    "sd": 1.5194187485131725,
+    "n": 3
+   },
+   "composite": {
+    "mean": 37.432916666666664,
+    "sd": 0.4486252147765823,
+    "n": 3
+   },
+   "GLUE7": {
+    "mean": 67.84961248323003,
+    "sd": 0.505189609678196,
+    "n": 3
+   },
+   "Reading_rt_amended": {
+    "mean": 8.636666666666667,
+    "sd": 0.32746501085357743,
+    "n": 3
+   },
+   "Reading_spr_amended": {
+    "mean": 3.0866666666666664,
+    "sd": 0.11150485789118485,
+    "n": 3
+   },
+   "composite_amended": {
+    "mean": 38.875,
+    "sd": 0.47963039155166215,
+    "n": 3
+   },
+   "claim": "ok"
+  },
+  "L28_E6": {
+   "BLiMP": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "Supplement": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "EWoK": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "COMPS": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "WUG_adj": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "WUG_past": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "Reading_rt": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "Reading_spr": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "Entity": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "composite": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "GLUE7": {
+    "mean": 67.21680605249323,
+    "sd": 0.407729850936515,
+    "n": 3
+   },
+   "Reading_rt_amended": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "Reading_spr_amended": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "composite_amended": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "claim": "no claim (n<3)"
+  }
+ },
+ "beats": {
+  "S_split:L28_E6": {
+   "composite": {
+    "diff": null,
+    "bar": null,
+    "beats": null,
+    "note": "no claim (n<3)"
+   },
+   "GLUE7": {
+    "diff": 0.6328064307368066,
+    "bar": 0.7496311742641807,
+    "beats": false
+   },
+   "composite_amended": {
+    "diff": null,
+    "bar": null,
+    "beats": null,
+    "note": "no claim (n<3)",
+    "label": "amended, no claim"
+   }
+  }
+ }
+}

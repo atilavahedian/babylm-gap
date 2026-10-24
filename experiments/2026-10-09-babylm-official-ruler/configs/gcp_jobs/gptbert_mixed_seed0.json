@@ -1,0 +1,19 @@
+{
+ "name": "gptbert_mixed_seed0",
+ "commit": "9e8f7cda026ab56dfdee828dd3bb19d899b5e57e",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "gptbert_mixed_seed0",
+   "cmd": "bash babylm/jobs/vm_job.sh gptbert_mixed_seed0 out/gptbert_mixed_seed0",
+   "timeout_s": 15600
+  }
+ ],
+ "outputs": [
+  "out"
+ ]
+}

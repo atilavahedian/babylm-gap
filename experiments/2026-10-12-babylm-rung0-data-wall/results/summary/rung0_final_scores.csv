@@ -1,0 +1,9 @@
+run,label,cal_t_full,cal_t_guarded,note
+dw0_W_wd0p2_s0,WD 0.2,5.082,5.0431,
+dw0_C_wd0p4_s0,WD 0.4 (control),5.0112,4.9806,
+dw0_W_wd0p8_s0,WD 0.8,5.0677,5.0381,
+dw0_W_wd1p6_s0,WD 1.6,5.2031,5.1763,
+dw0_W_wd3p2_s0,WD 3.2,5.3669,5.3408,
+dw0_LR_wd0p8_s0,"WD 0.8, 2x LR",,,"twin raw 5.2440, best single T 5.2160 (cal_t pending, far worse than WD 0.8)"
+dw0_L12x2_wd0p4_s0,12L looped 2x,5.0256,4.9924,
+dw0_P24_wd0p4_s0,24L plain (same FLOPs),4.9875,4.9542,

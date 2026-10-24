@@ -1,0 +1,53 @@
+{
+ "model_dir": "/opt/babylm/models/ctl_untrained_gptbert",
+ "split_dir": "/opt/babylm/osf/text_data/dev/dev",
+ "slice": "full",
+ "ctx": 512,
+ "stride": 256,
+ "short_context": false,
+ "ws": "collapse",
+ "words": 10418979,
+ "tokens": 16815149,
+ "nats_per_word": 15.953314281194517,
+ "bits_per_word": 23.01576739922241,
+ "nats_per_token": 9.884970182313923,
+ "per_domain": {
+  "bnc_spoken.dev": {
+   "words": 1252593,
+   "tokens": 1714782,
+   "nats_per_word": 13.53845164440494,
+   "bits_per_word": 19.53185704869804
+  },
+  "childes.dev": {
+   "words": 2716591,
+   "tokens": 5312433,
+   "nats_per_word": 19.286050387580342,
+   "bits_per_word": 27.82388925249683
+  },
+  "gutenberg.dev": {
+   "words": 2819070,
+   "tokens": 3850769,
+   "nats_per_word": 13.498264516015501,
+   "bits_per_word": 19.473879277863027
+  },
+  "open_subtitles.dev": {
+   "words": 2077019,
+   "tokens": 3400733,
+   "nats_per_word": 16.240988340589382,
+   "bits_per_word": 23.43079333810378
+  },
+  "simple_wiki.dev": {
+   "words": 1405366,
+   "tokens": 2305522,
+   "nats_per_word": 16.21980746491956,
+   "bits_per_word": 23.400235793813238
+  },
+  "switchboard.dev": {
+   "words": 148340,
+   "tokens": 230910,
+   "nats_per_word": 15.414628272939279,
+   "bits_per_word": 22.238607766516306
+  }
+ },
+ "seconds": 846.3
+}

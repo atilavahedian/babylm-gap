@@ -1,0 +1,53 @@
+{
+ "paths": {
+  "P0": "scratch/cs/port/s0.npz",
+  "P1": "scratch/cs/port/s1.npz",
+  "P2": "scratch/cs/port/s2.npz"
+ },
+ "mixes": {},
+ "single": {
+  "P0": {
+   "full": {
+    "raw": 4.261164613919819,
+    "calibrated": 4.254062892191161,
+    "calibrated_t": 4.240369743213724,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 4.257243827038541,
+    "calibrated": 4.25016184842737,
+    "calibrated_t": 4.236490470846743,
+    "t": 1.1
+   }
+  },
+  "P1": {
+   "full": {
+    "raw": 4.256362286017782,
+    "calibrated": 4.249975524336884,
+    "calibrated_t": 4.23797779650208,
+    "t": 1.05
+   },
+   "guarded": {
+    "raw": 4.252592426748062,
+    "calibrated": 4.2462129738302625,
+    "calibrated_t": 4.234225516075534,
+    "t": 1.05
+   }
+  },
+  "P2": {
+   "full": {
+    "raw": 4.257825426706115,
+    "calibrated": 4.250722923763254,
+    "calibrated_t": 4.236948902191036,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 4.254106184949279,
+    "calibrated": 4.247017051133292,
+    "calibrated_t": 4.233244326273456,
+    "t": 1.1
+   }
+  }
+ },
+ "mix": {}
+}

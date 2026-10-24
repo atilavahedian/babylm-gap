@@ -1,0 +1,84 @@
+{
+ "model_dir": "/opt/babylm/models/pub_gptbert_causal",
+ "split_dir": "/opt/babylm/osf/text_data/dev/dev",
+ "slice": "full",
+ "ctx": 512,
+ "stride": 256,
+ "short_context": false,
+ "ws": "raw",
+ "line_join": "newline",
+ "tab_space": "",
+ "words": 10418979,
+ "tokens": 17478484,
+ "nats_per_word": 6.096760267633008,
+ "bits_per_word": 8.79576580360301,
+ "nats_per_token": 3.6342978714002134,
+ "markup_chars": "\u230a\u230b\u2308\u2309\u2197\u2206\u2219\u204e",
+ "markup_words": 9882,
+ "markup_nats": 338372.3952771817,
+ "ex_markup_nats_per_word": 6.070040926818677,
+ "ex_markup_bits_per_word": 8.757217943114352,
+ "per_domain": {
+  "bnc_spoken.dev": {
+   "words": 1252593,
+   "tokens": 1739404,
+   "nats_per_word": 5.164773163896957,
+   "bits_per_word": 7.451192630870541,
+   "markup_words": 0,
+   "markup_tokens": 0,
+   "markup_nats": 0.0,
+   "ex_markup_bits_per_word": 7.451192630870541
+  },
+  "childes.dev": {
+   "words": 2716591,
+   "tokens": 5887018,
+   "nats_per_word": 8.084691491454965,
+   "bits_per_word": 11.663744321839276,
+   "markup_words": 9882,
+   "markup_tokens": 55533,
+   "markup_nats": 338372.3952771817,
+   "ex_markup_bits_per_word": 11.525972934057398
+  },
+  "gutenberg.dev": {
+   "words": 2819070,
+   "tokens": 3895652,
+   "nats_per_word": 5.385201879423122,
+   "bits_per_word": 7.769204045629664,
+   "markup_words": 0,
+   "markup_tokens": 0,
+   "markup_nats": 0.0,
+   "ex_markup_bits_per_word": 7.769204045629664
+  },
+  "open_subtitles.dev": {
+   "words": 2077019,
+   "tokens": 3401171,
+   "nats_per_word": 5.42735955658266,
+   "bits_per_word": 7.830024717403127,
+   "markup_words": 0,
+   "markup_tokens": 0,
+   "markup_nats": 0.0,
+   "ex_markup_bits_per_word": 7.830024717403127
+  },
+  "simple_wiki.dev": {
+   "words": 1405366,
+   "tokens": 2305756,
+   "nats_per_word": 5.411116872694728,
+   "bits_per_word": 7.80659147790728,
+   "markup_words": 0,
+   "markup_tokens": 0,
+   "markup_nats": 0.0,
+   "ex_markup_bits_per_word": 7.80659147790728
+  },
+  "switchboard.dev": {
+   "words": 148340,
+   "tokens": 249483,
+   "nats_per_word": 6.9520607075891165,
+   "bits_per_word": 10.029703506797837,
+   "markup_words": 0,
+   "markup_tokens": 0,
+   "markup_nats": 0.0,
+   "ex_markup_bits_per_word": 10.029703506797837
+  }
+ },
+ "seconds": 949.7
+}

@@ -1,0 +1,97 @@
+{
+ "dumps": [
+  "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e5_wd0p4.npz",
+  "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e5_wd0p4_s1.npz"
+ ],
+ "label": "K x exposure, out of track",
+ "vs_ref": {
+  "refs": [
+   "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e6_wd0p4.npz"
+  ],
+  "label": "mean of 1 reference runs - the 2-member mixture (positive = mixture better)",
+  "ref_npw_raw": 4.915795803402756,
+  "ref_sd_npw_raw": NaN,
+  "mix_npw_raw": 4.794983845374214,
+  "gain_npw_raw": 0.12081195802854161,
+  "ref_npw_ovr": 4.924494480532189,
+  "ref_sd_npw_ovr": NaN,
+  "mix_npw_ovr": 4.803417078998885,
+  "gain_npw_ovr": 0.12107740153330404
+ },
+ "kept_word_share": 0.9870679267133564,
+ "never_seen_char_guard": {
+  "label": "K x exposure, out of track",
+  "words": 10277,
+  "tokens": 57365,
+  "dumps": [
+   "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e5_wd0p4.npz",
+   "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e5_wd0p4_s1.npz"
+  ],
+  "vs_ref": {
+   "refs": [
+    "/tmp/tmp.pK9dakfIYH/ms_menu_28L384d_e6_wd0p4.npz"
+   ],
+   "label": "mean of 1 reference runs - the 2-member mixture (positive = mixture better)",
+   "ref_npw_raw": 4.889384747688003,
+   "ref_sd_npw_raw": NaN,
+   "mix_npw_raw": 4.7710540886711685,
+   "gain_npw_raw": 0.11833065901683426,
+   "ref_npw_ovr": 4.897723247863708,
+   "ref_sd_npw_ovr": NaN,
+   "mix_npw_ovr": 4.779153228684513,
+   "gain_npw_ovr": 0.11857001917919519
+  },
+  "twin_json_checks": []
+ },
+ "calibrated": {
+  "label": "calibrated-gain control (critic ref-0292): comparator, never an entry",
+  "tool": "scratch/v2r3/babylm/tools/calib_control.py",
+  "tool_sha256": "70c0eb5b2922c1bca300a9f3f3f1494c66fad85c69d2bc9c0a84dc5509089ca0",
+  "temps": [
+   0.9,
+   0.95,
+   1.05,
+   1.1,
+   1.15,
+   1.2
+  ],
+  "vs_ref": {
+   "gain_full_raw": 0.12081195802854161,
+   "gain_full_calibrated": 0.11672908825378503,
+   "gain_full_calibrated_t": 0.11013567979143168,
+   "gain_guarded_raw": 0.11833065901683426,
+   "gain_guarded_calibrated": 0.11471561590976265,
+   "gain_guarded_calibrated_t": 0.10808049160694289,
+   "refs": [
+    {
+     "full": {
+      "raw": 4.915795803402756,
+      "calibrated": 4.910677509294613,
+      "lam_even": 0.0075,
+      "lam_odd": 0.0075,
+      "words": 10418979,
+      "calibrated_t": 4.897474248504939,
+      "t_even": 1.05,
+      "lam_t_even": 0.0025,
+      "t_odd": 1.05,
+      "lam_t_odd": 0.0025,
+      "t_edge": false
+     },
+     "guarded": {
+      "raw": 4.889384747688002,
+      "calibrated": 4.8848372164260745,
+      "lam_even": 0.005,
+      "lam_odd": 0.0075,
+      "words": 10408702,
+      "calibrated_t": 4.872128784325637,
+      "t_even": 1.05,
+      "lam_t_even": 0.0025,
+      "t_odd": 1.05,
+      "lam_t_odd": 0.0025,
+      "t_edge": false
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "train_10M": {
+  "seconds": 13.9,
+  "dev_oov": 0.034667915960935526,
+  "kn_alone_nats_on_known": 6.166403635002607
+ },
+ "train_100M": {
+  "seconds": 158.2,
+  "dev_oov": 0.014350066669069156,
+  "kn_alone_nats_on_known": 5.8880863102399
+ }
+}

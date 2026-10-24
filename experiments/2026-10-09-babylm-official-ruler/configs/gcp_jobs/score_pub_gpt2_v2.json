@@ -1,0 +1,19 @@
+{
+ "name": "score_pub_gpt2_v2",
+ "commit": "90ddd2550794ea24e3d263fb62396d5db711fae0",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_pub_gpt2",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gpt2 out/score_pub_gpt2",
+   "timeout_s": 13800
+  }
+ ],
+ "outputs": [
+  "out"
+ ]
+}

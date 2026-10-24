@@ -1,0 +1,1073 @@
+{
+ "as_is": {
+  "targets": 3247,
+  "multi_piece": 308,
+  "critic_mismatch": 0,
+  "critic_mismatch_pct": 0.0,
+  "pipeline_mismatch": 308,
+  "pipeline_mismatch_pct": 9.485679088389283,
+  "critic_examples": [],
+  "pipeline_examples": [
+   {
+    "row": "4",
+    "kind": "word",
+    "word": "watching,",
+    "ref": [
+     "\u0120watching",
+     ","
+    ],
+    "got": [
+     "\u0120watching",
+     "\u0120,"
+    ]
+   },
+   {
+    "row": "11",
+    "kind": "word",
+    "word": "way.",
+    "ref": [
+     "\u0120way",
+     "."
+    ],
+    "got": [
+     "\u0120way",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "14",
+    "kind": "word",
+    "word": "it.",
+    "ref": [
+     "\u0120it",
+     "."
+    ],
+    "got": [
+     "\u0120it",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "18",
+    "kind": "word",
+    "word": "necks",
+    "ref": [
+     "\u0120neck",
+     "s"
+    ],
+    "got": [
+     "\u0120neck",
+     "\u0120s"
+    ]
+   },
+   {
+    "row": "21",
+    "kind": "word",
+    "word": "itself.",
+    "ref": [
+     "\u0120itself",
+     "."
+    ],
+    "got": [
+     "\u0120itself",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "31",
+    "kind": "word",
+    "word": "him.",
+    "ref": [
+     "\u0120him",
+     "."
+    ],
+    "got": [
+     "\u0120him",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "32",
+    "kind": "prev_word",
+    "word": "don't",
+    "ref": [
+     "\u0120don",
+     "'t"
+    ],
+    "got": [
+     "\u0120don",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "39",
+    "kind": "word",
+    "word": "up.",
+    "ref": [
+     "\u0120up",
+     "."
+    ],
+    "got": [
+     "\u0120up",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "48",
+    "kind": "word",
+    "word": "shivered.",
+    "ref": [
+     "\u0120sh",
+     "ivered",
+     "."
+    ],
+    "got": [
+     "\u0120sh",
+     "\u0120",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "52",
+    "kind": "word",
+    "word": "kid.",
+    "ref": [
+     "\u0120kid",
+     "."
+    ],
+    "got": [
+     "\u0120kid",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "53",
+    "kind": "word",
+    "word": "breakfast.",
+    "ref": [
+     "\u0120breakfast",
+     "."
+    ],
+    "got": [
+     "\u0120breakfast",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "54",
+    "kind": "word",
+    "word": "can't",
+    "ref": [
+     "\u0120can",
+     "'t"
+    ],
+    "got": [
+     "\u0120can",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "56",
+    "kind": "word",
+    "word": "me.",
+    "ref": [
+     "\u0120me",
+     "."
+    ],
+    "got": [
+     "\u0120me",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "66",
+    "kind": "word",
+    "word": "killing.",
+    "ref": [
+     "\u0120killing",
+     "."
+    ],
+    "got": [
+     "\u0120killing",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "77",
+    "kind": "word",
+    "word": "cans.",
+    "ref": [
+     "\u0120cans",
+     "."
+    ],
+    "got": [
+     "\u0120cans",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "78",
+    "kind": "word",
+    "word": "happened.",
+    "ref": [
+     "\u0120happened",
+     "."
+    ],
+    "got": [
+     "\u0120happened",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "89",
+    "kind": "word",
+    "word": "mess.",
+    "ref": [
+     "\u0120mess",
+     "."
+    ],
+    "got": [
+     "\u0120mess",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "91",
+    "kind": "prev_word",
+    "word": "necks",
+    "ref": [
+     "\u0120neck",
+     "s"
+    ],
+    "got": [
+     "\u0120neck",
+     "\u0120s"
+    ]
+   },
+   {
+    "row": "106",
+    "kind": "word",
+    "word": "couldn't",
+    "ref": [
+     "\u0120couldn",
+     "'t"
+    ],
+    "got": [
+     "\u0120couldn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "115",
+    "kind": "word",
+    "word": "word.",
+    "ref": [
+     "\u0120word",
+     "."
+    ],
+    "got": [
+     "\u0120word",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "122",
+    "kind": "word",
+    "word": "bored.",
+    "ref": [
+     "\u0120bored",
+     "."
+    ],
+    "got": [
+     "\u0120bored",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "126",
+    "kind": "word",
+    "word": "lip.",
+    "ref": [
+     "\u0120lip",
+     "."
+    ],
+    "got": [
+     "\u0120lip",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "134",
+    "kind": "word",
+    "word": "hide.",
+    "ref": [
+     "\u0120hide",
+     "."
+    ],
+    "got": [
+     "\u0120hide",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "135",
+    "kind": "word",
+    "word": "way.",
+    "ref": [
+     "\u0120way",
+     "."
+    ],
+    "got": [
+     "\u0120way",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "148",
+    "kind": "prev_word",
+    "word": "Geoffrey",
+    "ref": [
+     "\u0120Ge",
+     "off",
+     "rey"
+    ],
+    "got": [
+     "\u0120Ge",
+     "\u0120off",
+     "\u0120re"
+    ]
+   },
+   {
+    "row": "152",
+    "kind": "word",
+    "word": "yawn.",
+    "ref": [
+     "\u0120yawn",
+     "."
+    ],
+    "got": [
+     "\u0120yawn",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "159",
+    "kind": "word",
+    "word": "lamb.",
+    "ref": [
+     "\u0120lamb",
+     "."
+    ],
+    "got": [
+     "\u0120lamb",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "161",
+    "kind": "word",
+    "word": "that.",
+    "ref": [
+     "\u0120that",
+     "."
+    ],
+    "got": [
+     "\u0120that",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "164",
+    "kind": "prev_word",
+    "word": "warehouse",
+    "ref": [
+     "\u0120ware",
+     "house"
+    ],
+    "got": [
+     "\u0120ware",
+     "\u0120house"
+    ]
+   },
+   {
+    "row": "165",
+    "kind": "prev_word",
+    "word": "heaved",
+    "ref": [
+     "\u0120heav",
+     "ed"
+    ],
+    "got": [
+     "\u0120heav",
+     "\u0120ed"
+    ]
+   },
+   {
+    "row": "166",
+    "kind": "word",
+    "word": "again.",
+    "ref": [
+     "\u0120again",
+     "."
+    ],
+    "got": [
+     "\u0120again",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "183",
+    "kind": "word",
+    "word": "wrists",
+    "ref": [
+     "\u0120wr",
+     "ists"
+    ],
+    "got": [
+     "\u0120wr",
+     "\u0120is"
+    ]
+   },
+   {
+    "row": "185",
+    "kind": "word",
+    "word": "peace.",
+    "ref": [
+     "\u0120peace",
+     "."
+    ],
+    "got": [
+     "\u0120peace",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "186",
+    "kind": "word",
+    "word": "glared",
+    "ref": [
+     "\u0120gl",
+     "ared"
+    ],
+    "got": [
+     "\u0120gl",
+     "\u0120are"
+    ]
+   },
+   {
+    "row": "190",
+    "kind": "prev_word",
+    "word": "wasn't",
+    "ref": [
+     "\u0120wasn",
+     "'t"
+    ],
+    "got": [
+     "\u0120wasn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "194",
+    "kind": "word",
+    "word": "heaved",
+    "ref": [
+     "\u0120heav",
+     "ed"
+    ],
+    "got": [
+     "\u0120heav",
+     "\u0120ed"
+    ]
+   },
+   {
+    "row": "198",
+    "kind": "prev_word",
+    "word": "doesn't",
+    "ref": [
+     "\u0120doesn",
+     "'t"
+    ],
+    "got": [
+     "\u0120doesn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "199",
+    "kind": "word",
+    "word": "cap.",
+    "ref": [
+     "\u0120cap",
+     "."
+    ],
+    "got": [
+     "\u0120cap",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "200",
+    "kind": "word",
+    "word": "truck.",
+    "ref": [
+     "\u0120truck",
+     "."
+    ],
+    "got": [
+     "\u0120truck",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "201",
+    "kind": "word",
+    "word": "tucked",
+    "ref": [
+     "\u0120tuck",
+     "ed"
+    ],
+    "got": [
+     "\u0120tuck",
+     "\u0120ed"
+    ]
+   }
+  ]
+ },
+ "prefix_space": {
+  "targets": 3247,
+  "multi_piece": 308,
+  "critic_mismatch": 0,
+  "critic_mismatch_pct": 0.0,
+  "pipeline_mismatch": 308,
+  "pipeline_mismatch_pct": 9.485679088389283,
+  "critic_examples": [],
+  "pipeline_examples": [
+   {
+    "row": "4",
+    "kind": "word",
+    "word": "watching,",
+    "ref": [
+     "\u0120watching",
+     ","
+    ],
+    "got": [
+     "\u0120watching",
+     "\u0120,"
+    ]
+   },
+   {
+    "row": "11",
+    "kind": "word",
+    "word": "way.",
+    "ref": [
+     "\u0120way",
+     "."
+    ],
+    "got": [
+     "\u0120way",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "14",
+    "kind": "word",
+    "word": "it.",
+    "ref": [
+     "\u0120it",
+     "."
+    ],
+    "got": [
+     "\u0120it",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "18",
+    "kind": "word",
+    "word": "necks",
+    "ref": [
+     "\u0120neck",
+     "s"
+    ],
+    "got": [
+     "\u0120neck",
+     "\u0120s"
+    ]
+   },
+   {
+    "row": "21",
+    "kind": "word",
+    "word": "itself.",
+    "ref": [
+     "\u0120itself",
+     "."
+    ],
+    "got": [
+     "\u0120itself",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "31",
+    "kind": "word",
+    "word": "him.",
+    "ref": [
+     "\u0120him",
+     "."
+    ],
+    "got": [
+     "\u0120him",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "32",
+    "kind": "prev_word",
+    "word": "don't",
+    "ref": [
+     "\u0120don",
+     "'t"
+    ],
+    "got": [
+     "\u0120don",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "39",
+    "kind": "word",
+    "word": "up.",
+    "ref": [
+     "\u0120up",
+     "."
+    ],
+    "got": [
+     "\u0120up",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "48",
+    "kind": "word",
+    "word": "shivered.",
+    "ref": [
+     "\u0120sh",
+     "ivered",
+     "."
+    ],
+    "got": [
+     "\u0120sh",
+     "\u0120",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "52",
+    "kind": "word",
+    "word": "kid.",
+    "ref": [
+     "\u0120kid",
+     "."
+    ],
+    "got": [
+     "\u0120kid",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "53",
+    "kind": "word",
+    "word": "breakfast.",
+    "ref": [
+     "\u0120breakfast",
+     "."
+    ],
+    "got": [
+     "\u0120breakfast",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "54",
+    "kind": "word",
+    "word": "can't",
+    "ref": [
+     "\u0120can",
+     "'t"
+    ],
+    "got": [
+     "\u0120can",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "56",
+    "kind": "word",
+    "word": "me.",
+    "ref": [
+     "\u0120me",
+     "."
+    ],
+    "got": [
+     "\u0120me",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "66",
+    "kind": "word",
+    "word": "killing.",
+    "ref": [
+     "\u0120killing",
+     "."
+    ],
+    "got": [
+     "\u0120killing",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "77",
+    "kind": "word",
+    "word": "cans.",
+    "ref": [
+     "\u0120cans",
+     "."
+    ],
+    "got": [
+     "\u0120cans",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "78",
+    "kind": "word",
+    "word": "happened.",
+    "ref": [
+     "\u0120happened",
+     "."
+    ],
+    "got": [
+     "\u0120happened",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "89",
+    "kind": "word",
+    "word": "mess.",
+    "ref": [
+     "\u0120mess",
+     "."
+    ],
+    "got": [
+     "\u0120mess",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "91",
+    "kind": "prev_word",
+    "word": "necks",
+    "ref": [
+     "\u0120neck",
+     "s"
+    ],
+    "got": [
+     "\u0120neck",
+     "\u0120s"
+    ]
+   },
+   {
+    "row": "106",
+    "kind": "word",
+    "word": "couldn't",
+    "ref": [
+     "\u0120couldn",
+     "'t"
+    ],
+    "got": [
+     "\u0120couldn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "115",
+    "kind": "word",
+    "word": "word.",
+    "ref": [
+     "\u0120word",
+     "."
+    ],
+    "got": [
+     "\u0120word",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "122",
+    "kind": "word",
+    "word": "bored.",
+    "ref": [
+     "\u0120bored",
+     "."
+    ],
+    "got": [
+     "\u0120bored",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "126",
+    "kind": "word",
+    "word": "lip.",
+    "ref": [
+     "\u0120lip",
+     "."
+    ],
+    "got": [
+     "\u0120lip",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "134",
+    "kind": "word",
+    "word": "hide.",
+    "ref": [
+     "\u0120hide",
+     "."
+    ],
+    "got": [
+     "\u0120hide",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "135",
+    "kind": "word",
+    "word": "way.",
+    "ref": [
+     "\u0120way",
+     "."
+    ],
+    "got": [
+     "\u0120way",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "148",
+    "kind": "prev_word",
+    "word": "Geoffrey",
+    "ref": [
+     "\u0120Ge",
+     "off",
+     "rey"
+    ],
+    "got": [
+     "\u0120Ge",
+     "\u0120off",
+     "\u0120re"
+    ]
+   },
+   {
+    "row": "152",
+    "kind": "word",
+    "word": "yawn.",
+    "ref": [
+     "\u0120yawn",
+     "."
+    ],
+    "got": [
+     "\u0120yawn",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "159",
+    "kind": "word",
+    "word": "lamb.",
+    "ref": [
+     "\u0120lamb",
+     "."
+    ],
+    "got": [
+     "\u0120lamb",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "161",
+    "kind": "word",
+    "word": "that.",
+    "ref": [
+     "\u0120that",
+     "."
+    ],
+    "got": [
+     "\u0120that",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "164",
+    "kind": "prev_word",
+    "word": "warehouse",
+    "ref": [
+     "\u0120ware",
+     "house"
+    ],
+    "got": [
+     "\u0120ware",
+     "\u0120house"
+    ]
+   },
+   {
+    "row": "165",
+    "kind": "prev_word",
+    "word": "heaved",
+    "ref": [
+     "\u0120heav",
+     "ed"
+    ],
+    "got": [
+     "\u0120heav",
+     "\u0120ed"
+    ]
+   },
+   {
+    "row": "166",
+    "kind": "word",
+    "word": "again.",
+    "ref": [
+     "\u0120again",
+     "."
+    ],
+    "got": [
+     "\u0120again",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "183",
+    "kind": "word",
+    "word": "wrists",
+    "ref": [
+     "\u0120wr",
+     "ists"
+    ],
+    "got": [
+     "\u0120wr",
+     "\u0120is"
+    ]
+   },
+   {
+    "row": "185",
+    "kind": "word",
+    "word": "peace.",
+    "ref": [
+     "\u0120peace",
+     "."
+    ],
+    "got": [
+     "\u0120peace",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "186",
+    "kind": "word",
+    "word": "glared",
+    "ref": [
+     "\u0120gl",
+     "ared"
+    ],
+    "got": [
+     "\u0120gl",
+     "\u0120are"
+    ]
+   },
+   {
+    "row": "190",
+    "kind": "prev_word",
+    "word": "wasn't",
+    "ref": [
+     "\u0120wasn",
+     "'t"
+    ],
+    "got": [
+     "\u0120wasn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "194",
+    "kind": "word",
+    "word": "heaved",
+    "ref": [
+     "\u0120heav",
+     "ed"
+    ],
+    "got": [
+     "\u0120heav",
+     "\u0120ed"
+    ]
+   },
+   {
+    "row": "198",
+    "kind": "prev_word",
+    "word": "doesn't",
+    "ref": [
+     "\u0120doesn",
+     "'t"
+    ],
+    "got": [
+     "\u0120doesn",
+     "\u0120'"
+    ]
+   },
+   {
+    "row": "199",
+    "kind": "word",
+    "word": "cap.",
+    "ref": [
+     "\u0120cap",
+     "."
+    ],
+    "got": [
+     "\u0120cap",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "200",
+    "kind": "word",
+    "word": "truck.",
+    "ref": [
+     "\u0120truck",
+     "."
+    ],
+    "got": [
+     "\u0120truck",
+     "\u0120."
+    ]
+   },
+   {
+    "row": "201",
+    "kind": "word",
+    "word": "tucked",
+    "ref": [
+     "\u0120tuck",
+     "ed"
+    ],
+    "got": [
+     "\u0120tuck",
+     "\u0120ed"
+    ]
+   }
+  ]
+ },
+ "verdict": "STOP"
+}

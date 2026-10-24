@@ -1,0 +1,10 @@
+[cpu_zs_sub] S_e6_s2 start 2026-10-11T08:29:01Z ruler tools ref-0403 uri ${BUCKET}/babylm/vms/bl-exp-p2v2d-estar-1010-154711/out/babylm/runs/v2_S_10M_e6_s2/score/hf tasks: blimp supplement ewok wug_adj wug_past reading comps
+== 08:29:15 --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+== 08:44:37 --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+== 08:46:54 --task ewok --data_path evaluation_data/full_eval/ewok_filtered
+== 08:50:17 --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+== 08:50:29 --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+== 08:50:38 reading
+== 08:53:08 --task comps --data_path evaluation_data/full_eval/comps
+== 09:20:20 done
+[cpu_zs_sub] S_e6_s2 done 2026-10-11T09:20:23Z wall_s=3065

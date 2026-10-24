@@ -1,0 +1,46 @@
+table,row,col,k,value,derivation,source
+tab:failed,0,2,0,0.022,"base minus A2a, full raw",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:24Z
+tab:failed,0,2,1,0.0128,guarded raw,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:24Z
+tab:failed,0,2,2,0.0047,full calibrated_t,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:24Z
+tab:failed,0,2,3,-0.0025,guarded calibrated_t,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:24Z
+tab:failed,0,3,0,0.0102,packed kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:24Z
+tab:failed,1,2,0,0.004,"a3a minus null, full raw",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T11:56Z
+tab:failed,1,3,0,0.0074,screen kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T10:51Z
+tab:failed,2,2,0,0.0431,"A3g E10 vs E6 pool, full cal_t",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T22:27Z
+tab:failed,2,2,1,0.0458,guarded cal_t,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T22:27Z
+tab:failed,2,2,2,-0.0128,"arm minus 28L e6 reference, full cal_t",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T22:27Z
+tab:failed,2,2,3,-0.0072,guarded cal_t,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T22:27Z
+tab:failed,2,2,4,0.0138,"plain K=2 minus A3g K=2, 3-rep mean, full cal_t",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-11T00:55Z
+tab:failed,2,2,5,0.0129,guarded cal_t,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-11T00:55Z
+tab:failed,2,3,0,0.0112,"E6-pool claim floor, full",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T22:27Z
+tab:failed,2,3,1,0.02,stack bar,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:14Z
+tab:failed,3,2,0,-0.03795119321966833,n0a minus a4_a nats_per_word (negative = arm worse),experiments/2026-10-09-babylm-attacks/results/gcp_reads/a4_b1/a4_a/score/dev_bpw_twin.json ; experiments/2026-10-09-babylm-attacks/results/gcp_reads/a4_b1/a4_n0a/score/dev_bpw_twin.json
+tab:failed,3,2,1,-0.04496320956232758,"same, ex_unseen_chars",experiments/2026-10-09-babylm-attacks/results/gcp_reads/a4_b1/a4_a/score/dev_bpw_twin.json ; experiments/2026-10-09-babylm-attacks/results/gcp_reads/a4_b1/a4_n0a/score/dev_bpw_twin.json
+tab:failed,3,3,0,0.0074,solo screen kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T19:30Z
+tab:failed,4,2,0,0.0502,"student margin over N-single, full",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T13:23Z
+tab:failed,4,2,1,0.0506,guarded,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T13:23Z
+tab:failed,4,3,0,0.107,2 x 8-member floor,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T13:23Z
+tab:failed,4,4,0,0.2893001326568658,"noise slice, raw/all/all member-ens8",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:failed,5,2,0,36.4,"100 * rho, full leg 0.3289 / 0.9030",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T16:11Z
+tab:failed,5,2,1,-0.037,"K=2 beats trunk+branches, full",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:28Z
+tab:failed,5,2,2,-0.037,guarded,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:28Z
+tab:failed,5,3,0,50.0,kill if rho < 0.5,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T16:11Z
+tab:failed,6,2,0,0.003,"hetero diversity, low end",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:13Z
+tab:failed,6,2,1,0.007,high end,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:13Z
+tab:failed,6,3,0,0.03,kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:13Z
+tab:failed,7,2,0,0.1424000000000003,"best size-M cell (E10 wd0.8) minus S E6, raw twin",experiments/2026-10-09-babylm-gap-map/results/base_size_m/SHORT_E.md
+tab:failed,7,2,1,0.39420000000000055,worst (wd3.2 e5) minus S E6,experiments/2026-10-09-babylm-gap-map/results/base_size_m/SHORT_E.md
+tab:failed,7,2,2,0.3302000000000005,best short-epoch size-M cell (wd1.6 e3) minus K=2 e5 mix (P-F2e),experiments/2026-10-09-babylm-gap-map/results/base_size_m/SHORT_E.md ; experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:51Z
+tab:failed,7,3,0,-0.06,"P-F2e registered band, low",experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:51Z
+tab:failed,7,3,1,0.02,high,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-10T21:51Z
+tab:failed,7,4,0,0.0030000000000001137,"12L/880d e4 minus 36L/512d e4, cal_t full",experiments/2026-10-10-babylm-moonshot-10x/results/f4_menu/README.md
+tab:failed,7,4,1,0.006300000000000416,guarded,experiments/2026-10-10-babylm-moonshot-10x/results/f4_menu/README.md
+tab:failed,8,2,0,-0.05642409860432274,"C minus W0.8, cal_t full",experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:failed,8,2,1,-0.05749488832853622,cal_t guarded,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:failed,8,2,2,0.4,design: control weight decay,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-12T05:37Z
+tab:failed,8,3,0,0.0074,kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-12T11:13Z
+tab:failed,9,2,0,-0.03809794294021085,"P24 minus L12x2, cal_t full",experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:failed,9,2,1,-0.03823520500565447,cal_t guarded,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:failed,9,2,2,-0.014375554239882682,"C minus L12x2, cal_t full",experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:failed,9,2,3,-0.011865728967507039,cal_t guarded,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:failed,9,3,0,0.0074,kill line,experiments/2026-10-09-babylm-official-ruler/governance/critic_log.md @ 2026-10-12T12:59Z

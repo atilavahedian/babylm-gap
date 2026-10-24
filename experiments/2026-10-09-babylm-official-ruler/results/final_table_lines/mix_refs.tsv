@@ -1,0 +1,7 @@
+# mixture	members	MIX_REF_NPW (twin full raw, T=1)	source
+mixS_p01	v2_S_10M_e5_s0+s1	4.844270198203521	k2_estar/calib_set_out.json
+mixS_p23	v2_S_10M_e5_s2+s3	4.851141213825248	k2_estar/calib_set_out.json
+mixS_p45	v2_S_10M_e5_s4+s5	4.842996868764093	k2_estar/calib_set_out.json
+mix28L_p01	28L e5 s0rt+s1rt (retrain)	4.793700354253721	executor 3 reads/rt28 @ref-0388
+mix28L_p23	28L e5 s2rt+s3rt (retrain)	4.795395544528819	executor 3 reads/rt28 (12:44Z)
+mix28L_p45	28L e5 s4rt+s5rt (retrain)	4.792486397887453	executor 3 reads/rt28 (14:27Z)

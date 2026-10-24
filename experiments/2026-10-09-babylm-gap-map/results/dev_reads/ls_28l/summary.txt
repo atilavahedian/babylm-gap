@@ -1,0 +1,16 @@
+== ls_28L_vs_e10: 2 members, 2 refs
+  full: g(2)=0.1314
+  full: ref mean 4.9264 (sd 0.0086), mixture 4.7950, gain +0.1314
+  guarded: g(2)=0.1288
+  guarded: ref mean 4.8999 (sd 0.0075), mixture 4.7711, gain +0.1288
+  calibrated K=1 g_full_raw=0.0000 g_full_calibrated=0.0000 g_full_calibrated_t=0.0000 g_guarded_raw=0.0000 g_guarded_calibrated=0.0000 g_guarded_calibrated_t=0.0000
+  calibrated K=2 g_full_raw=0.1314 g_full_calibrated=0.1281 g_full_calibrated_t=0.1194 g_guarded_raw=0.1288 g_guarded_calibrated=0.1256 g_guarded_calibrated_t=0.1172
+  calibrated vs_ref gain_full_raw=0.1314 gain_full_calibrated=0.1281 gain_full_calibrated_t=0.1194 gain_guarded_raw=0.1288 gain_guarded_calibrated=0.1256 gain_guarded_calibrated_t=0.1172
+== ls_28L_vs_estar: 2 members, 1 refs
+  full: g(2)=0.1314
+  full: ref mean 4.9158 (sd nan), mixture 4.7950, gain +0.1208
+  guarded: g(2)=0.1288
+  guarded: ref mean 4.8894 (sd nan), mixture 4.7711, gain +0.1183
+  calibrated K=1 g_full_raw=0.0000 g_full_calibrated=0.0000 g_full_calibrated_t=0.0000 g_guarded_raw=0.0000 g_guarded_calibrated=0.0000 g_guarded_calibrated_t=0.0000
+  calibrated K=2 g_full_raw=0.1314 g_full_calibrated=0.1281 g_full_calibrated_t=0.1194 g_guarded_raw=0.1288 g_guarded_calibrated=0.1256 g_guarded_calibrated_t=0.1172
+  calibrated vs_ref gain_full_raw=0.1208 gain_full_calibrated=0.1167 gain_full_calibrated_t=0.1101 gain_guarded_raw=0.1183 gain_guarded_calibrated=0.1147 gain_guarded_calibrated_t=0.1081

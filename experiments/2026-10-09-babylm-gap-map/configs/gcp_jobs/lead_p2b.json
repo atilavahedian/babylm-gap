@@ -1,0 +1,60 @@
+{
+ "name": "lead_p2b",
+ "commit": "8bca58907c12ce2a33b8e583d13e7b80016b08c1",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,train_100M,dev; /opt/p2venv/bin/python -m pytest -q -x babylm/tests; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi",
+ "env": {
+  "RESTORE_URI": ""
+ },
+ "jobs": [
+  {
+   "name": "port_S_10M_e10_s1",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only port_S_10M_e10_s1; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 3600
+  },
+  {
+   "name": "port_S_10M_e10_s2",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only port_S_10M_e10_s2; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 3600
+  },
+  {
+   "name": "grid_S_10M_e1_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_10M_e1_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 1800
+  },
+  {
+   "name": "grid_S_10M_e2_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_10M_e2_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 1800
+  },
+  {
+   "name": "grid_S_10M_e4_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_10M_e4_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 1800
+  },
+  {
+   "name": "grid_S_30M_e3p333_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_30M_e3p333_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 3600
+  },
+  {
+   "name": "grid_S_30M_e10_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_30M_e10_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 5400
+  },
+  {
+   "name": "grid_S_10M_e20_s0",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2.json --only grid_S_10M_e20_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs port_S_10M_e10_s0 port_S_10M_e10_s1 port_S_10M_e10_s2; exit $rc",
+   "timeout_s": 3600
+  }
+ ],
+ "outputs": [
+  "babylm/runs",
+  "babylm/results_pack"
+ ],
+ "keep_checkpoints": true,
+ "continue_on_error": true
+}

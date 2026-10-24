@@ -1,0 +1,23 @@
+[job] score_pub_gptbert_causal start 2026-10-10T20:34:28Z commit 579eb1793e423c08f02e71c9403c254953ff79ce
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_pub_gptbert_causal", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}
+[job] GLUE finetune script: eval_finetuning_parallel.sh
+Copying ${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip to file:///opt/babylm/ewok.zip
+  
+
+[job] full EWoK files: 11
+
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]
+Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  5.10it/s]
+Fetching 10 files:  70%|███████   | 7/10 [00:01<00:00,  4.64it/s]
+Fetching 10 files: 100%|██████████| 10/10 [00:01<00:00,  6.66it/s]
+/opt/babylm/hf/babylm-baseline-10m-gpt-bert-causal-focus
+[job] GLUE finetune pub_gptbert_causal start 21:24:33
+[job] evaluated pub_gptbert_causal (causal, finetune) 21:26:45
+[job] evaluated pub_gptbert_causal (mntp) 22:00:45
+[job] score_pub_gptbert_causal done 2026-10-10T22:00:45Z wall_s=4636

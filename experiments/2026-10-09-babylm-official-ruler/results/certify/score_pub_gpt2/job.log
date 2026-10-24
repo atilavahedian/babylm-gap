@@ -1,0 +1,12 @@
+[job] score_pub_gpt2 start 2026-10-09T20:42:16Z commit 372258a60b132d60003abdf3ac57ca894a56ac1a
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_pub_gpt2", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  5.69it/s]Fetching 10 files:  60%|██████    | 6/10 [00:01<00:01,  3.01it/s]Fetching 10 files: 100%|██████████| 10/10 [00:01<00:00,  5.14it/s]
+/opt/babylm/hf/babylm-baseline-10m-gpt2
+[job] evaluated pub_gpt2 (causal, finetune) 21:05:49
+[job] score_pub_gpt2 done 2026-10-09T21:05:49Z wall_s=1403

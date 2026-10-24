@@ -1,0 +1,29 @@
+{
+ "name": "certify_a_v3_rest",
+ "commit": "a3111d8c986c2388ffb6d44f63b93ff5a0e5d3fb",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_pub_gptbert_mixed",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gptbert_mixed out/score_pub_gptbert_mixed",
+   "timeout_s": 21600
+  },
+  {
+   "name": "ftverify_pub_gptbert_causal",
+   "cmd": "bash babylm/jobs/vm_job.sh ftverify_pub_gptbert_causal out/ftverify_pub_gptbert_causal",
+   "timeout_s": 14400
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip",
+  "FT_PARALLEL": "0"
+ },
+ "note": " | REST after spot preemption of bl-certify-a-v3-1010-203235 at 22:37Z (score_pub_gptbert_causal + entity_v1 done there, outputs on its GCS out/). | v2 22:52Z: ruler fix ref-0339 (GLUE <7/7 falls back to sequential), FT_PARALLEL=0 (concurrent GLUE OOMs on 40GB for GPT-BERT)."
+}

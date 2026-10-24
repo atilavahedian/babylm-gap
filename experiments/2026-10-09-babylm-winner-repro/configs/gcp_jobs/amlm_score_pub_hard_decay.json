@@ -1,0 +1,21 @@
+{
+ "name": "amlm_score_pub_hard_decay",
+ "commit": "1cd2da4e18af03583dd60268b1593a728b6b3ff0",
+ "paths": [
+  "babylm"
+ ],
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "score_pub_hard_decay",
+   "cmd": "bash babylm/winner/amlm/gpu_job.sh score_pub_hard_decay out/score_pub_hard_decay",
+   "timeout_s": 7200
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ }
+}

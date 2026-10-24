@@ -1,0 +1,25 @@
+{
+ "name": "gptbert_100m_e1_ewok",
+ "commit": "01a1ca6d9345c54816c67e61025060d6978950ea",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "gptbert_100M_e1",
+   "cmd": "bash babylm/jobs/vm_job.sh gptbert_100M_e1 out/gptbert_100M_e1",
+   "timeout_s": 39000
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip",
+  "FT_PARALLEL": "0",
+  "GLUE_ENS": "2"
+ },
+ "note": " | v4 (ruler 22:52Z): rebuilt at ref-0339 (GLUE 7/7 rule + sequential fallback). | v5: code ref-0200, GLUE_ENS=2 (seed-43 GLUE + _ens2), timeout +3h, maxdur +3h. HELD until ruler releases."
+}

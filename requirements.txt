@@ -1,0 +1,9 @@
+# Training, DEV scoring and table scripts (Python 3.10+). Versions as used for the paper's runs.
+torch==2.7.0          # 12-layer runs; the 28-layer runs used torch 2.9.1 (see paper, Table 1 caption)
+numpy
+tokenizers
+transformers==4.51.3
+safetensors
+matplotlib
+pytest
+# The official BabyLM 2025 evaluation pipeline has its own pinned environment: src/babylm/eval/requirements_eval.txt

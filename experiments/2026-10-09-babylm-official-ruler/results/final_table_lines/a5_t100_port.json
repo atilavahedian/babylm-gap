@@ -1,0 +1,29 @@
+{
+ "line": "A5 T100: 100M reference point = port recipe E10, 3 seeds, cal_t (calib_set K=1 sha256 ref-0374, CALIB_TOKENIZER base_S_e6)",
+ "label": "upper bound (100M point not exhaustively tuned); trainer commit differs, training-equivalent (critic diff check)",
+ "source": "byi6gg ref-0373 babylm/gcp/reads/a5/port/calib_port_s0s2.json; s0 dump from x0 (bl-final-ii-28l-x0-1012-053724, tools twin ref-0026 / dump ref-0034 / dev_bpw ref-0165 sha ref-0195); s1/s2 from bl-a5-100m-port-s1s2-1011-232508",
+ "per_seed_full_cal_t": {
+  "s0": 4.240369743213724,
+  "s1": 4.23797779650208,
+  "s2": 4.236948902191036
+ },
+ "per_seed_guarded_cal_t": {
+  "s0": 4.236490470846743,
+  "s1": 4.234225516075534,
+  "s2": 4.233244326273456
+ },
+ "per_seed_full_raw": {
+  "s0": 4.261164613919819,
+  "s1": 4.256362286017782,
+  "s2": 4.257825426706115
+ },
+ "T100_cal_t_full_mean": 4.23843214730228,
+ "T100_cal_t_full_sd": 0.0017550966676676406,
+ "T100_cal_t_guarded_mean": 4.234653437731911,
+ "T100_cal_t_guarded_sd": 0.0016648427420230547,
+ "T100_raw_full_mean": 4.258450775547906,
+ "T100_raw_full_sd": 0.0024614800832256536,
+ "locked_recipe_100M_cal_t_e10": 4.547,
+ "locked_minus_port_full": 0.3085678526977196,
+ "finding": "the 10M-locked recipe is ~0.31 nats/word worse than the port recipe at 100M (cal_t full); cause untested"
+}

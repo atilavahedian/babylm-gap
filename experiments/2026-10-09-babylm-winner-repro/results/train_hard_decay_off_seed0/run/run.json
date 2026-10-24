@@ -1,0 +1,15 @@
+{
+ "arm": "hard_decay_off",
+ "seed": 0,
+ "train_wall_s": 3144,
+ "gpu": "NVIDIA A100-SXM4-40GB",
+ "train_sha256": "bbdf920bf0865a635f563f957709d97411ce8218f577c95f478e4530b86e3eaa",
+ "train_words": 9953773,
+ "words_exposed": 99537730,
+ "total_steps": 10155,
+ "tokenizer_sha256": "b80416831e6ed638fffd8e58ffa36ba0776853d410c55e071384aa726579a7f7",
+ "torch": "2.9.1+cu129",
+ "upstream_commit": "d1438b077761a891ec2b47c6854ea34be6e6e6aa",
+ "hinton_commit": "",
+ "deviations_from_paper": "none from code; code differs from paper: LAMB betas (0.9,0.98) not 0.95, z-loss 1e-4, bf16 weights"
+}

@@ -1,0 +1,145 @@
+== 02:44:58 --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+== 02:45:06 --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+== 02:45:13 --task ewok --data_path evaluation_data/fast_eval/ewok_fast
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task ewok --data_path evaluation_data/fast_eval/ewok_fast
+== 02:45:20 --task entity_tracking --data_path evaluation_data/full_eval/entity_tracking
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task entity_tracking --data_path evaluation_data/full_eval/entity_tracking
+== 02:45:27 --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+== 02:45:34 --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+== 02:45:41 reading
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/reading/run.py", line 59, in <module>
+    tokenizer = AutoProcessor.from_pretrained(args.model_path_or_name, trust_remote_code=True, revision=args.revision_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED reading
+== 02:45:48 --task comps --data_path evaluation_data/full_eval/comps
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 173, in main
+    dataloader = get_dataloader(args)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 585, in get_dataloader
+    dataset = CompletionRankingDataset(args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/dataset.py", line 24, in __init__
+    self.processor: ProcessorMixin = AutoProcessor.from_pretrained(args.model_path_or_name, padding_side="right", revision=args.revision_name, trust_remote_code=True)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/venv/lib/python3.12/site-packages/transformers/models/auto/processing_auto.py", line 375, in from_pretrained
+    raise ValueError(
+ValueError: Unrecognized processing class in /opt/babylm/models/amlm_hard_decay_off_s0. Can't instantiate a processor, a tokenizer, an image processor or a feature extractor for this model. Make sure the repository contains the files of at least one of those processing classes.
+FAILED --task comps --data_path evaluation_data/full_eval/comps
+== 02:45:55 done

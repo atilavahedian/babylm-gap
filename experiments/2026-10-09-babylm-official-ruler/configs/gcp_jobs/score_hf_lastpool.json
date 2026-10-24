@@ -1,0 +1,24 @@
+{
+ "name": "score_hf_lastpool",
+ "commit": "6359f28975d6cc4d0eca350a8df6a14c51841ba4",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_hf_base_S_e6_lastpool_pair",
+   "cmd": "FT_PARALLEL=0 HF_URI=\"__BUCKET__/hf/base_S_e6 __BUCKET__/hf/base_S_e6\" HF_NAME=\"base_S_e6_lastpool base_S_e6_untrained_lastpool\" FMT_JSON=/opt/hinton/babylm/recipes/harness/format.json bash babylm/jobs/vm_job.sh score_hf out/score_hf_base_S_e6_lastpool_pair",
+   "timeout_s": 12600
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__",
+  "FT_PARALLEL": "1"
+ },
+ "note": "Ruler 01:59Z (critic 44552922 sanity pair): last-NON-PAD-token adapter fix @ref-0202 (pad-side unit test gates scoring); base_S_e6_lastpool + seed-0 untrained init, sequential GLUE x2, pool ruler, maxdur 4h, after rep3."
+}

@@ -1,0 +1,95 @@
+TEMPERATURE: 1.00
+
+### FIELD ACCURACY
+semantics: 64.13
+syntax: 62.43
+morphology: 80.47
+syntax/semantics: 64.26
+
+### UID ACCURACY
+existential_there_quantifiers_1: 98.49
+wh_vs_that_with_gap_long_distance: 4.73
+distractor_agreement_relational_noun: 50.89
+anaphor_number_agreement: 94.95
+regular_plural_subject_verb_agreement_1: 81.46
+only_npi_scope: 39.31
+expletive_it_object_raising: 73.25
+left_branch_island_echo_question: 29.88
+existential_there_subject_raising: 75.22
+principle_A_c_command: 52.85
+matrix_question_npi_licensor_present: 23.25
+tough_vs_raising_1: 38.50
+passive_1: 82.14
+inchoative: 57.54
+irregular_plural_subject_verb_agreement_2: 87.67
+irregular_past_participle_adjectives: 85.95
+ellipsis_n_bar_1: 71.32
+ellipsis_n_bar_2: 88.53
+existential_there_quantifiers_2: 59.28
+sentential_negation_npi_scope: 51.66
+coordinate_structure_constraint_complex_left_branch: 40.84
+determiner_noun_agreement_with_adjective_1: 83.17
+intransitive: 66.94
+tough_vs_raising_2: 76.09
+principle_A_domain_1: 91.36
+adjunct_island: 69.72
+wh_questions_subject_gap: 87.97
+determiner_noun_agreement_2: 93.13
+irregular_past_participle_verbs: 77.81
+determiner_noun_agreement_irregular_2: 86.46
+coordinate_structure_constraint_object_extraction: 65.54
+existential_there_object_raising: 73.52
+superlative_quantifiers_2: 63.29
+sentential_negation_npi_licensor_present: 99.78
+determiner_noun_agreement_irregular_1: 77.68
+principle_A_case_1: 100.00
+animate_subject_trans: 67.71
+only_npi_licensor_present: 97.39
+wh_vs_that_no_gap_long_distance: 97.83
+animate_subject_passive: 68.60
+irregular_plural_subject_verb_agreement_1: 74.50
+anaphor_gender_agreement: 86.41
+principle_A_reconstruction: 33.92
+complex_NP_island: 45.51
+sentential_subject_island: 29.03
+determiner_noun_agreement_with_adj_2: 90.01
+determiner_noun_agreement_1: 88.37
+passive_2: 75.19
+wh_vs_that_with_gap: 24.05
+principle_A_domain_2: 62.51
+principle_A_domain_3: 56.32
+wh_questions_subject_gap_long_distance: 89.85
+npi_present_1: 38.28
+determiner_noun_agreement_with_adj_irregular_2: 77.98
+causative: 62.47
+wh_questions_object_gap: 67.52
+determiner_noun_agreement_with_adj_irregular_1: 74.93
+npi_present_2: 39.17
+wh_island: 51.98
+superlative_quantifiers_1: 59.55
+principle_A_case_2: 78.25
+wh_vs_that_no_gap: 96.05
+distractor_agreement_relative_clause: 46.38
+drop_argument: 71.30
+transitive: 72.00
+regular_plural_subject_verb_agreement_2: 81.38
+left_branch_island_simple_question: 52.58
+
+### LINGUISTICS_TERM ACCURACY
+quantifiers: 69.97
+filler_gap_dependency: 66.14
+subject_verb_agreement: 70.91
+anaphor_agreement: 90.59
+npi_licensing: 55.53
+control_raising: 66.77
+island_effects: 48.13
+binding: 67.48
+argument_structure: 69.73
+irregular_forms: 81.92
+ellipsis: 80.06
+determiner_noun_agreement: 84.53
+s-selection: 68.15
+
+### AVERAGE ACCURACY
+68.02
+

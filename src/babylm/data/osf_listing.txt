@@ -1,0 +1,202 @@
+README.md	3589	sha256=20d4993f0f36a965add35cbf0554cbb42b131f60f29bd80db16ab56a3f40c9c0	https://osf.io/download/eswy2/
+dev.zip	19264893	sha256=b5af75aeb1ee5a36f65ee98f316fdae73b16a0ba3767cca3f3dfa5eaac2dc621	https://osf.io/download/uyd7v/
+train_10M.zip	18139949	sha256=6d9d2cb3b3feccf0669e74173edb55de6c7f12412ee02935d16b1b6b44160b39	https://osf.io/download/y7djq/
+test.zip	16977636	sha256=12bd1c9c89f4f82156feb71b287d47f713429ee1292e938c6ab463a882816cef	https://osf.io/download/ftwu3/
+train_100M.zip	180012897	sha256=37a92db26f391e436febd592453084394d0c0830c8c9bdb30be781e440cdc826	https://osf.io/download/ywea7/
+[D] fast_eval
+  [D] wug_adj_nominalization
+    wug_adj_nominalization.jsonl	37187	sha256=f308a861e0861ef4d6a25c1e5a43ef4f29cd8238362a3bf9dd5855f0a78177d4	https://osf.io/download/7wjth/
+  [D] entity_tracking_fast
+    regular.jsonl	2369451	sha256=47382f53407b245cf1fdaa37e19b7eddadb796ebb555fc83ff9ef68bb705969e	https://osf.io/download/w2y53/
+  [D] blimp_fast
+    adjunct_island.jsonl	71464	sha256=f0b43e74ceec4efc2524f4331897f77bd3073cc6b81013b7bef7042b833a3b52	https://osf.io/download/fcn2h/
+    anaphor_gender_agreement.jsonl	64598	sha256=91cabb226936fdcd776a42b9002dba0ebd4ad42c9c8314d0a9b1acd96e0b1178	https://osf.io/download/uvtj4/
+    anaphor_number_agreement.jsonl	66146	sha256=e5842f488517f6d6bbc6af086b7e1e39558dd98aef2e6d85f10e21dfe3aee160	https://osf.io/download/fhs4j/
+    animate_subject_passive.jsonl	67531	sha256=494dbee7ee60e6d738ead6da4b046f27ffadbbe0fdba370448f0dd663b500486	https://osf.io/download/j2ybf/
+    animate_subject_trans.jsonl	63973	sha256=279ca80d1c00e20c9e9c899708c867838675aaed116e07d4766ed66f688d0ada	https://osf.io/download/ywbdx/
+    causative.jsonl	62993	sha256=8ca103dce976a5bb54c2662d938f0f88c4106144a492c4e94253e1f18609a7ed	https://osf.io/download/7m8x2/
+    complex_NP_island.jsonl	78253	sha256=c604a8b3c01b70ddf4d7e490cff56b1f9198178684869ff201c31f80c2f3d330	https://osf.io/download/ws9ut/
+    coordinate_structure_constraint_complex_left_branch.jsonl	80507	sha256=58b90875e00bb4d84f51417ba78c497cb10c58c30af4971426c5cdd8dfac382b	https://osf.io/download/35dhm/
+    coordinate_structure_constraint_object_extraction.jsonl	73011	sha256=d714a65436542613991a467831784e575b02cfb23550bc0f93170403e41efd8b	https://osf.io/download/hcgza/
+    determiner_noun_agreement_1.jsonl	69340	sha256=5ffe38f4ddbdf52649b93714aa8461f86f83a20ea70e56954b3e27cab58fe16a	https://osf.io/download/zmnqr/
+    determiner_noun_agreement_2.jsonl	69417	sha256=ba89494896ca3735bf3c9576c38ee90869610048ccd87bd262849b6e5bd6aa63	https://osf.io/download/b734q/
+    determiner_noun_agreement_irregular_1.jsonl	70749	sha256=3c3e20c1513c969632c8d6b7c803af2799505d213dfaf9de49261a0cf29b88f2	https://osf.io/download/681b8f72ff84eaaa8f159943/
+    determiner_noun_agreement_irregular_2.jsonl	70496	sha256=f9991a9b14487d1c8f9744044ad95bf3cd3872cc948d0a5c0046001e922bd5c6	https://osf.io/download/c7jq9/
+    determiner_noun_agreement_with_adj_2.jsonl	74060	sha256=e00717276dc8c0eba5ca023ce5ffc40c99104e4a7f270966047d3789be50cc5f	https://osf.io/download/681b8f75964364e4cbc0df62/
+    determiner_noun_agreement_with_adj_irregular_1.jsonl	75244	sha256=d9ef70cddcdb26b4da5f5ee75a029d5d9a7815eab13e803470454b6da89a1bd1	https://osf.io/download/9hjxd/
+    determiner_noun_agreement_with_adj_irregular_2.jsonl	75241	sha256=9395f390adbf2a4b8e1a6c47b7f5d031cf9f512559885d5abf8a13ae5add83c5	https://osf.io/download/681b8f7a31bce1e36f0b6b8a/
+    determiner_noun_agreement_with_adjective_1.jsonl	75228	sha256=7dc66d3d35832214dab5651468072175a0698d02b72a0123c639864e8469e5e6	https://osf.io/download/681b8f7bec0bb4b3b6c6135a/
+    distractor_agreement_relative_clause.jsonl	81955	sha256=43fab885cdaf94536c941cf2e65882e246bcf2d1bdf336ca34062b0133dc2602	https://osf.io/download/681b8f8066b7eea0480a7c2e/
+    distractor_agreement_relational_noun.jsonl	76224	sha256=41bb3701339cc97acf865cd720eacaf0d513f7e764972b32f00b37c98eafcf43	https://osf.io/download/681b8f80620b28d45e15990f/
+    drop_argument.jsonl	60368	sha256=beef7acc3808c0e240d9e3c2366b76cbe3a790a92027f4ad7072effbcdc3bfd0	https://osf.io/download/681b8f84ec0bb4b3b6c61360/
+    ellipsis_n_bar_1.jsonl	82158	sha256=c0f9b45349a64e56e42a3bcadbe0ef8de2defdf585bbb29670bded05cd86e5b4	https://osf.io/download/681b8f84f4fb2a03cfc0dcfd/
+    ellipsis_n_bar_2.jsonl	84828	sha256=58ec22bbe53a322b4301b92ea67b9740a4a29785882e9eff4bb51024620ff740	https://osf.io/download/681b8f87bab4d1ccea15982a/
+    existential_there_object_raising.jsonl	83232	sha256=cfdfbd32a8d0c042c8671a1565ed2e1d78fa34dd2fa6d2b15250969714947d89	https://osf.io/download/5ktxh/
+    existential_there_quantifiers_1.jsonl	71312	sha256=287fc091481a3599bcb356c7f06b5591f8c2357eb3847261021be70cf48ee78a	https://osf.io/download/681b8f8bbab4d1ccea15982d/
+    existential_there_quantifiers_2.jsonl	71786	sha256=732361c41bc8c420a49478491d2d9d803ce87ddabf7def5dbc58ea3b41c05506	https://osf.io/download/681b8f8b620b28d45e159914/
+    expletive_it_object_raising.jsonl	86472	sha256=1e43c6bcb657f73dc3bbe801474e2b33c17340a1831e0350b57a246239053ed4	https://osf.io/download/681b8f8eec0bb4b3b6c61362/
+    existential_there_subject_raising.jsonl	78109	sha256=3b5f87c4216c384b6681e2689f3d351624a7d00783bbd9211859ed6f6d9ddfae	https://osf.io/download/681b8f8f6dfbe3d756c0df5d/
+    intransitive.jsonl	60917	sha256=7e1d90304e52c382b3770db00190567ce61cd2d026c7ee166d43c7d3613549c1	https://osf.io/download/681b8f929af22b7fa50b6b88/
+    inchoative.jsonl	59480	sha256=15e4f292d2e9267190126d5fa5c2dbd1e933e3bcaaa5bfa8a5761594d92bba15	https://osf.io/download/681b8f934d7cfb6e450a7e0a/
+    irregular_past_participle_verbs.jsonl	63914	sha256=4d0539c25a24d5d9e65d09bdace8d825e9aae908e37312b9745107e4779ed4bf	https://osf.io/download/681b8f975bc7f0f661c0dfbb/
+    irregular_past_participle_adjectives.jsonl	67442	sha256=f0e8089481f5973273379d53edde8bb394e12726425af2547e1efccd91985265	https://osf.io/download/681b8f9738495459e9c614c9/
+    irregular_plural_subject_verb_agreement_1.jsonl	71038	sha256=a877a49912581ece39bf37ec4056c8690546905f35f9438b56b86abfe66c1f69	https://osf.io/download/681b8f996dfbe3d756c0df61/
+    irregular_plural_subject_verb_agreement_2.jsonl	68874	sha256=fbe335fbfdfbcd2c0850f19473e7d5e5cbd6ddc209de7882b8588c81b81f0978	https://osf.io/download/681b8f9bb161ab263cc616e5/
+    left_branch_island_echo_question.jsonl	67599	sha256=a0446a82664a1c3442652ba308ce8ef039a4097e3e8cd5c0fd0fd7026d93b4f6	https://osf.io/download/681b8f9cd84e4362cdc61479/
+    left_branch_island_simple_question.jsonl	68482	sha256=04a60390475ee356058ff28aafaec9deaee9643e0efcd62b79f2f1a8fb4c625f	https://osf.io/download/681b8fa0d84e4362cdc6147b/
+    matrix_question_npi_licensor_present.jsonl	68485	sha256=8306cefb0a23a518202c1ecacd361dd2579d95dc545fb3f66d6ddc5a93be92ac	https://osf.io/download/681b8fa14d7cfb6e450a7e0d/
+    npi_present_2.jsonl	63884	sha256=8a4e6cd6f447010bf68fd92f4e53617a6d6bfd786485201f9e9cb93bc4d257cd	https://osf.io/download/681b8fa3f4fb2a03cfc0dd0f/
+    npi_present_1.jsonl	66248	sha256=30f9b2e5a8c62e668dda16e37f9f8ffd4ea1d3c934e83d5d14578d36c33a69b8	https://osf.io/download/681b8fa36dfbe3d756c0df65/
+    only_npi_licensor_present.jsonl	67992	sha256=e6e8238da16ec80285e7eafec437e7f2bf0bc93c704bfad9cde1ebe83db4b330	https://osf.io/download/681b8fa7da9ae3637c1598e7/
+    only_npi_scope.jsonl	79957	sha256=230d88198dc66c2ad4fe02d6ac8288d4e982fb416bc06f897995e93fdc32dba4	https://osf.io/download/681b8fa89af22b7fa50b6b8b/
+    passive_1.jsonl	67795	sha256=337e2c7522cb48a1b0f3e7ffb4c0ee7f6664a14f199ce11775f0283f006f4ef1	https://osf.io/download/681b8faaf4fb2a03cfc0dd13/
+    passive_2.jsonl	61242	sha256=82d9b88a7f710387bbbb79875cd51bd20643beecc2313203f5cbe6ac7796c539	https://osf.io/download/681b8faaba492d5b760a7c7b/
+    principle_A_case_1.jsonl	72887	sha256=9880052a511b1cd29e338ba0f536f4c07560357d2867e3e5fc9d627c7b9ea4a9	https://osf.io/download/681b8fae5bc7f0f661c0dfc1/
+    principle_A_c_command.jsonl	76396	sha256=2a18cde4aeb4a59148f7bb34970bf19f1d35cedeae10f1b95343e54edd2e89bb	https://osf.io/download/fe2hz/
+    principle_A_case_2.jsonl	72536	sha256=20bb16b721aa3ffa53e5def130f2067c4ad50a27d6cb9bbb161db8fb02f00c48	https://osf.io/download/681b8fb066b7eea0480a7c41/
+    principle_A_domain_1.jsonl	72664	sha256=2bd00b2953794546c65c729a377ae2e1f8c037ba7ff010d5201442346f29090a	https://osf.io/download/681b8fb1964364e4cbc0df6d/
+    principle_A_domain_2.jsonl	71483	sha256=37e5c96792f453a2a5063ae1aec9b1abdde10ce16d5ce16ded03ab51212b401a	https://osf.io/download/rn65w/
+    principle_A_domain_3.jsonl	70107	sha256=1409dbe4326916338e931562f2e23c084c326dd8930c87a8386601acb3cc8940	https://osf.io/download/681b8fb55bc7f0f661c0dfc3/
+    principle_A_reconstruction.jsonl	68894	sha256=d1604a587fe217a1591f271f53f8714dd669a775cd1f9160e70fad773204e6e1	https://osf.io/download/681b8fb738495459e9c614d3/
+    regular_plural_subject_verb_agreement_1.jsonl	70022	sha256=a9c6bb022b0c04df8a6a77fe9a631385870cddd9acd98c2acdcf770fede3bb5e	https://osf.io/download/7k6rw/
+    regular_plural_subject_verb_agreement_2.jsonl	69236	sha256=bedf77ce7ef84b6404dce3556673fe450d265063bca50f9b93f5c9a20d0a8ac3	https://osf.io/download/681b8fbbf4fb2a03cfc0dd16/
+    sentential_negation_npi_licensor_present.jsonl	72786	sha256=f11f7a48f9e2b8a19b7dc4cfbf19b18f2a01b5456eca1d7c9b334408e9076f54	https://osf.io/download/681b8fbb66b7eea0480a7c43/
+    sentential_negation_npi_scope.jsonl	84703	sha256=00be8ad809e13fb2dfad32b4e8eca006fe5c8d5ccfdd6ab06fad32f5d8a823ed	https://osf.io/download/dzsy8/
+    sentential_subject_island.jsonl	72802	sha256=255543b72c2e0e1269c32a68d5edd08d07deaaedfbc49c8036a4b35632be08e0	https://osf.io/download/681b8fc0ec0bb4b3b6c61381/
+    superlative_quantifiers_1.jsonl	70632	sha256=0cb12f9ca3a85b6fcf8731cac7d56d0d4702bcd609b6f31ee05a24e1a4ca03b9	https://osf.io/download/681b8fc1964364e4cbc0df75/
+    superlative_quantifiers_2.jsonl	70340	sha256=55c314118cf368e43e0359a00291cdbe56ac09390592eb5b5f0d346f24e7a273	https://osf.io/download/681b8fc26dfbe3d756c0df6b/
+    tough_vs_raising_1.jsonl	68421	sha256=862c503e3a8ce2c683c74137c72f9c46598f71e8fbd7f389f99fb233ce000bfc	https://osf.io/download/8ebwx/
+    tough_vs_raising_2.jsonl	72336	sha256=9786b6a3faa7522ba840cb5f2f7342d9b3acc0d01fcee29cfb1fa8385edd0364	https://osf.io/download/681b8fc5d73df970f30a7cf9/
+    transitive.jsonl	64885	sha256=9487d61d16cb99eec8a44730b2c7b5a04cb334cfad9b4c76c334004c518be648	https://osf.io/download/681b8fc84d7cfb6e450a7e10/
+    wh_island.jsonl	67161	sha256=1e09c3aa762fd591a2968e7628bd3c8d455a8a598bb6bb0246c854c998790584	https://osf.io/download/681b8fc8ec0bb4b3b6c61384/
+    wh_questions_object_gap.jsonl	77437	sha256=580157666019105f386d531d095c14c719a39e001e9f68b045fa9a04bc4c9eab	https://osf.io/download/681b8fccff84eaaa8f159967/
+    wh_questions_subject_gap_long_distance.jsonl	92122	sha256=ad9b341c8149a47061c15bc7fe3d4c372067f27016ec501b93149e60c72dcb54	https://osf.io/download/681b8fccec0bb4b3b6c61387/
+    wh_questions_subject_gap.jsonl	77912	sha256=7dc383e73f292049f815d35920934e9b1c47f9f36811a50914dabef5ea61e267	https://osf.io/download/681b8fce6dfbe3d756c0df75/
+    wh_vs_that_no_gap_long_distance.jsonl	88120	sha256=485aa9c1720bf4d677992a24a1ef41fa53dd181b6adf8e4dc085f2366769058f	https://osf.io/download/681b8fceff84eaaa8f159969/
+    wh_vs_that_with_gap_long_distance.jsonl	85039	sha256=6866191ec68f96d746eafcc1b8221859ad3fce0c3e15d5c8dc7671db7ca8f20a	https://osf.io/download/681b8fd2964364e4cbc0df78/
+    wh_vs_that_no_gap.jsonl	76470	sha256=8467f501d768fe34b861ce95d7e887770d0647def26b8ddaa3ebe9f9cb1d2ffe	https://osf.io/download/681b8fd3bab4d1ccea159847/
+    wh_vs_that_with_gap.jsonl	73342	sha256=9c88f87bbc197aeaec44462e80a7e9c777e6685cd8088b9bee8d26c819138de5	https://osf.io/download/5s9e8/
+  [D] supplement_fast
+    hypernym.jsonl	11660	sha256=0e0d0c3b0b0d86f71a00ba5d9759c4af8ccbd03384262857c38240c6c9ebcd76	https://osf.io/download/2vb4x/
+    qa_congruence_easy.jsonl	9661	sha256=3a5a0616f3539c2110b4d1e25ddfe1e85a9d8d36f6433e15626f0a14e096973b	https://osf.io/download/894wm/
+    qa_congruence_tricky.jsonl	9664	sha256=75de5ae2fd2467674e8fc77eb00bf89e2822e9bc4c9aa6e5d9ccd49b11f84ed9	https://osf.io/download/gxfha/
+    subject_aux_inversion.jsonl	14200	sha256=85bbef86bc72607cc1f0b99b8e35078e41ffedd61f49ddec1b40418cfda5bf4d	https://osf.io/download/hr9jp/
+    turn_taking.jsonl	12734	sha256=d784fa1359113924c1ebb450ef7d7aef9299459f1cae2e7f142acdb81b2b1b64	https://osf.io/download/ehqnc/
+  [D] reading
+    reading_data.csv	615013	sha256=45204bc7ccfb10bdb6140797b5e60e83e9a85cc62d195a84ad4566cb429f0065	https://osf.io/download/8qxbk/
+  ewok_fast.zip	34719	sha256=310ffb7d7006533d116a2e58e3b89b05a0812cc27a83153b83e46c3cd10d95ba	https://osf.io/download/e8ayt/
+  [D] wug_past_tense
+    wug_past_tense.jsonl	20933	sha256=58a5f75c84071717fcb450123cb9e5e598886d24a7dfc86fda09bc7424f85c67	https://osf.io/download/vzm6e/
+[D] full_eval
+  [D] blimp_filtered
+    causative.jsonl	257879	sha256=ff1f0c8e87722d60ae890841ec2becb5a7690f3b33d24ac1281e5330ee5b49a1	https://osf.io/download/pgaxr/
+    anaphor_gender_agreement.jsonl	314039	sha256=726e5d5b163c26ef6c9e2d2ec4fff6c7c19d48ef089fb4d84429a38fa3aadee0	https://osf.io/download/r24kg/
+    animate_subject_trans.jsonl	295426	sha256=5adad562f2ebd40035e1224741ed6bedda39e250961a0bc883fcb86748db4235	https://osf.io/download/je7mt/
+    anaphor_number_agreement.jsonl	308093	sha256=9a096c82dba58f62434816d9b77317e458dfaa43276470ffe566df94bf625bc3	https://osf.io/download/37dpw/
+    adjunct_island.jsonl	332234	sha256=0b4f2feeeac8c8c26908fdc7847883bccc0d5c71c423fcc59526c6996d7fb48a	https://osf.io/download/s5xjh/
+    animate_subject_passive.jsonl	301139	sha256=a0f46ddc0bd9b03ac9110c4f78027aca5240ff21b5f58ccd6ad6726ac2979ca6	https://osf.io/download/cezf8/
+    wh_vs_that_with_gap.jsonl	337307	sha256=afb4d60c721b65f7040ae36aa724c889f36c709d8af1e2eadb8a07e13dc721f9	https://osf.io/download/cnvm2/
+    wh_vs_that_with_gap_long_distance.jsonl	386777	sha256=cc2bd762fcb12353fd9f66fcfa196fc894615aeea4bad9cd3dc067d4c76a4614	https://osf.io/download/md9vg/
+    wh_vs_that_no_gap.jsonl	328968	sha256=8fab09f7b1759ff1da543d78000fe0df2969bcaf3cd7ae0000b841022884fab7	https://osf.io/download/t6va4/
+    wh_vs_that_no_gap_long_distance.jsonl	385219	sha256=bbc89b0851030c9d0aa77b60f735982c1cfcb5c6e2e9f670d9db8040148e9aa7	https://osf.io/download/6yu39/
+    wh_questions_subject_gap_long_distance.jsonl	395660	sha256=6a3718d0780aaf4ae3d59a1d2edc134abe531f60f0bc15c84e70651e6117b3d8	https://osf.io/download/cwt9s/
+    wh_questions_subject_gap.jsonl	349411	sha256=71d07f65b18f1d83307796e43273ba795925f847cafe3dc9203e453fc400a07b	https://osf.io/download/681a0408409790fe07c61453/
+    wh_island.jsonl	321273	sha256=cd0039cdcb6a9d25eb2a6cbdf7fe4dd325af0545696143aa38aa77806486898e	https://osf.io/download/681a040991a6c4b6d415989f/
+    wh_questions_object_gap.jsonl	331438	sha256=aef42c33ede354cc981bf26c7b278e5e321fd8b14e9bf909b9bc3e4565a0cc16	https://osf.io/download/681a040c797fe5af6c0b6a01/
+    transitive.jsonl	281536	sha256=aef85a75f505afd0932009bb6383ab93ac1049a16ed0d83c93f464964363cf84	https://osf.io/download/c8xsv/
+    tough_vs_raising_2.jsonl	333235	sha256=2e9c8e060ba202f7ab70cf5c2b4814809cfb51492600bdd247d3273f59767925	https://osf.io/download/681a040e0ce5a8a6880a7cc5/
+    superlative_quantifiers_1.jsonl	345265	sha256=5fc1cd93dd87a66e99d54267bdd93a9d43d60581c080ba4b07f30df16fd09533	https://osf.io/download/681a0410ddab4984e60a7a51/
+    superlative_quantifiers_2.jsonl	346793	sha256=5b506244f14a15b76800d4fccff2c69969dd8a78037ba2f2803c0887181a9cb0	https://osf.io/download/gst6j/
+    sentential_subject_island.jsonl	350518	sha256=311b29f8e221bfb4a277d4668a41f03cfc6bf10cf1672bb9f9ea5703be97ae55	https://osf.io/download/6sfz7/
+    sentential_negation_npi_scope.jsonl	367778	sha256=d1da967b590037f75556798f417e5c4f7f2f219988675be239f931b004134270	https://osf.io/download/681a0416982066dcb5c0de76/
+    regular_plural_subject_verb_agreement_1.jsonl	312701	sha256=b2a65c1f2a602c4f8081f2aaf58f65a618ab6d665d97330a046f3b5da700327d	https://osf.io/download/ft765/
+    sentential_negation_npi_licensor_present.jsonl	334181	sha256=4391b597185d481469dbf8c5d80102d1e8a331c577fa6b6e6b4072a781dedfaf	https://osf.io/download/8tvjq/
+    principle_A_reconstruction.jsonl	333183	sha256=efa433bb7a05e7776b1bffd2829642c92df26c2d76d24f8522246c34439d9cbb	https://osf.io/download/z9yvq/
+    principle_A_domain_3.jsonl	329639	sha256=c25090413cb33c31193d30e214ca26aca7dd9ddf7c4436b6edac07904ea91721	https://osf.io/download/7mvc3/
+    regular_plural_subject_verb_agreement_2.jsonl	327225	sha256=5a0da162b326bc38384b5e5bad1fc436782d7eb53863dc7ee4ab13716cef73e6	https://osf.io/download/681a041ed18724e30ec0dbeb/
+    principle_A_case_2.jsonl	331585	sha256=037c6f444228aec72bea04e95205703576f29b6e100ebeaa0312ea23e6f8bfd6	https://osf.io/download/ed2s8/
+    principle_A_domain_1.jsonl	332038	sha256=e5ccd8d666c0ea41db83d49e737bc9955ff9e057b1218ea65bfb8f3d83e15e13	https://osf.io/download/kfwab/
+    passive_2.jsonl	276838	sha256=ce094e69c724ae62d60dea98f0e70eb43b76f2b710a4eee9bfe771e4be1f4e60	https://osf.io/download/681a04258e54dcb3cac61526/
+    principle_A_c_command.jsonl	360517	sha256=fd87dc5923d9b7a9746a1f81368cc72461a170f742cd36cba068b0b9e82059ab	https://osf.io/download/681a042721ca347e2015967d/
+    principle_A_domain_2.jsonl	327050	sha256=1aed7bcf1ba75151bcb268ae58cf103244e36061e473301d48670d646352ac80	https://osf.io/download/681a042a48eb0e2c02c0dd5a/
+    principle_A_case_1.jsonl	330445	sha256=999320d075001af21ddcbdcfe37c79f5c2ef7059babbbb74453e1a682d57fb8b	https://osf.io/download/681a042c409790fe07c6145e/
+    only_npi_licensor_present.jsonl	300006	sha256=26df99e9824ee6b69e2fd5f4a51ff56bb3f0cd0ccbc9a6f65ba699a271b2e287	https://osf.io/download/wxph8/
+    npi_present_2.jsonl	292145	sha256=fb358e96486b71605ae686e02324d9ea4c85c9ff3a8e42f065ab7d736a496df4	https://osf.io/download/pr58v/
+    left_branch_island_simple_question.jsonl	325464	sha256=60df4320859a807c69e7320853e5d439ba6cf1c3dceae489b8cced11cba09ee2	https://osf.io/download/673rc/
+    left_branch_island_echo_question.jsonl	321078	sha256=cfa75f6584f4ef9af72feea3f6e7d624adffa9c554745bd0ba8c96c7f2476835	https://osf.io/download/681a043214ccdc3f661596b6/
+    npi_present_1.jsonl	300790	sha256=0150e6e51d48bde7520cb047682999af4f958eae41cb3f5ab40c846787bf44bf	https://osf.io/download/681a0433becda878d4c615dc/
+    irregular_plural_subject_verb_agreement_2.jsonl	308646	sha256=6d157c760a8be53f7a02d7464687ee10b8985afcf1f3f51c4431523dea2a844d	https://osf.io/download/681a0435720c176b81c0dd80/
+    irregular_plural_subject_verb_agreement_1.jsonl	287531	sha256=8a8e3ffc578452de40c05e96ba76cde5b950d4b003d8980f6c17d301a8ed58b5	https://osf.io/download/681a0437ff83c3467ac0de12/
+    matrix_question_npi_licensor_present.jsonl	320107	sha256=47a7fd49341a32993b762a4daa55f1694deb84184378e22f5e02ba08df400246	https://osf.io/download/681a0437f6551570e60a7a48/
+    irregular_past_participle_adjectives.jsonl	323700	sha256=346545feb4d37d48552ffc5366584d55723cdd609fd9c350995ec511ccaeea6a	https://osf.io/download/681a043a720c176b81c0dd82/
+    inchoative.jsonl	254149	sha256=f23f2687c33298c75d583e2bed32b2978b2c5b3cb1222d283cd2141e0e19e2a0	https://osf.io/download/x9qhv/
+    irregular_past_participle_verbs.jsonl	299142	sha256=177d48c02d91edcec179bad119a20e474c724ddd3b8a78eeb29a90e23f00a893	https://osf.io/download/ctxfz/
+    intransitive.jsonl	263661	sha256=cd57ea044ee3226eda0e6649ae51ecc0ff01621c05745a1782ac1f5b9bb41ef1	https://osf.io/download/681a043e51f0f70ab20b6a56/
+    expletive_it_object_raising.jsonl	326572	sha256=c0acde5e83c1b4bd19acd81ef0485daa19f17bf2e2ee2aa4ba538260d8fdf57d	https://osf.io/download/681a0440f0a0bdb408c614eb/
+    existential_there_quantifiers_1.jsonl	330767	sha256=7b4aa5d9cb2735e64310cbe623e28ab6e81a9bbda3f65d408bbc95c43815685c	https://osf.io/download/jr63p/
+    existential_there_object_raising.jsonl	338553	sha256=1a531337e5daf6d1f9788e928bb78a25cb0d1361033550f97178e161726736bb	https://osf.io/download/hjazf/
+    existential_there_subject_raising.jsonl	363249	sha256=436236db69b7a6c0ddd0a1820d97d510b2ea2d0bb1415c0744c6fe8d404f04dd	https://osf.io/download/9y8k4/
+    existential_there_quantifiers_2.jsonl	325560	sha256=d4b649fcc13bc5ba390ff91ded0464340c39d0719ebfaa082d237a5f607113ce	https://osf.io/download/681a0446179cd8348d1595f0/
+    ellipsis_n_bar_2.jsonl	352142	sha256=08a40b94a61efee289cd225924dd38d74b5d578d9d343b75ab4971010d5715f1	https://osf.io/download/681a0447797fe5af6c0b6a15/
+    ellipsis_n_bar_1.jsonl	328136	sha256=994ef730be5783bc45dd035ee0d0604e81376b96522bf8409e8090d7958876e7	https://osf.io/download/681a044af6551570e60a7a4e/
+    drop_argument.jsonl	278627	sha256=2796e2e62f7e19726ea846e91ecb53e7232a70b0a5b6ba185f5bc7239028f940	https://osf.io/download/3n9sx/
+    distractor_agreement_relative_clause.jsonl	355792	sha256=9834935576750042547b9e83d0dc2738ae905fe921a970c89ff0022eb636b1ae	https://osf.io/download/681a044fb84cb119f3c614b3/
+    distractor_agreement_relational_noun.jsonl	301811	sha256=5687edeac9d7441e0adca066c5fa96283a6bff4203aae37780dd5c613ac8672e	https://osf.io/download/681a044f409790fe07c6146c/
+    determiner_noun_agreement_with_adj_irregular_1.jsonl	270182	sha256=9340a9c445fd698e4db83f4c27c8e9844f3146d7c9e7a824b5ebc88e9a457eca	https://osf.io/download/f2qyd/
+    determiner_noun_agreement_with_adjective_1.jsonl	351374	sha256=2bd8560d0ae8dadbd007470f0edb144f701634d89f03a17d270008c7778cd625	https://osf.io/download/yh9s6/
+    determiner_noun_agreement_with_adj_irregular_2.jsonl	315566	sha256=93fdeb726e7b3b33186f8ebec15178efdf87a05645e3f241e2414cbc4a3b08d9	https://osf.io/download/87c6m/
+    determiner_noun_agreement_irregular_2.jsonl	288838	sha256=ff26de5c3ee9d833ea5aff76810667b03d3cf789784c946a00057563af1acddd	https://osf.io/download/681a0457720c176b81c0dd8a/
+    determiner_noun_agreement_with_adj_2.jsonl	349230	sha256=2c18fa13d093ab036866b5ecb04571c4b618bcbbf6d46d9d9ce4fea435e9d295	https://osf.io/download/681a0458becda878d4c615df/
+    determiner_noun_agreement_irregular_1.jsonl	241136	sha256=8c085e9b9b896f51c68c5d55ab96e6104ae6370e643c4a9b6c5d741c245708c0	https://osf.io/download/jg8n5/
+    coordinate_structure_constraint_complex_left_branch.jsonl	364247	sha256=b35d04c62d979074faf20a79a7f2a1a941aa4e36e3be0deac7761673256a4d1c	https://osf.io/download/r2k68/
+    determiner_noun_agreement_1.jsonl	322752	sha256=03d9aa691d4b73cd88e11cc29ce1ffc5bdd7193c51c54be8528d0ca769129eda	https://osf.io/download/tbr68/
+    determiner_noun_agreement_2.jsonl	323380	sha256=252963d44176313bb6e8e7de8731262a7d6bfe99456d56c4cbb2a70673027704	https://osf.io/download/681a0460d854624ef30a7bba/
+    complex_NP_island.jsonl	329894	sha256=d0e8ba538e57bad749fe9d443c2831d90e83af00921d517795d99ef5057db9e1	https://osf.io/download/8gsu3/
+    coordinate_structure_constraint_object_extraction.jsonl	346278	sha256=eee09da7f82cd5ee5ac41162d6c22b250a846b59f46f4c441ec62e2bf5a026e1	https://osf.io/download/dk3t9/
+    tough_vs_raising_1.jsonl	323608	sha256=ffd40653b84443583ca7e99a8d9ffbb521b32f6b3970068448da891080b5932f	https://osf.io/download/681a0466ddab4984e60a7a64/
+    only_npi_scope.jsonl	334323	sha256=f2ca338ace8810d109429d6e68ca1c802675af31466de0287ba92143e33b56bc	https://osf.io/download/681a046791a6c4b6d41598a9/
+    passive_1.jsonl	283786	sha256=e11fb302e4bfd265711797a361dfe1e9f67f008f5b6b1f331f5cda799272c10f	https://osf.io/download/681a046afb0bb08fb80b6ac2/
+  [D] supplement_filtered
+    qa_congruence_easy.jsonl	12306	sha256=25c94dc5ef2ad7d8012a9695100e525a424135c94650e0dba1f74dbc10d44887	https://osf.io/download/2kcj8/
+    hypernym.jsonl	196960	sha256=4f8a46b377aa3c84275f3f812b14ed3266d0354aa13be9c94610eb287d17659f	https://osf.io/download/kf2jz/
+    turn_taking.jsonl	71440	sha256=a350fdbd8669e9f84e2608503ed94af1cfe5bf29ceda9a3e0a2c3efc9665c9db	https://osf.io/download/9uyra/
+    qa_congruence_tricky.jsonl	31876	sha256=8df41ef003adb0ca43ba6b286cf406925f3f766c5a59b1c9a96e05326c0a2334	https://osf.io/download/zuq8y/
+    subject_aux_inversion.jsonl	1072123	sha256=2a246a1ac90dd79d68e4c10e3f5ba81fd4a8563e385193a60c658c671aabb865	https://osf.io/download/se2n9/
+  [D] vqa_filtered
+    vqa_distractors_info.json	5784985	sha256=1d1b58b105a049b6bcd63a2871ce1c86d3554b5abd1c438ff2871a00f8ac3f61	https://osf.io/download/xj39p/
+  [D] winoground_filtered
+    winoground.jsonl	204176	sha256=a629e19b7c9f4e0d2881be002bfdcad64b569fafc990776160cab54d9624b973	https://osf.io/download/zyc4w/
+    README.md	318	sha256=bbe13a954fc2f0d45f232066f31234005353d0e5c6eb8a623c955223391894f0	https://osf.io/download/6u4hn/
+  [D] glue_filtered
+    mnli.train.jsonl	2295803	sha256=f21924ced5ebe1fb6abcac27556acd8eaa4c2f69add471c2ded8ee3f5d02852b	https://osf.io/download/7sdct/
+    boolq.train.jsonl	6541468	sha256=237efed024a1c944ebd192fd15c360e8bf0cfd3c5d353582178fc53c10333d99	https://osf.io/download/3w725/
+    boolq.valid.jsonl	1132714	sha256=09491f5c02730c400e230ee013c2e60a5726ff4e7255f5d8e547c756dc907f81	https://osf.io/download/a9d4u/
+    mnli.valid.jsonl	1110523	sha256=3ae64cf09c41b7a84b12b500937cdbb3f74cb1b8fc9dd87a3bfe2f0243b87a68	https://osf.io/download/gmj57/
+    mrpc.train.jsonl	1092476	sha256=4c6d10e778301c9a709a68d27317819564f039ddbf36f7f50ce0edf3a48b520f	https://osf.io/download/rcv64/
+    mrpc.valid.jsonl	60957	sha256=0095cde73fe911541032c2120830a44e145328b813302dcd41e2a498ba2f4082	https://osf.io/download/jr4vm/
+    multirc.valid.jsonl	4096348	sha256=4bd20d922cbc1862994c30e15932c61f7fc26d974ef8b12f72668ca3d8c0af7d	https://osf.io/download/u7pyk/
+    multirc.train.jsonl	48751935	sha256=409a911f2f5f671877be60aa2700c26eda2594e6d0d2ec81b77e6070b13d2e64	https://osf.io/download/697ty/
+    qqp.train.jsonl	1823696	sha256=3a79b5ac272ce165d4182f4d61f6de54e26bc5d9f6ac02673a5a6611e9dc6c33	https://osf.io/download/fd4p7/
+    qqp.valid.jsonl	3660622	sha256=d54fb89a26e473631816eda0cc5b5da68f2e9b27338e3eed6d19c590460f6a2b	https://osf.io/download/s2whq/
+    rte.valid.jsonl	50881	sha256=fb6265d78821ff5e13e67a9b8b9f8f74b87f750a38e789f22b1aa8c85835694f	https://osf.io/download/hz9xy/
+    wsc.train.jsonl	132379	sha256=90f8c3d71dcc9837d3f7dbcd42e652875fba7006aa6724cb9acb5a920b4c047a	https://osf.io/download/5fj3z/
+    rte.train.jsonl	947972	sha256=7777c04bc210d7f62b8a3222f35593c9f7bc9505d604f1908023586e5951be1d	https://osf.io/download/vbnky/
+    wsc.valid.jsonl	14653	sha256=cff18ef1631d5f93076f6d89b6922924e33de3cc754d2835b6a3367fd0fb6020	https://osf.io/download/2zyav/
+  [D] wug_adj_nominalization
+    wug_adj_nominalization.jsonl	37187	sha256=f308a861e0861ef4d6a25c1e5a43ef4f29cd8238362a3bf9dd5855f0a78177d4	https://osf.io/download/hyjde/
+  [D] entity_tracking
+    ambiref.jsonl	2828199	sha256=2167978ef9d1916fc47c2c2260e8dda63ba8658da419addffc4058b144efd6eb	https://osf.io/download/86n79/
+    move_contents.jsonl	2321513	sha256=be3bddc321c6d48bcd8b9bc91551318aba06e583431f71136e35bc0469999622	https://osf.io/download/9nvtd/
+    regular.jsonl	2369451	sha256=47382f53407b245cf1fdaa37e19b7eddadb796ebb555fc83ff9ef68bb705969e	https://osf.io/download/qfx7h/
+  [D] reading
+    reading_data.csv	615013	sha256=45204bc7ccfb10bdb6140797b5e60e83e9a85cc62d195a84ad4566cb429f0065	https://osf.io/download/cjq7p/
+  [D] comps
+    comps_wugs_dist-before.jsonl	6480433	sha256=0a3adffbeba82581db5562f99fe365adaf199f504eb2a79c71a9481db1e7b8b0	https://osf.io/download/u32h4/
+    comps_wugs_dist-in-between.jsonl	6536017	sha256=9f82ad76333fd4a23f8c69c313a7eb1da21f1f7e6f8f11361706d7c739ef738c	https://osf.io/download/mg3s6/
+    comps_wugs.jsonl	6005157	sha256=28ad83a6202a69e973901e8875fff104b38b6a6c324c78d37454294225af1168	https://osf.io/download/ch5bf/
+    comps_base.jsonl	14215247	sha256=0e20c242de7321c8ef3745407baaa98008b3fd54b39f050fc49dc103330c8f8b	https://osf.io/download/kahy3/
+  [D] wug_past_tense
+    wug_past_tense.jsonl	20933	sha256=58a5f75c84071717fcb450123cb9e5e598886d24a7dfc86fda09bc7424f85c67	https://osf.io/download/gx8mv/
+  [D] aoa
+    cdi_childes.json	1914466	sha256=bfb28dbe974970e559c257cda7bfeb6ebefe55478e2de0ce84535d63e9d8b929	https://osf.io/download/5s2kx/
+    cdi_human.csv	42174	sha256=fd6e47955fa3efb3889ff97736253fd267a28682283f438247d292c51ce42037	https://osf.io/download/7b8ay/

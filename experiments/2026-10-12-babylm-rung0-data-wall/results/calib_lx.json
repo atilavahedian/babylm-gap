@@ -1,0 +1,53 @@
+{
+ "paths": {
+  "C04": "scratch/cs/dw0/dw0_C_wd0p4_s0.npz",
+  "L12x2": "scratch/cs/dw0/dw0_L12x2_wd0p4_s0.npz",
+  "P24": "scratch/cs/dw0/dw0_P24_wd0p4_s0.npz"
+ },
+ "mixes": {},
+ "single": {
+  "C04": {
+   "full": {
+    "raw": 5.072300433095322,
+    "calibrated": 5.047660496565413,
+    "calibrated_t": 5.011242251899009,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 5.037999442806983,
+    "calibrated": 5.015692405687465,
+    "calibrated_t": 4.980560496163171,
+    "t": 1.1
+   }
+  },
+  "L12x2": {
+   "full": {
+    "raw": 5.08784324060723,
+    "calibrated": 5.063962250774043,
+    "calibrated_t": 5.025617806138892,
+    "t": 1.15
+   },
+   "guarded": {
+    "raw": 5.050659727143029,
+    "calibrated": 5.029398543428147,
+    "calibrated_t": 4.992426225130678,
+    "t": 1.1
+   }
+  },
+  "P24": {
+   "full": {
+    "raw": 5.064909681505086,
+    "calibrated": 5.032907424536942,
+    "calibrated_t": 4.987519863198681,
+    "t": 1.15
+   },
+   "guarded": {
+    "raw": 5.026215306170261,
+    "calibrated": 4.998143483987772,
+    "calibrated_t": 4.954191020125023,
+    "t": 1.15
+   }
+  }
+ },
+ "mix": {}
+}

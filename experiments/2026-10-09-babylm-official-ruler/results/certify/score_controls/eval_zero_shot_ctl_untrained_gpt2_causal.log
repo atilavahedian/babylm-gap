@@ -1,0 +1,145 @@
+== 21:06:18 --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+  0%|          | 0/936 [00:00<?, ?it/s]  0%|          | 0/936 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 162, in compute_causal_results
+    rank_and_evaluate(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 68, in rank_and_evaluate
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+== 21:06:26 --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+  0%|          | 0/82 [00:00<?, ?it/s]  0%|          | 0/82 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 162, in compute_causal_results
+    rank_and_evaluate(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 68, in rank_and_evaluate
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+== 21:06:34 --task ewok --data_path evaluation_data/fast_eval/ewok_fast
+  0%|          | 0/18 [00:00<?, ?it/s]  0%|          | 0/18 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 162, in compute_causal_results
+    rank_and_evaluate(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 68, in rank_and_evaluate
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task ewok --data_path evaluation_data/fast_eval/ewok_fast
+== 21:06:41 --task entity_tracking --data_path evaluation_data/full_eval/entity_tracking
+  0%|          | 0/149 [00:00<?, ?it/s]  0%|          | 0/149 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 162, in compute_causal_results
+    rank_and_evaluate(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 68, in rank_and_evaluate
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task entity_tracking --data_path evaluation_data/full_eval/entity_tracking
+== 21:06:49 --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 160, in compute_causal_results
+    rank_and_evaluate_wug(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 96, in rank_and_evaluate_wug
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+== 21:06:56 --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 160, in compute_causal_results
+    rank_and_evaluate_wug(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 96, in rank_and_evaluate_wug
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+== 21:07:03 reading
+  0%|          | 0/1726 [00:00<?, ?it/s]  0%|          | 1/1726 [00:00<09:25,  3.05it/s]  0%|          | 6/1726 [00:00<01:42, 16.72it/s]  1%|          | 12/1726 [00:00<01:02, 27.34it/s]  1%|          | 17/1726 [00:00<00:51, 33.01it/s]  1%|▏         | 23/1726 [00:00<00:43, 38.82it/s]  2%|▏         | 29/1726 [00:00<00:38, 43.96it/s]  2%|▏         | 34/1726 [00:01<00:38, 43.53it/s]  2%|▏         | 40/1726 [00:01<00:36, 45.97it/s]  3%|▎         | 46/1726 [00:01<00:35, 47.80it/s]  3%|▎         | 52/1726 [00:01<00:34, 49.07it/s]  3%|▎         | 58/1726 [00:01<00:36, 46.26it/s]  4%|▍         | 65/1726 [00:01<00:32, 50.39it/s]  4%|▍         | 71/1726 [00:01<00:33, 49.73it/s]  5%|▍         | 78/1726 [00:01<00:31, 51.52it/s]  5%|▍         | 84/1726 [00:01<00:32, 50.23it/s]  5%|▌         | 90/1726 [00:02<00:33, 49.35it/s]  6%|▌         | 95/1726 [00:02<00:33, 48.51it/s]  6%|▌         | 101/1726 [00:02<00:32, 50.78it/s]  6%|▋         | 108/1726 [00:02<00:30, 53.67it/s]  7%|▋         | 114/1726 [00:02<00:29, 54.47it/s]  7%|▋         | 120/1726 [00:02<00:29, 55.01it/s]  7%|▋         | 126/1726 [00:02<00:28, 55.61it/s]  8%|▊         | 132/1726 [00:02<00:29, 54.39it/s]  8%|▊         | 138/1726 [00:03<00:30, 52.24it/s]  8%|▊         | 144/1726 [00:03<00:30, 52.08it/s]  9%|▊         | 150/1726 [00:03<00:31, 50.83it/s]  9%|▉         | 156/1726 [00:03<00:31, 49.90it/s]  9%|▉         | 162/1726 [00:03<00:31, 49.26it/s] 10%|▉         | 167/1726 [00:03<00:33, 46.40it/s] 10%|█         | 173/1726 [00:03<00:31, 49.17it/s] 10%|█         | 180/1726 [00:03<00:28, 53.86it/s] 11%|█         | 186/1726 [00:03<00:30, 50.70it/s] 11%|█         | 192/1726 [00:04<00:30, 49.71it/s] 11%|█▏        | 198/1726 [00:04<00:30, 50.17it/s] 12%|█▏        | 204/1726 [00:04<00:33, 46.02it/s] 12%|█▏        | 209/1726 [00:04<00:34, 44.10it/s] 12%|█▏        | 215/1726 [00:04<00:32, 46.23it/s] 13%|█▎        | 220/1726 [00:04<00:32, 46.32it/s] 13%|█▎        | 226/1726 [00:04<00:30, 49.19it/s] 13%|█▎        | 231/1726 [00:04<00:31, 47.34it/s] 14%|█▎        | 236/1726 [00:05<00:31, 47.14it/s] 14%|█▍        | 242/1726 [00:05<00:30, 48.33it/s] 14%|█▍        | 248/1726 [00:05<00:30, 49.22it/s] 15%|█▍        | 253/1726 [00:05<00:30, 48.62it/s] 15%|█▌        | 259/1726 [00:05<00:29, 49.23it/s] 15%|█▌        | 265/1726 [00:05<00:29, 49.92it/s] 16%|█▌        | 272/1726 [00:05<00:27, 53.01it/s] 16%|█▌        | 278/1726 [00:05<00:27, 52.57it/s] 16%|█▋        | 284/1726 [00:05<00:28, 50.89it/s] 17%|█▋        | 291/1726 [00:06<00:26, 53.59it/s] 17%|█▋        | 297/1726 [00:06<00:27, 52.81it/s] 18%|█▊        | 303/1726 [00:06<00:26, 53.68it/s] 18%|█▊        | 309/1726 [00:06<00:26, 52.83it/s] 18%|█▊        | 315/1726 [00:06<00:27, 50.99it/s] 19%|█▊        | 321/1726 [00:06<00:28, 49.71it/s] 19%|█▉        | 326/1726 [00:06<00:29, 47.52it/s] 19%|█▉        | 332/1726 [00:06<00:29, 47.65it/s] 20%|█▉        | 337/1726 [00:07<00:29, 47.51it/s] 20%|█▉        | 343/1726 [00:07<00:28, 48.89it/s] 20%|██        | 349/1726 [00:07<00:27, 49.88it/s] 21%|██        | 355/1726 [00:07<00:26, 51.87it/s] 21%|██        | 361/1726 [00:07<00:26, 50.63it/s] 21%|██▏       | 367/1726 [00:07<00:25, 52.43it/s] 22%|██▏       | 373/1726 [00:07<00:25, 53.79it/s] 22%|██▏       | 379/1726 [00:07<00:25, 53.25it/s] 22%|██▏       | 385/1726 [00:07<00:27, 48.76it/s] 23%|██▎       | 390/1726 [00:08<00:27, 47.92it/s] 23%|██▎       | 396/1726 [00:08<00:27, 48.69it/s] 23%|██▎       | 402/1726 [00:08<00:26, 50.87it/s] 24%|██▎       | 408/1726 [00:08<00:26, 50.00it/s] 24%|██▍       | 414/1726 [00:08<00:25, 50.65it/s] 24%|██▍       | 420/1726 [00:08<00:26, 50.01it/s] 25%|██▍       | 426/1726 [00:08<00:26, 49.57it/s] 25%|██▌       | 432/1726 [00:08<00:25, 51.67it/s] 25%|██▌       | 438/1726 [00:09<00:25, 50.60it/s] 26%|██▌       | 444/1726 [00:09<00:25, 49.99it/s] 26%|██▌       | 450/1726 [00:09<00:25, 49.37it/s] 26%|██▋       | 455/1726 [00:09<00:26, 47.72it/s] 27%|██▋       | 460/1726 [00:09<00:26, 47.60it/s] 27%|██▋       | 466/1726 [00:09<00:25, 49.00it/s] 27%|██▋       | 472/1726 [00:09<00:25, 50.09it/s] 28%|██▊       | 478/1726 [00:09<00:24, 50.72it/s] 28%|██▊       | 485/1726 [00:09<00:24, 51.14it/s] 28%|██▊       | 491/1726 [00:10<00:24, 51.37it/s] 29%|██▉       | 497/1726 [00:10<00:25, 49.16it/s] 29%|██▉       | 502/1726 [00:10<00:25, 47.47it/s] 29%|██▉       | 508/1726 [00:10<00:24, 48.80it/s] 30%|██▉       | 513/1726 [00:10<00:25, 48.46it/s] 30%|███       | 518/1726 [00:10<00:25, 48.16it/s] 30%|███       | 524/1726 [00:10<00:24, 49.30it/s] 31%|███       | 530/1726 [00:10<00:23, 51.36it/s] 31%|███       | 536/1726 [00:11<00:24, 47.83it/s] 31%|███▏      | 541/1726 [00:11<00:25, 46.60it/s] 32%|███▏      | 547/1726 [00:11<00:24, 48.13it/s] 32%|███▏      | 553/1726 [00:11<00:23, 49.29it/s] 32%|███▏      | 559/1726 [00:11<00:23, 50.25it/s] 33%|███▎      | 565/1726 [00:11<00:22, 52.30it/s] 33%|███▎      | 571/1726 [00:11<00:22, 50.93it/s] 33%|███▎      | 577/1726 [00:11<00:22, 51.33it/s] 34%|███▍      | 583/1726 [00:11<00:22, 51.55it/s] 34%|███▍      | 589/1726 [00:12<00:22, 50.47it/s] 34%|███▍      | 595/1726 [00:12<00:22, 49.73it/s] 35%|███▍      | 601/1726 [00:12<00:21, 51.66it/s] 35%|███▌      | 608/1726 [00:12<00:20, 55.81it/s] 36%|███▌      | 614/1726 [00:12<00:20, 53.30it/s] 36%|███▌      | 620/1726 [00:12<00:21, 50.40it/s] 36%|███▋      | 626/1726 [00:12<00:21, 52.25it/s] 37%|███▋      | 632/1726 [00:12<00:21, 50.80it/s] 37%|███▋      | 638/1726 [00:13<00:20, 51.83it/s] 37%|███▋      | 644/1726 [00:13<00:20, 52.85it/s] 38%|███▊      | 650/1726 [00:13<00:21, 50.88it/s] 38%|███▊      | 656/1726 [00:13<00:23, 46.34it/s] 38%|███▊      | 662/1726 [00:13<00:22, 47.67it/s] 39%|███▊      | 668/1726 [00:13<00:21, 48.68it/s] 39%|███▉      | 674/1726 [00:13<00:21, 49.29it/s] 39%|███▉      | 680/1726 [00:13<00:21, 48.47it/s] 40%|███▉      | 686/1726 [00:14<00:21, 49.10it/s] 40%|████      | 692/1726 [00:14<00:20, 50.94it/s] 40%|████      | 698/1726 [00:14<00:21, 48.53it/s] 41%|████      | 704/1726 [00:14<00:20, 49.39it/s] 41%|████      | 711/1726 [00:14<00:19, 52.40it/s] 42%|████▏     | 717/1726 [00:14<00:19, 50.75it/s] 42%|████▏     | 723/1726 [00:14<00:19, 50.56it/s] 42%|████▏     | 729/1726 [00:14<00:21, 47.16it/s] 43%|████▎     | 734/1726 [00:14<00:21, 46.90it/s] 43%|████▎     | 740/1726 [00:15<00:20, 47.95it/s] 43%|████▎     | 745/1726 [00:15<00:20, 47.38it/s] 43%|████▎     | 750/1726 [00:15<00:20, 46.99it/s] 44%|████▍     | 756/1726 [00:15<00:19, 49.32it/s] 44%|████▍     | 761/1726 [00:15<00:20, 46.98it/s] 44%|████▍     | 767/1726 [00:15<00:19, 48.12it/s] 45%|████▍     | 772/1726 [00:15<00:20, 46.23it/s] 45%|████▌     | 778/1726 [00:15<00:19, 48.72it/s] 45%|████▌     | 783/1726 [00:16<00:20, 46.70it/s] 46%|████▌     | 788/1726 [00:16<00:20, 46.50it/s] 46%|████▌     | 793/1726 [00:16<00:20, 46.30it/s] 46%|████▌     | 798/1726 [00:16<00:21, 43.79it/s] 47%|████▋     | 803/1726 [00:16<00:21, 43.17it/s] 47%|████▋     | 808/1726 [00:16<00:21, 43.17it/s] 47%|████▋     | 813/1726 [00:16<00:20, 44.93it/s] 47%|████▋     | 819/1726 [00:16<00:19, 46.69it/s] 48%|████▊     | 825/1726 [00:16<00:18, 47.96it/s] 48%|████▊     | 831/1726 [00:17<00:18, 48.94it/s] 48%|████▊     | 836/1726 [00:17<00:19, 45.75it/s] 49%|████▊     | 841/1726 [00:17<00:19, 45.97it/s] 49%|████▉     | 847/1726 [00:17<00:18, 47.76it/s] 49%|████▉     | 852/1726 [00:17<00:19, 44.14it/s] 50%|████▉     | 857/1726 [00:17<00:19, 43.70it/s] 50%|████▉     | 862/1726 [00:17<00:19, 44.56it/s] 50%|█████     | 868/1726 [00:17<00:17, 47.78it/s] 51%|█████     | 873/1726 [00:18<00:18, 46.34it/s] 51%|█████     | 878/1726 [00:18<00:18, 46.33it/s] 51%|█████     | 883/1726 [00:18<00:18, 46.39it/s] 52%|█████▏    | 889/1726 [00:18<00:17, 47.83it/s] 52%|█████▏    | 895/1726 [00:18<00:16, 50.17it/s] 52%|█████▏    | 901/1726 [00:18<00:16, 50.60it/s] 53%|█████▎    | 907/1726 [00:18<00:16, 49.64it/s] 53%|█████▎    | 913/1726 [00:18<00:16, 50.17it/s] 53%|█████▎    | 919/1726 [00:18<00:15, 50.66it/s] 54%|█████▎    | 925/1726 [00:19<00:15, 51.02it/s] 54%|█████▍    | 931/1726 [00:19<00:15, 51.12it/s] 54%|█████▍    | 937/1726 [00:19<00:15, 51.37it/s] 55%|█████▍    | 943/1726 [00:19<00:15, 50.29it/s] 55%|█████▍    | 949/1726 [00:19<00:15, 50.62it/s] 55%|█████▌    | 955/1726 [00:19<00:15, 50.86it/s] 56%|█████▌    | 961/1726 [00:19<00:14, 51.17it/s] 56%|█████▌    | 969/1726 [00:19<00:13, 56.53it/s] 57%|█████▋    | 976/1726 [00:19<00:12, 57.78it/s] 57%|█████▋    | 982/1726 [00:20<00:13, 55.74it/s] 57%|█████▋    | 988/1726 [00:20<00:13, 55.79it/s] 58%|█████▊    | 994/1726 [00:20<00:13, 52.70it/s] 58%|█████▊    | 1000/1726 [00:20<00:13, 52.39it/s] 58%|█████▊    | 1006/1726 [00:20<00:14, 51.11it/s] 59%|█████▊    | 1012/1726 [00:20<00:14, 50.04it/s] 59%|█████▉    | 1018/1726 [00:20<00:13, 51.85it/s] 59%|█████▉    | 1024/1726 [00:20<00:13, 53.15it/s] 60%|█████▉    | 1030/1726 [00:21<00:13, 51.46it/s] 60%|██████    | 1036/1726 [00:21<00:13, 52.87it/s] 60%|██████    | 1042/1726 [00:21<00:13, 51.24it/s] 61%|██████    | 1049/1726 [00:21<00:12, 53.99it/s] 61%|██████    | 1056/1726 [00:21<00:12, 54.55it/s] 62%|██████▏   | 1062/1726 [00:21<00:12, 53.83it/s] 62%|██████▏   | 1068/1726 [00:21<00:12, 53.40it/s] 62%|██████▏   | 1074/1726 [00:21<00:11, 54.34it/s] 63%|██████▎   | 1080/1726 [00:21<00:12, 52.40it/s] 63%|██████▎   | 1087/1726 [00:22<00:11, 54.80it/s] 63%|██████▎   | 1093/1726 [00:22<00:12, 51.35it/s] 64%|██████▎   | 1099/1726 [00:22<00:12, 50.11it/s] 64%|██████▍   | 1105/1726 [00:22<00:12, 49.52it/s] 64%|██████▍   | 1110/1726 [00:22<00:12, 48.82it/s] 65%|██████▍   | 1115/1726 [00:22<00:12, 47.18it/s] 65%|██████▌   | 1122/1726 [00:22<00:11, 51.17it/s] 65%|██████▌   | 1129/1726 [00:22<00:10, 55.38it/s] 66%|██████▌   | 1135/1726 [00:23<00:10, 55.85it/s] 66%|██████▌   | 1141/1726 [00:23<00:10, 54.48it/s] 66%|██████▋   | 1147/1726 [00:23<00:11, 49.87it/s] 67%|██████▋   | 1153/1726 [00:23<00:11, 48.11it/s] 67%|██████▋   | 1158/1726 [00:23<00:12, 45.77it/s] 67%|██████▋   | 1164/1726 [00:23<00:11, 47.60it/s] 68%|██████▊   | 1169/1726 [00:23<00:11, 47.51it/s] 68%|██████▊   | 1174/1726 [00:23<00:11, 47.38it/s] 68%|██████▊   | 1180/1726 [00:23<00:11, 48.81it/s] 69%|██████▊   | 1185/1726 [00:24<00:11, 48.34it/s] 69%|██████▉   | 1191/1726 [00:24<00:10, 50.85it/s] 69%|██████▉   | 1198/1726 [00:24<00:09, 54.01it/s] 70%|██████▉   | 1204/1726 [00:24<00:09, 54.82it/s] 70%|███████   | 1210/1726 [00:24<00:09, 55.40it/s] 70%|███████   | 1216/1726 [00:24<00:09, 55.81it/s] 71%|███████   | 1222/1726 [00:24<00:08, 56.08it/s] 71%|███████   | 1228/1726 [00:24<00:09, 50.61it/s] 71%|███████▏  | 1234/1726 [00:25<00:10, 48.08it/s] 72%|███████▏  | 1239/1726 [00:25<00:10, 45.17it/s] 72%|███████▏  | 1244/1726 [00:25<00:11, 43.30it/s] 72%|███████▏  | 1249/1726 [00:25<00:10, 44.06it/s] 73%|███████▎  | 1255/1726 [00:25<00:09, 47.31it/s] 73%|███████▎  | 1261/1726 [00:25<00:09, 48.40it/s] 73%|███████▎  | 1266/1726 [00:25<00:09, 47.79it/s] 74%|███████▎  | 1272/1726 [00:25<00:09, 48.71it/s] 74%|███████▍  | 1278/1726 [00:25<00:08, 50.59it/s] 74%|███████▍  | 1284/1726 [00:26<00:08, 49.35it/s] 75%|███████▍  | 1290/1726 [00:26<00:08, 48.53it/s] 75%|███████▌  | 1297/1726 [00:26<00:08, 51.92it/s] 75%|███████▌  | 1303/1726 [00:26<00:08, 51.40it/s] 76%|███████▌  | 1309/1726 [00:26<00:08, 50.08it/s] 76%|███████▌  | 1315/1726 [00:26<00:08, 50.46it/s] 77%|███████▋  | 1321/1726 [00:26<00:07, 50.87it/s] 77%|███████▋  | 1327/1726 [00:26<00:08, 48.90it/s] 77%|███████▋  | 1332/1726 [00:27<00:08, 48.17it/s] 78%|███████▊  | 1338/1726 [00:27<00:07, 48.94it/s] 78%|███████▊  | 1344/1726 [00:27<00:07, 49.72it/s] 78%|███████▊  | 1349/1726 [00:27<00:08, 46.67it/s] 79%|███████▊  | 1355/1726 [00:27<00:07, 49.24it/s] 79%|███████▉  | 1361/1726 [00:27<00:07, 48.05it/s] 79%|███████▉  | 1367/1726 [00:27<00:07, 49.45it/s] 79%|███████▉  | 1372/1726 [00:27<00:07, 45.33it/s] 80%|███████▉  | 1378/1726 [00:27<00:07, 47.12it/s] 80%|████████  | 1383/1726 [00:28<00:07, 47.02it/s] 80%|████████  | 1388/1726 [00:28<00:07, 46.96it/s] 81%|████████  | 1394/1726 [00:28<00:07, 47.21it/s] 81%|████████  | 1400/1726 [00:28<00:06, 48.60it/s] 81%|████████▏ | 1406/1726 [00:28<00:06, 49.70it/s] 82%|████████▏ | 1412/1726 [00:28<00:06, 50.53it/s] 82%|████████▏ | 1418/1726 [00:28<00:06, 50.86it/s] 83%|████████▎ | 1424/1726 [00:28<00:05, 52.41it/s] 83%|████████▎ | 1430/1726 [00:29<00:05, 51.02it/s] 83%|████████▎ | 1437/1726 [00:29<00:05, 53.94it/s] 84%|████████▎ | 1443/1726 [00:29<00:05, 50.90it/s] 84%|████████▍ | 1449/1726 [00:29<00:05, 48.94it/s] 84%|████████▍ | 1455/1726 [00:29<00:05, 49.81it/s] 85%|████████▍ | 1461/1726 [00:29<00:05, 51.61it/s] 85%|████████▍ | 1467/1726 [00:29<00:05, 49.24it/s] 85%|████████▌ | 1473/1726 [00:29<00:04, 51.37it/s] 86%|████████▌ | 1479/1726 [00:29<00:04, 51.60it/s] 86%|████████▌ | 1485/1726 [00:30<00:04, 53.01it/s] 86%|████████▋ | 1491/1726 [00:30<00:04, 52.82it/s] 87%|████████▋ | 1497/1726 [00:30<00:04, 52.56it/s] 87%|████████▋ | 1504/1726 [00:30<00:04, 55.04it/s] 87%|████████▋ | 1510/1726 [00:30<00:04, 52.87it/s] 88%|████████▊ | 1516/1726 [00:30<00:04, 51.37it/s] 88%|████████▊ | 1522/1726 [00:30<00:03, 51.57it/s] 89%|████████▊ | 1528/1726 [00:30<00:03, 51.63it/s] 89%|████████▉ | 1534/1726 [00:31<00:03, 50.41it/s] 89%|████████▉ | 1540/1726 [00:31<00:03, 47.35it/s] 90%|████████▉ | 1545/1726 [00:31<00:03, 47.36it/s] 90%|████████▉ | 1550/1726 [00:31<00:03, 47.17it/s] 90%|█████████ | 1556/1726 [00:31<00:03, 48.52it/s] 90%|█████████ | 1561/1726 [00:31<00:03, 45.85it/s] 91%|█████████ | 1566/1726 [00:31<00:03, 46.32it/s] 91%|█████████ | 1572/1726 [00:31<00:03, 48.04it/s] 91%|█████████▏| 1578/1726 [00:31<00:03, 49.26it/s] 92%|█████████▏| 1584/1726 [00:32<00:02, 51.32it/s] 92%|█████████▏| 1590/1726 [00:32<00:02, 51.60it/s] 92%|█████████▏| 1596/1726 [00:32<00:02, 50.39it/s] 93%|█████████▎| 1602/1726 [00:32<00:02, 50.86it/s] 93%|█████████▎| 1608/1726 [00:32<00:02, 50.02it/s] 94%|█████████▎| 1614/1726 [00:32<00:02, 49.56it/s] 94%|█████████▍| 1620/1726 [00:32<00:02, 50.29it/s] 94%|█████████▍| 1626/1726 [00:32<00:01, 50.78it/s] 95%|█████████▍| 1632/1726 [00:33<00:01, 49.86it/s] 95%|█████████▍| 1638/1726 [00:33<00:01, 51.70it/s] 95%|█████████▌| 1644/1726 [00:33<00:01, 53.05it/s] 96%|█████████▌| 1650/1726 [00:33<00:01, 50.29it/s] 96%|█████████▌| 1656/1726 [00:33<00:01, 49.58it/s] 96%|█████████▌| 1661/1726 [00:33<00:01, 48.88it/s] 97%|█████████▋| 1666/1726 [00:33<00:01, 47.21it/s] 97%|█████████▋| 1671/1726 [00:33<00:01, 47.21it/s] 97%|█████████▋| 1678/1726 [00:33<00:00, 51.33it/s] 98%|█████████▊| 1684/1726 [00:34<00:00, 51.29it/s] 98%|█████████▊| 1690/1726 [00:34<00:00, 50.28it/s] 98%|█████████▊| 1696/1726 [00:34<00:00, 50.92it/s] 99%|█████████▊| 1702/1726 [00:34<00:00, 49.94it/s] 99%|█████████▉| 1708/1726 [00:34<00:00, 48.26it/s] 99%|█████████▉| 1713/1726 [00:34<00:00, 47.90it/s]100%|█████████▉| 1719/1726 [00:34<00:00, 49.08it/s]100%|█████████▉| 1725/1726 [00:34<00:00, 49.81it/s]100%|██████████| 1726/1726 [00:34<00:00, 49.42it/s]
+EYE TRACKING SCORE: 9.50
+SELF-PACED READING SCORE: 3.40
+== 21:07:45 --task comps --data_path evaluation_data/full_eval/comps
+  0%|          | 0/1423 [00:00<?, ?it/s]  0%|          | 0/1423 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 202, in <module>
+    main()
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/run.py", line 175, in main
+    results, predictions = compute_results(args, model, dataloader, temperatures)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 37, in compute_results
+    return compute_causal_results(args, model, dataloader, temperatures)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 162, in compute_causal_results
+    rank_and_evaluate(args, subset_to_stats, all_log_probs, raw_sentences, labels, metadatas, uids, predictions)
+  File "/opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py", line 68, in rank_and_evaluate
+    with open(_os.environ["BABYLM_TIE_LOG"], "a") as _f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'out/score_controls/ties_ctl_untrained_gpt2_causal.jsonl'
+FAILED --task comps --data_path evaluation_data/full_eval/comps
+== 21:07:53 done

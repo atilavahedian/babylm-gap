@@ -1,0 +1,50 @@
+{
+ "name": "ms_menu_f2",
+ "commit": "502b599cb019f117803c6a9b7bb1d63e6cfbd059",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; cp babylm/configs/jobs_moonshot_menu_f2.json _logs/; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py",
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz"
+ },
+ "note": "Moonshot menu F2 (critic ref-0419 accepted; pool moonshot): 6 solo runs train_10M, 28L/384d and 12L/592d at E4/5/6, from jobs_moonshot_menu_f2.json @ref-0073. Label: R4.4 reference, LR inherited from S. Each: score_trial, twin ref-0026, v2 dump ref-0034 --twin --temps 0.9-1.2 -> _dumps_v2/<name>.npz.",
+ "jobs": [
+  {
+   "name": "ms_menu_28L384d_e4_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_28L384d_e4_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_28L384d_e4_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_28L384d_e4_wd0p4 /opt/babylm || echo '[menu] score ms_menu_28L384d_e4_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_28L384d_e4_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_28L384d_e4_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_28L384d_e4_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_28L384d_e4_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_28L384d_e4_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_28L384d_e4_wd0p4.npz --check babylm/runs/ms_menu_28L384d_e4_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_28L384d_e4_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_28L384d_e4_wd0p4' || echo '[dumpv2] FAILED ms_menu_28L384d_e4_wd0p4'; }; exit $rc",
+   "timeout_s": 4390
+  },
+  {
+   "name": "ms_menu_28L384d_e5_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_28L384d_e5_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_28L384d_e5_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_28L384d_e5_wd0p4 /opt/babylm || echo '[menu] score ms_menu_28L384d_e5_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_28L384d_e5_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_28L384d_e5_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_28L384d_e5_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_28L384d_e5_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_28L384d_e5_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_28L384d_e5_wd0p4.npz --check babylm/runs/ms_menu_28L384d_e5_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_28L384d_e5_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_28L384d_e5_wd0p4' || echo '[dumpv2] FAILED ms_menu_28L384d_e5_wd0p4'; }; exit $rc",
+   "timeout_s": 4887
+  },
+  {
+   "name": "ms_menu_28L384d_e6_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_28L384d_e6_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_28L384d_e6_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_28L384d_e6_wd0p4 /opt/babylm || echo '[menu] score ms_menu_28L384d_e6_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_28L384d_e6_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_28L384d_e6_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_28L384d_e6_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_28L384d_e6_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_28L384d_e6_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_28L384d_e6_wd0p4.npz --check babylm/runs/ms_menu_28L384d_e6_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_28L384d_e6_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_28L384d_e6_wd0p4' || echo '[dumpv2] FAILED ms_menu_28L384d_e6_wd0p4'; }; exit $rc",
+   "timeout_s": 5385
+  },
+  {
+   "name": "ms_menu_12L592d_e4_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_12L592d_e4_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_12L592d_e4_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_12L592d_e4_wd0p4 /opt/babylm || echo '[menu] score ms_menu_12L592d_e4_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_12L592d_e4_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_12L592d_e4_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_12L592d_e4_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_12L592d_e4_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_12L592d_e4_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_12L592d_e4_wd0p4.npz --check babylm/runs/ms_menu_12L592d_e4_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_12L592d_e4_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_12L592d_e4_wd0p4' || echo '[dumpv2] FAILED ms_menu_12L592d_e4_wd0p4'; }; exit $rc",
+   "timeout_s": 4407
+  },
+  {
+   "name": "ms_menu_12L592d_e5_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_12L592d_e5_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_12L592d_e5_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_12L592d_e5_wd0p4 /opt/babylm || echo '[menu] score ms_menu_12L592d_e5_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_12L592d_e5_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_12L592d_e5_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_12L592d_e5_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_12L592d_e5_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_12L592d_e5_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_12L592d_e5_wd0p4.npz --check babylm/runs/ms_menu_12L592d_e5_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_12L592d_e5_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_12L592d_e5_wd0p4' || echo '[dumpv2] FAILED ms_menu_12L592d_e5_wd0p4'; }; exit $rc",
+   "timeout_s": 4909
+  },
+  {
+   "name": "ms_menu_12L592d_e6_wd0p4",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_moonshot_menu_f2.json --only ms_menu_12L592d_e6_wd0p4 --device cuda; rc=$?; [ -f babylm/runs/ms_menu_12L592d_e6_wd0p4/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/ms_menu_12L592d_e6_wd0p4 /opt/babylm || echo '[menu] score ms_menu_12L592d_e6_wd0p4 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/ms_menu_12L592d_e6_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/ms_menu_12L592d_e6_wd0p4/score/dev_bpw_twin.json > babylm/runs/ms_menu_12L592d_e6_wd0p4/score/dev_bpw_twin.log 2>&1 || echo '[twin] ms_menu_12L592d_e6_wd0p4 failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/ms_menu_12L592d_e6_wd0p4/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/ms_menu_12L592d_e6_wd0p4.npz --check babylm/runs/ms_menu_12L592d_e6_wd0p4/score/dev_bpw_twin.json > _logs/dumpv2_ms_menu_12L592d_e6_wd0p4.log 2>&1 && echo '[dumpv2] ok ms_menu_12L592d_e6_wd0p4' || echo '[dumpv2] FAILED ms_menu_12L592d_e6_wd0p4'; }; exit $rc",
+   "timeout_s": 5411
+  }
+ ]
+}

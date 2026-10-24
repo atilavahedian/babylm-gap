@@ -1,0 +1,1053 @@
+{
+ "created_by": "python -m babylm.data.prepare",
+ "source": "BabyLM 2025 text data (OSF node ryjfm text_data, byte-identical to 2024)",
+ "zips_md5": {
+  "train_10M": "dc67e5d2db96ed4f76cb072e2504a18c",
+  "train_100M": "f63cde477afd5673f3367fd009ea70cb",
+  "dev": "ad712e2f943ddbbbc94036178144e810",
+  "test": "dc7f838fe026dfd9781c6f41cba1ebd9"
+ },
+ "document_rule": "blank-line-separated blocks (line.strip()==''); switchboard: 2000-line pieces (no blank lines)",
+ "word_rule": "items of str.split(); wc_posix = `wc -w` in the POSIX locale (BabyLM's quoted counts)",
+ "normalisation": "every line -> ' '.join(line.split()) (babylm.data.corpus.normalize_line) before tokenizer training and tokenization; newlines, blank lines and document boundaries kept; word counts unchanged (asserted)",
+ "raw": {
+  "train_10M": {
+   "files": {
+    "bnc_spoken.train": {
+     "sha256": "e932ab5c552c8205aad28880c52a610d929c6f90f5b24d52b790f7e7d2df8d21",
+     "bytes": 4884146,
+     "lines": 90000,
+     "words": 932497,
+     "wc_posix": 932468,
+     "docs": 104
+    },
+    "childes.train": {
+     "sha256": "8095a2aa318e51c40ee10fa28ea311025a5879f42b23289268cf00447b796bfc",
+     "bytes": 15485295,
+     "lines": 580000,
+     "words": 2839591,
+     "wc_posix": 2839590,
+     "docs": 872
+    },
+    "gutenberg.train": {
+     "sha256": "9f151d44847f257232f00724f541f429265710ca1c7e02ac37edf2ff84bdb4c3",
+     "bytes": 14001510,
+     "lines": 66014,
+     "words": 2539489,
+     "wc_posix": 2539445,
+     "docs": 51
+    },
+    "open_subtitles.train": {
+     "sha256": "72a0be59362c41c8681a08403feead3b7d100f8a8a7e6ff664c6aae93e4dfa74",
+     "bytes": 10828244,
+     "lines": 360000,
+     "words": 2041868,
+     "wc_posix": 2036948,
+     "docs": 392
+    },
+    "simple_wiki.train": {
+     "sha256": "e0a80b05c9521c6080c2b30fa92870e0e02f7c23d15d73218043d2236db96e05",
+     "bytes": 8432882,
+     "lines": 65000,
+     "words": 1453539,
+     "wc_posix": 1451320,
+     "docs": 12285
+    },
+    "switchboard.train": {
+     "sha256": "65d6dee919f28386a907842ada3bf56dde4eb961f4e6e56e1529500c1d6ec0a4",
+     "bytes": 719322,
+     "lines": 18000,
+     "words": 146789,
+     "wc_posix": 146789,
+     "docs": 9
+    }
+   },
+   "total": {
+    "bytes": 54351399,
+    "lines": 1179014,
+    "words": 9953773,
+    "wc_posix": 9946560,
+    "docs": 13713
+   }
+  },
+  "train_100M": {
+   "files": {
+    "bnc_spoken.train": {
+     "sha256": "699ab646a9eac1faf8acdbe77063273c41a052ec109e9703b0cd611dbd5cc30c",
+     "bytes": 40356693,
+     "lines": 818961,
+     "words": 7760721,
+     "wc_posix": 7759945,
+     "docs": 699
+    },
+    "childes.train": {
+     "sha256": "386b26fedb47975c9686677b6dbe3006cbf988d0c1ba3083b1c253296a054bb7",
+     "bytes": 157062843,
+     "lines": 5790000,
+     "words": 28903287,
+     "wc_posix": 28894784,
+     "docs": 9898
+    },
+    "gutenberg.train": {
+     "sha256": "4c11bd1c9ec078d6aed1b88f9e81c2a60c88c775e0f37b04e404a7ad691ab6c5",
+     "bytes": 145494856,
+     "lines": 676014,
+     "words": 26371234,
+     "wc_posix": 26367028,
+     "docs": 563
+    },
+    "open_subtitles.train": {
+     "sha256": "acfed950fdfeb28df6a05fa29d58c5c1c0e62d6bddb07e44433a3cdd573b06ee",
+     "bytes": 106149427,
+     "lines": 3495000,
+     "words": 19963117,
+     "wc_posix": 19924117,
+     "docs": 3835
+    },
+    "simple_wiki.train": {
+     "sha256": "1bcdb29b71b494c358ff865bec35613f0cb7a999bb32356dd4f63e82ea377f64",
+     "bytes": 85323360,
+     "lines": 646969,
+     "words": 14674311,
+     "wc_posix": 14653591,
+     "docs": 116039
+    },
+    "switchboard.train": {
+     "sha256": "65424bafe73df0060a0d60dcffefe4c354fb74ebdfc871190cbf6a7374e5cee0",
+     "bytes": 6586033,
+     "lines": 161740,
+     "words": 1342029,
+     "wc_posix": 1342029,
+     "docs": 81
+    }
+   },
+   "total": {
+    "bytes": 540973212,
+    "lines": 11588684,
+    "words": 99014699,
+    "wc_posix": 98941494,
+    "docs": 131115
+   }
+  },
+  "dev": {
+   "files": {
+    "bnc_spoken.dev": {
+     "sha256": "2c546720837b059da82634b5554a7694bbb9bdeef18f52734da11ba443795cd8",
+     "bytes": 6539125,
+     "lines": 130000,
+     "words": 1252593,
+     "wc_posix": 1252362,
+     "docs": 118
+    },
+    "childes.dev": {
+     "sha256": "5823392e65a6da3344811845504c5d1ad9acec42315e2bd938be5eb01a8422a5",
+     "bytes": 14684091,
+     "lines": 520153,
+     "words": 2716591,
+     "wc_posix": 2707113,
+     "docs": 870
+    },
+    "gutenberg.dev": {
+     "sha256": "760ebc4c697b91308dd21f643ae3c3071e3e1222960fcf8af04119addc50e99b",
+     "bytes": 15605575,
+     "lines": 65000,
+     "words": 2819070,
+     "wc_posix": 2819004,
+     "docs": 59
+    },
+    "open_subtitles.dev": {
+     "sha256": "2e8038d3216c28d7319d0cb564011061d64e093e426b0ca816a9def481481e6b",
+     "bytes": 11029539,
+     "lines": 375000,
+     "words": 2077019,
+     "wc_posix": 2071910,
+     "docs": 406
+    },
+    "simple_wiki.dev": {
+     "sha256": "0ca18973a91069bf917bae9072ff511d39b474d590ab2241cb717221d8532c98",
+     "bytes": 8170440,
+     "lines": 60000,
+     "words": 1405366,
+     "wc_posix": 1403473,
+     "docs": 10638
+    },
+    "switchboard.dev": {
+     "sha256": "3dcd2a40051f8e90dadaa0ef656183c1ace7c62682f3306c86ed86aa8cfd057a",
+     "bytes": 724013,
+     "lines": 18000,
+     "words": 148340,
+     "wc_posix": 148340,
+     "docs": 9
+    }
+   },
+   "total": {
+    "bytes": 56752783,
+    "lines": 1168153,
+    "words": 10418979,
+    "wc_posix": 10402202,
+    "docs": 12100
+   }
+  },
+  "test": {
+   "files": {
+    "bnc_spoken.test": {
+     "sha256": "bdfc15bb70e1bd5f66d6a6113ef47995b7fe7fac247bd8afddfac87b86627b4b",
+     "bytes": 4889225,
+     "lines": 90000,
+     "words": 932334,
+     "wc_posix": 932112,
+     "docs": 97
+    },
+    "childes.test": {
+     "sha256": "c6b9e5d5479d003381a9a5ea8905ed82ac9c418cbc53395d4234bbb218ee8424",
+     "bytes": 14707424,
+     "lines": 540000,
+     "words": 2700128,
+     "wc_posix": 2699881,
+     "docs": 1021
+    },
+    "gutenberg.test": {
+     "sha256": "df309abec59a9143cb5220d81438297d24526024608e6bb795ca8c1a7069c9bd",
+     "bytes": 13296106,
+     "lines": 55000,
+     "words": 2404516,
+     "wc_posix": 2404470,
+     "docs": 47
+    },
+    "open_subtitles.test": {
+     "sha256": "59cf3e496921fb89f2581cae4f91ce5d2009513ad10778eb4181381d7ea44066",
+     "bytes": 10388196,
+     "lines": 345000,
+     "words": 1949898,
+     "wc_posix": 1946501,
+     "docs": 369
+    },
+    "simple_wiki.test": {
+     "sha256": "e3b1dec6f381115c82630b229ba427edd0f79553ccb9b40fdfc965e31bc7da70",
+     "bytes": 7618762,
+     "lines": 60000,
+     "words": 1300077,
+     "wc_posix": 1298552,
+     "docs": 10419
+    },
+    "switchboard.test": {
+     "sha256": "f30501f856a0f63571f81716b2e7f7420cfc9ca4b4705671111063065792e713",
+     "bytes": 823158,
+     "lines": 20000,
+     "words": 167133,
+     "wc_posix": 167133,
+     "docs": 10
+    }
+   },
+   "total": {
+    "bytes": 51722871,
+    "lines": 1110000,
+    "words": 9454086,
+    "wc_posix": 9448649,
+    "docs": 11963
+   }
+  }
+ },
+ "tokenizer": {
+  "path": "babylm/data/tok16k_10m/tokenizer.json",
+  "sha256": "0c15ea2d941f65054af9ab52e6c250aea4ad23a9177b2a369fa2f1eaf11152be",
+  "type": "byte-level BPE",
+  "vocab_size": 16384,
+  "special": {
+   "<|endoftext|>": 0
+  },
+  "trained_on": "train_10M documents",
+  "min_frequency": 2,
+  "library": "tokenizers 0.21.1"
+ },
+ "splits": {
+  "train_10M": {
+   "tokens": 15957304,
+   "words": 9953773,
+   "docs": 13713,
+   "tokens_per_word": 1.6031412410148393,
+   "sha256": "30be8c16ad4b2147d6c09d63f9463f2222313cd87a0e7ea11084084b0d74cfe4",
+   "sha256_words": "81fab721cdc394f4ebadee8e0c4896426e4d72e16519e30dc4c0f7278d3637b0",
+   "sha256_src": "e000d96680ea2535854e7a04b6fb1a331078689cdbfb333f019ffe7c44c5515d",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 1255856,
+     "words": 932497,
+     "docs": 104
+    },
+    "childes": {
+     "tokens": 5487727,
+     "words": 2839591,
+     "docs": 872
+    },
+    "gutenberg": {
+     "tokens": 3456467,
+     "words": 2539489,
+     "docs": 51
+    },
+    "open_subtitles": {
+     "tokens": 3317435,
+     "words": 2041868,
+     "docs": 392
+    },
+    "simple_wiki": {
+     "tokens": 2209119,
+     "words": 1453539,
+     "docs": 12285
+    },
+    "switchboard": {
+     "tokens": 230700,
+     "words": 146789,
+     "docs": 9
+    }
+   }
+  },
+  "train_100M": {
+   "tokens": 159963740,
+   "words": 99014699,
+   "docs": 131115,
+   "tokens_per_word": 1.6155554843427844,
+   "sha256": "9686d114d184d09ef43d34f46fedc9bfeabbfc6b0dc2a02eeabfb3d86a0edb5f",
+   "sha256_words": "24965158efc43aa026cbae751a7862d87a2b3ed946702353f2c732bac450e11d",
+   "sha256_src": "c818afdf7b1ec8be9eecc18109650177cb8888e8afdd18eea9baba876fe8af55",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 10629187,
+     "words": 7760721,
+     "docs": 699
+    },
+    "childes": {
+     "tokens": 55775605,
+     "words": 28903287,
+     "docs": 9898
+    },
+    "gutenberg": {
+     "tokens": 36512069,
+     "words": 26371234,
+     "docs": 563
+    },
+    "open_subtitles": {
+     "tokens": 32418691,
+     "words": 19963117,
+     "docs": 3835
+    },
+    "simple_wiki": {
+     "tokens": 22530325,
+     "words": 14674311,
+     "docs": 116039
+    },
+    "switchboard": {
+     "tokens": 2097863,
+     "words": 1342029,
+     "docs": 81
+    }
+   }
+  },
+  "dev": {
+   "tokens": 16542003,
+   "words": 10418979,
+   "docs": 12100,
+   "tokens_per_word": 1.5876798484765158,
+   "sha256": "2af8727109b04e4ecfe453193e7048932f13bb46bf2ff5f0471e631077a636d0",
+   "sha256_words": "d4ff8a3cb4b51aa90ab97140e2136dd15598b2123fd90e567db41403b050ba7f",
+   "sha256_src": "770ba0947b9b3bcb5cb87fe9d39dd8fac63f1039e127bbd456e45ab0c8716d3e",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 1714128,
+     "words": 1252593,
+     "docs": 118
+    },
+    "childes": {
+     "tokens": 5200441,
+     "words": 2716591,
+     "docs": 870
+    },
+    "gutenberg": {
+     "tokens": 3862223,
+     "words": 2819070,
+     "docs": 59
+    },
+    "open_subtitles": {
+     "tokens": 3388318,
+     "words": 2077019,
+     "docs": 406
+    },
+    "simple_wiki": {
+     "tokens": 2144386,
+     "words": 1405366,
+     "docs": 10638
+    },
+    "switchboard": {
+     "tokens": 232507,
+     "words": 148340,
+     "docs": 9
+    }
+   }
+  },
+  "test": {
+   "tokens": 15221045,
+   "words": 9454086,
+   "docs": 11963,
+   "tokens_per_word": 1.6099964607895465,
+   "sha256": "438a98a5311832af6b7edfba248959eb11a1f1c0483c9262362d4208c2bf2d49",
+   "sha256_words": "63766c90c3a904ca620b7c6bca6a3efe36050fdcfd2fec9a3c680c649a5f28cf",
+   "sha256_src": "0b1ea1aac3c91eb4ffabc4f40ed1fa5ba224c1d51adaf4e1425dc63c11ee5121",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 1268918,
+     "words": 932334,
+     "docs": 97
+    },
+    "childes": {
+     "tokens": 5208791,
+     "words": 2700128,
+     "docs": 1021
+    },
+    "gutenberg": {
+     "tokens": 3278079,
+     "words": 2404516,
+     "docs": 47
+    },
+    "open_subtitles": {
+     "tokens": 3179237,
+     "words": 1949898,
+     "docs": 369
+    },
+    "simple_wiki": {
+     "tokens": 2024605,
+     "words": 1300077,
+     "docs": 10419
+    },
+    "switchboard": {
+     "tokens": 261415,
+     "words": 167133,
+     "docs": 10
+    }
+   }
+  }
+ },
+ "ruler": {
+  "seed": 1234,
+  "rule": "data-ruler splits train_20M, train_30M, train_50M (str.split words): all train_10M documents plus whole\n    train_100M documents that share no line POSITION with train_10M. train_10M is a set of contiguous 1000-line\n    aligned chunks of train_100M (verified here line by line); a 100M document touching a covered line is never\n    added. Per source, extra words = N * (source share of train_100M words) - (source words in train_10M); extra\n    documents are taken as the prefix of one seeded permutation per source (seed 1234) whose word total is\n    closest to that quota, so 10M c 20M c 30M c 50M c 100M by construction.",
+  "alignment": {
+   "bnc_spoken": {
+    "lines_10M": 90000,
+    "chunks": 8,
+    "chunk_starts_100M": [
+     20000,
+     90000,
+     230000,
+     270000,
+     460000,
+     670000,
+     740000,
+     770000
+    ],
+    "chunk_lengths": [
+     10000,
+     10000,
+     10000,
+     10000,
+     20000,
+     10000,
+     10000,
+     10000
+    ],
+    "docs_100M": 699,
+    "docs_100M_free": 588,
+    "docs_100M_touching_10M": 111,
+    "words_100M_free": 6516932,
+    "words_unreachable_in_partially_covered_docs": 311292,
+    "free_docs_identical_to_a_10M_doc": 0
+   },
+   "childes": {
+    "lines_10M": 580000,
+    "chunks": 51,
+    "chunk_starts_100M": [
+     0,
+     60000,
+     170000,
+     390000,
+     590000,
+     640000,
+     700000,
+     1050000,
+     1080000,
+     1160000,
+     1270000,
+     1350000,
+     1740000,
+     1770000,
+     1870000,
+     2050000,
+     2110000,
+     2150000,
+     2200000,
+     2400000,
+     2520000,
+     2590000,
+     2800000,
+     2900000,
+     2930000,
+     3000000,
+     3050000,
+     3310000,
+     3340000,
+     3420000,
+     3500000,
+     3670000,
+     3810000,
+     3930000,
+     4020000,
+     4100000,
+     4120000,
+     4150000,
+     4350000,
+     4370000,
+     4460000,
+     4490000,
+     4520000,
+     4860000,
+     5220000,
+     5330000,
+     5510000,
+     5530000,
+     5620000,
+     5650000,
+     5770000
+    ],
+    "chunk_lengths": [
+     10000,
+     20000,
+     10000,
+     10000,
+     10000,
+     20000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     20000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     20000,
+     10000,
+     10000,
+     10000,
+     40000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000,
+     10000
+    ],
+    "docs_100M": 9898,
+    "docs_100M_free": 8976,
+    "docs_100M_touching_10M": 922,
+    "words_100M_free": 25520224,
+    "words_unreachable_in_partially_covered_docs": 543472,
+    "free_docs_identical_to_a_10M_doc": 0
+   },
+   "gutenberg": {
+    "lines_10M": 66014,
+    "chunks": 13,
+    "chunk_starts_100M": [
+     10000,
+     30000,
+     50000,
+     85000,
+     125000,
+     160000,
+     185000,
+     270000,
+     380000,
+     410000,
+     425000,
+     515000,
+     675000
+    ],
+    "chunk_lengths": [
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     1014
+    ],
+    "docs_100M": 563,
+    "docs_100M_free": 500,
+    "docs_100M_touching_10M": 63,
+    "words_100M_free": 22779230,
+    "words_unreachable_in_partially_covered_docs": 1052515,
+    "free_docs_identical_to_a_10M_doc": 0
+   },
+   "open_subtitles": {
+    "lines_10M": 360000,
+    "chunks": 61,
+    "chunk_starts_100M": [
+     10000,
+     45000,
+     115000,
+     135000,
+     230000,
+     335000,
+     370000,
+     385000,
+     445000,
+     560000,
+     600000,
+     755000,
+     860000,
+     900000,
+     935000,
+     995000,
+     1040000,
+     1095000,
+     1105000,
+     1120000,
+     1170000,
+     1190000,
+     1215000,
+     1265000,
+     1275000,
+     1310000,
+     1325000,
+     1360000,
+     1460000,
+     1530000,
+     1555000,
+     1755000,
+     1790000,
+     1870000,
+     1935000,
+     2015000,
+     2045000,
+     2060000,
+     2100000,
+     2160000,
+     2370000,
+     2430000,
+     2465000,
+     2495000,
+     2540000,
+     2595000,
+     2610000,
+     2655000,
+     2700000,
+     2805000,
+     2850000,
+     2870000,
+     3010000,
+     3020000,
+     3090000,
+     3170000,
+     3195000,
+     3210000,
+     3250000,
+     3285000,
+     3445000
+    ],
+    "chunk_lengths": [
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     10000,
+     10000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     15000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     5000,
+     10000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000
+    ],
+    "docs_100M": 3835,
+    "docs_100M_free": 3383,
+    "docs_100M_touching_10M": 452,
+    "words_100M_free": 17526523,
+    "words_unreachable_in_partially_covered_docs": 394726,
+    "free_docs_identical_to_a_10M_doc": 0
+   },
+   "simple_wiki": {
+    "lines_10M": 65000,
+    "chunks": 12,
+    "chunk_starts_100M": [
+     50000,
+     80000,
+     230000,
+     245000,
+     275000,
+     320000,
+     345000,
+     355000,
+     385000,
+     455000,
+     540000,
+     560000
+    ],
+    "chunk_lengths": [
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     5000,
+     10000
+    ],
+    "docs_100M": 116039,
+    "docs_100M_free": 103746,
+    "docs_100M_touching_10M": 12293,
+    "words_100M_free": 13218641,
+    "words_unreachable_in_partially_covered_docs": 2131,
+    "free_docs_identical_to_a_10M_doc": 0
+   },
+   "switchboard": {
+    "lines_10M": 18000,
+    "chunks": 9,
+    "chunk_starts_100M": [
+     20000,
+     32000,
+     92000,
+     98000,
+     110000,
+     128000,
+     138000,
+     142000,
+     154000
+    ],
+    "chunk_lengths": [
+     2000,
+     2000,
+     2000,
+     2000,
+     2000,
+     2000,
+     2000,
+     2000,
+     2000
+    ],
+    "docs_100M": 81,
+    "docs_100M_free": 72,
+    "docs_100M_touching_10M": 9,
+    "words_100M_free": 1195240,
+    "words_unreachable_in_partially_covered_docs": 0,
+    "free_docs_identical_to_a_10M_doc": 0
+   }
+  },
+  "splits": {
+   "train_20M": {
+    "tokens": 32182502,
+    "words": 19976501,
+    "docs": 27353,
+    "sha256": "53641812649f0217e918826d0cfaf48310237c491c5db079c387784ef5e16ba9",
+    "doc_list_sha256": "7df04386f26972effa7ba66e8859a44b2633df5b7587ed30963c84cbd48ca5a9",
+    "extra_words": {
+     "bnc_spoken": 633975,
+     "childes": 2998882,
+     "gutenberg": 2771667,
+     "open_subtitles": 1990583,
+     "simple_wiki": 1510409,
+     "switchboard": 117212
+    },
+    "per_source": {
+     "bnc_spoken": {
+      "tokens": 2138782,
+      "words": 1566472,
+      "docs": 141
+     },
+     "childes": {
+      "tokens": 11277853,
+      "words": 5838473,
+      "docs": 1952
+     },
+     "gutenberg": {
+      "tokens": 7248637,
+      "words": 5311156,
+      "docs": 113
+     },
+     "open_subtitles": {
+      "tokens": 6573947,
+      "words": 4032451,
+      "docs": 782
+     },
+     "simple_wiki": {
+      "tokens": 4529412,
+      "words": 2963948,
+      "docs": 24349
+     },
+     "switchboard": {
+      "tokens": 413871,
+      "words": 264001,
+      "docs": 16
+     }
+    }
+   },
+   "train_30M": {
+    "tokens": 48286629,
+    "words": 29979865,
+    "docs": 40935,
+    "sha256": "d016bb7392382f85d3c99ae383bae92d163939760dbd5351491fb0c44964cf98",
+    "doc_list_sha256": "aaa95e715e83459182f2fe446ca641db1894ff72b760322ca589a2bcd7d32374",
+    "extra_words": {
+     "bnc_spoken": 1414404,
+     "childes": 5918688,
+     "gutenberg": 5427109,
+     "open_subtitles": 4007794,
+     "simple_wiki": 2992536,
+     "switchboard": 265561
+    },
+    "per_source": {
+     "bnc_spoken": {
+      "tokens": 3199528,
+      "words": 2346901,
+      "docs": 232
+     },
+     "childes": {
+      "tokens": 16898700,
+      "words": 8758279,
+      "docs": 2960
+     },
+     "gutenberg": {
+      "tokens": 10870053,
+      "words": 7966598,
+      "docs": 169
+     },
+     "open_subtitles": {
+      "tokens": 9861741,
+      "words": 6049662,
+      "docs": 1159
+     },
+     "simple_wiki": {
+      "tokens": 6810331,
+      "words": 4446075,
+      "docs": 36390
+     },
+     "switchboard": {
+      "tokens": 646276,
+      "words": 412350,
+      "docs": 25
+     }
+    }
+   },
+   "train_50M": {
+    "tokens": 80610417,
+    "words": 50030273,
+    "docs": 67187,
+    "sha256": "e23587d59169b74eb14d8c98116c4673e153b5d0eee5c4c76b810a22e807a68a",
+    "doc_list_sha256": "8ce532d0beea63c66d6f03ca432ea79e954ff7b03e8e4cb6145b8ca11fc311c2",
+    "extra_words": {
+     "bnc_spoken": 3001453,
+     "childes": 11757107,
+     "gutenberg": 10795038,
+     "open_subtitles": 8038508,
+     "simple_wiki": 5956855,
+     "switchboard": 527539
+    },
+    "per_source": {
+     "bnc_spoken": {
+      "tokens": 5385118,
+      "words": 3933950,
+      "docs": 372
+     },
+     "childes": {
+      "tokens": 28139664,
+      "words": 14596698,
+      "docs": 5043
+     },
+     "gutenberg": {
+      "tokens": 18256071,
+      "words": 13334527,
+      "docs": 276
+     },
+     "open_subtitles": {
+      "tokens": 16407972,
+      "words": 10080376,
+      "docs": 1936
+     },
+     "simple_wiki": {
+      "tokens": 11366103,
+      "words": 7410394,
+      "docs": 59519
+     },
+     "switchboard": {
+      "tokens": 1055489,
+      "words": 674328,
+      "docs": 41
+     }
+    }
+   }
+  }
+ },
+ "subsets": {
+  "dev_sub": {
+   "tokens": 1600917,
+   "words": 993245,
+   "docs": 1199,
+   "sha256": "d184cf1c72be959932126f91a077b5f6ab3008ed64d06dbb83b2eaad3e432e8e",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 154841,
+     "words": 114748,
+     "docs": 13
+    },
+    "childes": {
+     "tokens": 502019,
+     "words": 260982,
+     "docs": 93
+    },
+    "gutenberg": {
+     "tokens": 379568,
+     "words": 262146,
+     "docs": 9
+    },
+    "open_subtitles": {
+     "tokens": 332917,
+     "words": 202901,
+     "docs": 43
+    },
+    "simple_wiki": {
+     "tokens": 204891,
+     "words": 135254,
+     "docs": 1040
+    },
+    "switchboard": {
+     "tokens": 26681,
+     "words": 17214,
+     "docs": 1
+    }
+   },
+   "subset_of": "dev"
+  },
+  "train_sub": {
+   "tokens": 1592018,
+   "words": 1004073,
+   "docs": 1383,
+   "sha256": "8591d38cf93e8fec3d758889ea96475b6cbc9a04bb8ecb06edd741445c118f4d",
+   "per_source": {
+    "bnc_spoken": {
+     "tokens": 128667,
+     "words": 97740,
+     "docs": 7
+    },
+    "childes": {
+     "tokens": 548981,
+     "words": 283463,
+     "docs": 108
+    },
+    "gutenberg": {
+     "tokens": 332590,
+     "words": 254152,
+     "docs": 6
+    },
+    "open_subtitles": {
+     "tokens": 329542,
+     "words": 203748,
+     "docs": 43
+    },
+    "simple_wiki": {
+     "tokens": 224864,
+     "words": 147388,
+     "docs": 1218
+    },
+    "switchboard": {
+     "tokens": 27374,
+     "words": 17582,
+     "docs": 1
+    }
+   },
+   "subset_of": "train_10M"
+  }
+ },
+ "protected": {
+  "test": "FINAL split: tokenized only; evaluation requires train.py --final"
+ }
+}

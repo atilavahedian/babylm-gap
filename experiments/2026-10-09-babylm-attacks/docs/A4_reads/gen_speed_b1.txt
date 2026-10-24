@@ -1,0 +1,13 @@
+# A4 batch 1 generation speed, measured (babylm.a4.generate on 1 A100-SXM4-40GB, torch 2.7, bf16 autocast, batch 1024,
+# KV cache; executor 3 copy-back @ ref-0106, a4_data/gen/*.json). ms/step is per decode step of the whole batch;
+# decoded tok/s counts every decoded position (rows keep decoding after their stop); kept = the trained text.
+shard    seconds     rows batches   steps ms/step       words  words/s kept tok/s decoded tok/s   stop words/row
+a4a         1527   346112     338   64896    23.5    29901912    19580      31102         43514  0.421      86.4
+n1a         2346   433152     423  108288    21.7    29918149    12754      21580         47269  0.568      69.1
+a4b_A        360    90112      88   16896    21.3     9956959    27644      45735         48035  0.077     110.5
+a4b_B        354    90112      88   16896    20.9     9955997    28144      46599         48908  0.079     110.5
+probe         12     2000       2     384    31.7      219673    18036      29988         32285  0.078     109.8
+total       4599                   207360    22.2    79952690    17384
+# Per-step time is about 21-24 ms whether or not the 8-gram block runs, so decoding at batch 1024 is bound by the
+# per-step launch and host-sync cost, not by the GPU's arithmetic (inferred, not profiled). Later generation uses
+# --batch 4096 (experimenter 2026-10-11 03:12Z) and records its measured speed beside this.

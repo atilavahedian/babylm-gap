@@ -1,0 +1,24 @@
+{
+ "name": "base_s1x",
+ "commit": "07269bffed1e0990368a8c2e64eb79fdc677ff0e",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "base_s1x",
+   "cmd": "SKIP=; for n in base_S_wd1p0_lr0p25 base_S_wd2p0_lr0p25 base_S_wd1p0_lr0p125 base_S_wd2p0_lr0p125; do if [ -n \"$SKIP\" ] && echo $n | grep -qE \"$SKIP\"; then echo \"[reg] skip $n\"; continue; fi; python -m babylm.harness.run_jobs babylm/configs/jobs_base_grid_S.json --only $n --device cuda || echo \"[run] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[run] score $n failed\"; }; done",
+   "timeout_s": 10800
+  }
+ ],
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz"
+ }
+}

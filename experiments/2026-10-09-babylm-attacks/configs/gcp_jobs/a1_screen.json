@@ -1,0 +1,41 @@
+{
+ "name": "a1_screen",
+ "commit": "dd5b7cd255cef5c859e9d1f1dfd510afcc85aaf7",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${R1_ARGS:-}\" ]; then python -m babylm.configs.make_base_jobs --r1 $R1_ARGS; fi; cp babylm/configs/jobs_a1_r1_S.json _logs/",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz",
+  "R1_ARGS": "",
+  "CELLS": "r1_sd_base r1_A1a r1_A1b r1_A1c r1_A1d r1_A1e",
+  "BENCH": "0",
+  "CFG": "babylm/configs/jobs_a1_r1_S.json",
+  "TWX_RUNS": "",
+  "PTV2_BF": ""
+ },
+ "jobs": [
+  {
+   "name": "ptv2bf",
+   "cmd": "gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; if [ -n \"${PTV2_BF:-}\" ]; then for r in $PTV2_BF; do S=babylm/runs/_ptv2_bf/$r; mkdir -p $S && gsutil -m -q rsync -r __BUCKET__/ptv2_in/$r $S && CK= && { [ ! -f $S/dev_bpw_twin.json ] || CK=\"--check $S/dev_bpw_twin.json\"; } && /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump $S/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out $S/dev_v2.npz $CK > $S/dump.log 2>&1 && echo \"[ptv2] bf ok $r\" || echo \"[ptv2] bf FAILED $r\"; rm -rf $S/hf; done; fi",
+   "timeout_s": 7200
+  },
+  {
+   "name": "twx",
+   "cmd": "for r in ${TWX_RUNS:-}; do S=babylm/runs/_twx/$r; mkdir -p $S/hf && gsutil -m -q rsync -r __BUCKET__/twx_in/$r/hf $S/hf && /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py $S/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out $S/dev_bpw_twin.json > $S/dev_bpw_twin.log 2>&1 && echo \"[twx] ok $r\" || echo \"[twx] FAILED $r\"; rm -rf $S/hf; done",
+   "timeout_s": 3600
+  },
+  {
+   "name": "a1_screen",
+   "cmd": "gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; for n in $CELLS; do cfg=${CFG:-babylm/configs/jobs_base_r1_S.json}; [ $n = base_S_wd2p0_lr0p5_final ] && cfg=babylm/configs/jobs_ctrl_final.json; python -m babylm.harness.run_jobs $cfg --only $n --device cuda || echo \"[cells] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[cells] score $n failed\"; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/$n/score/dev_bpw_twin.json > babylm/runs/$n/score/dev_bpw_twin.log 2>&1 || echo \"[twin] $n failed\"; mkdir -p babylm/runs/$n/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/$n/pt_v2/dev_v2.npz --check babylm/runs/$n/score/dev_bpw_twin.json > babylm/runs/$n/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/$n failed\"; }; done; if [ \"${BENCH:-0}\" = 1 ]; then nvidia-cuda-mps-control -d && echo '[pack] MPS on'; python - <<'PYB' > _logs/pack_cmds.txt\nimport json,shlex\nj=[x for x in json.load(open('babylm/configs/jobs_base_r1_S.json'))['jobs'] if x['name'].endswith('_r1_ve0_tied')][0]\na=[str(x) for x in j['args']]\ni=a.index('--out') if '--out' in a else None\na=[x for k,x in enumerate(a) if i is None or k not in (i,i+1)]\na=[x for x in a if x not in ('--save',)]\nprint(' '.join(shlex.quote(x) for x in a))\nPYB\nfor k in 1 2 3; do for i in $(seq 1 $k); do timeout 300 python -m babylm.harness.train $(cat _logs/pack_cmds.txt) --device cuda --out /tmp/pack_${k}_$i > _logs/pack_${k}_$i.log 2>&1 & done; wait; python - $k <<'PYS'\nimport re,sys,statistics as s\nk=int(sys.argv[1]); tot=0\nfor i in range(1,k+1):\n    v=[float(x.replace(',','')) for x in re.findall(r'([0-9,]+) tok/s',open(f'_logs/pack_{k}_{i}.log').read())][-5:]\n    m=s.median(v) if v else 0; tot+=m; print(f'[pack] k={k} copy={i} tok/s={m:,.0f} n={len(v)}')\nprint(f'[pack] k={k} aggregate tok/s={tot:,.0f}')\nPYS\ndone; echo quit | nvidia-cuda-mps-control; rm -rf /tmp/pack_*;  fi",
+   "timeout_s": 9600
+  }
+ ],
+ "note": ""
+}

@@ -1,0 +1,21 @@
+[job] score_hf start 2026-10-11T12:22:51Z commit 7dac8c6659b0b8acd8f3db6eabe50005b62a4fd5
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_hf", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}
+[job] GLUE finetune script: eval_finetuning_parallel.sh (at most 3 tasks at a time)
+Copying ${BUCKET}/babylm/hf/base_S_e6/config.json to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/config.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/configuration_hinton.py to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/configuration_hinton.py
+  
+Copying ${BUCKET}/babylm/hf/base_S_e6/hinton_export.json to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/hinton_export.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/model.safetensors to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/model.safetensors
+Copying ${BUCKET}/babylm/hf/base_S_e6/modeling_hinton.py to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/modeling_hinton.py
+Copying ${BUCKET}/babylm/hf/base_S_e6/special_tokens_map.json to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/special_tokens_map.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/tokenizer.json to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/tokenizer.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/tokenizer_config.json to file:///opt/babylm/hf/base_S_e6_untrained_lastpool/tokenizer_config.json
+..
+
+Average throughput: 381.9MiB/s

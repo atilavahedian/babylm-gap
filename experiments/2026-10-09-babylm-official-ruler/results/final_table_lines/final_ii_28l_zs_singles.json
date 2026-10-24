@@ -1,0 +1,33 @@
+{
+ "name": "final-ii-28l-zs-singles",
+ "commit": "4cadd917171976f12d9ccf671e09820e33bb9822",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ },
+ "note": "Ruler final table priority (ii), 28L retrain set (torch 2.9.1 training; official eval in the pipeline venv). Code @ref-0171. Executor fills __URI_<member>__ = <retrain VM out>/babylm/runs/<member>/score/hf and __MIX_REF_pXY__ = the reads/rt28 full raw mixture DEV. GLUE is sequential (FT_PARALLEL=0): the S identity check was MISMATCH on multirc (ftverify @ref-0194), so no concurrent GLUE and no 28L identity check. Guard caveat: MIX_REF comes from the retrain VM's twin (torch 2.9.1); the guard recomputes it in the pipeline venv; a FAIL at |diff| ~1e-5..1e-4 would be a torch-eval difference, report it before voiding. bin ZS-SINGLES: official zero-shot (ZS_ONLY) of 28L e6 s0-s2, right after bin ZS (the first x0 VM died in setup before these ran). maxdur 1. Pool ruler.",
+ "jobs": [
+  {
+   "name": "zs_28L_e6_s0",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_menu_28L384d_e6_wd0p4_s0_rt__ HF_NAME=L28_e6_s0 bash babylm/jobs/vm_job.sh score_hf out/zs_28L_e6_s0",
+   "timeout_s": 2400
+  },
+  {
+   "name": "zs_28L_e6_s1",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_menu_28L384d_e6_wd0p4_s1_rt__ HF_NAME=L28_e6_s1 bash babylm/jobs/vm_job.sh score_hf out/zs_28L_e6_s1",
+   "timeout_s": 2400
+  },
+  {
+   "name": "zs_28L_e6_s2",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_menu_28L384d_e6_wd0p4_s2_rt__ HF_NAME=L28_e6_s2 bash babylm/jobs/vm_job.sh score_hf out/zs_28L_e6_s2",
+   "timeout_s": 2400
+  }
+ ]
+}

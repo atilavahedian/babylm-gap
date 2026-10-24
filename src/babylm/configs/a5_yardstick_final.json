@@ -1,0 +1,124 @@
+{
+ "note": "A5 final read (critic ref-0185/ref-0354/ref-0361/88358636). Filled by the ruler 12 Oct. root = executor 3's dir of v2 --twin --temps dumps (<run name>.npz); confirm the three a5port names. T100 = port E10 s0 (x0 A100 redump, tools twin ref-0026 / dump ref-0034 / dev_bpw ref-0195) + s1/s2 (bl-a5-100m-port-s1s2). A2 ref = 28L e6 seed MEAN (R4.4 22:27Z: entries scored by seed mean). A3/A4 = original dev reps (critic 05:13Z, 88358636).",
+ "root": "<executor 3 dumps dir>",
+ "y": {
+  "pool": [
+   "v2_S_10M_e6_s0.npz",
+   "v2_S_10M_e6_s1.npz",
+   "v2_S_10M_e6_s2.npz",
+   "v2_S_10M_e6_s3.npz",
+   "v2_S_10M_e6_s4.npz"
+  ],
+  "t100": [
+   "a5port_S_100M_e10_s0.npz",
+   "a5port_S_100M_e10_s1.npz",
+   "a5port_S_100M_e10_s2.npz"
+  ],
+  "t100_label": "T100 = port recipe E10, 3 seeds; best legal 100M point we hold, not exhaustively tuned (locked recipe 0.31 worse): x is an UPPER BOUND"
+ },
+ "gains": {
+  "S_same_size_vs_E6_pool": {
+   "arm": [
+    [
+     "v2_S_10M_e5_s0.npz",
+     "v2_S_10M_e5_s1.npz"
+    ],
+    [
+     "v2_S_10M_e5_s2.npz",
+     "v2_S_10M_e5_s3.npz"
+    ],
+    [
+     "v2_S_10M_e5_s4.npz",
+     "v2_S_10M_e5_s5.npz"
+    ]
+   ],
+   "ref": [
+    "v2_S_10M_e6_s0.npz",
+    "v2_S_10M_e6_s1.npz",
+    "v2_S_10M_e6_s2.npz",
+    "v2_S_10M_e6_s3.npz",
+    "v2_S_10M_e6_s4.npz"
+   ]
+  },
+  "A2_S_matched_vs_28L_e6_F2": {
+   "arm": [
+    [
+     "v2_S_10M_e5_s0.npz",
+     "v2_S_10M_e5_s1.npz"
+    ],
+    [
+     "v2_S_10M_e5_s2.npz",
+     "v2_S_10M_e5_s3.npz"
+    ],
+    [
+     "v2_S_10M_e5_s4.npz",
+     "v2_S_10M_e5_s5.npz"
+    ]
+   ],
+   "ref": [
+    "ms_menu_28L384d_e6_wd0p4.npz",
+    "ms_menu_28L384d_e6_wd0p4_s1.npz",
+    "ms_menu_28L384d_e6_wd0p4_s2.npz"
+   ],
+   "ref_sd": [
+    "ms_menu_28L384d_e6_wd0p4.npz",
+    "ms_menu_28L384d_e6_wd0p4_s1.npz",
+    "ms_menu_28L384d_e6_wd0p4_s2.npz"
+   ],
+   "labels": [
+    "reference crosses envs (arm 2.7, reference 2.9.1)"
+   ]
+  },
+  "28L_same_size_vs_e6_mean": {
+   "arm": [
+    [
+     "ms_menu_28L384d_e5_wd0p4.npz",
+     "ms_menu_28L384d_e5_wd0p4_s1.npz"
+    ],
+    [
+     "ms_menu_28L384d_e5_wd0p4_s2.npz",
+     "ms_menu_28L384d_e5_wd0p4_s3.npz"
+    ],
+    [
+     "ms_menu_28L384d_e5_wd0p4_s4.npz",
+     "ms_menu_28L384d_e5_wd0p4_s5.npz"
+    ]
+   ],
+   "ref": [
+    "ms_menu_28L384d_e6_wd0p4.npz",
+    "ms_menu_28L384d_e6_wd0p4_s1.npz",
+    "ms_menu_28L384d_e6_wd0p4_s2.npz"
+   ],
+   "labels": [
+    "Y from S only; upper bound if the gap grows with size"
+   ]
+  },
+  "A4_28L_matched_vs_best_F4": {
+   "arm": [
+    [
+     "ms_menu_28L384d_e5_wd0p4.npz",
+     "ms_menu_28L384d_e5_wd0p4_s1.npz"
+    ],
+    [
+     "ms_menu_28L384d_e5_wd0p4_s2.npz",
+     "ms_menu_28L384d_e5_wd0p4_s3.npz"
+    ],
+    [
+     "ms_menu_28L384d_e5_wd0p4_s4.npz",
+     "ms_menu_28L384d_e5_wd0p4_s5.npz"
+    ]
+   ],
+   "ref": [
+    "ms_menu_36L512d_e4_wd0p4.npz"
+   ],
+   "ref_sd": [
+    "ms_menu_28L384d_e6_wd0p4.npz",
+    "ms_menu_28L384d_e6_wd0p4_s1.npz",
+    "ms_menu_28L384d_e6_wd0p4_s2.npz"
+   ],
+   "labels": [
+    "Y from S only; upper bound if the gap grows with size"
+   ]
+  }
+ }
+}

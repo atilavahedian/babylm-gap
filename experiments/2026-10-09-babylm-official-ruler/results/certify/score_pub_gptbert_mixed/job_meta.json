@@ -1,0 +1,1 @@
+{"job": "score_pub_gptbert_mixed", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA L4", "transformers": "4.51.3", "python": "3.12.3"}

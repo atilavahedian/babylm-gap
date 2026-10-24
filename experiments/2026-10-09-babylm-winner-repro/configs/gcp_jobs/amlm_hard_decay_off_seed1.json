@@ -1,0 +1,21 @@
+{
+ "name": "amlm_hard_decay_off_seed1",
+ "commit": "1cd2da4e18af03583dd60268b1593a728b6b3ff0",
+ "paths": [
+  "babylm"
+ ],
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "train_hard_decay_off_seed1",
+   "cmd": "bash babylm/winner/amlm/gpu_job.sh train_hard_decay_off_seed1 out/train_hard_decay_off_seed1",
+   "timeout_s": 20700
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ }
+}

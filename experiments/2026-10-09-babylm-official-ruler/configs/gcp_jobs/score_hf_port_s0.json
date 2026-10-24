@@ -1,0 +1,25 @@
+{
+ "name": "score_hf_port_s0",
+ "commit": "9e8f7cda026ab56dfdee828dd3bb19d899b5e57e",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_hf",
+   "cmd": "bash babylm/jobs/vm_job.sh score_hf out/score_hf",
+   "timeout_s": 14400
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip",
+  "HF_URI": "${BUCKET}/babylm/vms/bl-exp-p2a-1009-204558/out/babylm/runs/port_S_10M_e10_s0/hf ${BUCKET}/babylm/vms/bl-exp-p2a-1009-204558/out/babylm/runs/port_S_10M_e10_s0/hf_lastpool",
+  "HF_NAME": "port_S_s0 port_S_s0_lastpool",
+  "FMT_JSON": "/opt/hinton/babylm/recipes/harness/format.json"
+ }
+}

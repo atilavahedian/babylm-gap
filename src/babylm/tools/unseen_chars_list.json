@@ -1,0 +1,434 @@
+{
+ "description": "DEV characters that never occur in train_10M raw text (deterministic: set(dev) - set(train_10M)); used by unseen_chars.py, the never-seen-character guard (critic ref-0001 / ref-0015)",
+ "tool_sha256": "e03fddc9314ceead39493ba7525a49a6ffb3460f846e987ebe297993adaab267",
+ "raw_train_10M_sha256": "945d2f56bdbd48e054667e0527528321ba7acb558dfd11d35bafec5535d87172",
+ "raw_dev_sha256": "354129f25184f114eb07d83c367ba54fbca1c578f39325aa40355119e449713d",
+ "count": 85,
+ "chars": [
+  {
+   "cp": "U+003E",
+   "char": ">",
+   "name": "GREATER-THAN SIGN"
+  },
+  {
+   "cp": "U+0092",
+   "char": "",
+   "name": "?"
+  },
+  {
+   "cp": "U+00AB",
+   "char": "«",
+   "name": "LEFT-POINTING DOUBLE ANGLE QUOTATION MARK"
+  },
+  {
+   "cp": "U+00BB",
+   "char": "»",
+   "name": "RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK"
+  },
+  {
+   "cp": "U+00FF",
+   "char": "ÿ",
+   "name": "LATIN SMALL LETTER Y WITH DIAERESIS"
+  },
+  {
+   "cp": "U+011E",
+   "char": "Ğ",
+   "name": "LATIN CAPITAL LETTER G WITH BREVE"
+  },
+  {
+   "cp": "U+0126",
+   "char": "Ħ",
+   "name": "LATIN CAPITAL LETTER H WITH STROKE"
+  },
+  {
+   "cp": "U+0129",
+   "char": "ĩ",
+   "name": "LATIN SMALL LETTER I WITH TILDE"
+  },
+  {
+   "cp": "U+0136",
+   "char": "Ķ",
+   "name": "LATIN CAPITAL LETTER K WITH CEDILLA"
+  },
+  {
+   "cp": "U+0165",
+   "char": "ť",
+   "name": "LATIN SMALL LETTER T WITH CARON"
+  },
+  {
+   "cp": "U+0177",
+   "char": "ŷ",
+   "name": "LATIN SMALL LETTER Y WITH CIRCUMFLEX"
+  },
+  {
+   "cp": "U+0192",
+   "char": "ƒ",
+   "name": "LATIN SMALL LETTER F WITH HOOK"
+  },
+  {
+   "cp": "U+01C2",
+   "char": "ǂ",
+   "name": "LATIN LETTER ALVEOLAR CLICK"
+  },
+  {
+   "cp": "U+01CE",
+   "char": "ǎ",
+   "name": "LATIN SMALL LETTER A WITH CARON"
+  },
+  {
+   "cp": "U+01D0",
+   "char": "ǐ",
+   "name": "LATIN SMALL LETTER I WITH CARON"
+  },
+  {
+   "cp": "U+0255",
+   "char": "ɕ",
+   "name": "LATIN SMALL LETTER C WITH CURL"
+  },
+  {
+   "cp": "U+0258",
+   "char": "ɘ",
+   "name": "LATIN SMALL LETTER REVERSED E"
+  },
+  {
+   "cp": "U+025D",
+   "char": "ɝ",
+   "name": "LATIN SMALL LETTER REVERSED OPEN E WITH HOOK"
+  },
+  {
+   "cp": "U+0279",
+   "char": "ɹ",
+   "name": "LATIN SMALL LETTER TURNED R"
+  },
+  {
+   "cp": "U+0294",
+   "char": "ʔ",
+   "name": "LATIN LETTER GLOTTAL STOP"
+  },
+  {
+   "cp": "U+0295",
+   "char": "ʕ",
+   "name": "LATIN LETTER PHARYNGEAL VOICED FRICATIVE"
+  },
+  {
+   "cp": "U+02B9",
+   "char": "ʹ",
+   "name": "MODIFIER LETTER PRIME"
+  },
+  {
+   "cp": "U+02E7",
+   "char": "˧",
+   "name": "MODIFIER LETTER MID TONE BAR"
+  },
+  {
+   "cp": "U+1E0C",
+   "char": "Ḍ",
+   "name": "LATIN CAPITAL LETTER D WITH DOT BELOW"
+  },
+  {
+   "cp": "U+1E3B",
+   "char": "ḻ",
+   "name": "LATIN SMALL LETTER L WITH LINE BELOW"
+  },
+  {
+   "cp": "U+1E49",
+   "char": "ṉ",
+   "name": "LATIN SMALL LETTER N WITH LINE BELOW"
+  },
+  {
+   "cp": "U+1E51",
+   "char": "ṑ",
+   "name": "LATIN SMALL LETTER O WITH MACRON AND GRAVE"
+  },
+  {
+   "cp": "U+1E5F",
+   "char": "ṟ",
+   "name": "LATIN SMALL LETTER R WITH LINE BELOW"
+  },
+  {
+   "cp": "U+1E62",
+   "char": "Ṣ",
+   "name": "LATIN CAPITAL LETTER S WITH DOT BELOW"
+  },
+  {
+   "cp": "U+1E6E",
+   "char": "Ṯ",
+   "name": "LATIN CAPITAL LETTER T WITH LINE BELOW"
+  },
+  {
+   "cp": "U+1E6F",
+   "char": "ṯ",
+   "name": "LATIN SMALL LETTER T WITH LINE BELOW"
+  },
+  {
+   "cp": "U+1EA5",
+   "char": "ấ",
+   "name": "LATIN SMALL LETTER A WITH CIRCUMFLEX AND ACUTE"
+  },
+  {
+   "cp": "U+1EA9",
+   "char": "ẩ",
+   "name": "LATIN SMALL LETTER A WITH CIRCUMFLEX AND HOOK ABOVE"
+  },
+  {
+   "cp": "U+1EAD",
+   "char": "ậ",
+   "name": "LATIN SMALL LETTER A WITH CIRCUMFLEX AND DOT BELOW"
+  },
+  {
+   "cp": "U+1EAF",
+   "char": "ắ",
+   "name": "LATIN SMALL LETTER A WITH BREVE AND ACUTE"
+  },
+  {
+   "cp": "U+1EBD",
+   "char": "ẽ",
+   "name": "LATIN SMALL LETTER E WITH TILDE"
+  },
+  {
+   "cp": "U+1EBF",
+   "char": "ế",
+   "name": "LATIN SMALL LETTER E WITH CIRCUMFLEX AND ACUTE"
+  },
+  {
+   "cp": "U+1EC3",
+   "char": "ể",
+   "name": "LATIN SMALL LETTER E WITH CIRCUMFLEX AND HOOK ABOVE"
+  },
+  {
+   "cp": "U+1ECB",
+   "char": "ị",
+   "name": "LATIN SMALL LETTER I WITH DOT BELOW"
+  },
+  {
+   "cp": "U+1ED1",
+   "char": "ố",
+   "name": "LATIN SMALL LETTER O WITH CIRCUMFLEX AND ACUTE"
+  },
+  {
+   "cp": "U+1ED3",
+   "char": "ồ",
+   "name": "LATIN SMALL LETTER O WITH CIRCUMFLEX AND GRAVE"
+  },
+  {
+   "cp": "U+1EDB",
+   "char": "ớ",
+   "name": "LATIN SMALL LETTER O WITH HORN AND ACUTE"
+  },
+  {
+   "cp": "U+1EDF",
+   "char": "ở",
+   "name": "LATIN SMALL LETTER O WITH HORN AND HOOK ABOVE"
+  },
+  {
+   "cp": "U+1EE3",
+   "char": "ợ",
+   "name": "LATIN SMALL LETTER O WITH HORN AND DOT BELOW"
+  },
+  {
+   "cp": "U+1EE5",
+   "char": "ụ",
+   "name": "LATIN SMALL LETTER U WITH DOT BELOW"
+  },
+  {
+   "cp": "U+1EEB",
+   "char": "ừ",
+   "name": "LATIN SMALL LETTER U WITH HORN AND GRAVE"
+  },
+  {
+   "cp": "U+1EF1",
+   "char": "ự",
+   "name": "LATIN SMALL LETTER U WITH HORN AND DOT BELOW"
+  },
+  {
+   "cp": "U+200F",
+   "char": "‏",
+   "name": "RIGHT-TO-LEFT MARK"
+  },
+  {
+   "cp": "U+2010",
+   "char": "‐",
+   "name": "HYPHEN"
+  },
+  {
+   "cp": "U+2021",
+   "char": "‡",
+   "name": "DOUBLE DAGGER"
+  },
+  {
+   "cp": "U+202D",
+   "char": "‭",
+   "name": "LEFT-TO-RIGHT OVERRIDE"
+  },
+  {
+   "cp": "U+2030",
+   "char": "‰",
+   "name": "PER MILLE SIGN"
+  },
+  {
+   "cp": "U+203A",
+   "char": "›",
+   "name": "SINGLE RIGHT-POINTING ANGLE QUOTATION MARK"
+  },
+  {
+   "cp": "U+204E",
+   "char": "⁎",
+   "name": "LOW ASTERISK"
+  },
+  {
+   "cp": "U+2063",
+   "char": "⁣",
+   "name": "INVISIBLE SEPARATOR"
+  },
+  {
+   "cp": "U+20AB",
+   "char": "₫",
+   "name": "DONG SIGN"
+  },
+  {
+   "cp": "U+211E",
+   "char": "℞",
+   "name": "PRESCRIPTION TAKE"
+  },
+  {
+   "cp": "U+2197",
+   "char": "↗",
+   "name": "NORTH EAST ARROW"
+  },
+  {
+   "cp": "U+21D7",
+   "char": "⇗",
+   "name": "NORTH EAST DOUBLE ARROW"
+  },
+  {
+   "cp": "U+2206",
+   "char": "∆",
+   "name": "INCREMENT"
+  },
+  {
+   "cp": "U+2207",
+   "char": "∇",
+   "name": "NABLA"
+  },
+  {
+   "cp": "U+2219",
+   "char": "∙",
+   "name": "BULLET OPERATOR"
+  },
+  {
+   "cp": "U+221A",
+   "char": "√",
+   "name": "SQUARE ROOT"
+  },
+  {
+   "cp": "U+221E",
+   "char": "∞",
+   "name": "INFINITY"
+  },
+  {
+   "cp": "U+222A",
+   "char": "∪",
+   "name": "UNION"
+  },
+  {
+   "cp": "U+2264",
+   "char": "≤",
+   "name": "LESS-THAN OR EQUAL TO"
+  },
+  {
+   "cp": "U+2308",
+   "char": "⌈",
+   "name": "LEFT CEILING"
+  },
+  {
+   "cp": "U+2309",
+   "char": "⌉",
+   "name": "RIGHT CEILING"
+  },
+  {
+   "cp": "U+230A",
+   "char": "⌊",
+   "name": "LEFT FLOOR"
+  },
+  {
+   "cp": "U+230B",
+   "char": "⌋",
+   "name": "RIGHT FLOOR"
+  },
+  {
+   "cp": "U+2594",
+   "char": "▔",
+   "name": "UPPER ONE EIGHTH BLOCK"
+  },
+  {
+   "cp": "U+25CB",
+   "char": "○",
+   "name": "WHITE CIRCLE"
+  },
+  {
+   "cp": "U+25CF",
+   "char": "●",
+   "name": "BLACK CIRCLE"
+  },
+  {
+   "cp": "U+2605",
+   "char": "★",
+   "name": "BLACK STAR"
+  },
+  {
+   "cp": "U+263A",
+   "char": "☺",
+   "name": "WHITE SMILING FACE"
+  },
+  {
+   "cp": "U+263B",
+   "char": "☻",
+   "name": "BLACK SMILING FACE"
+  },
+  {
+   "cp": "U+2659",
+   "char": "♙",
+   "name": "WHITE CHESS PAWN"
+  },
+  {
+   "cp": "U+265F",
+   "char": "♟",
+   "name": "BLACK CHESS PAWN"
+  },
+  {
+   "cp": "U+26A5",
+   "char": "⚥",
+   "name": "MALE AND FEMALE SIGN"
+  },
+  {
+   "cp": "U+2A33",
+   "char": "⨳",
+   "name": "SMASH PRODUCT"
+  },
+  {
+   "cp": "U+2E38",
+   "char": "⸸",
+   "name": "TURNED DAGGER"
+  },
+  {
+   "cp": "U+A9C8",
+   "char": "꧈",
+   "name": "JAVANESE PADA LINGSA"
+  },
+  {
+   "cp": "U+FE0F",
+   "char": "️",
+   "name": "VARIATION SELECTOR-16"
+  },
+  {
+   "cp": "U+1F192",
+   "char": "🆒",
+   "name": "SQUARED COOL"
+  },
+  {
+   "cp": "U+1F60E",
+   "char": "😎",
+   "name": "SMILING FACE WITH SUNGLASSES"
+  }
+ ]
+}

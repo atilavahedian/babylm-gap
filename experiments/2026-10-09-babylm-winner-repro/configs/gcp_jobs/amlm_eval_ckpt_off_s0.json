@@ -1,0 +1,22 @@
+{
+ "name": "amlm_eval_ckpt_off_s0",
+ "commit": "1cd2da4e18af03583dd60268b1593a728b6b3ff0",
+ "paths": [
+  "babylm"
+ ],
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "eval_ckpt_amlm_hard_decay_off_s0",
+   "cmd": "bash babylm/winner/amlm/gpu_job.sh eval_ckpt_amlm_hard_decay_off_s0 out/eval_ckpt_amlm_hard_decay_off_s0",
+   "timeout_s": 6900
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "CKPT": "${BUCKET}/babylm/restore/amlm_off_s0/checkpoint-10155",
+  "EWOK_ZIP": "__EWOK__"
+ }
+}

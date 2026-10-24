@@ -1,0 +1,18 @@
+{
+ "pipeline": "babylm/evaluation-pipeline-2025 @ bf55c1131e53654c2a87418f5629c26959acd710",
+ "source": "eval_zero_shot.sh at bf55c1131e53654c2a87418f5629c26959acd710 (8 commands; babylm/eval/zero_shot_all.sh runs the same 8 with --save_predictions), track strict-small, backend causal",
+ "rule": "critic ref-0185 (B official): composite = unweighted mean of every zero-shot task score below with composite=true; Entity is reported only; GLUE7 (final-token, matched 2-FT ensemble) is its own column, never in the composite",
+ "not_zero_shot": "AoA (eval_aoa.sh: needs intermediate checkpoints, a separate script) and the fast-eval revision sweep are not zero-shot scores of the final checkpoint and are not in this list",
+ "tasks": [
+  {"key": "BLiMP",       "composite": true,  "file": "zero_shot/causal/blimp/blimp_filtered/best_temperature_report.txt",            "score": "### AVERAGE ACCURACY line (%)"},
+  {"key": "Supplement",  "composite": true,  "file": "zero_shot/causal/blimp/supplement_filtered/best_temperature_report.txt",       "score": "### AVERAGE ACCURACY line (%)"},
+  {"key": "EWoK",        "composite": true,  "file": "zero_shot/causal/ewok/ewok_filtered/best_temperature_report.txt",              "score": "### AVERAGE ACCURACY line (%); full gated EWoK only (fast EWoK -> row incomplete)"},
+  {"key": "COMPS",       "composite": true,  "file": "zero_shot/causal/comps/comps/best_temperature_report.txt",                     "score": "### AVERAGE ACCURACY line (%)"},
+  {"key": "WUG_adj",     "composite": true,  "file": "zero_shot/causal/wug_adj/wug_adj_nominalization/best_temperature_report.txt",  "score": "### AVERAGE SPEARMAN'S RHO line x 100 (leaderboard scale)"},
+  {"key": "WUG_past",    "composite": true,  "file": "zero_shot/causal/wug_past/wug_past_tense/best_temperature_report.txt",         "score": "### AVERAGE SPEARMAN'S RHO line x 100 (leaderboard scale)"},
+  {"key": "Reading_rt",  "composite": true,  "file": "zero_shot/causal/reading/report.txt",                                          "score": "EYE TRACKING SCORE (pipeline: 100 x relative R2 gain)"},
+  {"key": "Reading_spr", "composite": true,  "file": "zero_shot/causal/reading/report.txt",                                          "score": "SELF-PACED READING SCORE (pipeline: 100 x relative R2 gain)"},
+  {"key": "Entity",      "composite": false, "file": "zero_shot/causal/entity_tracking/entity_tracking/best_temperature_report.txt", "score": "### AVERAGE ACCURACY line (%); reported only"}
+ ],
+ "glue7": "mean(BoolQ acc, MNLI acc, MRPC F1, MultiRC acc, QQP F1, RTE acc, WSC acc) x 100 from <model>_lastpool_ens2 (single causal model) or <mix>_ens2 (K=2 mixture); 7/7 or none"
+}

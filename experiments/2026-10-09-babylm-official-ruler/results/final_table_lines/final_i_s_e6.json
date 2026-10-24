@@ -1,0 +1,48 @@
+{
+ "name": "final-i-s-e6",
+ "commit": "4cadd917171976f12d9ccf671e09820e33bb9822",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip"
+ },
+ "note": "Ruler final table priority (i), bin B: S E6 singles s0-s2 (reference arm for the S split). Per seed: official zero-shot (ZS_ONLY, plain name) + GLUE7 final-token ens2 (seeds 42+43) sequential (FT_PARALLEL=0, identity MISMATCH on multirc) on the _lastpool name. No BOS fine-tune Executor fills __URI_v2_S_10M_e6_sK__ (each run's score/hf; s1/s2 at ${BUCKET}/babylm/vms/bl-exp-p2v2d-estar-1010-154711/out/babylm/runs/v2_S_10M_e6_sK/score/hf; s0 from bl-exp-p2v2c-1010-093536).",
+ "jobs": [
+  {
+   "name": "zs_S_e6_s0",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s0__ HF_NAME=S_e6_s0 bash babylm/jobs/vm_job.sh score_hf out/zs_S_e6_s0",
+   "timeout_s": 1800
+  },
+  {
+   "name": "glue_S_e6_s0_lastpool",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s0__ HF_NAME=S_e6_s0_lastpool bash babylm/jobs/vm_job.sh score_hf out/glue_S_e6_s0_lastpool",
+   "timeout_s": 9000
+  },
+  {
+   "name": "zs_S_e6_s1",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s1__ HF_NAME=S_e6_s1 bash babylm/jobs/vm_job.sh score_hf out/zs_S_e6_s1",
+   "timeout_s": 1800
+  },
+  {
+   "name": "glue_S_e6_s1_lastpool",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s1__ HF_NAME=S_e6_s1_lastpool bash babylm/jobs/vm_job.sh score_hf out/glue_S_e6_s1_lastpool",
+   "timeout_s": 9000
+  },
+  {
+   "name": "zs_S_e6_s2",
+   "cmd": "ZS_ONLY=1 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s2__ HF_NAME=S_e6_s2 bash babylm/jobs/vm_job.sh score_hf out/zs_S_e6_s2",
+   "timeout_s": 1800
+  },
+  {
+   "name": "glue_S_e6_s2_lastpool",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 HF_URI=__URI_v2_S_10M_e6_s2__ HF_NAME=S_e6_s2_lastpool bash babylm/jobs/vm_job.sh score_hf out/glue_S_e6_s2_lastpool",
+   "timeout_s": 9000
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+BASE: full raw 5.010378 vs dev_bpw_twin.json nats_per_word 5.010378 OK
+BASE: guarded raw 4.976119 vs dev_bpw_twin.json ex_unseen_chars_nats_per_word 4.976119 OK
+BASE         full raw 5.0104 cal 4.9975 (lam 0.01/0.0125)  guarded raw 4.9761 cal 4.9645 (lam 0.01/0.01)
+             full cal_t 4.9756 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9442 (T,lam 1.1,0.0025/1.1,0.005)
+A2A: full raw 4.988382 vs dev_bpw_twin.json nats_per_word 4.988382 OK
+A2A: guarded raw 4.963285 vs dev_bpw_twin.json ex_unseen_chars_nats_per_word 4.963285 OK
+A2A          full raw 4.9884 cal 4.9833 (lam 0.0075/0.0075)  guarded raw 4.9633 cal 4.9586 (lam 0.005/0.0075)
+             full cal_t 4.9709 (T,lam 1.05,0.0025/1.05,0.0025)  guarded cal_t 4.9466 (T,lam 1.05,0.0025/1.05,0.0025)
+BASE - A2A: full raw +0.0220 cal +0.0143 cal_t +0.0047  guarded raw +0.0128 cal +0.0060 cal_t -0.0025

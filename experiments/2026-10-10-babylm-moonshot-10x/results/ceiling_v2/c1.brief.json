@@ -1,0 +1,46 @@
+{
+ "dev": {
+  "self": {
+   "npw_ovr": 4.998969438840323,
+   "npw_raw": 4.990082557357823
+  },
+  "oracle": {
+   "npw_ovr": 4.489708335092104,
+   "npw_raw": 4.481800980318342
+  },
+  "t100": {
+   "npw_ovr": 4.275248510937576,
+   "npw_raw": 4.261164613919819
+  }
+ },
+ "label": "C1: oracle teacher (100M words; out of track); C1-self teacher = 2x exposure",
+ "G_npw_raw": 0.7289179434380042,
+ "f1_npw_raw": 0.6973097337158796,
+ "G_npw_ovr": 0.7237209279027468,
+ "f1_npw_ovr": 0.7036705505034857,
+ "kept_word_share": 0.9870679267133564,
+ "never_seen_char_guard": {
+  "label": "C1: oracle teacher (100M words; out of track); C1-self teacher = 2x exposure",
+  "words": 10277,
+  "tokens": 57365,
+  "dev": {
+   "self": {
+    "npw_ovr": 4.971752371292907,
+    "npw_raw": 4.963237779416154
+   },
+   "oracle": {
+    "npw_ovr": 4.466957045383724,
+    "npw_raw": 4.4593616583088
+   },
+   "t100": {
+    "npw_ovr": 4.271238906654621,
+    "npw_raw": 4.257243827038541
+   }
+  },
+  "G_npw_raw": 0.7059939523776135,
+  "f1_npw_raw": 0.7137116676572425,
+  "G_npw_ovr": 0.700513464638286,
+  "f1_npw_ovr": 0.7206075991270727,
+  "twin_json_checks": []
+ }
+}

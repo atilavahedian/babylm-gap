@@ -1,0 +1,5 @@
+BASE_R1_S0   full raw 5.0023 cal 4.9898 (lam 0.01/0.0125)  guarded raw 4.9717 cal 4.9604 (lam 0.01/0.01)
+             full cal_t 4.9684 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9405 (T,lam 1.1,0.0025/1.1,0.005)
+V2E          full raw 5.0088 cal 4.9964 (lam 0.01/0.0125)  guarded raw 4.9766 cal 4.9652 (lam 0.01/0.01)
+             full cal_t 4.9734 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9439 (T,lam 1.1,0.0025/1.1,0.005)
+BASE_R1_S0 - V2E: full raw -0.0065 cal -0.0066 cal_t -0.0050  guarded raw -0.0049 cal -0.0048 cal_t -0.0034

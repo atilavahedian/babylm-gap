@@ -1,0 +1,22 @@
+{
+ "name": "gptbert_causal_seed1_ewok",
+ "commit": "aa7b108938b99f04464a7a07684a0dd6c2d81b3e",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "gptbert_causal_seed1",
+   "cmd": "bash babylm/jobs/vm_job.sh gptbert_causal_seed1 out/gptbert_causal_seed1",
+   "timeout_s": 17400
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip"
+ }
+}

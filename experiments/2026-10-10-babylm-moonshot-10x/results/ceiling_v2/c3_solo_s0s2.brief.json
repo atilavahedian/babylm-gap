@@ -1,0 +1,28 @@
+{
+ "dumps": [
+  "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied.npz",
+  "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied_s1.npz",
+  "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz"
+ ],
+ "label": "K x exposure, out of track",
+ "g_inf_npw_raw": 0.31999687117769227,
+ "b_npw_raw": 0.33653812668842076,
+ "g_inf_npw_ovr": 0.3206918717927571,
+ "b_npw_ovr": 0.33726923001229653,
+ "kept_word_share": 0.9870679267133564,
+ "never_seen_char_guard": {
+  "label": "K x exposure, out of track",
+  "words": 10277,
+  "tokens": 57365,
+  "dumps": [
+   "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied.npz",
+   "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied_s1.npz",
+   "scratch/c3s/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz"
+  ],
+  "g_inf_npw_raw": 0.31328086513002235,
+  "b_npw_raw": 0.32898104785015814,
+  "g_inf_npw_ovr": 0.3138911556298306,
+  "b_npw_ovr": 0.3296168204524027,
+  "twin_json_checks": []
+ }
+}

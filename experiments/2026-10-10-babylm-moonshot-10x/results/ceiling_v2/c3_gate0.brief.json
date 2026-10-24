@@ -1,0 +1,38 @@
+{
+ "dumps": [
+  "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied.npz",
+  "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied_s1.npz",
+  "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz",
+  "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3.npz",
+  "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4.npz",
+  "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s5.npz",
+  "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s6.npz",
+  "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s7.npz"
+ ],
+ "label": "K x exposure, out of track",
+ "g_inf_npw_raw": 0.33267370898451876,
+ "b_npw_raw": 0.3618456939659108,
+ "g_inf_npw_ovr": 0.33340245734901414,
+ "b_npw_ovr": 0.36265390484989757,
+ "kept_word_share": 0.9870679267133564,
+ "never_seen_char_guard": {
+  "label": "K x exposure, out of track",
+  "words": 10277,
+  "tokens": 57365,
+  "dumps": [
+   "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied.npz",
+   "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied_s1.npz",
+   "/tmp/tmp.mldj3W5hX9/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz",
+   "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3.npz",
+   "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4.npz",
+   "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s5.npz",
+   "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s6.npz",
+   "/tmp/tmp.mldj3W5hX9/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s7.npz"
+  ],
+  "g_inf_npw_raw": 0.3236507772337985,
+  "b_npw_raw": 0.3512920092564164,
+  "g_inf_npw_ovr": 0.3242676955123263,
+  "b_npw_ovr": 0.3519698200085877,
+  "twin_json_checks": []
+ }
+}

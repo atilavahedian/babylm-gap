@@ -1,0 +1,26 @@
+{
+ "name": "base_r1_a",
+ "commit": "89a0fc3a4f084f5910adfcf124514855c8192c88",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${R1_ARGS:-}\" ]; then python -m babylm.configs.make_base_jobs --r1 $R1_ARGS; fi; cp babylm/configs/jobs_base_r1_S.json _logs/jobs_base_r1_S.used.json",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "base_r1_a",
+   "cmd": "NAMES=$(python -c \"import json,os; n=[x['name'] for x in json.load(open('babylm/configs/jobs_base_r1_S.json'))['jobs'] if x['name']!='base_gpu_smoke_levers']; h=(len(n)+1)//2; print(' '.join(n[:h] if os.environ['PART']=='A' else n[h:]))\"); echo \"[r1] part $PART: $NAMES\"; python -m babylm.harness.run_jobs babylm/configs/jobs_base_r1_S.json --only base_gpu_smoke_levers --device cuda; SKIP=; [ -f babylm/runs/base_gpu_smoke_levers/result.json ] || { echo '[r1] smoke failed: skipping mntp cells'; SKIP='mntp'; }; for n in $NAMES; do if [ -n \"$SKIP\" ] && echo $n | grep -qE \"$SKIP\"; then echo \"[r1] skip $n\"; continue; fi; python -m babylm.harness.run_jobs babylm/configs/jobs_base_r1_S.json --only $n --device cuda || echo \"[r1] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[r1] score $n failed\"; }; done",
+   "timeout_s": 16200
+  }
+ ],
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz",
+  "PART": "A",
+  "R1_ARGS": ""
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "count_mismatch_vs_features": 0,
+ "pooled": {
+  "10x data (GPT-BERT) | dispersion": {
+   "gap_ratio_bursty_over_spread": [
+    1.289,
+    1.201,
+    1.381
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.189,
+    1.11,
+    1.27
+   ]
+  },
+  "10x data (GPT-BERT) | left diversity": {
+   "gap_ratio_bursty_over_spread": [
+    0.914,
+    0.858,
+    0.969
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.062,
+    1.004,
+    1.121
+   ]
+  },
+  "10x data (GPT-2) | dispersion": {
+   "gap_ratio_bursty_over_spread": [
+    1.149,
+    1.07,
+    1.23
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.071,
+    1.005,
+    1.142
+   ]
+  },
+  "10x data (GPT-2) | left diversity": {
+   "gap_ratio_bursty_over_spread": [
+    0.969,
+    0.914,
+    1.019
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.108,
+    1.055,
+    1.158
+   ]
+  },
+  "epochs 1 to 10 (GPT-2 10M) | dispersion": {
+   "gap_ratio_bursty_over_spread": [
+    1.081,
+    1.022,
+    1.143
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.006,
+    0.956,
+    1.061
+   ]
+  },
+  "epochs 1 to 10 (GPT-2 10M) | left diversity": {
+   "gap_ratio_bursty_over_spread": [
+    1.029,
+    0.977,
+    1.081
+   ],
+   "share_removed_ratio_bursty_over_spread": [
+    1.139,
+    1.093,
+    1.189
+   ]
+  }
+ }
+}

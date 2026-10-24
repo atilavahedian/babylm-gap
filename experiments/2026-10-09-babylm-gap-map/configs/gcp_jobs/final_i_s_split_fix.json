@@ -1,0 +1,28 @@
+{
+ "name": "final-i-s-split-fix",
+ "commit": "4cadd917171976f12d9ccf671e09820e33bb9822",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ },
+ "note": "Critic ref-0191 fix-up of bin A (S split p23/p45 GLUE ran at FT_CONC=3): per mixture, reuse bin A's zero-shot + guard and its 6 concurrent tasks; rerun multirc sequentially for both members (m0 seed 42, m1 seed 43) and rebuild _ens2; spot check: p23 member 0 rte seed 42 rerun sequentially must be sha256-identical to bin A's concurrent copy (spot_identity_*.txt), else GLUE_INCOMPLETE_mixS_p23_ens2 and the whole bin reruns sequentially (option b). Same member URIs as bin A (fill __URI_A_*__); __BINA_OUT__ = bin A's synced out dir. Runs on project-b after bin A closes. Concurrent multirc is reported nowhere. Readout uses this OUT alone for mixS_p23/p45 (it carries the copied zero-shot + guard).",
+ "jobs": [
+  {
+   "name": "glue_fix_S_split_p23",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 GLUE_RERUN=multirc GLUE_SPOT=m0:rte GLUE_PREV=${BUCKET}/babylm/vms/bl-final-i-s-split-p23-p45-1011-104317/out/out/score_mix_S_split_p23 HF_URI='${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-1010-160122/out/babylm/runs/v2_S_10M_e5_s2/score/hf ${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s3/score/hf' HF_NAME=mixS_p23 bash babylm/jobs/vm_job.sh score_mix out/glue_fix_S_split_p23",
+   "timeout_s": 5400
+  },
+  {
+   "name": "glue_fix_S_split_p45",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 GLUE_RERUN=multirc GLUE_PREV=${BUCKET}/babylm/vms/bl-final-i-s-split-p23-p45-1011-104317/out/out/score_mix_S_split_p45 HF_URI='${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s4/score/hf ${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s5/score/hf' HF_NAME=mixS_p45 bash babylm/jobs/vm_job.sh score_mix out/glue_fix_S_split_p45",
+   "timeout_s": 5400
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+table,row,col,k,value,derivation,source
+tab:rung0,0,1,0,5.011242251899009,C04 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,0,2,0,4.980560496163171,C04 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,1,1,0,5.08199274939797,W02 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,1,2,0,5.04308554483437,W02 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,2,1,0,5.067666350503332,W08 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,2,2,0,5.038055384491707,W08 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1a.json
+tab:rung0,3,1,0,5.203101352174895,W16 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1b.json
+tab:rung0,3,2,0,5.176259668099922,W16 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1b.json
+tab:rung0,4,1,0,5.366943054575535,W32 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1b.json
+tab:rung0,4,2,0,5.340796577429113,W32 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_s1b.json
+tab:rung0,5,1,0,5.213677287618584,LR08 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lr.json
+tab:rung0,5,2,0,5.187582031149935,LR08 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lr.json
+tab:rung0,6,1,0,5.025617806138892,L12x2 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:rung0,6,2,0,4.992426225130678,L12x2 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:rung0,7,1,0,4.987519863198681,P24 full calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:rung0,7,2,0,4.954191020125023,P24 guarded calibrated_t,experiments/2026-10-12-babylm-rung0-data-wall/results/calib_lx.json
+tab:rung0,8,1,0,4.953377469057395,"E6 pool mean, all/full",experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:rung0,8,2,0,4.925078482727216,"E6 pool mean, all/guarded",experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json

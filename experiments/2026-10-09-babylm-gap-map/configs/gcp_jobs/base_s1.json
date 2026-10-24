@@ -1,0 +1,25 @@
+{
+ "name": "base_s1",
+ "commit": "5e1d9d176874fe23d9c5ea8f20466a344e08291e",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi; $T/babylm/eval/setup.sh /opt/babylm",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "base_s1",
+   "cmd": "for n in base_S_wd0_lr1 base_S_wd0p1_lr1 base_S_wd0p4_lr1 base_S_wd1p0_lr1 base_S_wd2p0_lr1 base_S_wd0_lr0p5 base_S_wd0p1_lr0p5 base_S_wd0p4_lr0p5 base_S_wd1p0_lr0p5 base_S_wd2p0_lr0p5; do python -m babylm.harness.run_jobs babylm/configs/jobs_base_s1.json --only $n --device cuda || echo \"[s1] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[s1] score $n failed\"; }; done; ls babylm/runs/*/score/score.json",
+   "timeout_s": 20700
+  }
+ ],
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz",
+  "RESTORE_URI": "__BUCKET__/restore/base_s1_200254/runs"
+ }
+}

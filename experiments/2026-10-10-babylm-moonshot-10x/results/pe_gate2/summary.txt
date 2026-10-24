@@ -1,0 +1,3 @@
+== pe_gate2 (mini-ruler proxy)
+  full: p_bar(PE3) 7.6068 better F 9.2880 (vs F +1.6811, bar 2 floor 0.1164) B mean 7.9084 J(PE3) 0.3289 J(I3) 0.9030 rho 0.364 (a) killed False (b) killed True NJ 7.7267
+  guarded: p_bar(PE3) 7.5631 better F 9.2329 (vs F +1.6698, bar 2 floor 0.1150) B mean 7.8631 J(PE3) 0.3283 J(I3) 0.8996 rho 0.365 (a) killed False (b) killed True NJ 7.6833

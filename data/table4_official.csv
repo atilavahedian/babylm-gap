@@ -1,0 +1,25 @@
+table,row,col,k,value,derivation,source
+tab:official,0,1,0,37.432916666666664,mean of mixS_* composite (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,0,1,1,0.4486252147765823,sample SD of mixS_* composite,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,0,2,0,37.56583333333334,mean of mix28L_* composite (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,0,2,1,1.7023285217117585,sample SD of mix28L_* composite,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,1,1,0,36.04333333333334,mean of S_e6_* composite (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,1,1,1,1.5309751454002578,sample SD of S_e6_* composite,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,1,2,0,36.52041666666667,mean of L28_e6_* composite (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,1,2,1,0.46597064911143515,sample SD of L28_e6_* composite,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,2,1,0,1.3895833333333343,beats S_split:S_E6 composite diff,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,2,1,1,1.8421543471948545,beats S_split:S_E6 composite bar,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,2,2,0,1.045416666666668,beats mix28L:single28L composite diff,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,2,2,1,2.0379895458242414,beats mix28L:single28L composite bar,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_28L_mix_vs_single.json
+tab:official,3,1,0,67.84961248323003,mean of mixS_* GLUE7 (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,3,1,1,0.505189609678196,sample SD of mixS_* GLUE7,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,3,2,0,67.10190469582442,mean of mix28L_* GLUE7 (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json
+tab:official,3,2,1,0.8556471591389528,sample SD of mix28L_* GLUE7,experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json
+tab:official,4,1,0,66.56129333349776,mean of S_e6_* GLUE7 (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,4,1,1,0.3656336505645964,sample SD of S_e6_* GLUE7,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,4,2,0,67.21680605249323,mean of L28_e6_* GLUE7 (n=3),experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json
+tab:official,4,2,1,0.4077298509365149,sample SD of L28_e6_* GLUE7,experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json
+tab:official,5,1,0,1.2883191497322741,beats S_split:S_E6 GLUE7 diff,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,5,1,1,0.7200967603056333,beats S_split:S_E6 GLUE7 bar,experiments/2026-10-09-babylm-official-ruler/results/readouts/zs_S_split_vs_E6.json
+tab:official,5,2,0,-0.11490135666880974,beats mix28L:single28L GLUE7 diff,experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json
+tab:official,5,2,1,1.0944561463955653,beats mix28L:single28L GLUE7 bar,experiments/2026-10-09-babylm-official-ruler/results/readouts/glue_28L_mix_vs_single.json

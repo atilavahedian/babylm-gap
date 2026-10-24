@@ -1,0 +1,49 @@
+{
+ "split": "synth",
+ "tokens": 47563450,
+ "words": 29861325,
+ "docs": 329628,
+ "tokens_per_word": 1.5928111026553577,
+ "per_source": {
+  "open_subtitles": {
+   "tokens": 15052565,
+   "words": 9113303,
+   "docs": 82783
+  },
+  "gutenberg": {
+   "tokens": 10337381,
+   "words": 7503486,
+   "docs": 54138
+  },
+  "childes": {
+   "tokens": 12230236,
+   "words": 6500999,
+   "docs": 128423
+  },
+  "simple_wiki": {
+   "tokens": 3980204,
+   "words": 2576085,
+   "docs": 31775
+  },
+  "bnc_spoken": {
+   "tokens": 5002763,
+   "words": 3585010,
+   "docs": 26995
+  },
+  "switchboard": {
+   "tokens": 960301,
+   "words": 582442,
+   "docs": 5514
+  }
+ },
+ "tokenizer_sha256": "0c15ea2d941f65054af9ab52e6c250aea4ad23a9177b2a369fa2f1eaf11152be",
+ "sha256": "df01cb5cb5a6886562e04a3bbd3e1f222f89664004aaa511c6b3f06b71c20c4c",
+ "sha256_words": "f175e3c60448e73096919b203dd38d0e5224a0628e500cff46e78b9825fdd4c1",
+ "sha256_src": "7b3fb41ba940bba1cecc2bb971f7ba6fe55f551712e975149016efabc77b7290",
+ "format": "raw little-endian uint16 tokens / uint32 word ids / uint8 source ids; BOS (0) before every doc",
+ "doc_shuffle_seed": null,
+ "null": "N2: words shuffled within sentences",
+ "shuffle_seed": 0,
+ "of": "babylm/runs/a4_data/syn_a4a",
+ "of_sha256": "76f247fcc91e524a67819ce996f4f3124835e4d036db2991ad989d621e77c936"
+}

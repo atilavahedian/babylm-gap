@@ -1,0 +1,2 @@
+Token indices sequence length is longer than the specified maximum sequence length for this model (2630 > 1024). Running this sequence through the model will result in indexing errors
+{"out": "babylm/runs/a5port_S_100M_e10_s1/pt_v2/dev_v2.npz", "nats_per_word": 4.256362286017779, "words": 10418979, "tokens": 16542003, "nats_per_word_at": {"0.9": 4.338528633955984, "0.95": 4.28798522839965, "1.05": 4.241330947945086, "1.1": 4.240948496139706, "1.15": 4.253569859856279, "1.2": 4.277781855109649}}

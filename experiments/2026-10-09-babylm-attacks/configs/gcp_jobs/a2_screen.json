@@ -1,0 +1,28 @@
+{
+ "name": "a2_screen",
+ "commit": "30e233b6dc2c5217182182249c4800c5a79e714a",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${R1_ARGS:-}\" ]; then python -m babylm.configs.make_base_jobs --r1 $R1_ARGS; fi; cp babylm/configs/jobs_a2_screen.json _logs/",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz",
+  "R1_ARGS": "",
+  "CELLS": "a2_base a2_A2a a2_A2b a2_A2c a2_A2d a2_A2e",
+  "BENCH": "0",
+  "CFG": "babylm/configs/jobs_a2_screen.json"
+ },
+ "jobs": [
+  {
+   "name": "a2_screen",
+   "cmd": "for n in $CELLS; do cfg=${CFG:-babylm/configs/jobs_base_r1_S.json}; [ $n = base_S_wd2p0_lr0p5_final ] && cfg=babylm/configs/jobs_ctrl_final.json; python -m babylm.harness.run_jobs $cfg --only $n --device cuda || echo \"[cells] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[cells] score $n failed\"; /opt/babylm/venv/bin/python babylm/eval/dev_bpw.py babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --vocab_mask 16384 --out babylm/runs/$n/score/dev_bpw_masked.json > babylm/runs/$n/score/dev_bpw_masked.log 2>&1 || echo \"[a2] masked score $n failed\"; }; done; if [ \"${BENCH:-0}\" = 1 ]; then nvidia-cuda-mps-control -d && echo '[pack] MPS on'; python - <<'PYB' > _logs/pack_cmds.txt\nimport json,shlex\nj=[x for x in json.load(open('babylm/configs/jobs_base_r1_S.json'))['jobs'] if x['name'].endswith('_r1_ve0_tied')][0]\na=[str(x) for x in j['args']]\ni=a.index('--out') if '--out' in a else None\na=[x for k,x in enumerate(a) if i is None or k not in (i,i+1)]\na=[x for x in a if x not in ('--save',)]\nprint(' '.join(shlex.quote(x) for x in a))\nPYB\nfor k in 1 2 3; do for i in $(seq 1 $k); do timeout 300 python -m babylm.harness.train $(cat _logs/pack_cmds.txt) --device cuda --out /tmp/pack_${k}_$i > _logs/pack_${k}_$i.log 2>&1 & done; wait; python - $k <<'PYS'\nimport re,sys,statistics as s\nk=int(sys.argv[1]); tot=0\nfor i in range(1,k+1):\n    v=[float(x.replace(',','')) for x in re.findall(r'([0-9,]+) tok/s',open(f'_logs/pack_{k}_{i}.log').read())][-5:]\n    m=s.median(v) if v else 0; tot+=m; print(f'[pack] k={k} copy={i} tok/s={m:,.0f} n={len(v)}')\nprint(f'[pack] k={k} aggregate tok/s={tot:,.0f}')\nPYS\ndone; echo quit | nvidia-cuda-mps-control; rm -rf /tmp/pack_*;  fi",
+   "timeout_s": 9000
+  }
+ ]
+}

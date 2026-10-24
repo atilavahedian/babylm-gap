@@ -1,0 +1,12 @@
+[job] ftverify_pub_gptbert_causal start 2026-10-11T03:11:15Z commit a3111d8c986c2388ffb6d44f63b93ff5a0e5d3fb
+name, memory.total [MiB], driver_version
+NVIDIA A100-SXM4-40GB, 40960 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "ftverify_pub_gptbert_causal", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}
+[job] GLUE finetune script: eval_finetuning.sh
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:01,  7.89it/s]Fetching 10 files:  70%|███████   | 7/10 [00:01<00:00,  3.75it/s]Fetching 10 files: 100%|██████████| 10/10 [00:01<00:00,  5.49it/s]
+[job] GLUE sequential pub_gptbert_causal start (FT_PARALLEL=0, identity not tested) 03:11:30
+[job] ftverify_pub_gptbert_causal done 2026-10-11T06:07:20Z wall_s=10552

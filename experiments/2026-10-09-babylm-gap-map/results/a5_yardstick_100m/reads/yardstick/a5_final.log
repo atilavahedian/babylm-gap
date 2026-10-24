@@ -1,0 +1,25 @@
+Y all/full [0.7149] +- 0.0068 
+Y all/guarded [0.6904] +- 0.0043 
+Y ovr/full [0.7099] +- 0.0069 
+Y ovr/guarded [0.6851] +- 0.0043 
+S_same_size_vs_E6_pool all/full g 0.1124 [0.0968, 0.128] x [1.436] ci [1.366, 1.51]
+S_same_size_vs_E6_pool all/guarded g 0.11 [0.0992, 0.1208] x [1.443] ci [1.392, 1.496]
+S_same_size_vs_E6_pool ovr/full g 0.1126 [0.0969, 0.1283] x [1.441] ci [1.369, 1.516]
+S_same_size_vs_E6_pool ovr/guarded g 0.1102 [0.0994, 0.121] x [1.448] ci [1.397, 1.502]
+S_same_size_vs_E6_pool headline x lower bound {'full': 1.366, 'guarded': 1.392} ['DEV-loss data-equivalent multiplier (log-linear)', 'T100 = port recipe E10, 3 seeds; best legal 100M point we hold, not exhaustively tuned (locked recipe 0.31 worse): x is an UPPER BOUND']
+A2_S_matched_vs_28L_e6_F2 all/full g 0.0603 [0.0462, 0.0744] x [1.214] ci [1.161, 1.271]
+A2_S_matched_vs_28L_e6_F2 all/guarded g 0.0601 [0.049, 0.0712] x [1.222] ci [1.177, 1.268]
+A2_S_matched_vs_28L_e6_F2 ovr/full g 0.0605 [0.0464, 0.0747] x [1.217] ci [1.162, 1.274]
+A2_S_matched_vs_28L_e6_F2 ovr/guarded g 0.0603 [0.0491, 0.0715] x [1.225] ci [1.18, 1.272]
+A2_S_matched_vs_28L_e6_F2 headline x lower bound {'full': 1.161, 'guarded': 1.177} ['DEV-loss data-equivalent multiplier (log-linear)', 'T100 = port recipe E10, 3 seeds; best legal 100M point we hold, not exhaustively tuned (locked recipe 0.31 worse): x is an UPPER BOUND', 'reference crosses envs (arm 2.7, reference 2.9.1)']
+28L_same_size_vs_e6_mean all/full g 0.1145 [0.1032, 0.1258] x [1.446] ci [1.394, 1.499]
+28L_same_size_vs_e6_mean all/guarded g 0.1116 [0.1032, 0.1199] x [1.451] ci [1.411, 1.492]
+28L_same_size_vs_e6_mean ovr/full g 0.1148 [0.1034, 0.1262] x [1.451] ci [1.398, 1.506]
+28L_same_size_vs_e6_mean ovr/guarded g 0.1118 [0.1035, 0.1202] x [1.456] ci [1.416, 1.498]
+28L_same_size_vs_e6_mean headline x lower bound {'full': 1.394, 'guarded': 1.411} ['DEV-loss data-equivalent multiplier (log-linear)', 'T100 = port recipe E10, 3 seeds; best legal 100M point we hold, not exhaustively tuned (locked recipe 0.31 worse): x is an UPPER BOUND', 'Y from S only; upper bound if the gap grows with size']
+A4_28L_matched_vs_best_F4 all/full g 0.086 [0.0609, 0.1111] x [1.319] ci [1.217, 1.43]
+A4_28L_matched_vs_best_F4 all/guarded g 0.0825 [0.0677, 0.0972] x [1.317] ci [1.253, 1.383]
+A4_28L_matched_vs_best_F4 ovr/full g 0.0862 [0.061, 0.1114] x [1.323] ci [1.219, 1.435]
+A4_28L_matched_vs_best_F4 ovr/guarded g 0.0827 [0.0679, 0.0975] x [1.32] ci [1.256, 1.388]
+A4_28L_matched_vs_best_F4 headline x lower bound {'full': 1.217, 'guarded': 1.253} ['DEV-loss data-equivalent multiplier (log-linear)', 'T100 = port recipe E10, 3 seeds; best legal 100M point we hold, not exhaustively tuned (locked recipe 0.31 worse): x is an UPPER BOUND', 'Y from S only; upper bound if the gap grows with size']
+rc=0

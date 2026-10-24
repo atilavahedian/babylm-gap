@@ -1,0 +1,208 @@
+{
+ "base": "base_S_wd0p4_lr0p5_r1_ve0_tied",
+ "runs": [],
+ "n_words": 10418979,
+ "n_valid": 10418978,
+ "block": 2000,
+ "n_blocks": 5210,
+ "boot": 1000,
+ "bands": "count of the normal form in train_10M: 0, 1-63, 64-8k (<8192), 8k+",
+ "markup_chars": "\u230a\u230b\u2308\u2309\u2197\u2206\u2219\u204e",
+ "slices": {
+  "all": {
+   "share_of_words": 1.0,
+   "n_words": 10418978,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.040623715201233
+   }
+  },
+  "band 0": {
+   "share_of_words": 0.017571013203022408,
+   "n_words": 183072,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 21.283493036699554
+   }
+  },
+  "band 1-63": {
+   "share_of_words": 0.06377045810059298,
+   "n_words": 664423,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 11.479785834212265
+   }
+  },
+  "band 64-8k": {
+   "share_of_words": 0.3458058938218317,
+   "n_words": 3602944,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 6.3345253063345535
+   }
+  },
+  "band 8k+": {
+   "share_of_words": 0.572852634874553,
+   "n_words": 5968539,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 3.0445243415707255
+   }
+  },
+  "rare (count <= 63)": {
+   "share_of_words": 0.08134147130361538,
+   "n_words": 847495,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 13.597537897615299
+   }
+  },
+  "after-rare (3 words, not rare)": {
+   "share_of_words": 0.1848466327503523,
+   "n_words": 1925913,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 4.681737213007373
+   }
+  },
+  "focus (rare + after-rare)": {
+   "share_of_words": 0.2661881040539677,
+   "n_words": 2773408,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 7.406217888480218
+   }
+  },
+  "frequent, not after-rare": {
+   "share_of_words": 0.7338118959460324,
+   "n_words": 7645570,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 4.182511395920222
+   }
+  },
+  "all, unseen-chars excluded": {
+   "share_of_words": 0.9990136268643623,
+   "n_words": 10408701,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.009593125204868
+   }
+  },
+  "band 0, unseen-chars excluded": {
+   "share_of_words": 0.01658492800349516,
+   "n_words": 172798,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 20.380949948308345
+   }
+  },
+  "unseen-char words": {
+   "share_of_words": 0.0009863731356376797,
+   "n_words": 10277,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 36.4688744815486
+   }
+  },
+  "all, markup-excluded": {
+   "share_of_words": 0.9990515384522359,
+   "n_words": 10409096,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.010818611159645
+   }
+  },
+  "band 0, markup-excluded": {
+   "share_of_words": 0.01662255165525832,
+   "n_words": 173190,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 20.418938763220513
+   }
+  },
+  "markup words": {
+   "share_of_words": 0.0009484615477640897,
+   "n_words": 9882,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 36.435502207296096
+   }
+  },
+  "source bnc_spoken": {
+   "share_of_words": 0.12022215614621702,
+   "n_words": 1252592,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.064152071934668
+   }
+  },
+  "source childes": {
+   "share_of_words": 0.2607348820584898,
+   "n_words": 2716591,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 4.010086141745831
+   }
+  },
+  "source gutenberg": {
+   "share_of_words": 0.27057068361215464,
+   "n_words": 2819070,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.471572491840466
+   }
+  },
+  "source open_subtitles": {
+   "share_of_words": 0.19934959071801475,
+   "n_words": 2077019,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.581467812367264
+   }
+  },
+  "source simple_wiki": {
+   "share_of_words": 0.13488520659127987,
+   "n_words": 1405366,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.444375539658099
+   }
+  },
+  "source switchboard": {
+   "share_of_words": 0.014237480873843864,
+   "n_words": 148340,
+   "mean_nats_per_word": {
+    "base_S_wd0p4_lr0p5_r1_ve0_tied": 4.126779476638687
+   }
+  }
+ },
+ "result_json": {
+  "base_S_wd0p4_lr0p5_r1_ve0_tied": {
+   "tokens_seen": 159580160,
+   "words_seen": 99541960,
+   "gpu": "NVIDIA A100-SXM4-40GB",
+   "tokens_per_s": 366223.25566368445,
+   "harness_full_dev_nats_per_word": 5.040629947673423,
+   "official_dev_nats_per_word": 5.036669336147283,
+   "official_dev_nats_per_word_twin": 5.002263348908206,
+   "dev_twin_protocol": "blank-line twin: each run of blank lines -> one scored BOS; documents tokenized on their own",
+   "fast": {
+    "blimp/blimp_fast": 68.37,
+    "blimp/supplement_fast": 66.0,
+    "entity_tracking/entity_tracking_fast": 23.21,
+    "ewok/ewok_fast": 50.45,
+    "wug_adj/wug_adj_nominalization": 0.43,
+    "wug_past/wug_past_tense": 0.21,
+    "reading/eye_tracking": 0.15,
+    "reading/self_paced_reading": 0.08
+   }
+  }
+ },
+ "headline": {
+  "instrument": "official scorer on the fp32 HF export, score.json dev_nats_per_word_twin (v2, blank-line twin)",
+  "metric": "dev_nats_per_word_twin",
+  "official": {
+   "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.002263348908206
+  },
+  "official_v1_for_information": {
+   "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.036669336147283
+  },
+  "harness_all_words": {
+   "base_S_wd0p4_lr0p5_r1_ve0_tied": 5.040623715201233
+  },
+  "delta_official": {}
+ },
+ "execution_condition": {
+  "rule": "critic ref-0027: arm, N1 and base under the same execution condition (alone vs alone or packed vs packed, same GPU type)",
+  "gpu": {
+   "base_S_wd0p4_lr0p5_r1_ve0_tied": "NVIDIA A100-SXM4-40GB"
+  },
+  "tokens_per_s": {
+   "base_S_wd0p4_lr0p5_r1_ve0_tied": 366223.25566368445
+  },
+  "tokens_per_s_ratio_to_base": {},
+  "same_condition": true,
+  "basis": "control only, nothing to compare"
+ }
+}

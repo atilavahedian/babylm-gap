@@ -1,0 +1,24 @@
+{
+ "name": "base_reg_s",
+ "commit": "07269bffed1e0990368a8c2e64eb79fdc677ff0e",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "jobs": [
+  {
+   "name": "base_reg_s",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_base_reg_S.json --only base_gpu_smoke_levers --device cuda; SKIP=; [ -f babylm/runs/base_gpu_smoke_levers/result.json ] || { echo '[reg] smoke failed: skipping ema/mntp cells'; SKIP='ema|mntp'; }; for n in base_S_wd2p0_lr0p5_ep2 base_S_wd2p0_lr0p5_ep4 base_S_wd2p0_lr0p5_hwd0p03 base_S_wd2p0_lr0p5_hwd0p1 base_S_wd2p0_lr0p5_hwd0p3 base_S_wd2p0_lr0p5_ewd0p001 base_S_wd2p0_lr0p5_ema0p99 base_S_wd2p0_lr0p5_ema0p998 base_S_wd2p0_lr0p5_mntp0p25 base_S_wd2p0_lr0p5_mntp0p5 base_S_wd2p0_lr0p5_do0p1 base_S_wd2p0_lr0p5_do0p2; do if [ -n \"$SKIP\" ] && echo $n | grep -qE \"$SKIP\"; then echo \"[reg] skip $n\"; continue; fi; python -m babylm.harness.run_jobs babylm/configs/jobs_base_reg_S.json --only $n --device cuda || echo \"[run] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[run] score $n failed\"; }; done",
+   "timeout_s": 19800
+  }
+ ],
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz"
+ }
+}

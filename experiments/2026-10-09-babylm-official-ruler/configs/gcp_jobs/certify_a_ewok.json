@@ -1,0 +1,27 @@
+{
+ "name": "certify_a_ewok",
+ "commit": "372258a60b132d60003abdf3ac57ca894a56ac1a",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_pub_gptbert_causal",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gptbert_causal out/score_pub_gptbert_causal",
+   "timeout_s": 10800
+  },
+  {
+   "name": "score_pub_gptbert_mixed",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gptbert_mixed out/score_pub_gptbert_mixed",
+   "timeout_s": 10800
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip"
+ }
+}

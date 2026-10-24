@@ -1,0 +1,33 @@
+{
+ "name": "final-i-s-split-fix2",
+ "commit": "6f15c78b2713ede52381e2bbb99db5a433937558",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__"
+ },
+ "note": "Rerun of the bin A fix-up (final_i_s_split_fix.json) with a longer job timeout: the first fix-up's p23 job hit its 5400 s timeout (m0 multirc + m0 rte spot finished, m1 multirc did not; no ens2, no job-written spot file). Same commands, same inputs (GLUE_PREV = bin A's out, so bin A's zero-shot + guard + 6 concurrent tasks carry forward; concurrent multirc set aside and rerun sequentially for both members; p23 m0 rte spot rerun so the job itself writes spot_identity and gates GLUE_INCOMPLETE). Executor 3's hand check of the first fix-up (11 Oct 16:57Z): p23 m0 rte concurrent vs sequential results.txt sha ref-0192..., predictions.json sha ref-0193..., identical (acc .6403, mcc .3307). New OUT names (glue_fix2_*) so the readout gets exactly one OUT per mixture. Drop the p45 job if the first fix-up's p45 finished with ens2. Runs on project-b. Pool ruler. maxdur 3h with p23 only, 5h with both RULER 18:00Z: re-pinned to ref-0174; appended READING_PS jobs (final_reading_ps_*.json @09158043) for members readable from project-b. EXECUTOR 18:10Z: p45 job dropped (first fix-up p45 rc=0 with ens2).",
+ "jobs": [
+  {
+   "name": "glue_fix2_S_split_p23",
+   "cmd": "FT_PARALLEL=0 GLUE_ENS=2 DEV_BPW=0 GLUE_RERUN=multirc GLUE_SPOT=m0:rte GLUE_PREV=${BUCKET}/babylm/vms/bl-final-i-s-split-p23-p45-1011-104317/out/out/score_mix_S_split_p23 HF_URI='${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-1010-160122/out/babylm/runs/v2_S_10M_e5_s2/score/hf ${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s3/score/hf' HF_NAME=mixS_p23 bash babylm/jobs/vm_job.sh score_mix out/glue_fix2_S_split_p23",
+   "timeout_s": 9000
+  },
+  {
+   "name": "reading_ps_mixS_p23",
+   "cmd": "READING_PS=1 DEV_BPW=0 HF_URI='${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-1010-160122/out/babylm/runs/v2_S_10M_e5_s2/score/hf ${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s3/score/hf' HF_NAME=mixS_p23 bash babylm/jobs/vm_job.sh score_mix out/reading_ps_mixS_p23",
+   "timeout_s": 1800
+  },
+  {
+   "name": "reading_ps_mixS_p45",
+   "cmd": "READING_PS=1 DEV_BPW=0 HF_URI='${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s4/score/hf ${BUCKET}/babylm/vms/bl-exp-p2v2d-ls-b-1010-170941/out/babylm/runs/v2_S_10M_e5_s5/score/hf' HF_NAME=mixS_p45 bash babylm/jobs/vm_job.sh score_mix out/reading_ps_mixS_p45",
+   "timeout_s": 1800
+  }
+ ]
+}

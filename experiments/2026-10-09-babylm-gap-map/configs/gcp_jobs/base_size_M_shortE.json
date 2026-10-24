@@ -1,0 +1,36 @@
+{
+ "name": "base_size_m_shorte",
+ "commit": "9d34111fc9f18d62847107b5675aaff059ae0a21",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,dev; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; $T/babylm/eval/setup.sh /opt/babylm; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; mkdir -p babylm/moonshot; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; cp babylm/configs/jobs_base_size_M_shortE.json _logs/",
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RESTORE_URI": "",
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz"
+ },
+ "jobs": [
+  {
+   "name": "base_M_wd1p6_lr0p5_e5_ve0_tied",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_base_size_M_shortE.json --only base_M_wd1p6_lr0p5_e5_ve0_tied; rc=$?; [ -f babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied /opt/babylm || echo '[m] score base_M_wd1p6_lr0p5_e5_ve0_tied failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/score/dev_bpw_twin.log 2>&1 || echo '[twin] base_M_wd1p6_lr0p5_e5_ve0_tied failed'; mkdir -p babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/pt_v2/dev_v2.npz --check babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd1p6_lr0p5_e5_ve0_tied/pt_v2/dump.log 2>&1 && echo '[ptv2] ok base_M_wd1p6_lr0p5_e5_ve0_tied' || echo '[ptv2] FAILED base_M_wd1p6_lr0p5_e5_ve0_tied'; }; exit $rc",
+   "timeout_s": 16200
+  },
+  {
+   "name": "base_M_wd3p2_lr0p5_e5_ve0_tied",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_base_size_M_shortE.json --only base_M_wd3p2_lr0p5_e5_ve0_tied; rc=$?; [ -f babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied /opt/babylm || echo '[m] score base_M_wd3p2_lr0p5_e5_ve0_tied failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/score/dev_bpw_twin.log 2>&1 || echo '[twin] base_M_wd3p2_lr0p5_e5_ve0_tied failed'; mkdir -p babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/pt_v2/dev_v2.npz --check babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd3p2_lr0p5_e5_ve0_tied/pt_v2/dump.log 2>&1 && echo '[ptv2] ok base_M_wd3p2_lr0p5_e5_ve0_tied' || echo '[ptv2] FAILED base_M_wd3p2_lr0p5_e5_ve0_tied'; }; exit $rc",
+   "timeout_s": 16200
+  },
+  {
+   "name": "base_M_wd1p6_lr0p5_e3_ve0_tied",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_base_size_M_shortE.json --only base_M_wd1p6_lr0p5_e3_ve0_tied; rc=$?; [ -f babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied /opt/babylm || echo '[m] score base_M_wd1p6_lr0p5_e3_ve0_tied failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/score/dev_bpw_twin.log 2>&1 || echo '[twin] base_M_wd1p6_lr0p5_e3_ve0_tied failed'; mkdir -p babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/pt_v2/dev_v2.npz --check babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/score/dev_bpw_twin.json > babylm/runs/base_M_wd1p6_lr0p5_e3_ve0_tied/pt_v2/dump.log 2>&1 && echo '[ptv2] ok base_M_wd1p6_lr0p5_e3_ve0_tied' || echo '[ptv2] FAILED base_M_wd1p6_lr0p5_e3_ve0_tied'; }; exit $rc",
+   "timeout_s": 16200
+  }
+ ],
+ "note": "Size-M short-E WD tune (base builder ticket, experimenter 15:51Z) @ref-0167, p2venv torch 2.7, solo, integer E. Each: score_trial (registered dev_bpw + fast suite), twin ref-0026 both legs, temps dump ref-0034. Slot: after a3g stack, ahead of a3g claim and A4 b1."
+}

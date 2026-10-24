@@ -1,0 +1,17 @@
+last non-pad token (b, s): [(0, 5), (1, 2), (2, 4)]
+take_final=False causal=False: pools (b, s) = [(0, 0), (1, 0), (2, 0)]
+take_final=True causal=False: pools (b, s) = [(0, 5), (1, 5), (2, 5)]
+take_final=True causal=True: crashes: IndexError: index 4 is out of bounds for dimension 0 with size 3
+
+Source, babylm/evaluation-pipeline-2025 @ bf55c1131e53654c2a87418f5629c26959acd710, evaluation_pipeline/finetune/classifier_model.py lines 127-133:
+        if self.take_final and not self.enc_dec and not self.causal:
+            transformer_output: torch.Tensor = encoding[:, -1]
+        elif self.take_final and not self.enc_dec:
+            final_position: torch.Tensor = attention_mask[:, :, -1].squeeze().long().argmax(-1) - 1
+            transformer_output: torch.Tensor = encoding[final_position].diagonal().t()
+        else:
+            transformer_output = encoding[:, 0]
+eval_finetuning.sh @ bf55c1131e53654c2a87418f5629c26959acd710 passes neither --take_final nor --causal (official default = encoding[:, 0]).
+Verdict: --take_final alone pools the LAST POSITION (h[:, -1]), a pad token on every right-padded row; with --causal it
+indexes the batch dimension with token positions (wrong rows, IndexError when a position >= batch size). Neither pools
+the last non-pad token, so the adapter (make_hinton_lastpool.py) is used instead (critic ref-0212 / ref-0345).

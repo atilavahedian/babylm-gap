@@ -1,0 +1,123 @@
+{
+ "covered_share": 0.9038624892065119,
+ "n_words": 187326,
+ "lams": {
+  "0.0": {
+   "nats_per_word": 5.213571036188994,
+   "gain_nats_per_word": -2.527363203633278e-18,
+   "gain_band_0_overall": -1.0010480139596906e-19,
+   "gain_band_0_per_word": -5.424423496182037e-18,
+   "gain_band_1-63_overall": -4.2495953062290485e-19,
+   "gain_band_1-63_per_word": -6.1320265778359475e-18,
+   "gain_band_64-8k_overall": -6.730286698749095e-19,
+   "gain_band_64-8k_per_word": -1.8865427974829383e-18,
+   "gain_band_8k+_overall": -1.3292702017394947e-18,
+   "gain_band_8k+_per_word": -2.392962288445411e-18,
+   "gain_cont_positions_overall": -1.3315942858621555e-18,
+   "gain_init_positions_overall": -1.1957689177711225e-18
+  },
+  "0.02": {
+   "nats_per_word": 5.205700439387816,
+   "gain_nats_per_word": 0.007870596801178603,
+   "gain_band_0_overall": 0.0008853034363258729,
+   "gain_band_0_per_word": 0.04797233193901663,
+   "gain_band_1-63_overall": 0.0052166105020434155,
+   "gain_band_1-63_per_word": 0.07527397773114966,
+   "gain_band_64-8k_overall": 0.001693204636136758,
+   "gain_band_64-8k_per_word": 0.0047461618708787255,
+   "gain_band_8k+_overall": 7.547822667255868e-05,
+   "gain_band_8k+_per_word": 0.00013587647552003426,
+   "gain_cont_positions_overall": 0.00620645907540303,
+   "gain_init_positions_overall": 0.0016641377257755733
+  },
+  "0.05": {
+   "nats_per_word": 5.204067068129837,
+   "gain_nats_per_word": 0.009503968059157259,
+   "gain_band_0_overall": 0.0010171825061444895,
+   "gain_band_0_per_word": 0.05511852188198514,
+   "gain_band_1-63_overall": 0.00756035512090214,
+   "gain_band_1-63_per_word": 0.10909344348930168,
+   "gain_band_64-8k_overall": 0.0019984337812277773,
+   "gain_band_64-8k_per_word": 0.005601738863401736,
+   "gain_band_8k+_overall": -0.0010720033491171455,
+   "gain_band_8k+_per_word": -0.001929828551161068,
+   "gain_cont_positions_overall": 0.006498035772723248,
+   "gain_init_positions_overall": 0.003005932286434014
+  },
+  "0.1": {
+   "nats_per_word": 5.207505950099175,
+   "gain_nats_per_word": 0.006065086089819741,
+   "gain_band_0_overall": 0.0006324013804753753,
+   "gain_band_0_per_word": 0.03426821550446345,
+   "gain_band_1-63_overall": 0.008816919929974349,
+   "gain_band_1-63_per_word": 0.12722526134666268,
+   "gain_band_64-8k_overall": 0.0008249831722335404,
+   "gain_band_64-8k_per_word": 0.0023124810744111117,
+   "gain_band_8k+_overall": -0.0042092183928635245,
+   "gain_band_8k+_per_word": -0.0075774668421606465,
+   "gain_cont_positions_overall": 0.0018883732193721973,
+   "gain_init_positions_overall": 0.004176712870447543
+  },
+  "0.2": {
+   "nats_per_word": 5.224859384489125,
+   "gain_nats_per_word": -0.01128834830013107,
+   "gain_band_0_overall": -0.0010681013666850856,
+   "gain_band_0_per_word": -0.05787768487580282,
+   "gain_band_1-63_overall": 0.007552573933504505,
+   "gain_band_1-63_per_word": 0.10898116350852449,
+   "gain_band_64-8k_overall": -0.004588203222149491,
+   "gain_band_64-8k_per_word": -0.012861029744457879,
+   "gain_band_8k+_overall": -0.013184617644800996,
+   "gain_band_8k+_per_word": -0.023735048578004493,
+   "gain_cont_positions_overall": -0.01571119954483083,
+   "gain_init_positions_overall": 0.004422851244699764
+  },
+  "0.3": {
+   "nats_per_word": 5.251155942685606,
+   "gain_nats_per_word": -0.0375849064966117,
+   "gain_band_0_overall": -0.0035466869838756227,
+   "gain_band_0_per_word": -0.19218590857433754,
+   "gain_band_1-63_overall": 0.0035938501009539145,
+   "gain_band_1-63_per_word": 0.05185807764684124,
+   "gain_band_64-8k_overall": -0.012680274045915768,
+   "gain_band_64-8k_per_word": -0.03554362650833047,
+   "gain_band_8k+_overall": -0.024951795567774226,
+   "gain_band_8k+_per_word": -0.04491841142948043,
+   "gain_cont_positions_overall": -0.04048931406393361,
+   "gain_init_positions_overall": 0.0029044075673219038
+  },
+  "0.5": {
+   "nats_per_word": 5.327517685668639,
+   "gain_nats_per_word": -0.11394664947964334,
+   "gain_band_0_overall": -0.010718755387680001,
+   "gain_band_0_per_word": -0.5808219762084303,
+   "gain_band_1-63_overall": -0.010345449313321603,
+   "gain_band_1-63_per_word": -0.14928143876654465,
+   "gain_band_64-8k_overall": -0.03588010217661112,
+   "gain_band_64-8k_per_word": -0.10057424202570522,
+   "gain_band_8k+_overall": -0.05700234260203061,
+   "gain_band_8k+_per_word": -0.1026160490329238,
+   "gain_cont_positions_overall": -0.11005570396383321,
+   "gain_init_positions_overall": -0.0038909455158101136
+  }
+ },
+ "per_band_best": {
+  "0": {
+   "lam": 0.04,
+   "gain_overall": 0.0010219382470582404
+  },
+  "1-63": {
+   "lam": 0.12,
+   "gain_overall": 0.008864572061901988
+  },
+  "64-8k": {
+   "lam": 0.04,
+   "gain_overall": 0.002020881819491004
+  },
+  "8k+": {
+   "lam": 0.02,
+   "gain_overall": 7.547822667255868e-05
+  }
+ },
+ "per_band_best_total_overall": 0.011982870355123791
+}

@@ -1,0 +1,55 @@
+{
+ "model_dir": "/opt/hinton/babylm/runs/base_M_wd0p4_lr0p5_ve0_tied/score/hf",
+ "split_dir": "/opt/babylm/osf/text_data/dev/dev",
+ "slice": "full",
+ "ctx": 512,
+ "stride": 256,
+ "short_context": false,
+ "ws": "collapse",
+ "line_join": "newline",
+ "tab_space": "",
+ "words": 10418979,
+ "tokens": 16554090,
+ "nats_per_word": 5.158661192731759,
+ "bits_per_word": 7.442374920380454,
+ "nats_per_token": 3.2468098599915276,
+ "per_domain": {
+  "bnc_spoken.dev": {
+   "words": 1252593,
+   "tokens": 1714245,
+   "nats_per_word": 5.118363431302403,
+   "bits_per_word": 7.384237539807396
+  },
+  "childes.dev": {
+   "words": 2716591,
+   "tokens": 5201311,
+   "nats_per_word": 4.085488545721425,
+   "bits_per_word": 5.894114064520964
+  },
+  "gutenberg.dev": {
+   "words": 2819070,
+   "tokens": 3862281,
+   "nats_per_word": 5.554882444934831,
+   "bits_per_word": 8.014001356028642
+  },
+  "open_subtitles.dev": {
+   "words": 2077019,
+   "tokens": 3388723,
+   "nats_per_word": 5.742089099889736,
+   "bits_per_word": 8.284083468753494
+  },
+  "simple_wiki.dev": {
+   "words": 1405366,
+   "tokens": 2155023,
+   "nats_per_word": 5.7211122040311695,
+   "bits_per_word": 8.253820205125097
+  },
+  "switchboard.dev": {
+   "words": 148340,
+   "tokens": 232507,
+   "nats_per_word": 4.124766265572894,
+   "bits_per_word": 5.950779836168103
+  }
+ },
+ "seconds": 549.4
+}

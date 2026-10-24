@@ -1,0 +1,13 @@
+model,path,row_set,rows,row_norm,logit,precap_logit,log_p
+s3solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s3/hf,never in train_10M,128,2.8826422691345215,-13.839583396911621,-25.855321884155273,-27.456729888916016
+s3solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s3/hf,CA markup bytes,12,6.290300369262695,-8.780917167663574,-10.9256010055542,-22.3980655670166
+s3solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s3/hf,seen over 100 times,9955,5.591733455657959,-4.585268020629883,-5.195244312286377,-18.202415466308594
+s3pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3/score/hf,never in train_10M,128,2.856374740600586,-13.868765830993652,-25.9710750579834,-27.50469207763672
+s3pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3/score/hf,CA markup bytes,12,6.371664524078369,-8.839189529418945,-11.0547456741333,-22.47511863708496
+s3pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3/score/hf,seen over 100 times,9955,5.596268177032471,-4.6284708976745605,-5.246462821960449,-18.2643985748291
+s4solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s4/hf,never in train_10M,128,2.6840806007385254,-13.828446388244629,-25.513996124267578,-27.487960815429688
+s4solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s4/hf,CA markup bytes,12,6.153881072998047,-8.841930389404297,-11.2183198928833,-22.501447677612305
+s4solo,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s4/hf,seen over 100 times,9955,5.589410781860352,-4.699789524078369,-5.362397193908691,-18.35930633544922
+s4pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4/score/hf,never in train_10M,128,2.6760823726654053,-13.798924446105957,-25.443641662597656,-27.415300369262695
+s4pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4/score/hf,CA markup bytes,12,6.124061107635498,-8.926911354064941,-11.369976997375488,-22.543289184570312
+s4pack,shared/babylm/moonshot/ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4/score/hf,seen over 100 times,9955,5.581722259521484,-4.716999530792236,-5.3873162269592285,-18.333375930786133

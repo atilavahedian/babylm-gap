@@ -1,0 +1,10 @@
+[job] score_pub_gptbert_mixed start 2026-10-09T21:31:28Z commit 372258a60b132d60003abdf3ac57ca894a56ac1a
+name, memory.total [MiB], driver_version
+NVIDIA L4, 23034 MiB, 580.178.04
+183 files bad: []
+ok
+patched /opt/babylm/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd /opt/babylm/eval2025 && PY=/opt/babylm/venv/bin/python /opt/hinton/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_pub_gptbert_mixed", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA L4", "transformers": "4.51.3", "python": "3.12.3"}
+Fetching 10 files:   0%|          | 0/10 [00:00<?, ?it/s]Fetching 10 files:  10%|█         | 1/10 [00:00<00:02,  3.75it/s]Fetching 10 files:  70%|███████   | 7/10 [00:03<00:01,  1.94it/s]Fetching 10 files: 100%|██████████| 10/10 [00:03<00:00,  2.83it/s]
+/opt/babylm/hf/babylm-baseline-10m-gpt-bert-mixed

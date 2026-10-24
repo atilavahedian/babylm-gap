@@ -1,0 +1,31 @@
+== run 1
+BASE: full raw 5.007661 vs dev_bpw_twin.json nats_per_word 5.007661 OK
+BASE         full raw 5.0077 cal 4.9953 (lam 0.01/0.0125)  guarded raw 4.9767 cal 4.9652 (lam 0.01/0.01)
+             full cal_t 4.9719 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9433 (T,lam 1.1,0.0025/1.1,0.005)
+A3A: full raw 4.944495 vs dev_bpw_twin.json nats_per_word 4.944495 OK
+A3A          full raw 4.9445 cal 4.9369 (lam 0.0075/0.0075)  guarded raw 4.9093 cal 4.9027 (lam 0.0075/0.0075)
+             full cal_t 4.9143 (T,lam 1.1,0.0025/1.1,0.0025)  guarded cal_t 4.8817 (T,lam 1.1,0.0025/1.1,0.0025)
+A3N: full raw 4.948412 vs dev_bpw_twin.json nats_per_word 4.948412 OK
+A3N: guarded raw 4.915104 vs dev_bpw_twin.json ex_unseen_chars_nats_per_word 4.915104 OK
+A3N          full raw 4.9484 cal 4.9418 (lam 0.0075/0.0075)  guarded raw 4.9151 cal 4.9092 (lam 0.0075/0.0075)
+             full cal_t 4.9271 (T,lam 1.1,0.0025/1.1,0.0025)  guarded cal_t 4.8955 (T,lam 1.05,0.0025/1.05,0.005)
+BASE - A3A: full raw +0.0632 cal +0.0584 cal_t +0.0576  guarded raw +0.0673 cal +0.0625 cal_t +0.0616
+BASE - A3N: full raw +0.0592 cal +0.0535 cal_t +0.0448  guarded raw +0.0616 cal +0.0560 cal_t +0.0478
+== run 2
+BASE: full raw 5.007661 vs dev_bpw_twin.json nats_per_word 5.007661 OK
+BASE         full raw 5.0077 cal 4.9953 (lam 0.01/0.0125)  guarded raw 4.9767 cal 4.9652 (lam 0.01/0.01)
+             full cal_t 4.9719 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9433 (T,lam 1.1,0.0025/1.1,0.005)
+A3C: full raw 4.958301 vs dev_bpw_twin.json nats_per_word 4.958301 OK
+A3C          full raw 4.9583 cal 4.9495 (lam 0.01/0.01)  guarded raw 4.9241 cal 4.9165 (lam 0.0075/0.01)
+             full cal_t 4.9237 (T,lam 1.1,0.0025/1.1,0.0025)  guarded cal_t 4.8920 (T,lam 1.1,0.0025/1.1,0.0025)
+A3B: full raw 5.165240 vs dev_bpw_twin.json nats_per_word 5.165240 OK
+A3B          full raw 5.1652 cal 5.1619 (lam 0.005/0.005)  guarded raw 5.1326 cal 5.1298 (lam 0.005/0.005)
+             full cal_t 5.1602 (T,lam 1.05,0.0025/1.05,0.0025)  guarded cal_t 5.1288 (T,lam 1.05,0.0025/1.05,0.0025)
+A3N1139: full raw 4.972118 vs dev_bpw_twin.json nats_per_word 4.972118 OK
+A3N1139      full raw 4.9721 cal 4.9622 (lam 0.01/0.01)  guarded raw 4.9377 cal 4.9289 (lam 0.01/0.01)
+             full cal_t 4.9360 (T,lam 1.1,0.0025/1.1,0.0025)  guarded cal_t 4.9041 (T,lam 1.1,0.0025/1.1,0.0025)
+BASE - A3C: full raw +0.0494 cal +0.0458 cal_t +0.0481  guarded raw +0.0525 cal +0.0488 cal_t +0.0512
+BASE - A3B: full raw -0.1576 cal -0.1666 cal_t -0.1883  guarded raw -0.1559 cal -0.1646 cal_t -0.1855
+BASE - A3N1139: full raw +0.0355 cal +0.0331 cal_t +0.0359  guarded raw +0.0390 cal +0.0364 cal_t +0.0392
+
+[exited with code 0]

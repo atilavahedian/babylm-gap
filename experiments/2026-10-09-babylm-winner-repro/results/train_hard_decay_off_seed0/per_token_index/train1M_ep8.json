@@ -1,0 +1,17 @@
+{
+ "ckpt": "/opt/hinton/out/train_hard_decay_off_seed0/run/checkpoint-8124",
+ "revision": null,
+ "files": [
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/off/train_sample_1M.txt"
+ ],
+ "files_sha256": [
+  "6b9a4073d24176cacb9260dfe03032f3f3c558847382a008a50b7b7c869ca23d"
+ ],
+ "tokens": 1680640,
+ "words_read": 1000005,
+ "k": 7,
+ "seq": 256,
+ "mean_loss_nats_per_token": 2.0563437938690186,
+ "nats_per_word": 3.45595645904541,
+ "kind": "MLM pseudo-loss, not causal"
+}

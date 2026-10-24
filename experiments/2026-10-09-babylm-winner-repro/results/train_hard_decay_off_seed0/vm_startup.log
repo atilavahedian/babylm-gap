@@ -1,0 +1,69 @@
+[startup] waiting for the NVIDIA driver
+Fri Oct  9 21:59:07 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:00:04.0 Off |                    0 |
+| N/A   33C    P0             53W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+W: https://us-apt.pkg.dev/projects/gce-ai-infra/dists/gpudirect-gib-apt/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+W: http://packages.cloud.google.com/apt/dists/apt-transport-artifact-registry-stable/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+Selecting previously unselected package python3-pip-whl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 88410 files and directories currently installed.)
+Preparing to unpack .../0-python3-pip-whl_24.0+dfsg-1ubuntu1.3_all.deb ...
+Unpacking python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../1-python3-setuptools-whl_68.1.2-2ubuntu1.2_all.deb ...
+Unpacking python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Selecting previously unselected package python3.12-venv.
+Preparing to unpack .../2-python3.12-venv_3.12.3-1ubuntu0.17_amd64.deb ...
+Unpacking python3.12-venv (3.12.3-1ubuntu0.17) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../3-python3-venv_3.12.3-0ubuntu2.1_amd64.deb ...
+Unpacking python3-venv (3.12.3-0ubuntu2.1) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../4-unzip_6.0-28ubuntu4.1_amd64.deb ...
+Unpacking unzip (6.0-28ubuntu4.1) ...
+Selecting previously unselected package zip.
+Preparing to unpack .../5-zip_3.0-13ubuntu0.2_amd64.deb ...
+Unpacking zip (3.0-13ubuntu0.2) ...
+Setting up python3-setuptools-whl (68.1.2-2ubuntu1.2) ...
+Setting up python3-pip-whl (24.0+dfsg-1ubuntu1.3) ...
+Setting up unzip (6.0-28ubuntu4.1) ...
+Setting up zip (3.0-13ubuntu0.2) ...
+Setting up python3.12-venv (3.12.3-1ubuntu0.17) ...
+Setting up python3-venv (3.12.3-0ubuntu2.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+[startup] python3 venv ok
+[startup] torch python: /usr/bin/python3
+[startup] torch 2.9.1+cu129 NVIDIA A100-SXM4-40GB
+[startup] job train_hard_decay_off_seed0 start 2026-10-09T21:59:42Z
+[startup] job train_hard_decay_off_seed0 rc=0
+The class this function is called from is 'DebertaV2Tokenizer'.
+{"ckpt": "/opt/hinton/out/train_hard_decay_off_seed0/run/checkpoint-10155", "revision": null, "files": ["/opt/hinton/out/train_hard_decay_off_seed0/run/work/off/train_sample_1M.txt"], "files_sha256": ["6b9a4073d24176cacb9260dfe03032f3f3c558847382a008a50b7b7c869ca23d"], "tokens": 1680640, "words_read": 1000005, "k": 7, "seq": 256, "mean_loss_nats_per_token": 2.0293564796447754, "nats_per_word": 3.410600423812866, "kind": "MLM pseudo-loss, not causal"}
+done: /opt/hinton/out/train_hard_decay_off_seed0/run
+[job] evaluated amlm_hard_decay_off_s0 02:47:13
+[job] train_hard_decay_off_seed0 done in 16819s

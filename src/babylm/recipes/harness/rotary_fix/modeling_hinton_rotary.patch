@@ -1,0 +1,66 @@
+--- a/babylm/harness/hf_template/modeling_hinton.py
++++ b/babylm/harness/hf_template/modeling_hinton.py
+@@ -34,27 +34,37 @@
+ 
+ 
+ class Rotary(nn.Module):
++    """Half-truncated RoPE. freq/cos/sin are non-persistent buffers, i.e. NOT in model.safetensors: they are recomputed
++    from (head_dim, base, frac), which are kept as plain attributes. Some transformers versions (seen with 5.19)
++    build the model on the meta device and never materialise non-persistent buffers (cos[0, 0] = 0 -> every loss NaN),
++    so the tables are rebuilt on the first forward after loading (and by _init_weights), whatever the loader did."""
+     def __init__(self, head_dim: int, max_seq_len: int, base: float, frac: float):
+         super().__init__()
+-        n_rot = max(1, int(head_dim * frac))
+-        half = head_dim // 2
+-        n_rot = min(n_rot, half)
+-        freq = (1.0 / base) ** torch.linspace(0, 1, steps=n_rot, dtype=torch.float32)
+-        freq = torch.cat([freq, freq.new_zeros(half - n_rot)])
+-        self.register_buffer("freq", freq, persistent=False)
++        self.head_dim, self.base, self.frac, self.max_seq_len = head_dim, base, frac, max_seq_len
++        self._tables_ok = False
+         self._build(max_seq_len)
+ 
+-    def _build(self, T: int) -> None:
+-        t = torch.arange(T, dtype=torch.float32, device=self.freq.device)
+-        theta = torch.outer(t, self.freq)
+-        self.register_buffer("cos", theta.cos(), persistent=False)
+-        self.register_buffer("sin", theta.sin(), persistent=False)
++    def _freq(self, device) -> torch.Tensor:
++        n_rot = max(1, int(self.head_dim * self.frac))
++        half = self.head_dim // 2
++        n_rot = min(n_rot, half)
++        freq = (1.0 / self.base) ** torch.linspace(0, 1, steps=n_rot, dtype=torch.float32, device=device)
++        return torch.cat([freq, freq.new_zeros(half - n_rot)])
++
++    def _build(self, T: int, device=None) -> None:
++        # computed on CPU in fp32 (as at export time), then moved: the tables are bit-identical on every device
++        freq = self._freq("cpu")
++        theta = torch.outer(torch.arange(T, dtype=torch.float32, device="cpu"), freq)
++        dev = device if device is not None else "cpu"
++        self.register_buffer("freq", freq.to(dev), persistent=False)
++        self.register_buffer("cos", theta.cos().to(dev), persistent=False)
++        self.register_buffer("sin", theta.sin().to(dev), persistent=False)
+ 
+     def forward(self, x: torch.Tensor) -> torch.Tensor:
+         T = x.size(-3)
+-        if T > self.cos.size(0) or self.cos.device != x.device:
+-            self.freq = self.freq.to(x.device)
+-            self._build(max(T, self.cos.size(0)))
++        if not self._tables_ok or T > self.cos.size(0) or self.cos.device != x.device:
++            self._build(max(T, self.max_seq_len, self.cos.size(0) if self.cos.device.type != "meta" else 0), x.device)
++            self._tables_ok = True
+         cos = self.cos[None, :T, None, :]
+         sin = self.sin[None, :T, None, :]
+         x1, x2 = x.float().chunk(2, dim=-1)
+@@ -169,8 +179,9 @@
+         self.skip_weights = nn.Parameter(torch.ones(max(self.n_enc, 1)))
+         self.embnorm = bool(c.embnorm)
+ 
+-    def _init_weights(self, module):  # weights always come from model.safetensors
+-        pass
++    def _init_weights(self, module):  # weights always come from model.safetensors; RoPE tables are recomputed
++        if isinstance(module, Rotary):
++            module._tables_ok = False
+ 
+     def get_input_embeddings(self):
+         return self.embed

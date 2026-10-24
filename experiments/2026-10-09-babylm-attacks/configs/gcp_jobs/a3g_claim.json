@@ -1,0 +1,36 @@
+{
+ "name": "a3g_claim",
+ "commit": "ec949aabb1a798779c3f8038fa80d6746109e020",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,dev; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; $T/babylm/eval/setup.sh /opt/babylm; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; mkdir -p babylm/moonshot; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; cp babylm/configs/jobs_a3g_claim_S_a3a_e10_s123.json _logs/",
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RESTORE_URI": "",
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz"
+ },
+ "jobs": [
+  {
+   "name": "a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_a3g_claim_S_a3a_e10_s123.json --only a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal; rc=$?; [ -f babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal /opt/babylm || echo '[a3g] score a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/score/dev_bpw_twin.log 2>&1 || echo '[twin] a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal failed'; mkdir -p babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/pt_v2/dev_v2.npz --check babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal/pt_v2/dump.log 2>&1 && echo '[ptv2] ok a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal' || echo '[ptv2] FAILED a3_S_r1win_wd0p4_ve0_tied_s1_a3a_all_p0p1_anneal'; }; exit $rc",
+   "timeout_s": 10800
+  },
+  {
+   "name": "a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_a3g_claim_S_a3a_e10_s123.json --only a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal; rc=$?; [ -f babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal /opt/babylm || echo '[a3g] score a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/score/dev_bpw_twin.log 2>&1 || echo '[twin] a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal failed'; mkdir -p babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/pt_v2/dev_v2.npz --check babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal/pt_v2/dump.log 2>&1 && echo '[ptv2] ok a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal' || echo '[ptv2] FAILED a3_S_r1win_wd0p4_ve0_tied_s2_a3a_all_p0p1_anneal'; }; exit $rc",
+   "timeout_s": 10800
+  },
+  {
+   "name": "a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p",
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_a3g_claim_S_a3a_e10_s123.json --only a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal; rc=$?; [ -f babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal /opt/babylm || echo '[a3g] score a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/score/dev_bpw_twin.log 2>&1 || echo '[twin] a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal failed'; mkdir -p babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/pt_v2/dev_v2.npz --check babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal/pt_v2/dump.log 2>&1 && echo '[ptv2] ok a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal' || echo '[ptv2] FAILED a3_S_r1win_wd0p4_ve0_tied_s3_a3a_all_p0p1_anneal'; }; exit $rc",
+   "timeout_s": 10800
+  }
+ ],
+ "note": "A3g claim (experimenter 14:48Z; critic-accepted card @ref-0075), SOLO, from babylm/configs/jobs_a3g_claim_S_a3a_e10_s123.json. Reference env p2venv torch 2.7.0 (experimenter 14:49Z rule; the A3 screen arms ran system torch 2.9.1, so A3 vs A3g is cross-env). Each: score_trial (BLiMP-fast), twin ref-0026 both legs, temps dump ref-0034 -> runs/<run>/pt_v2/dev_v2.npz. Ends on milestones; record ckpt step = final step."
+}

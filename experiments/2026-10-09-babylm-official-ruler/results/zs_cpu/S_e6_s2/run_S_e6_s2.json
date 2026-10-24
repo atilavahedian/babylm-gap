@@ -1,0 +1,24 @@
+{
+ "name": "S_e6_s2",
+ "uri": "${BUCKET}/babylm/vms/bl-exp-p2v2d-estar-1010-154711/out/babylm/runs/v2_S_10M_e6_s2/score/hf",
+ "driver": "scratchpad cpu_zs_sub.sh (experimenter 07:24Z)",
+ "tasks": [
+  "blimp",
+  "supplement",
+  "ewok",
+  "wug_adj",
+  "wug_past",
+  "reading",
+  "comps"
+ ],
+ "excluded": [
+  "entity_tracking"
+ ],
+ "pipeline": "eval2025 bf55c1131e53654c2a87418f5629c26959acd710",
+ "ruler_tools": "ref-0403",
+ "torch": "2.7.0+cpu",
+ "transformers": "4.51.3",
+ "device": "cpu",
+ "threads": 4,
+ "zero_shot_wall_s": 3065
+}

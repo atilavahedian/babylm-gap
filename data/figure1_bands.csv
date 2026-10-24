@@ -1,0 +1,17 @@
+table,row,col,k,value,derivation,source
+fig:bands,0,0,0,48.18658334948175,100 * word_share c10=8k+,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,0,0,1,36.64251554782863,100 * word_share c10=64-8k,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,0,0,2,11.488563322759362,100 * word_share c10=1-63,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,0,0,3,3.68233777993026,100 * word_share c10=0,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,1,0,0,0.04267388200186568,"word_share * member-ens8, c10=8k+",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,1,0,1,0.10037424473930304,"word_share * member-ens8, c10=64-8k",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,1,0,2,0.0795507393154962,"word_share * member-ens8, c10=1-63",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,1,0,3,0.06670126660020222,"word_share * member-ens8, c10=0",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,2,0,0,0.03562311290926013,"word_share * ens8-c1oracle, c10=8k+",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,2,0,1,0.08618150423449608,"word_share * ens8-c1oracle, c10=64-8k",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,2,0,2,0.06771537915495764,"word_share * ens8-c1oracle, c10=1-63",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,2,0,3,0.04348281853556009,"word_share * ens8-c1oracle, c10=0",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,3,0,0,0.043884910335369065,"word_share * c1oracle-t100, c10=8k+",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,3,0,1,0.06671395117808089,"word_share * c1oracle-t100, c10=64-8k",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,3,0,2,0.05786508121124289,"word_share * c1oracle-t100, c10=1-63",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+fig:bands,3,0,3,0.052172423673829925,"word_share * c1oracle-t100, c10=0",experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json

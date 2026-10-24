@@ -1,0 +1,28 @@
+{
+  "recipe": "AMLM-Hard-Decay (Edman & Fraser 2025, 'Mask and You Shall Receive', arXiv:2510.20475)",
+  "published_strict_small": {"nlp": 58.3, "human_likeness": 8.4, "macro": 33.3, "source": "Findings of the Third BabyLM Challenge, Table 3"},
+  "sibling": {"name": "AMLM-Hard (constant 15% mask)", "nlp": 58.0, "human_likeness": 26.7, "macro": 42.3},
+  "code": {
+    "repo": "https://github.com/Leukas/babylm25",
+    "commit": "d1438b077761a891ec2b47c6854ea34be6e6e6aa",
+    "license": "MIT",
+    "sha256": {
+      "train_mask.py": "b680787efbde81d24ad64eca661bb5520cd361780fa271c999d051172d575a63",
+      "preprocessing.py": "c7d97f2792a16464b8aac0a92c0c6725ee6c7749f817a1f742434844a91d2b66",
+      "data/bb24.train": "dd923a7df44758ace4f971e6753867e0db00b98c07fbe7ebffbfa6da00226ab5",
+      "data/bb25_small.dev": "05d30e16101d6c33de917d147af8ad783b72206fb44ba99dae3e558aaaeb4f6c",
+      "tokenizers/bb24.model": "11fb36c4badc2b9f0efb56af3e0fba0cf465036b966940e717456f55131b5ec1"
+    }
+  },
+  "base_config": {"hf": "microsoft/deberta-v3-base", "revision": "8ccc9b6f36199bec6961081d44eb72fb3f7353f3",
+                  "config_sha256": "649f6a1ec33c6bdd9a6486d5c66019d461139e54957073eafe9bbc2d34c75b0b",
+                  "note": "config only (from_config, random init); --pretrained is never passed"},
+  "released_checkpoints": {
+    "leukas/amlm_hard_decay": "1639a11da8f09e8c4247a09cf6516495d1d402af",
+    "leukas/amlm_hard": "545287c34a1e331600bce9fd2656f97194cdb717",
+    "spm_matches_repo_tokenizer": true
+  },
+  "authors_env": {"transformers": "4.54.1", "optimizer": "bitsandbytes LAMB (CUDA)"},
+  "command_hard_decay": "python train_mask.py --train_data data/bb24.train --valid_data data/bb25_small.dev --tokenizer tokenizers/bb24.model --output_path OUT --mask_update_steps 200 --logging_steps 200 --intermediate_size 1280 --hidden_size 384 --max_seq_len 0:64,5:256 --lamb --all_checkpoints --mlm_prob 0.4 --mask_decay 0.25 --seed SEED",
+  "command_hard": "same, with --mlm_prob 0.15 and no --mask_decay"
+}

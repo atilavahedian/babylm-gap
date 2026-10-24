@@ -1,0 +1,249 @@
+{
+ "dumps": [
+  "/tmp/tmp.UmfFpFfrr5/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz",
+  "/tmp/tmp.UmfFpFfrr5/a2_A2a.npz"
+ ],
+ "single": [
+  {
+   "npw_ovr": 5.007813979367838,
+   "npw_raw": 4.998677070063753
+  },
+  {
+   "npw_ovr": 4.997110236593075,
+   "npw_raw": 4.988381989666381
+  }
+ ],
+ "rows": [
+  {
+   "K": 1,
+   "subsets": 2,
+   "label": "K x exposure, out of track",
+   "ens_npw_raw": 4.993529529865067,
+   "member_npw_raw": 4.993529529865067,
+   "g_npw_raw": 0.0,
+   "ens_npw_ovr": 5.002462107980456,
+   "member_npw_ovr": 5.002462107980456,
+   "g_npw_ovr": 0.0
+  },
+  {
+   "K": 2,
+   "subsets": 1,
+   "label": "K x exposure, out of track",
+   "ens_npw_raw": 4.836958557161801,
+   "member_npw_raw": 4.993529529865067,
+   "g_npw_raw": 0.1565709727032658,
+   "ens_npw_ovr": 4.845545812320413,
+   "member_npw_ovr": 5.002462107980456,
+   "g_npw_ovr": 0.15691629566004295
+  }
+ ],
+ "label": "K x exposure, out of track",
+ "never_seen_char_guard": {
+  "label": "K x exposure, out of track",
+  "words": 10277,
+  "tokens": 57365,
+  "dumps": [
+   "/tmp/tmp.UmfFpFfrr5/base_S_wd0p4_lr0p5_r1_ve0_tied_s2.npz",
+   "/tmp/tmp.UmfFpFfrr5/a2_A2a.npz"
+  ],
+  "single": [
+   {
+    "npw_ovr": 4.9764642030683195,
+    "npw_raw": 4.9677437599192755
+   },
+   {
+    "npw_ovr": 4.971666803261951,
+    "npw_raw": 4.963284743503031
+   }
+  ],
+  "rows": [
+   {
+    "K": 1,
+    "subsets": 2,
+    "label": "K x exposure, out of track",
+    "ens_npw_raw": 4.965514251711154,
+    "member_npw_raw": 4.965514251711154,
+    "g_npw_raw": 0.0,
+    "ens_npw_ovr": 4.974065503165136,
+    "member_npw_ovr": 4.974065503165136,
+    "g_npw_ovr": 0.0
+   },
+   {
+    "K": 2,
+    "subsets": 1,
+    "label": "K x exposure, out of track",
+    "ens_npw_raw": 4.812591544215032,
+    "member_npw_raw": 4.965514251711154,
+    "g_npw_raw": 0.15292270749612147,
+    "ens_npw_ovr": 4.820842215444874,
+    "member_npw_ovr": 4.974065503165136,
+    "g_npw_ovr": 0.1532232877202615
+   }
+  ],
+  "twin_json_checks": []
+ },
+ "calibrated": {
+  "label": "calibrated-gain control (critic ref-0292): comparator, never an entry",
+  "tool": "scratch/v2r3/babylm/tools/calib_control.py",
+  "tool_sha256": "70c0eb5b2922c1bca300a9f3f3f1494c66fad85c69d2bc9c0a84dc5509089ca0",
+  "temps": [
+   0.9,
+   0.95,
+   1.05,
+   1.1,
+   1.15,
+   1.2
+  ],
+  "single": [
+   {
+    "full": {
+     "raw": 4.998677070063753,
+     "calibrated": 4.987639914201297,
+     "lam_even": 0.01,
+     "lam_odd": 0.01,
+     "words": 10418979,
+     "calibrated_t": 4.968973803059621,
+     "t_even": 1.1,
+     "lam_t_even": 0.0025,
+     "t_odd": 1.1,
+     "lam_t_odd": 0.005,
+     "t_edge": false
+    },
+    "guarded": {
+     "raw": 4.967743759919275,
+     "calibrated": 4.957678960006957,
+     "lam_even": 0.01,
+     "lam_odd": 0.01,
+     "words": 10408702,
+     "calibrated_t": 4.940356150069055,
+     "t_even": 1.1,
+     "lam_t_even": 0.0025,
+     "t_odd": 1.1,
+     "lam_t_odd": 0.0025,
+     "t_edge": false
+    }
+   },
+   {
+    "full": {
+     "raw": 4.98838198966638,
+     "calibrated": 4.983288498342272,
+     "lam_even": 0.0075,
+     "lam_odd": 0.0075,
+     "words": 10418979,
+     "calibrated_t": 4.970859925481494,
+     "t_even": 1.05,
+     "lam_t_even": 0.0025,
+     "t_odd": 1.05,
+     "lam_t_odd": 0.0025,
+     "t_edge": false
+    },
+    "guarded": {
+     "raw": 4.963284743503032,
+     "calibrated": 4.958593653419161,
+     "lam_even": 0.005,
+     "lam_odd": 0.0075,
+     "words": 10408702,
+     "calibrated_t": 4.946625511344121,
+     "t_even": 1.05,
+     "lam_t_even": 0.0025,
+     "t_odd": 1.05,
+     "lam_t_odd": 0.0025,
+     "t_edge": false
+    }
+   }
+  ],
+  "rows": [
+   {
+    "K": 1,
+    "subsets": 2,
+    "g_full_raw": 0.0,
+    "g_full_calibrated": 0.0,
+    "g_full_calibrated_t": 0.0,
+    "lam_full": [
+     [
+      0.01,
+      0.01
+     ],
+     [
+      0.0075,
+      0.0075
+     ]
+    ],
+    "t_full": [
+     [
+      1.1,
+      1.1,
+      false
+     ],
+     [
+      1.05,
+      1.05,
+      false
+     ]
+    ],
+    "g_guarded_raw": 0.0,
+    "g_guarded_calibrated": 0.0,
+    "g_guarded_calibrated_t": 0.0,
+    "lam_guarded": [
+     [
+      0.01,
+      0.01
+     ],
+     [
+      0.005,
+      0.0075
+     ]
+    ],
+    "t_guarded": [
+     [
+      1.1,
+      1.1,
+      false
+     ],
+     [
+      1.05,
+      1.05,
+      false
+     ]
+    ]
+   },
+   {
+    "K": 2,
+    "subsets": 1,
+    "g_full_raw": 0.15657097270326492,
+    "g_full_calibrated": 0.15008770025707285,
+    "g_full_calibrated_t": 0.1399155658698641,
+    "lam_full": [
+     [
+      0.0025,
+      0.0025
+     ]
+    ],
+    "t_full": [
+     [
+      1.05,
+      1.05,
+      false
+     ]
+    ],
+    "g_guarded_raw": 0.15292270749612058,
+    "g_guarded_calibrated": 0.14698399284123287,
+    "g_guarded_calibrated_t": 0.13719066187087314,
+    "lam_guarded": [
+     [
+      0.0025,
+      0.0025
+     ]
+    ],
+    "t_guarded": [
+     [
+      1.05,
+      1.05,
+      false
+     ]
+    ]
+   }
+  ]
+ },
+ "kept_word_share": 0.9870679267133564
+}

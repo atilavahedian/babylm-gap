@@ -1,0 +1,10 @@
+# A4 instrument evidence (critic ref-0035). instrument from each VM startup.log: the VM runs its job list serially, one python job at a time on 1 GPU. Torch for these rows: p2venv 2.7.0+cu126 (the startup "torch 2.9.1" line is the system python check).
+run	vm	machine_type	gpu	instrument	evidence
+v2_S_10M_e6_s0	bl-exp-p2v2c-1010-093536	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e6_s0 12:04Z-12:31Z (prev e3_s0 ended, next e7_s0 started 12:31Z)
+v2_S_10M_e10_s0	bl-exp-p2v2d-estar-1010-154711	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e10_s0 16:44Z-17:16Z
+v2_S_10M_e6_s1	bl-exp-p2v2d-estar-1010-154711	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e6_s1 17:16Z-17:43Z
+v2_S_10M_e6_s2	bl-exp-p2v2d-estar-1010-154711	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e6_s2 17:43Z-18:11Z
+v2_S_10M_e6_s3	bl-exp-p2v2d-estar-1010-154711	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e6_s3 18:11Z-18:39Z
+v2_S_10M_e6_s4	bl-exp-p2v2d-estar-1010-154711	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: jobs serial; v2_S_10M_e6_s4 18:39Z-19:06Z
+v2_S_10M_e10_s1	bl-exp-p2v2f-1010-193702	a2-highgpu-1g	NVIDIA A100-SXM4-40GB	solo	startup.log: single-job list; v2_S_10M_e10_s1 19:58Z-20:30Z
+# pending: A4 batch 1 rows are added when that VM copies back.

@@ -1,0 +1,29 @@
+own-count band | 10M model: n, nll, -log p_uni, nll-uni, first, cont, tok/w | 100M model: n, nll, -log p_uni, nll-uni, first, cont, tok/w
+1-3      |   1464  17.16  15.56   1.60  8.12  9.04 3.33 |    607  17.12  17.95  -0.82  6.92 10.21 3.74
+4-15     |   2949  13.41  14.00  -0.60  8.28  5.13 3.00 |    895  13.38  16.33  -2.94  6.81  6.57 3.52
+16-63    |   5449  10.92  12.57  -1.66  7.94  2.98 2.59 |   1824  11.52  14.86  -3.34  7.28  4.23 3.23
+64-255   |   9361   8.98  11.20  -2.22  7.66  1.32 1.58 |   3594   9.81  13.48  -3.67  7.09  2.72 2.86
+256-1k   |  13970   7.48   9.85  -2.37  6.49  0.99 1.47 |   6786   8.13  12.10  -3.97  6.56  1.57 2.16
+1k-8k    |  22764   5.99   8.13  -2.14  5.22  0.78 1.34 |  18382   6.57  10.35  -3.78  5.68  0.90 1.52
+8k+      |  21626   4.30   5.79  -1.49  3.72  0.58 1.23 |  46945   4.52   7.12  -2.60  3.91  0.60 1.28
+
+(first uses only; nll-uni = loss minus own-corpus unigram surprise = what context + knowledge buy)
+
+words with c10 1-63 and c100 <= 63 (n=1972): nll10 16.15 nll100 12.29 gap 3.86; median c10 3 c100 31
+  c100 in 1-3: n=89 nll10 19.93 nll100 18.15 gap 1.78 (median c10 1)
+  c100 in 4-15: n=353 nll10 17.00 nll100 13.48 gap 3.52 (median c10 1)
+  c100 in 16-63: n=1530 nll10 15.73 nll100 11.68 gap 4.06 (median c10 3)
+
+non-ascii never-seen (n=607): tok/word 10M 5.32 vs 100M 4.17; nll10 first/cont 6.76/22.86; nll100 first/cont 4.45/8.56; per-token nll 10M 5.56 100M 3.12
+capitalized novel word (name-like)       n=  946 tok/w 3.90/3.88 nll10 f/c  6.62/13.33 nll100 f/c  5.72/ 8.87 per-tok 5.11/3.76
+lowercase novel word                     n=  404 tok/w 3.67/3.64 nll10 f/c  8.14/14.54 nll100 f/c  7.46/ 9.31 per-tok 6.18/4.60
+inflection of seen word                  n=  343 tok/w 3.34/3.22 nll10 f/c  7.76/ 9.55 nll100 f/c  6.74/ 5.97 per-tok 5.18/3.95
+derivation of seen word                  n=  280 tok/w 3.32/3.31 nll10 f/c  6.99/ 8.09 nll100 f/c  6.16/ 5.11 per-tok 4.54/3.41
+closed compound of seen words            n=  241 tok/w 3.37/3.16 nll10 f/c  7.05/11.89 nll100 f/c  6.22/ 8.00 per-tok 5.63/4.50
+hyphen/slash compound of seen parts      n=  348 tok/w 4.48/4.46 nll10 f/c  7.09/16.46 nll100 f/c  6.23/11.70 per-tok 5.26/4.02
+
+1-63 band first uses by 10M pieces per word: n, share, gap/word, gap first, gap cont, nll10 cont, nll100 cont
+  pieces 1: n=  256 share 2.6% gap  1.36 first  1.65 cont -0.28 nll10c  0.00 nll100c  0.28
+  pieces 2: n= 4279 share 43.4% gap  2.26 first  1.26 cont  1.01 nll10c  2.41 nll100c  1.40
+  pieces 3: n= 3286 share 33.3% gap  3.17 first  1.23 cont  1.95 nll10c  4.80 nll100c  2.85
+  pieces >=4: n= 2041 share 20.7% gap  4.09 first  0.82 cont  3.27 nll10c  9.06 nll100c  5.79

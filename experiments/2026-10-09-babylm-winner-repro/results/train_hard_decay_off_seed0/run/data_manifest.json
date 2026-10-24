@@ -1,0 +1,33 @@
+{
+ "train_sources": [
+  "bnc_spoken.train",
+  "childes.train",
+  "gutenberg.train",
+  "open_subtitles.train",
+  "simple_wiki.train",
+  "switchboard.train"
+ ],
+ "dev_sources": [
+  "bnc_spoken.dev",
+  "childes.dev",
+  "gutenberg.dev",
+  "open_subtitles.dev",
+  "simple_wiki.dev",
+  "switchboard.dev"
+ ],
+ "train_10M.txt": {
+  "lines": 1165314,
+  "words": 9953773,
+  "sha256": "bbdf920bf0865a635f563f957709d97411ce8218f577c95f478e4530b86e3eaa"
+ },
+ "dev_small.txt": {
+  "lines": 11561,
+  "words": 101874,
+  "sha256": "2ddd43d3de380cf98eb3ca1dee8741384ed75706e212746dbf1a7d59c305d9f6"
+ },
+ "train_sample_1M.txt": {
+  "lines": 117440,
+  "words": 1000005,
+  "sha256": "6b9a4073d24176cacb9260dfe03032f3f3c558847382a008a50b7b7c869ca23d"
+ }
+}

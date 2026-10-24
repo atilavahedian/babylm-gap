@@ -1,0 +1,17 @@
+V2E          full raw 5.0088 cal 4.9964 (lam 0.01/0.0125)  guarded raw 4.9766 cal 4.9652 (lam 0.01/0.01)
+             full cal_t 4.9734 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9439 (T,lam 1.1,0.0025/1.1,0.005)
+S0           full raw 5.0023 cal 4.9898 (lam 0.01/0.0125)  guarded raw 4.9717 cal 4.9604 (lam 0.01/0.01)
+             full cal_t 4.9684 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9405 (T,lam 1.1,0.0025/1.1,0.005)
+S1           full raw 4.9996 cal 4.9875 (lam 0.01/0.0125)  guarded raw 4.9686 cal 4.9577 (lam 0.01/0.01)
+             full cal_t 4.9662 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9378 (T,lam 1.1,0.0025/1.1,0.005)
+S2           full raw 4.9987 cal 4.9876 (lam 0.01/0.01)  guarded raw 4.9677 cal 4.9577 (lam 0.01/0.01)
+             full cal_t 4.9690 (T,lam 1.1,0.0025/1.1,0.005)  guarded cal_t 4.9404 (T,lam 1.1,0.0025/1.1,0.0025)
+S3           full raw 5.0048 cal 4.9922 (lam 0.01/0.0125)  guarded raw 4.9738 cal 4.9623 (lam 0.01/0.01)
+             full cal_t 4.9705 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9420 (T,lam 1.1,0.0025/1.1,0.005)
+S4           full raw 4.9978 cal 4.9846 (lam 0.0125/0.0125)  guarded raw 4.9666 cal 4.9546 (lam 0.01/0.0125)
+             full cal_t 4.9610 (T,lam 1.1,0.005/1.1,0.005)  guarded cal_t 4.9323 (T,lam 1.1,0.005/1.1,0.005)
+V2E - S0: full raw +0.0065 cal +0.0066 cal_t +0.0050  guarded raw +0.0049 cal +0.0048 cal_t +0.0034
+V2E - S1: full raw +0.0092 cal +0.0089 cal_t +0.0072  guarded raw +0.0080 cal +0.0075 cal_t +0.0061
+V2E - S2: full raw +0.0101 cal +0.0087 cal_t +0.0044  guarded raw +0.0089 cal +0.0075 cal_t +0.0035
+V2E - S3: full raw +0.0040 cal +0.0042 cal_t +0.0029  guarded raw +0.0028 cal +0.0029 cal_t +0.0018
+V2E - S4: full raw +0.0110 cal +0.0118 cal_t +0.0124  guarded raw +0.0100 cal +0.0105 cal_t +0.0116

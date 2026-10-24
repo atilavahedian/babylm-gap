@@ -1,0 +1,54 @@
+{
+ "name": "lead_p2v2b_10m",
+ "commit": "e059b101ff37216547ad87cb67cd3b15a1bf8d52",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,train_100M,dev; /opt/p2venv/bin/python -m pytest -q -x babylm/tests; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; $T/babylm/eval/setup.sh /opt/babylm; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; mkdir -p babylm/moonshot; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_10080768.py babylm/moonshot/dev_bpw_dump.py",
+ "env": {
+  "RESTORE_URI": "",
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz",
+  "TWX_RUNS": "base_S_wd0p4_lr0p5_r1_ve0_tied base_S_wd0p4_lr0p5_r1_ve0_tied_s1 base_S_wd0p4_lr0p5_r1_ve0_tied_s2 base_S_wd0p4_lr0p5_r1_ve0_tied_s3 base_S_wd0p4_lr0p5_r1_ve0_tied_s4 ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s3 ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s4 ms_c3_base_S_wd0p4_lr0p5_r1_ve0_tied_s5"
+ },
+ "jobs": [
+  {
+   "name": "twx",
+   "cmd": "for r in ${TWX_RUNS:-}; do S=babylm/runs/_twx/$r; mkdir -p $S && gsutil -m -q rsync -r __BUCKET__/twx_in/$r/hf $S/hf && /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py $S/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out $S/dev_bpw_twin.json > $S/dev_bpw_twin.log 2>&1 && echo \"[twx] ok $r\" || echo \"[twx] FAILED $r\"; rm -rf $S/hf; done",
+   "timeout_s": 3600
+  },
+  {
+   "name": "v2_S_10M_e5_s0",
+   "timeout_s": 3600,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e5_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; [ -f babylm/runs/v2_S_10M_e5_s0/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/v2_S_10M_e5_s0 /opt/babylm || echo '[v2] score v2_S_10M_e5_s0 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/v2_S_10M_e5_s0/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/v2_S_10M_e5_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e5_s0/score/dev_bpw_twin.log 2>&1 || echo '[twin] v2_S_10M_e5_s0 failed'; mkdir -p babylm/runs/v2_S_10M_e5_s0/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/v2_S_10M_e5_s0/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --out babylm/runs/v2_S_10M_e5_s0/pt_v2/dev_v2.npz --check babylm/runs/v2_S_10M_e5_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e5_s0/pt_v2/dump.log 2>&1 || echo '[ptv2] v2_S_10M_e5_s0 failed'; }; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e5_s1",
+   "timeout_s": 3600,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e5_s1; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; [ -f babylm/runs/v2_S_10M_e5_s1/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/v2_S_10M_e5_s1 /opt/babylm || echo '[v2] score v2_S_10M_e5_s1 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/v2_S_10M_e5_s1/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/v2_S_10M_e5_s1/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e5_s1/score/dev_bpw_twin.log 2>&1 || echo '[twin] v2_S_10M_e5_s1 failed'; mkdir -p babylm/runs/v2_S_10M_e5_s1/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/v2_S_10M_e5_s1/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --out babylm/runs/v2_S_10M_e5_s1/pt_v2/dev_v2.npz --check babylm/runs/v2_S_10M_e5_s1/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e5_s1/pt_v2/dump.log 2>&1 || echo '[ptv2] v2_S_10M_e5_s1 failed'; }; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e4_s0",
+   "timeout_s": 3600,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e4_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; [ -f babylm/runs/v2_S_10M_e4_s0/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/v2_S_10M_e4_s0 /opt/babylm || echo '[v2] score v2_S_10M_e4_s0 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/v2_S_10M_e4_s0/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/v2_S_10M_e4_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e4_s0/score/dev_bpw_twin.log 2>&1 || echo '[twin] v2_S_10M_e4_s0 failed'; mkdir -p babylm/runs/v2_S_10M_e4_s0/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/v2_S_10M_e4_s0/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --out babylm/runs/v2_S_10M_e4_s0/pt_v2/dev_v2.npz --check babylm/runs/v2_S_10M_e4_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e4_s0/pt_v2/dump.log 2>&1 || echo '[ptv2] v2_S_10M_e4_s0 failed'; }; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e2_s0",
+   "timeout_s": 3600,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e2_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; [ -f babylm/runs/v2_S_10M_e2_s0/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/v2_S_10M_e2_s0 /opt/babylm || echo '[v2] score v2_S_10M_e2_s0 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/v2_S_10M_e2_s0/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/v2_S_10M_e2_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e2_s0/score/dev_bpw_twin.log 2>&1 || echo '[twin] v2_S_10M_e2_s0 failed'; mkdir -p babylm/runs/v2_S_10M_e2_s0/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/v2_S_10M_e2_s0/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --out babylm/runs/v2_S_10M_e2_s0/pt_v2/dev_v2.npz --check babylm/runs/v2_S_10M_e2_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e2_s0/pt_v2/dump.log 2>&1 || echo '[ptv2] v2_S_10M_e2_s0 failed'; }; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e1_s0",
+   "timeout_s": 3600,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e1_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; [ -f babylm/runs/v2_S_10M_e1_s0/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/v2_S_10M_e1_s0 /opt/babylm || echo '[v2] score v2_S_10M_e1_s0 failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/v2_S_10M_e1_s0/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/v2_S_10M_e1_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e1_s0/score/dev_bpw_twin.log 2>&1 || echo '[twin] v2_S_10M_e1_s0 failed'; mkdir -p babylm/runs/v2_S_10M_e1_s0/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/v2_S_10M_e1_s0/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --out babylm/runs/v2_S_10M_e1_s0/pt_v2/dev_v2.npz --check babylm/runs/v2_S_10M_e1_s0/score/dev_bpw_twin.json > babylm/runs/v2_S_10M_e1_s0/pt_v2/dump.log 2>&1 || echo '[ptv2] v2_S_10M_e1_s0 failed'; }; exit $rc"
+  }
+ ],
+ "outputs": [
+  "babylm/runs",
+  "babylm/results_pack"
+ ],
+ "keep_checkpoints": true,
+ "continue_on_error": true,
+ "suggested_max_run_duration": "2h30m",
+ "note": "v2b 10M cells SOLO (experimenter 06:16Z): e5_s0, e5_s1 (legal 2-model x 5-epoch test), e4, e2, e1; plus score_trial, twin and v2 per-token dump. Pool floor. First job twx: eval-only twin ref-0026 on staged <bucket>/twx_in/<run>/hf (solo vs packed s3/s4, instruments 06:40Z)."
+}

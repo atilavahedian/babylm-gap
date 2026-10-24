@@ -1,0 +1,60 @@
+{
+ "run": "a4_GA",
+ "job": "a4_halfgens",
+ "instrument": "solo",
+ "pack_partners": [],
+ "vm": "bl-a4-screen-1010-235629",
+ "machine_type": "a2-highgpu-1g",
+ "gpu": [
+  "NVIDIA A100-SXM4-40GB"
+ ],
+ "gpu_count": 1,
+ "pack_env": null,
+ "train_procs_at_launch": 1,
+ "gpu_procs_max": 1,
+ "gpu_proc_samples": 8,
+ "gpu_proc_log": [
+  [
+   1791677724,
+   0
+  ],
+  [
+   1791677754,
+   1
+  ],
+  [
+   1791677784,
+   1
+  ],
+  [
+   1791677814,
+   1
+  ],
+  [
+   1791677844,
+   1
+  ],
+  [
+   1791677874,
+   1
+  ],
+  [
+   1791677904,
+   1
+  ],
+  [
+   1791677934,
+   1
+  ]
+ ],
+ "train_window_unix": [
+  1791677754,
+  1791677816
+ ],
+ "startup_commit": "e4457da58f9a4e1826e5524686ed820ead625d02",
+ "job_python": "/opt/p2venv/bin/python",
+ "torch": "2.7.0+cu126",
+ "job_start_unix": 1791677724.0,
+ "commit": "3eebd06c7c682a16e486612bf2d8cc2c741ddae4",
+ "source": "babylm/gcp/startup.sh write_instrument"
+}

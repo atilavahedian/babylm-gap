@@ -1,0 +1,53 @@
+{
+ "run": "a5port_S_100M_e10_s2",
+ "checkpoint": "chck_1000M.pt",
+ "dev_nats_per_word": 4.28984318245998,
+ "dev_bits_per_word": 6.188935485526342,
+ "dev_format": {
+  "ws": "collapse",
+  "line_join": "newline",
+  "ctx": 512
+ },
+ "automodel_attention": "causal",
+ "harness_full_dev_nats_per_word": 4.292401135544575,
+ "train_time_s": 4281.619570732117,
+ "tokens_per_s": 373612.8811945036,
+ "params_nonembedding": 21233718,
+ "levers": {
+  "lr_scale": 1.0,
+  "window_plan": null,
+  "dropped_windows": null,
+  "windows_per_epoch": null,
+  "mntp_frac": 0.0,
+  "mntp_p": [
+   0.3,
+   0.15
+  ],
+  "mntp_random_keep": [
+   0.1,
+   0.1
+  ],
+  "mask_id": null,
+  "vocab_size": 16384,
+  "tie_embeddings": false,
+  "ema_decay": 0.0,
+  "head_wd": null,
+  "embed_wd": null,
+  "adam_group_wd": {
+   "embed": 0.0,
+   "head": 0.0,
+   "scalar": 0.0
+  },
+  "levers_sha256": "3e9ae73ff4c9cce09bf1b68bab1e6319b87302c0e227f12a50e26fea66c4c3f4"
+ },
+ "fast": {
+  "blimp/blimp_fast": 70.36,
+  "blimp/supplement_fast": 68.8,
+  "entity_tracking/entity_tracking_fast": 33.13,
+  "ewok/ewok_fast": 51.18,
+  "wug_adj/wug_adj_nominalization": 0.46,
+  "wug_past/wug_past_tense": 0.24,
+  "reading/eye_tracking": 0.51,
+  "reading/self_paced_reading": 0.1
+ }
+}

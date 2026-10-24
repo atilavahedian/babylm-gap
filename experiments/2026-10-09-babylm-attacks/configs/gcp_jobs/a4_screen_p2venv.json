@@ -1,0 +1,82 @@
+{
+ "name": "a4_screen",
+ "commit": "3eebd06c7c682a16e486612bf2d8cc2c741ddae4",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,dev; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi; if [ -n \"${G_URI:-}\" ] && [ ! -f babylm/runs/a4_G/result.json ]; then mkdir -p babylm/runs/a4_G; gsutil -m -q rsync -r \"$G_URI\" babylm/runs/a4_G; fi; /opt/p2venv/bin/python -m babylm.a4.data halves",
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz",
+  "RESTORE_URI": "",
+  "G_URI": ""
+ },
+ "outputs": [
+  "babylm/runs"
+ ],
+ "keep_checkpoints": true,
+ "continue_on_error": true,
+ "jobs": [
+  {
+   "name": "a4_G",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --device cuda --only a4_G",
+   "timeout_s": 10800
+  },
+  {
+   "name": "a4_halfgens",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --device cuda --only a4_GA a4_GB",
+   "timeout_s": 10800
+  },
+  {
+   "name": "a4_generate",
+   "timeout_s": 10800,
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; mkdir -p babylm/runs/a4_data/gen; [ -f babylm/runs/a4_data/gen/a4a.json ] || python -m babylm.a4.generate --ckpt babylm/runs/a4_G/resume.pt --out babylm/runs/a4_data/gen/a4a --seed_split train_10M --block_split train_10M --words 29861319; [ -f babylm/runs/a4_data/gen/probe.json ] || python -m babylm.a4.generate --ckpt babylm/runs/a4_G/resume.pt --out babylm/runs/a4_data/gen/probe --seed_split train_10M --rows 2000; [ -f babylm/runs/a4_data/gen/n1a.json ] || python -m babylm.a4.generate --ckpt babylm/runs/a4_G/resume.pt --out babylm/runs/a4_data/gen/n1a --selfseed --block_split train_10M --words 29861319; [ -f babylm/runs/a4_data/gen/a4b_A.json ] || python -m babylm.a4.generate --ckpt babylm/runs/a4_GA/resume.pt --out babylm/runs/a4_data/gen/a4b_A --seed_split train_10M_hB --words 9953773; [ -f babylm/runs/a4_data/gen/a4b_B.json ] || python -m babylm.a4.generate --ckpt babylm/runs/a4_GB/resume.pt --out babylm/runs/a4_data/gen/a4b_B --seed_split train_10M_hA --words 9953773"
+  },
+  {
+   "name": "a4_build",
+   "timeout_s": 7200,
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; [ -f babylm/runs/a4_data/syn_a4a/bin/synth.meta.json ] || python -m babylm.a4.data build babylm/runs/a4_data/syn_a4a babylm/runs/a4_data/gen/a4a.jsonl.gz --words 29861319; [ -f babylm/runs/a4_data/syn_n1a/bin/synth.meta.json ] || python -m babylm.a4.data build babylm/runs/a4_data/syn_n1a babylm/runs/a4_data/gen/n1a.jsonl.gz --words 29861319; [ -f babylm/runs/a4_data/syn_n2a/bin/synth.meta.json ] || python -m babylm.a4.data shuffle babylm/runs/a4_data/syn_a4a babylm/runs/a4_data/syn_n2a; [ -f babylm/runs/a4_data/syn_a4b/bin/synth.meta.json ] || python -m babylm.a4.data build babylm/runs/a4_data/syn_a4b babylm/runs/a4_data/gen/a4b_A.jsonl.gz babylm/runs/a4_data/gen/a4b_B.jsonl.gz --words 19907546"
+  },
+  {
+   "name": "a4_audit",
+   "timeout_s": 10800,
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; mkdir -p babylm/runs/a4_data/audit; [ -f babylm/runs/a4_data/audit/leak.json ] || python -m babylm.a4.audit leak babylm/runs/a4_data/syn_a4a babylm/runs/a4_data/syn_n1a babylm/runs/a4_data/syn_n2a babylm/runs/a4_data/syn_a4b --eval_dir /opt/babylm/osf/evaluation_data --out babylm/runs/a4_data/audit/leak.json; [ -f babylm/runs/a4_data/audit/copy_a4a.json ] || python -m babylm.a4.audit copy babylm/runs/a4_data/syn_a4a --probe babylm/runs/a4_data/gen/probe.jsonl.gz --out babylm/runs/a4_data/audit/copy_a4a.json; [ -f babylm/runs/a4_data/audit/copy_n1a.json ] || python -m babylm.a4.audit copy babylm/runs/a4_data/syn_n1a --probe babylm/runs/a4_data/gen/probe.jsonl.gz --out babylm/runs/a4_data/audit/copy_n1a.json; [ -f babylm/runs/a4_data/audit/copy_a4b.json ] || python -m babylm.a4.audit copy babylm/runs/a4_data/syn_a4b --probe babylm/runs/a4_data/gen/probe.jsonl.gz --out babylm/runs/a4_data/audit/copy_a4b.json"
+  },
+  {
+   "name": "a4_n0a",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_n0a --device cuda; [ -f babylm/runs/a4_n0a/result.json ] && { [ -f babylm/runs/a4_n0a/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_n0a /opt/babylm; }; [ -d babylm/runs/a4_n0a/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_n0a/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_n0a/score/dev_bpw_twin.json > babylm/runs/a4_n0a/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_n0a failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_n0a/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_n0a/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_n0a/pt_v2/dev_v2.npz --check babylm/runs/a4_n0a/score/dev_bpw_twin.json > babylm/runs/a4_n0a/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_n0a failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_a",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_a --device cuda; [ -f babylm/runs/a4_a/result.json ] && { [ -f babylm/runs/a4_a/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_a /opt/babylm; }; [ -d babylm/runs/a4_a/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_a/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_a/score/dev_bpw_twin.json > babylm/runs/a4_a/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_a failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_a/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_a/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_a/pt_v2/dev_v2.npz --check babylm/runs/a4_a/score/dev_bpw_twin.json > babylm/runs/a4_a/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_a failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_n1a",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_n1a --device cuda; [ -f babylm/runs/a4_n1a/result.json ] && { [ -f babylm/runs/a4_n1a/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_n1a /opt/babylm; }; [ -d babylm/runs/a4_n1a/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_n1a/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_n1a/score/dev_bpw_twin.json > babylm/runs/a4_n1a/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_n1a failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_n1a/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_n1a/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_n1a/pt_v2/dev_v2.npz --check babylm/runs/a4_n1a/score/dev_bpw_twin.json > babylm/runs/a4_n1a/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_n1a failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_n2a",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_n2a --device cuda; [ -f babylm/runs/a4_n2a/result.json ] && { [ -f babylm/runs/a4_n2a/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_n2a /opt/babylm; }; [ -d babylm/runs/a4_n2a/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_n2a/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_n2a/score/dev_bpw_twin.json > babylm/runs/a4_n2a/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_n2a failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_n2a/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_n2a/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_n2a/pt_v2/dev_v2.npz --check babylm/runs/a4_n2a/score/dev_bpw_twin.json > babylm/runs/a4_n2a/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_n2a failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_n0b",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_n0b --device cuda; [ -f babylm/runs/a4_n0b/result.json ] && { [ -f babylm/runs/a4_n0b/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_n0b /opt/babylm; }; [ -d babylm/runs/a4_n0b/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_n0b/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_n0b/score/dev_bpw_twin.json > babylm/runs/a4_n0b/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_n0b failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_n0b/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_n0b/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_n0b/pt_v2/dev_v2.npz --check babylm/runs/a4_n0b/score/dev_bpw_twin.json > babylm/runs/a4_n0b/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_n0b failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_b",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; python -m babylm.harness.run_jobs babylm/configs/jobs_a4_screen.json --only a4_b --device cuda; [ -f babylm/runs/a4_b/result.json ] && { [ -f babylm/runs/a4_b/score/score.json ] || bash babylm/harness/score_trial.sh babylm/runs/a4_b /opt/babylm; }; [ -d babylm/runs/a4_b/score/hf ] && { [ -f babylm/eval/dev_bpw_twin.py ] || gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a4_b/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a4_b/score/dev_bpw_twin.json > babylm/runs/a4_b/score/dev_bpw_twin.log 2>&1 || echo '[twin] a4_b failed'; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; mkdir -p babylm/runs/a4_b/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a4_b/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/a4_b/pt_v2/dev_v2.npz --check babylm/runs/a4_b/score/dev_bpw_twin.json > babylm/runs/a4_b/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/a4_b failed\"; }",
+   "timeout_s": 14400
+  },
+  {
+   "name": "a4_report",
+   "cmd": "export PATH=/opt/p2venv/bin:$PATH; mkdir -p babylm/runs/a4_data/plots; for r in a4_G a4_GA a4_GB a4_n0a a4_a a4_n1a a4_n2a a4_n0b a4_b a4_n1b a4_n2b; do [ -f babylm/runs/$r/curves.csv ] && python -m babylm.harness.plot_curves babylm/runs/$r; done; python -m babylm.harness.plot_curves babylm/runs/a4_G babylm/runs/a4_n0a babylm/runs/a4_a babylm/runs/a4_n1a babylm/runs/a4_n2a --out babylm/runs/a4_data/plots/arm_a; python -m babylm.harness.plot_curves babylm/runs/a4_G babylm/runs/a4_n0b babylm/runs/a4_b babylm/runs/a4_n1b babylm/runs/a4_n2b --out babylm/runs/a4_data/plots/arm_b; python -m babylm.a4.ledger babylm/runs/a4_n0a babylm/runs/a4_a babylm/runs/a4_n1a babylm/runs/a4_n2a babylm/runs/a4_n0b babylm/runs/a4_b babylm/runs/a4_n1b babylm/runs/a4_n2b --base_epochs 10 --out babylm/runs/a4_data/ledger.json",
+   "timeout_s": 1800
+  }
+ ],
+ "note": "A4 screen (base job base_S_wd0p4_lr0p5_r1_ve0_tied from ref-0065:babylm/configs/jobs_base_r1_S.json). Plan {'E_star': 10, 'E_G': 4, 'E_g': 2, 'R_a': 3, 'R_b': 2, 'syn_words_a': 29861319, 'syn_words_b': 19907546, 'words_a': 99537730, 'words_b': 99537730}. One A100, sequential, about 2 h (batch 2 about 45 min): maxdur 3 h (batch 2: 1.5 h). Preempted => relaunch the same file with env RESTORE_URI=<bucket>/vms/<old VM>/out/babylm/runs (every step skips what exists). Afterwards copy each run's small files (result.json, config.json, curves.csv, train_log.csv, *.png, score/*.json) and babylm/runs/a4_data/{audit,plots,ledger.*} and babylm/runs/a4_data/gen/*.json to shared/babylm/attacks/A4/<run>/; tell the A4 thread (it reports the audits first, then the screen). | p2venv torch 2.7.0 version (experimenter 14:49Z env rule): setup builds /opt/p2venv, every job runs with PATH=/opt/p2venv/bin first (score_trial keeps its own eval venv)."
+}

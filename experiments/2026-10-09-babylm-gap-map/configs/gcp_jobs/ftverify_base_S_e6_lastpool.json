@@ -1,0 +1,26 @@
+{
+ "name": "ftverify-base-s-e6-lastpool",
+ "commit": "7dac8c6659b0b8acd8f3db6eabe50005b62a4fd5",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "out"
+ ],
+ "env": {},
+ "note": "Ruler 05:28Z final-table GLUE priority (i) @ref-0171 (FT_CONC cap + ftverify_hf): job1 = concurrent (FT_CONC=3) vs official sequential seed-42 GLUE identity on base_S_e6_lastpool (trained half of the sanity pair); job2 = untrained_lastpool half. Replaces score_hf_lastpool.json (ref-0197). Pool ruler, maxdur 3h. Readout ft_identity_base_S_e6_lastpool.txt.",
+ "jobs": [
+  {
+   "name": "ftverify_base_S_e6_lastpool",
+   "cmd": "FT_PARALLEL=1 FT_CONC=3 HF_URI=__BUCKET__/hf/base_S_e6 HF_NAME=base_S_e6_lastpool bash babylm/jobs/vm_job.sh ftverify_hf out/ftverify_base_S_e6_lastpool",
+   "timeout_s": 9000
+  },
+  {
+   "name": "score_hf_base_S_e6_untrained_lastpool",
+   "cmd": "FT_PARALLEL=1 FT_CONC=3 HF_URI=__BUCKET__/hf/base_S_e6 HF_NAME=base_S_e6_untrained_lastpool bash babylm/jobs/vm_job.sh score_hf out/score_hf_base_S_e6_untrained_lastpool",
+   "timeout_s": 3600
+  }
+ ]
+}

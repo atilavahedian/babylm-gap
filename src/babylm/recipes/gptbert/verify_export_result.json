@@ -1,0 +1,9 @@
+{
+  "state_dict_roundtrip_max_abs_diff": 0.0,
+  "causal: train-side model vs published HF, max|dlogit|": 0.0,
+  "causal: exported HF vs published HF, max|dlogit|": 0.0,
+  "masked: train-side model vs published HF, max|dlogit|": 0.0,
+  "masked: exported HF vs published HF, max|dlogit|": 0.0,
+  "tiny non-default size (patched config): exported vs train-side, max|dlogit| causal": 0.0,
+  "tiny non-default size (patched config): exported vs train-side, max|dlogit| masked": 0.0
+}

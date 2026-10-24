@@ -1,0 +1,4 @@
+model,path,registered_full,twin_minus_registered,twin_full_estimate
+s0,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied/hf,5.036669336147283,-0.02241919107720301,5.01425014507008
+s1,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s1/hf,5.0255455609757105,-0.01768216864255148,5.007863392333159
+s2,shared/babylm/base_r1/base_S_wd0p4_lr0p5_r1_ve0_tied_s2/hf,5.028277980328095,-0.019970685320745793,5.0083072950073495

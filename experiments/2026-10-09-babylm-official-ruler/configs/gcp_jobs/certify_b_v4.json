@@ -1,0 +1,39 @@
+{
+ "name": "certify_b_v3_ewok",
+ "commit": "2271e0645c30450a3d09a81825c7e467b694d403",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_hf_base_S_e6",
+   "cmd": "FT_PARALLEL=0 HF_URI=__BUCKET__/hf/base_S_e6 HF_NAME=base_S_e6 FMT_JSON=/opt/hinton/babylm/recipes/harness/format.json bash babylm/jobs/vm_job.sh score_hf out/score_hf_base_S_e6",
+   "timeout_s": 21600
+  },
+  {
+   "name": "score_pub_gpt2",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gpt2 out/score_pub_gpt2",
+   "timeout_s": 21600
+  },
+  {
+   "name": "score_pub_gptbert_masked",
+   "cmd": "FT_PARALLEL=0 bash babylm/jobs/vm_job.sh score_pub_gptbert_masked out/score_pub_gptbert_masked",
+   "timeout_s": 21600
+  },
+  {
+   "name": "score_controls",
+   "cmd": "bash babylm/jobs/vm_job.sh score_controls out/score_controls",
+   "timeout_s": 18000
+  }
+ ],
+ "outputs": [
+  "out"
+ ],
+ "env": {
+  "EWOK_ZIP": "__EWOK__",
+  "FT_PARALLEL": "1"
+ },
+ "note": "certify_b v4 (ruler 22:54Z, experimenter 22:54Z): at ref-0395 (per-task GLUE resume, 7/7 rule). FIRST score_hf on locked S E6 base (v2_S_10M_e6_s0 HF export, copied to __BUCKET__/hf/base_S_e6) FT_PARALLEL=0; then score_pub_gpt2 (FT_PARALLEL=1, 7/7 fallback), score_pub_gptbert_masked (FT_PARALLEL=0), score_controls. Relaunch after a cut: stage old out/ and pass GLUE_RESUME_FROM."
+}

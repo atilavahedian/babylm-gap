@@ -1,0 +1,55 @@
+{
+ "syn_dir": "babylm/runs/a4_data/syn_a4b",
+ "syn_sha256": "18db2f6a7de85c775107f0c63c3d1a69a185256ba7dc5057ddeece774b959d92",
+ "train_10M_sha256": "30be8c16ad4b2147d6c09d63f9463f2222313cd87a0e7ea11084084b0d74cfe4",
+ "overlap": {
+  "synthetic": {
+   "6gram": 0.2291218455546,
+   "8gram": 0.10852200441483927
+  },
+  "dev": {
+   "6gram": 0.1867391307383759,
+   "8gram": 0.08279417408225365
+  }
+ },
+ "nearest_neighbour": {
+  "rule": "semi-global token edit distance to train_10M around the best 6-gram diagonals; near-copy = distance <= 10% of the length",
+  "synthetic": {
+   "docs": 2000,
+   "near_copy_rate": 0.0,
+   "exact_rate": 0.0,
+   "mean_norm_distance": 0.7547933824153084,
+   "quantiles_norm_distance": {
+    "0.01": 0.48164811242766603,
+    "0.05": 0.5263157894736842,
+    "0.1": 0.5531914893617021,
+    "0.5": 0.7931984538202155
+   }
+  },
+  "dev_chunks": {
+   "docs": 2000,
+   "near_copy_rate": 0.0005,
+   "exact_rate": 0.0,
+   "mean_norm_distance": 0.819426005789151,
+   "quantiles_norm_distance": {
+    "0.01": 0.489421052631579,
+    "0.05": 0.5691489361702128,
+    "0.1": 0.6073298429319371,
+    "0.5": 0.8624338624338624
+   }
+  },
+  "probe": {
+   "docs": 1950,
+   "near_copy_rate": 0.0,
+   "exact_rate": 0.0,
+   "mean_norm_distance": 0.7467495637517816,
+   "quantiles_norm_distance": {
+    "0.01": 0.48157649796393254,
+    "0.05": 0.5239241151005857,
+    "0.1": 0.5497382198952879,
+    "0.5": 0.7853403141361257
+   }
+  }
+ },
+ "seconds": 97.43733811378479
+}

@@ -1,0 +1,126 @@
+{
+ "spec": "critic ref-0185 (B official): composite = unweighted mean of every zero-shot task score below with composite=true; Entity is reported only; GLUE7 (final-token, matched 2-FT ensemble) is its own column, never in the composite",
+ "models": {
+  "mix28L_p01": {
+   "model": "mix28L_p01",
+   "valid": true,
+   "notes": [
+    "no GLUE7 (mix28L_p01_ens2: 0/7)"
+   ],
+   "guard": "PASS export 4.793700 vs read 4.793700 nats/word, |diff| 1.63e-09 (tolerance 1e-4)",
+   "BLiMP": 69.72,
+   "Supplement": 57.87,
+   "EWoK": 51.22,
+   "COMPS": 53.59,
+   "WUG_adj": 42.0,
+   "WUG_past": 12.0,
+   "Reading_rt": 0.17,
+   "Reading_spr": 0.0,
+   "Entity": 23.41,
+   "composite": 35.82125,
+   "glue_source": "mix28L_p01_ens2",
+   "GLUE7": null
+  },
+  "mix28L_p23": {
+   "model": "mix28L_p23",
+   "valid": true,
+   "notes": [
+    "no GLUE7 (mix28L_p23_ens2: 0/7)"
+   ],
+   "guard": "PASS export 4.795396 vs read 4.795396 nats/word, |diff| 6.66e-10 (tolerance 1e-4)",
+   "BLiMP": 69.71,
+   "Supplement": 59.7,
+   "EWoK": 51.58,
+   "COMPS": 53.99,
+   "WUG_adj": 48.0,
+   "WUG_past": 18.0,
+   "Reading_rt": 0.23,
+   "Reading_spr": 0.02,
+   "Entity": 27.5,
+   "composite": 37.65375,
+   "glue_source": "mix28L_p23_ens2",
+   "GLUE7": null
+  },
+  "mix28L_p45": {
+   "model": "mix28L_p45",
+   "valid": true,
+   "notes": [
+    "no GLUE7 (mix28L_p45_ens2: 0/7)"
+   ],
+   "guard": "PASS export 4.792486 vs read 4.792486 nats/word, |diff| 1.13e-09 (tolerance 1e-4)",
+   "BLiMP": 70.62,
+   "Supplement": 60.54,
+   "EWoK": 50.32,
+   "COMPS": 54.01,
+   "WUG_adj": 55.00000000000001,
+   "WUG_past": 23.0,
+   "Reading_rt": 0.29,
+   "Reading_spr": 0.0,
+   "Entity": 30.07,
+   "composite": 39.222500000000004,
+   "glue_source": "mix28L_p45_ens2",
+   "GLUE7": null
+  }
+ },
+ "arms": {
+  "mix28L": {
+   "BLiMP": {
+    "mean": 70.01666666666667,
+    "sd": 0.5225259164226578,
+    "n": 3
+   },
+   "Supplement": {
+    "mean": 59.370000000000005,
+    "sd": 1.3652472303579317,
+    "n": 3
+   },
+   "EWoK": {
+    "mean": 51.04,
+    "sd": 0.6489992295835171,
+    "n": 3
+   },
+   "COMPS": {
+    "mean": 53.86333333333334,
+    "sd": 0.2369247419188894,
+    "n": 3
+   },
+   "WUG_adj": {
+    "mean": 48.333333333333336,
+    "sd": 6.506407098647715,
+    "n": 3
+   },
+   "WUG_past": {
+    "mean": 17.666666666666668,
+    "sd": 5.507570547286102,
+    "n": 3
+   },
+   "Reading_rt": {
+    "mean": 0.22999999999999998,
+    "sd": 0.059999999999999984,
+    "n": 3
+   },
+   "Reading_spr": {
+    "mean": 0.006666666666666667,
+    "sd": 0.011547005383792516,
+    "n": 3
+   },
+   "Entity": {
+    "mean": 26.993333333333336,
+    "sd": 3.358784502365898,
+    "n": 3
+   },
+   "composite": {
+    "mean": 37.56583333333334,
+    "sd": 1.7023285217117585,
+    "n": 3
+   },
+   "GLUE7": {
+    "mean": null,
+    "sd": null,
+    "n": 0
+   },
+   "claim": "no claim (n<3)"
+  }
+ },
+ "beats": {}
+}

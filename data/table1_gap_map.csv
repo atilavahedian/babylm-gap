@@ -1,0 +1,8 @@
+table,row,col,k,value,derivation,source
+tab:map,0,1,0,0.2893001326568658,raw/all/all member-ens8,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,0,2,0,38.939941291063626,100 * member-ens8 / (member - t100),experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,1,1,0,0.23300281483427465,raw/all/all ens8-c1oracle,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,1,2,0,31.36229439984633,100 * ens8-c1oracle / (member - t100),experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,2,1,0,0.2206363663985229,raw/all/all c1oracle-t100,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,2,2,0,29.697764309090044,100 * c1oracle-t100 / (member - t100),experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json
+tab:map,3,1,0,0.7429393138896634,raw/all/all member - t100,experiments/2026-10-09-babylm-gap-map/results/d1_bias/bias.json

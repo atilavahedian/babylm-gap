@@ -1,0 +1,27 @@
+{
+ "ckpt": "/opt/hinton/out/train_hard_decay_off_seed0/run/checkpoint-5077",
+ "revision": null,
+ "files": [
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/bnc_spoken.dev",
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/childes.dev",
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/gutenberg.dev",
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/open_subtitles.dev",
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/simple_wiki.dev",
+  "/opt/hinton/out/train_hard_decay_off_seed0/run/work/text/dev/switchboard.dev"
+ ],
+ "files_sha256": [
+  "2c546720837b059da82634b5554a7694bbb9bdeef18f52734da11ba443795cd8",
+  "5823392e65a6da3344811845504c5d1ad9acec42315e2bd938be5eb01a8422a5",
+  "760ebc4c697b91308dd21f643ae3c3071e3e1222960fcf8af04119addc50e99b",
+  "2e8038d3216c28d7319d0cb564011061d64e093e426b0ca816a9def481481e6b",
+  "0ca18973a91069bf917bae9072ff511d39b474d590ab2241cb717221d8532c98",
+  "3dcd2a40051f8e90dadaa0ef656183c1ace7c62682f3306c86ed86aa8cfd057a"
+ ],
+ "tokens": 17332480,
+ "words_read": 10418979,
+ "k": 7,
+ "seq": 256,
+ "mean_loss_nats_per_token": 3.4297022819519043,
+ "nats_per_word": 5.705477237701416,
+ "kind": "MLM pseudo-loss, not causal"
+}

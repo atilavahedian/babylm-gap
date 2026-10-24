@@ -1,0 +1,734 @@
+{
+ "audits": {
+  "leak": {
+   "syn_a4a": {
+    "words": 29861325,
+    "items_hit": 91,
+    "items_hit_synthetic_only": 46,
+    "dev_13gram_share": 1.3645750849642929e-06,
+    "dev_13gram_share_synthetic_only": 1.267105436038272e-06
+   },
+   "syn_n1a": {
+    "words": 29861487,
+    "items_hit": 22,
+    "items_hit_synthetic_only": 13,
+    "dev_13gram_share": 8.772268403341884e-07,
+    "dev_13gram_share_synthetic_only": 7.797571914081675e-07
+   },
+   "syn_n2a": {
+    "words": 29861325,
+    "items_hit": 0,
+    "items_hit_synthetic_only": 0,
+    "dev_13gram_share": 1.3645750849642929e-06,
+    "dev_13gram_share_synthetic_only": 1.267105436038272e-06
+   },
+   "syn_a4b": {
+    "words": 19907697,
+    "items_hit": 57,
+    "items_hit_synthetic_only": 26,
+    "dev_13gram_share": 1.7544536806683768e-06,
+    "dev_13gram_share_synthetic_only": 1.3645750849642929e-06
+   }
+  },
+  "copy": {
+   "a4a": {
+    "overlap_6gram": 0.09805204097772631,
+    "overlap_8gram": 0.00024156592803281898,
+    "dev_overlap_6gram": 0.1867391307383759,
+    "near_copy_synthetic": 0.0,
+    "near_copy_dev_chunks": 0.0,
+    "near_copy_probe": 0.0
+   },
+   "a4b": {
+    "overlap_6gram": 0.2291218455546,
+    "overlap_8gram": 0.10852200441483927,
+    "dev_overlap_6gram": 0.1867391307383759,
+    "near_copy_synthetic": 0.0,
+    "near_copy_dev_chunks": 0.0005,
+    "near_copy_probe": 0.0
+   },
+   "n1a": {
+    "overlap_6gram": 0.012433464384499092,
+    "overlap_8gram": 1.6687457658069338e-05,
+    "dev_overlap_6gram": 0.1867391307383759,
+    "near_copy_synthetic": 0.0,
+    "near_copy_dev_chunks": 0.0,
+    "near_copy_probe": 0.0
+   }
+  }
+ },
+ "thresholds": {
+  "metric": "v2",
+  "key": "dev_nats_per_word_twin",
+  "condition": "solo",
+  "pass_gain": 0.01,
+  "kill_gain": 0.0074,
+  "blimp_kill": 2.0,
+  "ref": "critic ref-0019, interim v2 screen floor 0.0036",
+  "numbers_only": false
+ },
+ "step_check": {
+  "base": {
+   "checkpoint": "chck_100M.pt",
+   "ckpt_step": 2435,
+   "final_step": 2435,
+   "last_row": [
+    "100M",
+    2435
+   ],
+   "ok": true
+  },
+  "estar_raw": {
+   "checkpoint": "chck_60M.pt",
+   "ckpt_step": 1461,
+   "final_step": 1461,
+   "last_row": [
+    "60M",
+    1461
+   ],
+   "ok": true
+  },
+  "a4_a": {
+   "checkpoint": "chck_100M.pt",
+   "ckpt_step": 1449,
+   "final_step": 1449,
+   "last_row": [
+    "100M",
+    1449
+   ],
+   "ok": true
+  },
+  "a4_n0a": {
+   "checkpoint": "chck_100M.pt",
+   "ckpt_step": 1460,
+   "final_step": 1460,
+   "last_row": [
+    "100M",
+    1460
+   ],
+   "ok": true
+  }
+ },
+ "env_check": {
+  "rule": "critic ref-0037 (registered 14:50Z, map 14:54Z; GPU model binding 15:34Z; instrument 48436034 / ref-0039), experimenter 15:07Z: the torch/CUDA build, the GPU model and the packing instrument (solo or packed) are part of the recipe; every compared run (arm, nulls, references, the generators the runs start from) shares one environment (the reference: p2venv torch 2.7.0+cu126 on an NVIDIA A100-SXM4-40GB, solo; another instance of the same GPU model is the same environment). Run files do not record packing: the batch's instrument is its ticket's (--packed for a packed one) and each reference's is declared from its ticket (--ref_instrument NAME=solo|packed). The 0.002 single-pair admission is retracted (critic ref-0038); a cross-environment read stands only if its margin clears its bar + ENV_SYS on both legs, raw and calibrated_t (critic 48436034 / 76151841: raw 0.014 full / 0.013 guarded, calibrated_t 0.014 / 0.014), plus PACK_SYS across instruments (critic ref-0046: 0.012 / 0.010), else it needs a within-environment run. This readout reads within one environment and one instrument only: use a reference run in the arms' environment (the E10 base: v2e, solo)",
+  "home": "2.7.0+cu126",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "instrument": "solo",
+  "ref_instruments": {
+   "base": "solo",
+   "estar_raw": "solo"
+  },
+  "builds": {
+   "a4_a": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB"
+   },
+   "a4_n0a": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "sidecar": {
+     "run": "a4_n0a",
+     "source": "babylm/gcp/startup.sh write_instrument",
+     "startup_commit": "e4457da58f9a4e1826e5524686ed820ead625d02",
+     "instrument": "solo",
+     "pack_env": null,
+     "pack_partners": [],
+     "train_procs_at_launch": 1,
+     "vm": "bl-a4-screen-1010-235629",
+     "machine_type": "a2-highgpu-1g",
+     "gpu": [
+      "NVIDIA A100-SXM4-40GB"
+     ],
+     "gpu_procs_max": 1,
+     "gpu_proc_log": [
+      [
+       1791684940,
+       0
+      ],
+      [
+       1791684970,
+       1
+      ],
+      [
+       1791685000,
+       1
+      ],
+      [
+       1791685030,
+       1
+      ],
+      [
+       1791685060,
+       1
+      ],
+      [
+       1791685090,
+       1
+      ],
+      [
+       1791685120,
+       1
+      ],
+      [
+       1791685150,
+       1
+      ],
+      [
+       1791685180,
+       1
+      ],
+      [
+       1791685210,
+       1
+      ],
+      [
+       1791685240,
+       1
+      ],
+      [
+       1791685270,
+       1
+      ],
+      [
+       1791685300,
+       1
+      ],
+      [
+       1791685330,
+       1
+      ],
+      [
+       1791685360,
+       1
+      ],
+      [
+       1791685390,
+       1
+      ],
+      [
+       1791685420,
+       1
+      ],
+      [
+       1791685451,
+       1
+      ],
+      [
+       1791685481,
+       1
+      ],
+      [
+       1791685511,
+       1
+      ],
+      [
+       1791685541,
+       0
+      ],
+      [
+       1791685571,
+       1
+      ],
+      [
+       1791685601,
+       1
+      ],
+      [
+       1791685631,
+       1
+      ],
+      [
+       1791685661,
+       1
+      ],
+      [
+       1791685691,
+       1
+      ],
+      [
+       1791685721,
+       1
+      ],
+      [
+       1791685751,
+       1
+      ],
+      [
+       1791685781,
+       1
+      ],
+      [
+       1791685811,
+       1
+      ],
+      [
+       1791685841,
+       1
+      ],
+      [
+       1791685871,
+       1
+      ],
+      [
+       1791685901,
+       1
+      ],
+      [
+       1791685931,
+       1
+      ],
+      [
+       1791685961,
+       1
+      ],
+      [
+       1791685991,
+       1
+      ],
+      [
+       1791686021,
+       1
+      ],
+      [
+       1791686051,
+       1
+      ],
+      [
+       1791686081,
+       1
+      ],
+      [
+       1791686111,
+       1
+      ],
+      [
+       1791686141,
+       1
+      ],
+      [
+       1791686171,
+       1
+      ],
+      [
+       1791686201,
+       1
+      ],
+      [
+       1791686231,
+       1
+      ],
+      [
+       1791686261,
+       1
+      ],
+      [
+       1791686291,
+       1
+      ]
+     ],
+     "train_window_unix": [
+      1791684970,
+      1791685228
+     ]
+    }
+   },
+   "a4_G": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "sidecar": {
+     "run": "a4_G",
+     "source": "babylm/gcp/startup.sh write_instrument",
+     "startup_commit": "e4457da58f9a4e1826e5524686ed820ead625d02",
+     "instrument": "solo",
+     "pack_env": null,
+     "pack_partners": [],
+     "train_procs_at_launch": 1,
+     "vm": "bl-a4-screen-1010-235629",
+     "machine_type": "a2-highgpu-1g",
+     "gpu": [
+      "NVIDIA A100-SXM4-40GB"
+     ],
+     "gpu_procs_max": 1,
+     "gpu_proc_log": [
+      [
+       1791677408,
+       0
+      ],
+      [
+       1791677438,
+       1
+      ],
+      [
+       1791677468,
+       1
+      ],
+      [
+       1791677498,
+       1
+      ],
+      [
+       1791677528,
+       1
+      ],
+      [
+       1791677558,
+       1
+      ],
+      [
+       1791677588,
+       1
+      ],
+      [
+       1791677618,
+       1
+      ],
+      [
+       1791677648,
+       1
+      ],
+      [
+       1791677678,
+       1
+      ],
+      [
+       1791677708,
+       1
+      ]
+     ],
+     "train_window_unix": [
+      1791677438,
+      1791677695
+     ]
+    }
+   },
+   "a4_GA": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "sidecar": {
+     "run": "a4_GA",
+     "source": "babylm/gcp/startup.sh write_instrument",
+     "startup_commit": "e4457da58f9a4e1826e5524686ed820ead625d02",
+     "instrument": "solo",
+     "pack_env": null,
+     "pack_partners": [],
+     "train_procs_at_launch": 1,
+     "vm": "bl-a4-screen-1010-235629",
+     "machine_type": "a2-highgpu-1g",
+     "gpu": [
+      "NVIDIA A100-SXM4-40GB"
+     ],
+     "gpu_procs_max": 1,
+     "gpu_proc_log": [
+      [
+       1791677724,
+       0
+      ],
+      [
+       1791677754,
+       1
+      ],
+      [
+       1791677784,
+       1
+      ],
+      [
+       1791677814,
+       1
+      ],
+      [
+       1791677844,
+       1
+      ],
+      [
+       1791677874,
+       1
+      ],
+      [
+       1791677904,
+       1
+      ],
+      [
+       1791677934,
+       1
+      ]
+     ],
+     "train_window_unix": [
+      1791677754,
+      1791677816
+     ]
+    }
+   },
+   "a4_GB": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "sidecar": {
+     "run": "a4_GB",
+     "source": "babylm/gcp/startup.sh write_instrument",
+     "startup_commit": "e4457da58f9a4e1826e5524686ed820ead625d02",
+     "instrument": "solo",
+     "pack_env": null,
+     "pack_partners": [],
+     "train_procs_at_launch": 1,
+     "vm": "bl-a4-screen-1010-235629",
+     "machine_type": "a2-highgpu-1g",
+     "gpu": [
+      "NVIDIA A100-SXM4-40GB"
+     ],
+     "gpu_procs_max": 1,
+     "gpu_proc_log": [
+      [
+       1791677724,
+       0
+      ],
+      [
+       1791677754,
+       1
+      ],
+      [
+       1791677784,
+       1
+      ],
+      [
+       1791677814,
+       1
+      ],
+      [
+       1791677844,
+       1
+      ],
+      [
+       1791677874,
+       1
+      ],
+      [
+       1791677904,
+       1
+      ],
+      [
+       1791677934,
+       1
+      ]
+     ],
+     "train_window_unix": [
+      1791677844,
+      1791677926
+     ]
+    }
+   },
+   "base": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB"
+   },
+   "estar_raw": {
+    "torch": "2.7.0+cu126",
+    "gpu": "NVIDIA A100-SXM4-40GB"
+   }
+  },
+  "gpus": [
+   "NVIDIA A100-SXM4-40GB"
+  ]
+ },
+ "instrument_check": {
+  "rule": "critic ref-0035: a screen reads on the tickets' declared instruments; promotion and every claim also need each compared run's instrument corroborated by executor 3 from VM evidence (the VM's job list or startup.log showing one job at a time, solo, or two, packed; its machine type and GPU name): --vm_evidence, one row per run, or for a solo run its complete instrument.json sidecar (SIDECAR_RULE). Any disagreement between a row, a sidecar, the ticket and the run's GPU record VOIDs the read; a run without a complete row or sidecar leaves promotion pending",
+  "sidecar_rule": "critic ref-0036: the runner's sidecar stands in for a solo run's row only when complete: (a) written on the VM during the run by startup.sh, which records its own commit (source, startup_commit, not +dirty); (b) copied back with the run's outputs, never regenerated (one naming another run conflicts); (c) solo stated positively: PACK recorded as unset or 1 (pack_env), no pack partners, one training process at launch (train_procs_at_launch), as no pack lines alone is not solo; (d) its VM, machine type and nvidia-smi GPUs, the run's result.json GPU among them. Runs from before ref-0040 still need the row. Critic ref-0041: solo means exactly 1 GPU compute process in every sample of the training window, first train step to final checkpoint write (train_window_unix over gpu_proc_log; later scoring is excluded by time), and a second process in it VOIDs the read; a sidecar that cannot isolate the window needs gpu_procs_max = 1 over the job, else the row decides",
+  "instrument": "solo",
+  "compared": 7,
+  "rows": {
+   "v2_S_10M_e10_s0": {
+    "run": "v2_S_10M_e10_s0",
+    "vm": "bl-exp-p2v2d-estar-1010-154711",
+    "machine_type": "a2-highgpu-1g",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "instrument": "solo",
+    "evidence": "startup.log: jobs serial; v2_S_10M_e10_s0 16:44Z-17:16Z"
+   },
+   "v2_S_10M_e6_s0": {
+    "run": "v2_S_10M_e6_s0",
+    "vm": "bl-exp-p2v2c-1010-093536",
+    "machine_type": "a2-highgpu-1g",
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "instrument": "solo",
+    "evidence": "startup.log: jobs serial; v2_S_10M_e6_s0 12:04Z-12:31Z (prev e3_s0 ended, next e7_s0 started 12:31Z)"
+   }
+  },
+  "missing": [
+   "a4_a"
+  ],
+  "by_sidecar": [
+   "a4_n0a",
+   "a4_G",
+   "a4_GA",
+   "a4_GB"
+  ],
+  "sidecars": [
+   "a4_G",
+   "a4_GA",
+   "a4_GB",
+   "a4_n0a"
+  ]
+ },
+ "scope": "a screen only (critic ref-0039): no claim until the arms' environment has a solo E10 pool of 3 runs or more (torch 2.7: v2e, v2f and one more), whose SD on the gated metric sets the claim floors; the torch 2.9 pool's SD is not borrowed",
+ "families": {
+  "a": {
+   "arm": "a4_a",
+   "dev": 5.018829094421015,
+   "dev_v1": 5.0390229231851995,
+   "dev_v2": 5.018829094421015,
+   "dev_v2x": 4.995732709737338,
+   "blimp_fast": 68.72,
+   "flops_vs_twin": 1.1596697008337176,
+   "within_R0": true,
+   "refs": {
+    "N0'": {
+     "dev": 4.980877901201347,
+     "gain": -0.03795119321966833,
+     "blimp_fast": 67.57,
+     "gain_v1": -0.03402626442386136,
+     "gain_v2": -0.03795119321966833,
+     "ok": true,
+     "null": true,
+     "status": "kill",
+     "gain_ex_unseen": -0.04496320956232758,
+     "status_ex_unseen": "kill",
+     "gain_ex_unseen_harness": null
+    },
+    "base": {
+     "dev": 5.008766736010567,
+     "gain": -0.010062358410448446,
+     "blimp_fast": 66.69,
+     "gain_v1": -0.0065993419914249785,
+     "gain_v2": -0.010062358410448446,
+     "ok": true,
+     "null": false,
+     "status": "kill",
+     "gain_ex_unseen": -0.019107588972346434,
+     "status_ex_unseen": "kill",
+     "gain_ex_unseen_harness": null
+    }
+   },
+   "kill": [
+    "gain over N0' -0.0380 < 0.0074",
+    "gain over base -0.0101 < 0.0074"
+   ],
+   "inconclusive": [],
+   "artifact": [],
+   "guard_pending": [],
+   "leg_pending": [],
+   "missing": [
+    "N1",
+    "N2"
+   ],
+   "unseen_leg": {
+    "instrument": "v2 twin @ ref-0026 ex_unseen_chars, v2 against v2 (critic ref-0023 / ref-0024 / ref-0025, experimenter 06:43Z)",
+    "arm": 4.995732709737338,
+    "other_counts": [],
+    "cross_check": {
+     "instrument": "babylm/tools/unseen_chars.py sha256 ref-0017 (ref-0016), critic ref-0001 / ref-0015",
+     "words": null,
+     "chars": null,
+     "arm_rest": null,
+     "binding": false
+    }
+   },
+   "comparator": "N0'",
+   "blimp_drop_vs_comparator": -1.1500000000000057,
+   "verdict": "NO VERDICT: missing ['N1', 'N2']",
+   "gates": {
+    "kill_gain": 0.0074,
+    "kill_lines": {
+     "raw": {
+      "full": 0.0074,
+      "guarded": 0.0074
+     },
+     "calibrated_t": {
+      "full": 0.0095,
+      "guarded": 0.0094
+     }
+    },
+    "cal_t": "critic ref-0032: a bar read on calibrated_t (the promotion gates, every claim) is the raw bar x the leg's calibrated_t/raw solo E10 SD ratio (full 0.0037 / 0.0029 = 1.28, guarded 0.0038 / 0.0030 = 1.27); packed x1.28 on both legs, provisional until a packed calibrated_t SD exists",
+    "calib": {
+     "ref": "critic ref-0011 / ref-0029: calibrated_t binds (softmax(z / T) mixed with lam x unigram, T and lam picked jointly, cross-fitted on DEV document parity); the lam-only value is reported",
+     "tool": "babylm/tools/calib_control.py @ ref-0033 --format v2 --json",
+     "dump": "babylm/moonshot/dev_bpw_dump.py @ ref-0034 --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2"
+    },
+    "estar": "critic ref-0030 / ref-0031: raw gain vs the same-seed base at E*_raw (v2 twin), calibrated_t gain vs the same-seed base at E*_cal; the screen keeps its registered bars vs E10",
+    "calibrated": {
+     "N0'": {
+      "name": "a4_n0a",
+      "full": null,
+      "guarded": null,
+      "full_lam": null,
+      "guarded_lam": null
+     },
+     "base": {
+      "name": "base",
+      "full": null,
+      "guarded": null,
+      "full_lam": null,
+      "guarded_lam": null
+     }
+    },
+    "blocked": [
+     "epoch-equivalent: raw gain over the same-seed base at E*_raw (full) -0.0553 < 0.0074",
+     "epoch-equivalent: raw gain over the same-seed base at E*_raw (guarded) -0.0590 < 0.0074"
+    ],
+    "pending": [
+     "no calibrated control (--calib: calib_control @ ref-0033 over the temps dumps)",
+     "the instrument is not corroborated from VM evidence for a4_a (critic ref-0035 / ref-0036: --vm_evidence or a complete runner sidecar)"
+    ],
+    "estar_raw": {
+     "run": "v2_S_10M_e6_s0",
+     "full": -0.05528174259399954,
+     "guarded": -0.05898325603350685
+    },
+    "estar_cal": {
+     "name": "estar_cal",
+     "full": null,
+     "guarded": null,
+     "build_via": null
+    },
+    "uncorroborated": [
+     "a4_a"
+    ]
+   },
+   "promotion": null
+  },
+  "b": {
+   "arm": "a4_b",
+   "dev": null,
+   "dev_v1": null,
+   "dev_v2": null,
+   "dev_v2x": null,
+   "blimp_fast": null,
+   "flops_vs_twin": null,
+   "within_R0": null,
+   "refs": {},
+   "kill": [],
+   "inconclusive": [],
+   "artifact": [],
+   "guard_pending": [],
+   "leg_pending": [],
+   "missing": [
+    "N0'",
+    "N1",
+    "N2",
+    "base",
+    "FLOP-matched a4_n0a"
+   ],
+   "verdict": "NO VERDICT: missing [\"N0'\", 'N1', 'N2', 'base', 'FLOP-matched a4_n0a']",
+   "gates": null,
+   "promotion": null
+  }
+ },
+ "judged": "a",
+ "verdict": "NO VERDICT: missing ['N1', 'N2']",
+ "promotion": null,
+ "promote": null,
+ "estar": {
+  "note": "experimenter 14:28Z: E*_raw = E*_cal = 6 (v2c calib_control)",
+  "raw_base": "shared/babylm/split/v2_S_10M_e6_s0/score/score.json",
+  "calib": null
+ },
+ "next": null,
+ "table": "| family | arm DEV (v2) | reference | ref DEV | gain | gain v1 / v2 | gain without never-seen-char words: v2 twin / harness cross-check | status | BLiMP-fast arm / ref |\n|---|---|---|---|---|---|---|---|---|\n| a (a4_a) | 5.0188 | N0' | 4.9809 | -0.0380 | -0.0340 / -0.0380 | -0.0450 / ? | kill | 68.72 / 67.57 |\n| a (a4_a) | 5.0188 | base | 5.0088 | -0.0101 | -0.0066 / -0.0101 | -0.0191 / ? | kill | 68.72 / 66.69 |\n\n| family | promotion gate (its metric's kill line, both legs) | gain full | gain without never-seen-char words | lam-only full / without |\n|---|---|---|---|---|\n| a (a4_a) | calibrated_t over N0' | ? | ? | ? / ? |\n| a (a4_a) | calibrated_t over base | ? | ? | ? / ? |\n| a (a4_a) | raw over the same-seed base at E*_raw | -0.0553 | -0.0590 |  |\n| a (a4_a) | calibrated_t over the same-seed base at E*_cal | ? | ? |  |"
+}

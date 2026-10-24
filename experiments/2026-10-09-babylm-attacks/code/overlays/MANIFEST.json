@@ -1,0 +1,71 @@
+{
+ "a1_self_distill_2szb4k": {
+  "branch": "wip-branch",
+  "tip": "ref-0003",
+  "files": [
+   "babylm/analysis/post_runs.py",
+   "babylm/configs/make_base_jobs.py",
+   "babylm/configs/make_gpu_jobs.py",
+   "babylm/eval/dev_bpw.py",
+   "babylm/harness/export_hf.py",
+   "babylm/harness/hf_template/configuration_hinton.py",
+   "babylm/harness/hf_template/modeling_hinton.py",
+   "babylm/harness/levers.py",
+   "babylm/harness/score_trial.sh",
+   "babylm/harness/self_distill.py",
+   "babylm/harness/train.py",
+   "babylm/tests/test_harness.py",
+   "babylm/tests/test_levers.py",
+   "babylm/tests/test_self_distill.py"
+  ]
+ },
+ "a2_input_noise_gd7wjc": {
+  "branch": "wip-branch",
+  "tip": "ref-0004",
+  "files": [
+   "babylm/analysis/post_runs.py",
+   "babylm/configs/make_base_jobs.py",
+   "babylm/configs/make_gpu_jobs.py",
+   "babylm/eval/dev_bpw.py",
+   "babylm/harness/export_hf.py",
+   "babylm/harness/hf_template/configuration_hinton.py",
+   "babylm/harness/hf_template/modeling_hinton.py",
+   "babylm/harness/input_noise.py",
+   "babylm/harness/levers.py",
+   "babylm/harness/score_trial.sh",
+   "babylm/harness/train.py",
+   "babylm/tests/test_harness.py",
+   "babylm/tests/test_input_noise.py",
+   "babylm/tests/test_levers.py"
+  ]
+ },
+ "stack_taxy02": {
+  "branch": "wip-branch",
+  "tip": "ref-0007",
+  "files": [
+   "babylm/a4/ledger.py",
+   "babylm/a4/verdict.py",
+   "babylm/analysis/post_runs.py",
+   "babylm/configs/make_a2_jobs.py",
+   "babylm/configs/make_a3_jobs.py",
+   "babylm/configs/make_a4_jobs.py",
+   "babylm/configs/make_base_jobs.py",
+   "babylm/eval/dev_bpw.py",
+   "babylm/harness/bpe_dropout.py",
+   "babylm/harness/cycle.py",
+   "babylm/harness/export_hf.py",
+   "babylm/harness/hf_template/configuration_hinton.py",
+   "babylm/harness/hf_template/modeling_hinton.py",
+   "babylm/harness/levers.py",
+   "babylm/harness/score_trial.sh",
+   "babylm/harness/train.py",
+   "babylm/tests/test_a4.py",
+   "babylm/tests/test_harness.py",
+   "babylm/tests/test_input_noise.py",
+   "babylm/tests/test_levers.py",
+   "babylm/tests/test_make_stack_jobs.py",
+   "babylm/tests/test_self_distill.py",
+   "babylm/tests/test_stack.py"
+  ]
+ }
+}

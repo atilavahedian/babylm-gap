@@ -1,0 +1,26 @@
+[job] score_hf start 2026-10-11T05:23:42Z commit 7a866c3091ec2df4d20ff6159202c000b51e3efe
+babylm/jobs/vm_job.sh: line 42: nvidia-smi: command not found
+183 files bad: []
+ok
+patched scratch/bw/eval2025/evaluation_pipeline/sentence_zero_shot/compute_results.py
+eval ready: cd scratch/bw/eval2025 && PY=scratch/bw/venv/bin/python scratch/rz/babylm/eval/zero_shot_all.sh MODEL causal
+{"job": "score_hf", "torch": "2.7.0+cpu", "cuda": null, "gpu": null, "transformers": "4.51.3", "python": "3.13.16"}
+[job] GLUE finetune script: eval_finetuning.sh
+Copying ${BUCKET}/ewok/ewok-core-1.0_ref-0155.zip to file://scratch/bw/ewok.zip
+  
+.....
+[job] full EWoK files: 11
+Copying ${BUCKET}/babylm/hf/base_S_e6/config.json to file://scratch/bw/hf/cpu_base_S_e6/config.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/configuration_hinton.py to file://scratch/bw/hf/cpu_base_S_e6/configuration_hinton.py
+  
+Copying ${BUCKET}/babylm/hf/base_S_e6/hinton_export.json to file://scratch/bw/hf/cpu_base_S_e6/hinton_export.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/model.safetensors to file://scratch/bw/hf/cpu_base_S_e6/model.safetensors
+Copying ${BUCKET}/babylm/hf/base_S_e6/modeling_hinton.py to file://scratch/bw/hf/cpu_base_S_e6/modeling_hinton.py
+Copying ${BUCKET}/babylm/hf/base_S_e6/special_tokens_map.json to file://scratch/bw/hf/cpu_base_S_e6/special_tokens_map.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/tokenizer.json to file://scratch/bw/hf/cpu_base_S_e6/tokenizer.json
+Copying ${BUCKET}/babylm/hf/base_S_e6/tokenizer_config.json to file://scratch/bw/hf/cpu_base_S_e6/tokenizer_config.json
+..................
+
+Average throughput: 73.3MiB/s
+[job] evaluated cpu_base_S_e6 (causal) 07:39:47
+[job] score_hf done 2026-10-11T07:39:47Z wall_s=8142

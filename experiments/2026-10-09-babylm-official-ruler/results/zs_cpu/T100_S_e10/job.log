@@ -1,0 +1,10 @@
+[cpu_zs_sub] T100_S_e10 start 2026-10-11T09:20:23Z ruler tools ref-0403 uri ${BUCKET}/babylm/vms/bl-ms-ceiling-b-p2-1010-050243/out/babylm/runs/T100_grid_S_100M_e10_s0/score/hf tasks: blimp supplement ewok wug_adj wug_past reading comps
+== 09:20:37 --task blimp --data_path evaluation_data/full_eval/blimp_filtered
+== 09:36:57 --task blimp --data_path evaluation_data/full_eval/supplement_filtered
+== 09:39:30 --task ewok --data_path evaluation_data/full_eval/ewok_filtered
+== 09:43:27 --task wug_adj --data_path evaluation_data/full_eval/wug_adj_nominalization
+== 09:43:38 --task wug_past --data_path evaluation_data/full_eval/wug_past_tense
+== 09:43:48 reading
+== 09:46:12 --task comps --data_path evaluation_data/full_eval/comps
+== 10:21:02 done
+[cpu_zs_sub] T100_S_e10 done 2026-10-11T10:21:05Z wall_s=3625

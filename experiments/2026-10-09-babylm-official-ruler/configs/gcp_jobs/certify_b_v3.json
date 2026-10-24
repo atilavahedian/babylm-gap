@@ -1,0 +1,29 @@
+{
+ "name": "certify_b_v3",
+ "commit": "9e8f7cda026ab56dfdee828dd3bb19d899b5e57e",
+ "paths": [
+  "babylm"
+ ],
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "score_pub_gpt2",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gpt2 out/score_pub_gpt2",
+   "timeout_s": 10800
+  },
+  {
+   "name": "score_pub_gptbert_masked",
+   "cmd": "bash babylm/jobs/vm_job.sh score_pub_gptbert_masked out/score_pub_gptbert_masked",
+   "timeout_s": 10800
+  },
+  {
+   "name": "score_controls",
+   "cmd": "bash babylm/jobs/vm_job.sh score_controls out/score_controls",
+   "timeout_s": 10800
+  }
+ ],
+ "outputs": [
+  "out"
+ ]
+}

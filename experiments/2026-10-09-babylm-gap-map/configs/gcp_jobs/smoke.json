@@ -1,0 +1,4 @@
+{"name": "smoke", "commit": "c20293b5c5bfe5e89f6cd6d6dcfa38910f9d82b9", "paths": ["babylm"],
+ "setup": "pip install -q pandas matplotlib",
+ "jobs": [{"name": "gpu", "timeout_s": 600, "cmd": "mkdir -p babylm/smoke && python -c \"import torch,time,pandas,matplotlib; x=torch.randn(8192,8192,device='cuda',dtype=torch.bfloat16); torch.cuda.synchronize(); t=time.time(); [x@x for _ in range(50)]; torch.cuda.synchronize(); print('TFLOPS', 50*2*8192**3/(time.time()-t)/1e12)\" | tee babylm/smoke/out.txt && curl -sI https://huggingface.co | head -1 | tee -a babylm/smoke/out.txt"}],
+ "outputs": ["babylm/smoke"]}

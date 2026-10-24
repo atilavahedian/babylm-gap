@@ -1,0 +1,122 @@
+{
+  "version": "v1",
+  "seed": 20261009,
+  "created_utc": "2026-10-09T18:52:16Z",
+  "params": {
+    "dev_chunks": 420,
+    "train_chunks": 280,
+    "max_words": 360,
+    "min_words": 120,
+    "max_overlap": 0.05
+  },
+  "zip_sha256": {
+    "dev.zip": "b5af75aeb1ee5a36f65ee98f316fdae73b16a0ba3767cca3f3dfa5eaac2dc621",
+    "train_100M.zip": "37a92db26f391e436febd592453084394d0c0830c8c9bdb30be781e440cdc826",
+    "train_10M.zip": "6d9d2cb3b3feccf0669e74173edb55de6c7f12412ee02935d16b1b6b44160b39"
+  },
+  "file_sha256": {
+    "dev/bnc_spoken.dev": "2c546720837b059da82634b5554a7694bbb9bdeef18f52734da11ba443795cd8",
+    "dev/childes.dev": "5823392e65a6da3344811845504c5d1ad9acec42315e2bd938be5eb01a8422a5",
+    "dev/gutenberg.dev": "760ebc4c697b91308dd21f643ae3c3071e3e1222960fcf8af04119addc50e99b",
+    "dev/open_subtitles.dev": "2e8038d3216c28d7319d0cb564011061d64e093e426b0ca816a9def481481e6b",
+    "dev/simple_wiki.dev": "0ca18973a91069bf917bae9072ff511d39b474d590ab2241cb717221d8532c98",
+    "dev/switchboard.dev": "3dcd2a40051f8e90dadaa0ef656183c1ace7c62682f3306c86ed86aa8cfd057a",
+    "train_10M/bnc_spoken.train": "e932ab5c552c8205aad28880c52a610d929c6f90f5b24d52b790f7e7d2df8d21",
+    "train_10M/childes.train": "8095a2aa318e51c40ee10fa28ea311025a5879f42b23289268cf00447b796bfc",
+    "train_10M/gutenberg.train": "9f151d44847f257232f00724f541f429265710ca1c7e02ac37edf2ff84bdb4c3",
+    "train_10M/open_subtitles.train": "72a0be59362c41c8681a08403feead3b7d100f8a8a7e6ff664c6aae93e4dfa74",
+    "train_10M/simple_wiki.train": "e0a80b05c9521c6080c2b30fa92870e0e02f7c23d15d73218043d2236db96e05",
+    "train_10M/switchboard.train": "65d6dee919f28386a907842ada3bf56dde4eb961f4e6e56e1529500c1d6ec0a4",
+    "train_100M/bnc_spoken.train": "699ab646a9eac1faf8acdbe77063273c41a052ec109e9703b0cd611dbd5cc30c",
+    "train_100M/childes.train": "386b26fedb47975c9686677b6dbe3006cbf988d0c1ba3083b1c253296a054bb7",
+    "train_100M/gutenberg.train": "4c11bd1c9ec078d6aed1b88f9e81c2a60c88c775e0f37b04e404a7ad691ab6c5",
+    "train_100M/open_subtitles.train": "acfed950fdfeb28df6a05fa29d58c5c1c0e62d6bddb07e44433a3cdd573b06ee",
+    "train_100M/simple_wiki.train": "1bcdb29b71b494c358ff865bec35613f0cb7a999bb32356dd4f63e82ea377f64",
+    "train_100M/switchboard.train": "65424bafe73df0060a0d60dcffefe4c354fb74ebdfc871190cbf6a7374e5cee0"
+  },
+  "overlap": {
+    "dev_vs_train_10M_13gram": 1.4956961343733408e-05,
+    "dev_vs_train_100M_13gram": 0.0005160151663588026,
+    "dev_max_chunk_vs_train_100M_13gram": 0.04395604395604396,
+    "train_sample_vs_train_10M_13gram": 1.0
+  },
+  "word_normal_form": "lowercase, strip surrounding punctuation (babylm.instruments.corpus.norm)",
+  "splits": {
+    "dev": {
+      "jsonl_sha256": "ca0e3dcd10de892776d781a87e706ab65e209636a1204640c5634d77a0ac6406",
+      "chunks": 419,
+      "words": 138745,
+      "words_by_source": {
+        "bnc_spoken": 18306,
+        "childes": 40142,
+        "gutenberg": 37056,
+        "open_subtitles": 31277,
+        "simple_wiki": 9839,
+        "switchboard": 2125
+      },
+      "features_sha256": "89fa94dc825c78bc30bf4759ace29a9aad887307685b4f95bae4b3a1331e9953",
+      "quota": {
+        "bnc_spoken": 53,
+        "childes": 114,
+        "gutenberg": 119,
+        "open_subtitles": 88,
+        "simple_wiki": 39,
+        "switchboard": 6
+      },
+      "rejected_overlap": {
+        "bnc_spoken": 0,
+        "childes": 13,
+        "gutenberg": 1,
+        "open_subtitles": 0,
+        "simple_wiki": 2,
+        "switchboard": 0
+      },
+      "candidates": {
+        "bnc_spoken": 3615,
+        "childes": 7755,
+        "gutenberg": 8878,
+        "open_subtitles": 5834,
+        "simple_wiki": 3718,
+        "switchboard": 421
+      }
+    },
+    "train": {
+      "jsonl_sha256": "575971125ae8c390e4209f0b94f9e68fb512868084a576797469f2b9dbfd4052",
+      "chunks": 280,
+      "words": 93726,
+      "words_by_source": {
+        "bnc_spoken": 9508,
+        "childes": 29693,
+        "gutenberg": 24679,
+        "open_subtitles": 21750,
+        "simple_wiki": 6679,
+        "switchboard": 1417
+      },
+      "features_sha256": "c31abe95c0c56d58f5c3c42964677a3bd2c53d070f651e33ba176d9211c81d0d",
+      "quota": {
+        "bnc_spoken": 28,
+        "childes": 85,
+        "gutenberg": 76,
+        "open_subtitles": 61,
+        "simple_wiki": 26,
+        "switchboard": 4
+      },
+      "rejected_overlap": {
+        "bnc_spoken": 0,
+        "childes": 0,
+        "gutenberg": 0,
+        "open_subtitles": 0,
+        "simple_wiki": 0,
+        "switchboard": 0
+      },
+      "candidates": {
+        "bnc_spoken": 2707,
+        "childes": 8096,
+        "gutenberg": 7863,
+        "open_subtitles": 5737,
+        "simple_wiki": 3669,
+        "switchboard": 416
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "name": "base_r2_solo",
+ "commit": "099c9d72d29bd4d438a79d2c3f1602e1426245f9",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${R1_ARGS:-}\" ]; then python -m babylm.configs.make_base_jobs --r1 $R1_ARGS; fi; cp babylm/configs/jobs_base_r2_S.json _logs/; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; echo \"ad43c239fa2a47605c246748fee795a3070e0ad09f68cdc18eb0a880208bab07  babylm/eval/dev_bpw_twin.py\" | sha256sum -c -",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz",
+  "R1_ARGS": "",
+  "CELLS": "base_S_wd0p4_lr0p5_r1_ve0_tied_r2_e5_wd0p2 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_e5_wd0p7 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_e5_cd0p75 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_e5_cd1p0 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_e5_lr0p35 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_cd0p75 base_S_wd0p4_lr0p5_r1_ve0_tied_r2_wd0p7",
+  "BENCH": "0",
+  "CFG": "babylm/configs/jobs_base_r2_S.json"
+ },
+ "jobs": [
+  {
+   "name": "base_r2",
+   "cmd": "gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py 2>/dev/null || { mkdir -p babylm/moonshot && touch babylm/moonshot/__init__.py && gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py; }; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; for n in $CELLS; do cfg=${CFG:-babylm/configs/jobs_base_r1_S.json}; [ $n = base_S_wd2p0_lr0p5_final ] && cfg=babylm/configs/jobs_ctrl_final.json; python -m babylm.harness.run_jobs $cfg --only $n --device cuda || echo \"[cells] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[cells] score $n failed\"; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/$n/score/dev_bpw_twin.json > babylm/runs/$n/score/dev_bpw_twin.log 2>&1 || echo \"[twin] $n failed\"; mkdir -p babylm/runs/$n/pt_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/$n/pt_v2/dev_v2.npz --check babylm/runs/$n/score/dev_bpw_twin.json > babylm/runs/$n/pt_v2/dump.log 2>&1 || echo \"[ptv2] babylm/runs/$n failed\"; }; done",
+   "timeout_s": 12000
+  }
+ ],
+ "note": "Base r2 (base builder 09:39Z, experimenter approved): jobs_base_r2_S.json @ ref-0190, 7 cells (5 at E=5, 2 at E=10), all SOLO; score_trial, twin ref-0026, ref-0034 temps dump. Outputs to shared/babylm/base_r1/. Replaces base_r2 @ ref-0160 / base_r2_p2."
+}

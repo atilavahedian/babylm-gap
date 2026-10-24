@@ -1,0 +1,29 @@
+{
+ "name": "base_seeds_s34",
+ "commit": "97a0b2c8c55ab64f4393edf1d9bfe286de3ae1df",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; if [ -n \"${R1_ARGS:-}\" ]; then python -m babylm.configs.make_base_jobs --r1 $R1_ARGS; fi; cp babylm/configs/jobs_base_r1_S.json _logs/jobs_base_r1_S.used.json",
+ "continue_on_error": true,
+ "keep_checkpoints": true,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5.tar.gz",
+  "R1_ARGS": "",
+  "CELLS": "base_S_wd0p4_lr0p5_r1_ve0_tied_s3 base_S_wd0p4_lr0p5_r1_ve0_tied_s4",
+  "BENCH": "0",
+  "CFG": "babylm/configs/jobs_base_seeds_base_S_wd0p4_lr0p5_r1_ve0_tied.json"
+ },
+ "jobs": [
+  {
+   "name": "base_seeds_r1win",
+   "cmd": "python - <<'PYS'\nimport json,copy\np='babylm/configs/jobs_base_seeds_base_S_wd0p4_lr0p5_r1_ve0_tied.json'\nd=json.load(open(p))\ns1=[x for x in d['jobs'] if x['name'].endswith('_s1')][0]\nfor k in (3,4):\n    x=copy.deepcopy(s1); n=s1['name'][:-1]+str(k); x['name']=n; a=x['args']\n    a[a.index('--seed')+1]=str(k) if isinstance(a[a.index('--seed')+1],str) else k; a[a.index('--tag')+1]=n\n    d['jobs'].append(x)\njson.dump(d,open(p,'w'),indent=1)\nPYS\ncp babylm/configs/jobs_base_seeds_base_S_wd0p4_lr0p5_r1_ve0_tied.json _logs/; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0049.py babylm/eval/dev_bpw_twin.py; python - <<'PYC'\nimport json\nj=[x for x in json.load(open('babylm/configs/jobs_base_s1.json'))['jobs'] if x['name']=='base_S_wd2p0_lr0p5'][0]\nj['name']='base_S_wd2p0_lr0p5_final'; a=j['args']; a[a.index('--tag')+1]='base_S_wd2p0_lr0p5_final'\njson.dump({'jobs':[j]},open('babylm/configs/jobs_ctrl_final.json','w'),indent=1)\nPYC\ncp babylm/configs/jobs_ctrl_final.json _logs/; for n in $CELLS; do cfg=${CFG:-babylm/configs/jobs_base_r1_S.json}; case $n in *_r2_*) cfg=babylm/configs/jobs_base_r2_S.json;; esac; [ $n = base_S_wd2p0_lr0p5_final ] && cfg=babylm/configs/jobs_ctrl_final.json; python -m babylm.harness.run_jobs $cfg --only $n --device cuda || echo \"[cells] train $n failed\"; [ -f babylm/runs/$n/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/$n /opt/babylm || echo \"[cells] score $n failed\"; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/$n/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/$n/score/dev_bpw_twin.json > babylm/runs/$n/score/dev_bpw_twin.log 2>&1 || echo \"[twin] $n failed\"; python -m babylm.analysis.perword babylm/runs/$n --epochs_only || echo \"[cells] perword $n failed\"; }; done; if [ \"${BENCH:-0}\" = 1 ]; then nvidia-cuda-mps-control -d && echo '[pack] MPS on'; python - <<'PYB' > _logs/pack_cmds.txt\nimport json,shlex\nj=[x for x in json.load(open('babylm/configs/jobs_base_r1_S.json'))['jobs'] if x['name'].endswith('_r1_ve0_tied')][0]\na=[str(x) for x in j['args']]\ni=a.index('--out') if '--out' in a else None\na=[x for k,x in enumerate(a) if i is None or k not in (i,i+1)]\na=[x for x in a if x not in ('--save',)]\nprint(' '.join(shlex.quote(x) for x in a))\nPYB\nfor k in 1 2 3; do for i in $(seq 1 $k); do timeout 300 python -m babylm.harness.train $(cat _logs/pack_cmds.txt) --device cuda --out /tmp/pack_${k}_$i > _logs/pack_${k}_$i.log 2>&1 & done; wait; python - $k <<'PYS'\nimport re,sys,statistics as s\nk=int(sys.argv[1]); tot=0\nfor i in range(1,k+1):\n    v=[float(x.replace(',','')) for x in re.findall(r'([0-9,]+) tok/s',open(f'_logs/pack_{k}_{i}.log').read())][-5:]\n    m=s.median(v) if v else 0; tot+=m; print(f'[pack] k={k} copy={i} tok/s={m:,.0f} n={len(v)}')\nprint(f'[pack] k={k} aggregate tok/s={tot:,.0f}')\nPYS\ndone; echo quit | nvidia-cuda-mps-control; rm -rf /tmp/pack_*;  fi",
+   "timeout_s": 5400
+  }
+ ],
+ "note": "Plain base seeds s3/s4 UNPACKED (experimenter 05:41Z: >=5 plain seeds for the claim floor, and a packing check vs the packed C3 seeds). Pool floor."
+}

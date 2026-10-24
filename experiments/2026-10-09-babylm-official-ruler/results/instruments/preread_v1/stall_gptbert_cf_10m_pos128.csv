@@ -1,0 +1,76 @@
+split,run,revision,words_seen,group,n,mean_nats
+dev,gptbert_cf_10m,chck_10M,10000000.0,all,34111,6.0609620113577565
+dev,gptbert_cf_10m,chck_10M,10000000.0,never seen in 10M,517,25.15044957480071
+dev,gptbert_cf_10m,chck_10M,10000000.0,seen 1-63 times,2134,15.64260653792527
+dev,gptbert_cf_10m,chck_10M,10000000.0,seen 64-8k times,11848,7.56110170401053
+dev,gptbert_cf_10m,chck_10M,10000000.0,seen 8k+ times,19612,3.6088842238529053
+dev,gptbert_cf_10m,chck_20M,20000000.0,all,34111,5.7468732803933325
+dev,gptbert_cf_10m,chck_20M,20000000.0,never seen in 10M,517,23.00098050170987
+dev,gptbert_cf_10m,chck_20M,20000000.0,seen 1-63 times,2134,14.106789630231113
+dev,gptbert_cf_10m,chck_20M,20000000.0,seen 64-8k times,11848,7.192668775795185
+dev,gptbert_cf_10m,chck_20M,20000000.0,seen 8k+ times,19612,3.508946503241812
+dev,gptbert_cf_10m,chck_30M,30000000.0,all,34111,5.644158872730538
+dev,gptbert_cf_10m,chck_30M,30000000.0,never seen in 10M,517,23.050810461118097
+dev,gptbert_cf_10m,chck_30M,30000000.0,seen 1-63 times,2134,13.68698995793631
+dev,gptbert_cf_10m,chck_30M,30000000.0,seen 64-8k times,11848,7.044783351702422
+dev,gptbert_cf_10m,chck_30M,30000000.0,seen 8k+ times,19612,3.464001865088054
+dev,gptbert_cf_10m,chck_50M,50000000.0,all,34111,5.469064044881385
+dev,gptbert_cf_10m,chck_50M,50000000.0,never seen in 10M,517,22.477362779745512
+dev,gptbert_cf_10m,chck_50M,50000000.0,seen 1-63 times,2134,12.893192793264454
+dev,gptbert_cf_10m,chck_50M,50000000.0,seen 64-8k times,11848,6.828015152750745
+dev,gptbert_cf_10m,chck_50M,50000000.0,seen 8k+ times,19612,3.3919054725271947
+dev,gptbert_cf_10m,chck_70M,70000000.0,all,34111,5.3347676413877965
+dev,gptbert_cf_10m,chck_70M,70000000.0,never seen in 10M,517,22.411608838712223
+dev,gptbert_cf_10m,chck_70M,70000000.0,seen 1-63 times,2134,12.417412783093436
+dev,gptbert_cf_10m,chck_70M,70000000.0,seen 64-8k times,11848,6.679408682015572
+dev,gptbert_cf_10m,chck_70M,70000000.0,seen 8k+ times,19612,3.3016043392883456
+dev,gptbert_cf_10m,chck_80M,80000000.0,all,34111,5.308550017251538
+dev,gptbert_cf_10m,chck_80M,80000000.0,never seen in 10M,517,22.451051665574486
+dev,gptbert_cf_10m,chck_80M,80000000.0,seen 1-63 times,2134,12.26081463039679
+dev,gptbert_cf_10m,chck_80M,80000000.0,seen 64-8k times,11848,6.628184015847419
+dev,gptbert_cf_10m,chck_80M,80000000.0,seen 8k+ times,19612,3.3029498922260987
+dev,gptbert_cf_10m,chck_90M,90000000.0,all,34111,5.289971663897842
+dev,gptbert_cf_10m,chck_90M,90000000.0,never seen in 10M,517,22.424048670140643
+dev,gptbert_cf_10m,chck_90M,90000000.0,seen 1-63 times,2134,12.193379687102146
+dev,gptbert_cf_10m,chck_90M,90000000.0,seen 64-8k times,11848,6.580031039158988
+dev,gptbert_cf_10m,chck_90M,90000000.0,seen 8k+ times,19612,3.307776374695335
+dev,gptbert_cf_10m,chck_100M,100000000.0,all,34111,5.286174120396906
+dev,gptbert_cf_10m,chck_100M,100000000.0,never seen in 10M,517,22.5505030339645
+dev,gptbert_cf_10m,chck_100M,100000000.0,seen 1-63 times,2134,12.164615322394086
+dev,gptbert_cf_10m,chck_100M,100000000.0,seen 64-8k times,11848,6.581209217709883
+dev,gptbert_cf_10m,chck_100M,100000000.0,seen 8k+ times,19612,3.3002559373283464
+dev,gptbert_cf_100m,chck_1000M,,all,34111,4.469233683840103
+dev,gptbert_cf_100m,chck_1000M,,never seen in 10M,517,16.463640525605623
+dev,gptbert_cf_100m,chck_1000M,,seen 1-63 times,2134,9.506754471872206
+dev,gptbert_cf_100m,chck_1000M,,seen 64-8k times,11848,5.585789056005271
+dev,gptbert_cf_100m,chck_1000M,,seen 8k+ times,19612,2.9303735090355865
+train,gptbert_cf_10m,chck_10M,10000000.0,all,22774,5.551107927109043
+train,gptbert_cf_10m,chck_10M,10000000.0,never seen in 10M,147,24.7181034672017
+train,gptbert_cf_10m,chck_10M,10000000.0,seen 1-63 times,1359,14.739062234002759
+train,gptbert_cf_10m,chck_10M,10000000.0,seen 64-8k times,7929,7.201264505739844
+train,gptbert_cf_10m,chck_10M,10000000.0,seen 8k+ times,13339,3.42290718046943
+train,gptbert_cf_10m,chck_20M,20000000.0,all,22774,5.178547358818287
+train,gptbert_cf_10m,chck_20M,20000000.0,never seen in 10M,147,23.015104271116712
+train,gptbert_cf_10m,chck_20M,20000000.0,seen 1-63 times,1359,12.910418267193922
+train,gptbert_cf_10m,chck_20M,20000000.0,seen 64-8k times,7929,6.696681698448641
+train,gptbert_cf_10m,chck_20M,20000000.0,seen 8k+ times,13339,3.291833691412977
+train,gptbert_cf_10m,chck_50M,50000000.0,all,22774,4.707818493111201
+train,gptbert_cf_10m,chck_50M,50000000.0,never seen in 10M,147,20.290405652960953
+train,gptbert_cf_10m,chck_50M,50000000.0,seen 1-63 times,1359,10.99555967329447
+train,gptbert_cf_10m,chck_50M,50000000.0,seen 64-8k times,7929,6.039773398297739
+train,gptbert_cf_10m,chck_50M,50000000.0,seen 8k+ times,13339,3.103743898344649
+train,gptbert_cf_10m,chck_70M,70000000.0,all,22774,4.440917677780696
+train,gptbert_cf_10m,chck_70M,70000000.0,never seen in 10M,147,19.09129067829677
+train,gptbert_cf_10m,chck_70M,70000000.0,seen 1-63 times,1359,10.014444543402353
+train,gptbert_cf_10m,chck_70M,70000000.0,seen 64-8k times,7929,5.738311723979045
+train,gptbert_cf_10m,chck_70M,70000000.0,seen 8k+ times,13339,2.940425494426442
+train,gptbert_cf_10m,chck_100M,100000000.0,all,22774,4.171920954588037
+train,gptbert_cf_10m,chck_100M,100000000.0,never seen in 10M,147,17.28044252006375
+train,gptbert_cf_10m,chck_100M,100000000.0,seen 1-63 times,1359,9.110906090567504
+train,gptbert_cf_10m,chck_100M,100000000.0,seen 64-8k times,7929,5.3599665153071285
+train,gptbert_cf_10m,chck_100M,100000000.0,seen 8k+ times,13339,2.818067838097843
+train,gptbert_cf_100m,chck_1000M,,all,22774,3.9634878469375057
+train,gptbert_cf_100m,chck_1000M,,never seen in 10M,147,16.318822943434423
+train,gptbert_cf_100m,chck_1000M,,seen 1-63 times,1359,8.643816134604577
+train,gptbert_cf_100m,chck_1000M,,seen 64-8k times,7929,5.063508170181079
+train,gptbert_cf_100m,chck_1000M,,seen 8k+ times,13339,2.6966116534355273

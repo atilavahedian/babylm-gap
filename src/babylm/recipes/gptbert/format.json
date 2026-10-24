@@ -1,0 +1,1 @@
+{"line_join": "newline", "ws": "collapse", "source": "prepare_data.py: documents = non-blank lines joined with \\n, ' '.join(line.split()) per line; checked on the published checkpoint (README)"}

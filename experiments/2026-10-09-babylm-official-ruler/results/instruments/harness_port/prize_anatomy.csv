@@ -1,0 +1,41 @@
+family,panel,item,nats,lo,hi
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,total,10M final minus 100M final (dev),5.41080434794996,4.818280192382419,6.21794172629919
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,total reweighted to dev source shares,5.405122159370477,4.828510600210255,5.921190362754662
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,"per word, speaker labels left out",5.654534160902803,5.053596190050103,6.421217480133192
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,"carried by speaker labels (*CHI:, A:)",0.03165720732242828,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,lines verbatim in train_100M removed (0.30% of words),5.416659626197908,4.821690190666743,6.22587837532065
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,"CHILDES markup words left out (0.03% of words, none in train_10M)",5.384254560472473,4.780707678649638,6.188074523097444
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,carried by CHILDES markup words,0.028430830241803894,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,"reweighted, overlap removed",5.407426000309452,4.831501942995348,5.923975499813398
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,required labels,"reweighted, overlap and CHILDES markup removed",5.380138133343439,4.811658350230062,5.891010636031185
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,seen vs new text,on train text both saw 10 times,-1.6748138726718504,-1.801118453446969,-1.556284327666355
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,seen vs new text,extra on new text only,7.085618220621811,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,seen vs new text,  of which words seen <64 times,2.1140547949219277,1.7343935087232598,2.6369980243568962
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,seen vs new text,  of which words seen 64+ times,5.080719323503469,4.743745079703625,5.4887213979059215
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,by word frequency in train_10M,never seen in 10M,0.5563336157632659,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 1-63 times,1.0706486615412891,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 64-8k times,2.5986730247178933,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 8k+ times,1.1851490459275118,,
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,local statistics,"count model of the 100M words (oracle, not legal)",3.507451290645193,3.145441551892391,3.96808824384558
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,cheap legal 10M add-ons,count model of the same 10M words,2.741060198092812,2.461184192847869,3.08021422224984
+port_S_10M_e10_s0 vs grid_S_100M_e10_s0,cheap legal 10M add-ons,copy cache of earlier words,1.6068204996912343,1.2917963080440746,2.0106583811166776
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,total,10M final minus 100M final (dev),1.014100819508763,0.901569635094724,1.119946593946931
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,total reweighted to dev source shares,1.012417635315616,0.9463112119007803,1.0790281146149265
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,"per word, speaker labels left out",1.0544241552615594,0.9501063175487382,1.1533889425002284
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,"carried by speaker labels (*CHI:, A:)",0.011029210360814284,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,lines verbatim in train_100M removed (0.30% of words),1.013042324301,0.8998767673748472,1.11840912665963
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,"CHILDES markup words left out (0.03% of words, none in train_10M)",1.0006427832255747,0.892029756520234,1.107537315027869
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,carried by CHILDES markup words,0.013807620774351251,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,"reweighted, overlap removed",1.0108612242038304,0.9442274571265364,1.0775617795866252
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,required labels,"reweighted, overlap and CHILDES markup removed",0.9973309569304746,0.9339385460507148,1.054492354296902
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,seen vs new text,"on train text seen 2 times by the 10M model, 10 by the 100M",0.6421167450528805,0.5883560837867601,0.6989316129709789
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,seen vs new text,extra on new text only,0.37198407445588255,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,seen vs new text,  of which words seen <64 times,0.12290931239426336,0.08816605475740671,0.1557527122281585
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,seen vs new text,  of which words seen 64+ times,0.20901916131356818,0.13447277802259713,0.2791108380101975
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,by word frequency in train_10M,never seen in 10M,0.1014405722729697,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 1-63 times,0.2176653567723611,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 64-8k times,0.44598856574526513,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,by word frequency in train_10M,seen 8k+ times,0.2490063247181669,,
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,local statistics,"count model of the 100M words (oracle, not legal)",0.2413917927839111,0.2159240488177732,0.2683462814701532
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,cheap legal 10M add-ons,count model of the same 10M words,0.0732743338104876,0.0658558101336241,0.0809976408457818
+port_S_10M_e10_s0 best epoch vs grid_S_100M_e10_s0,cheap legal 10M add-ons,copy cache of earlier words,0.1097631731455314,0.0851234330827912,0.1414421289269439

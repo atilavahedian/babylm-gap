@@ -1,0 +1,21 @@
+table,row,col,k,value,derivation,source
+tab:ensemble,0,2,0,0.1123785970224267,S_same_size_vs_E6_pool all/full g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,0,2,1,0.10998650760383288,all/guarded g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,0,3,0,1.3656979030957903,all/full x_ci95 low,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,0,4,0,1.436100665241908,all/full x,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,1,2,0,0.056475376469970584,"registered single-seed comparator, all/full g",experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a2_registered.json
+tab:ensemble,1,2,1,0.057036809202254624,all/guarded g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a2_registered.json
+tab:ensemble,1,3,0,1.1015162987027758,all/full x_ci95 low,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a2_registered.json
+tab:ensemble,1,4,0,1.1994788133142336,all/full x,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a2_registered.json
+tab:ensemble,2,2,0,0.0603071601134495,A2_S_matched_vs_28L_e6_F2 all/full g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,2,2,1,0.06011040669482259,all/guarded g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,2,3,0,1.1605510207561538,all/full x_ci95 low,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,2,4,0,1.2143730739854321,all/full x,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,3,2,0,0.11447623368241633,28L_same_size_vs_e6_mean all/full g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,3,2,1,0.11157452694882863,all/guarded g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,3,3,0,1.3941065581534786,all/full x_ci95 low,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,3,4,0,1.445835438148511,all/full x,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,4,2,0,0.08596218968241587,A4_28L_matched_vs_best_F4 all/full g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,4,2,1,0.08247409130519312,all/guarded g,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,4,3,0,1.216572458827845,all/full x_ci95 low,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json
+tab:ensemble,4,4,0,1.3189733890791528,all/full x,experiments/2026-10-09-babylm-official-ruler/results/readouts/a5_xfactor_final_a5_out.json

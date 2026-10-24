@@ -1,0 +1,49 @@
+family,panel,item,nats,lo,hi
+GPT-BERT causal,total,10M final minus 100M final (dev),0.8456934107606238,0.7862205574170082,0.9144577248382444
+GPT-BERT causal,format,whitespace collapsed (reference code; headline),0.8456934107606238,0.7862205574170082,0.9144577248382444
+GPT-BERT causal,format,whitespace as in the files (first scored),0.8436673679352837,0.7852492221162145,0.9107579311303837
+GPT-BERT causal,required labels,total reweighted to dev source shares,0.8774387775285264,0.8314084818015686,0.9411515600972553
+GPT-BERT causal,required labels,"per word, speaker labels left out",0.8825003521747778,0.820267805777661,0.9510011077016188
+GPT-BERT causal,required labels,"carried by speaker labels (*CHI:, A:)",0.011190086619261191,,
+GPT-BERT causal,required labels,lines verbatim in train_100M removed (0.17% of words),0.845079775911185,0.7859755017173072,0.9134484063836956
+GPT-BERT causal,required labels,"CHILDES markup words left out (0.10% of words, none in train_10M)",0.8202081852022954,0.7763388541013851,0.8677826643956036
+GPT-BERT causal,required labels,carried by CHILDES markup words,0.026336499302639583,,
+GPT-BERT causal,required labels,"reweighted, overlap removed",0.8766827010707741,0.8306999630229756,0.9406480523763433
+GPT-BERT causal,required labels,"reweighted, overlap and CHILDES markup removed",0.8533501822296787,0.8199804592987738,0.893756021188507
+GPT-BERT causal,seen vs new text,on train text both saw 10 times,0.2396797146468017,0.21240509782376926,0.26579689231431664
+GPT-BERT causal,seen vs new text,extra on new text only,0.606013696113822,,
+GPT-BERT causal,seen vs new text,  of which words seen <64 times,0.21571616918845726,0.1694136761969643,0.27214652699522396
+GPT-BERT causal,seen vs new text,  of which words seen 64+ times,0.3836960099993672,0.3537212639061363,0.4136112285450205
+GPT-BERT causal,by word frequency in train_10M,never seen in 10M,0.1017603883077215,,
+GPT-BERT causal,by word frequency in train_10M,seen 1-63 times,0.1633676991506055,,
+GPT-BERT causal,by word frequency in train_10M,seen 64-8k times,0.3618068851671806,,
+GPT-BERT causal,by word frequency in train_10M,seen 8k+ times,0.2187584381351156,,
+GPT-BERT causal,local statistics,"count model of the 100M words (oracle, not legal)",0.1615247181385743,0.143193189334556,0.1844414775784158
+GPT-BERT causal,cheap legal 10M add-ons,count model of the same 10M words,0.0512850848460704,0.0413038422536814,0.0646440791901778
+GPT-BERT causal,cheap legal 10M add-ons,copy cache of earlier words,0.0371406958454379,0.0292142938751083,0.0465208516607012
+GPT-BERT causal,cheap legal 10M add-ons,one softmax temperature,0.0130087902652746,,
+GPT-BERT causal,cheap legal 10M add-ons,ensemble with GPT-2 10M,0.0767306835811982,0.0680658156624225,0.0864350689531951
+GPT-2,total,10M final minus 100M final (dev),1.071355564397982,0.9938168149869093,1.1570830936278433
+GPT-2,format,all speaker-label tabs to spaces (headline),1.071355564397982,0.9938168149869093,1.1570830936278433
+GPT-2,format,per-source tabs (chosen after scoring; slice tables),1.0757267157164396,0.9991188308814324,1.1617342869271863
+GPT-2,format,all tabs kept (code-literal),0.9474474726154231,0.8709229486195388,1.0401045490307375
+GPT-2,required labels,total reweighted to dev source shares,1.123701151123082,1.0585417577171188,1.2046815804036928
+GPT-2,required labels,"per word, speaker labels left out",1.1083371475674748,1.0335508218410443,1.1900205490911722
+GPT-2,required labels,"carried by speaker labels (*CHI:, A:)",0.023298153952733054,,
+GPT-2,required labels,lines verbatim in train_100M removed (0.17% of words),1.070438040789564,0.992696932399086,1.1565520178064725
+GPT-2,required labels,"CHILDES markup words left out (0.10% of words, none in train_10M)",1.0419604251049785,0.9813166981714466,1.1066541205831029
+GPT-2,required labels,carried by CHILDES markup words,0.030476564300709396,,
+GPT-2,required labels,"reweighted, overlap removed",1.1228672882673174,1.0576043110364446,1.204200871212535
+GPT-2,required labels,"reweighted, overlap and CHILDES markup removed",1.095979457274621,1.0468891855967517,1.1520534097721726
+GPT-2,seen vs new text,on train text both saw 10 times,0.6831872775820449,0.6367835189765251,0.7283960372978565
+GPT-2,seen vs new text,extra on new text only,0.38816828681593707,,
+GPT-2,seen vs new text,  of which words seen <64 times,0.15015357614622857,0.10094628686316948,0.20910956276301546
+GPT-2,seen vs new text,  of which words seen 64+ times,0.2031845021699099,0.16564894238951117,0.24197540123075287
+GPT-2,by word frequency in train_10M,never seen in 10M,0.1254815763299746,,
+GPT-2,by word frequency in train_10M,seen 1-63 times,0.2658589907556253,,
+GPT-2,by word frequency in train_10M,seen 64-8k times,0.4376275572877879,,
+GPT-2,by word frequency in train_10M,seen 8k+ times,0.2423874400245937,,
+GPT-2,local statistics,"count model of the 100M words (oracle, not legal)",0.2463912691453095,0.2160490775211369,0.2830473200332075
+GPT-2,cheap legal 10M add-ons,count model of the same 10M words,0.0757247653692303,0.0664006606716998,0.0879461113125586
+GPT-2,cheap legal 10M add-ons,copy cache of earlier words,0.0836920165800844,0.0644485755925715,0.1070464241595446
+GPT-2,cheap legal 10M add-ons,one softmax temperature,0.0,,

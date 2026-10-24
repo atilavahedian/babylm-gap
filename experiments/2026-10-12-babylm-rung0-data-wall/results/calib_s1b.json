@@ -1,0 +1,38 @@
+{
+ "paths": {
+  "W16": "scratch/cs/dw0/dw0_W_wd1p6_s0.npz",
+  "W32": "scratch/cs/dw0/dw0_W_wd3p2_s0.npz"
+ },
+ "mixes": {},
+ "single": {
+  "W16": {
+   "full": {
+    "raw": 5.222491273813623,
+    "calibrated": 5.214672071796231,
+    "calibrated_t": 5.203101352174895,
+    "t": 1.05
+   },
+   "guarded": {
+    "raw": 5.194271472542477,
+    "calibrated": 5.187215043575934,
+    "calibrated_t": 5.176259668099922,
+    "t": 1.05
+   }
+  },
+  "W32": {
+   "full": {
+    "raw": 5.392621501889977,
+    "calibrated": 5.384174772700174,
+    "calibrated_t": 5.366943054575535,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 5.364118788799877,
+    "calibrated": 5.3565910402149175,
+    "calibrated_t": 5.340796577429113,
+    "t": 1.1
+   }
+  }
+ },
+ "mix": {}
+}

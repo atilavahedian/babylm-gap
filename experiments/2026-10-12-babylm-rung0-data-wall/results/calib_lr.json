@@ -1,0 +1,23 @@
+{
+ "paths": {
+  "LR08": "scratch/cs/dw0/dw0_LR_wd0p8_s0.npz"
+ },
+ "mixes": {},
+ "single": {
+  "LR08": {
+   "full": {
+    "raw": 5.243958289146154,
+    "calibrated": 5.2324752899171365,
+    "calibrated_t": 5.213677287618584,
+    "t": 1.1
+   },
+   "guarded": {
+    "raw": 5.2159241535419945,
+    "calibrated": 5.205323660202498,
+    "calibrated_t": 5.187582031149935,
+    "t": 1.1
+   }
+  }
+ },
+ "mix": {}
+}

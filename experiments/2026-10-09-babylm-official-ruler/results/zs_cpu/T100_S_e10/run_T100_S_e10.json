@@ -1,0 +1,24 @@
+{
+ "name": "T100_S_e10",
+ "uri": "${BUCKET}/babylm/vms/bl-ms-ceiling-b-p2-1010-050243/out/babylm/runs/T100_grid_S_100M_e10_s0/score/hf",
+ "driver": "scratchpad cpu_zs_sub.sh (experimenter 07:24Z)",
+ "tasks": [
+  "blimp",
+  "supplement",
+  "ewok",
+  "wug_adj",
+  "wug_past",
+  "reading",
+  "comps"
+ ],
+ "excluded": [
+  "entity_tracking"
+ ],
+ "pipeline": "eval2025 bf55c1131e53654c2a87418f5629c26959acd710",
+ "ruler_tools": "ref-0403",
+ "torch": "2.7.0+cpu",
+ "transformers": "4.51.3",
+ "device": "cpu",
+ "threads": 4,
+ "zero_shot_wall_s": 3625
+}

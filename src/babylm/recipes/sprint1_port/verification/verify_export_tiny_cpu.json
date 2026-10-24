@@ -1,0 +1,90 @@
+{
+ "hf_class": "Sprint1ForCausalLM",
+ "hf_n_params": 9756681,
+ "ref_n_params": 9756681,
+ "dev_windows": {
+  "shape": [
+   4,
+   256
+  ],
+  "max_abs_logit_diff": 0.0,
+  "train_forward_loss": 5.068127632141113,
+  "hf_ce": 5.068127632141113,
+  "loss_abs_diff": 0.0
+ },
+ "tokenizer": {
+  "class": "GPT2TokenizerFast",
+  "ids": [
+   50256,
+   464,
+   11875,
+   10072,
+   5045,
+   13
+  ],
+  "offsets": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    3,
+    8
+   ],
+   [
+    8,
+    14
+   ],
+   [
+    14,
+    18
+   ],
+   [
+    18,
+    19
+   ]
+  ],
+  "bos": 50256,
+  "eos": 50256,
+  "pad": 50256,
+  "padding_side": "right",
+  "bos_prepended": true
+ },
+ "right_padding_max_abs_diff": 4.76837158203125e-06,
+ "sentences_max_abs_logit_diff_vs_train_module": 0.0,
+ "official_dataloader": {
+  "max_abs_logprob_diff": 7.62939453125e-06,
+  "first_token_after_bos_scored": true,
+  "examples": [
+   {
+    "sentence": "The cats annoy Tim.",
+    "pipeline_logprob": -41.57178497314453,
+    "train_module_logprob": -41.57178497314453
+   },
+   {
+    "sentence": "Who should Derek hug after shocking Richard?",
+    "pipeline_logprob": -75.84265899658203,
+    "train_module_logprob": -75.84265899658203
+   },
+   {
+    "sentence": "Many girls insulted themselves.",
+    "pipeline_logprob": -48.75306701660156,
+    "train_module_logprob": -48.75306701660156
+   },
+   {
+    "sentence": "These books were dropped.",
+    "pipeline_logprob": -41.16640090942383,
+    "train_module_logprob": -41.16640090942383
+   }
+  ]
+ },
+ "official_run": {
+  "returncode": 0,
+  "report": "TEMPERATURE: 1.00\n\n### FIELD ACCURACY\nsmoke: 60.00\n\n### UID ACCURACY\nsmoke_items: 60.00\n\n### LINGUISTICS_TERM ACCURACY\nsmoke: 60.00\n\n### AVERAGE ACCURACY\n60.00\n\n",
+  "stderr_tail": ""
+ }
+}

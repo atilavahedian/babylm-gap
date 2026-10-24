@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/run.py", line 8, in <module>
+    from evaluation_pipeline.finetune.trainer import Trainer
+  File "/opt/babylm/eval2025/evaluation_pipeline/finetune/trainer.py", line 27, in <module>
+    import wandb
+ModuleNotFoundError: No module named 'wandb'

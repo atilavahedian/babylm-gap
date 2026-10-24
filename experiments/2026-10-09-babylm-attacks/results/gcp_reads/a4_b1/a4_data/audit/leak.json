@@ -1,0 +1,747 @@
+{
+ "rule": "13-gram on lowercased words (non-alphanumerics -> space); items of 6-12 words: whole-item exact match",
+ "eval_dir": "/opt/babylm/osf/evaluation_data",
+ "eval_files": 187,
+ "eval_items": 339217,
+ "skipped_files": [
+  "fast_eval/ewok_fast.zip",
+  "full_eval/winoground_filtered/README.md"
+ ],
+ "train_10M": {
+  "sha256": "30be8c16ad4b2147d6c09d63f9463f2222313cd87a0e7ea11084084b0d74cfe4",
+  "items_hit": 175,
+  "dev_13gram_share": 0.0013670118261874436
+ },
+ "dev_distinct_13grams": 10259604,
+ "synthetic": {
+  "babylm/runs/a4_data/syn_a4a": {
+   "sha256": "76f247fcc91e524a67819ce996f4f3124835e4d036db2991ad989d621e77c936",
+   "words": 29861325,
+   "items_hit": 91,
+   "items_hit_synthetic_only": 46,
+   "dev_13gram_share": 1.3645750849642929e-06,
+   "dev_13gram_share_synthetic_only": 1.267105436038272e-06,
+   "per_file": {
+    "fast_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 5,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/aoa/cdi_childes.json": {
+     "items": 7328,
+     "hit_synthetic": 19,
+     "hit_train_10M": 12,
+     "hit_synthetic_only": 9
+    },
+    "full_eval/comps/comps_base.jsonl": {
+     "items": 602,
+     "hit_synthetic": 2,
+     "hit_train_10M": 0,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/glue_filtered/boolq.train.jsonl": {
+     "items": 17356,
+     "hit_synthetic": 0,
+     "hit_train_10M": 32,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/boolq.valid.jsonl": {
+     "items": 3174,
+     "hit_synthetic": 0,
+     "hit_train_10M": 8,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.train.jsonl": {
+     "items": 17851,
+     "hit_synthetic": 27,
+     "hit_train_10M": 47,
+     "hit_synthetic_only": 13
+    },
+    "full_eval/glue_filtered/mnli.valid.jsonl": {
+     "items": 6955,
+     "hit_synthetic": 7,
+     "hit_train_10M": 10,
+     "hit_synthetic_only": 6
+    },
+    "full_eval/glue_filtered/multirc.train.jsonl": {
+     "items": 12164,
+     "hit_synthetic": 4,
+     "hit_train_10M": 6,
+     "hit_synthetic_only": 4
+    },
+    "full_eval/glue_filtered/multirc.valid.jsonl": {
+     "items": 1598,
+     "hit_synthetic": 1,
+     "hit_train_10M": 2,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.train.jsonl": {
+     "items": 17926,
+     "hit_synthetic": 3,
+     "hit_train_10M": 4,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/glue_filtered/qqp.valid.jsonl": {
+     "items": 35145,
+     "hit_synthetic": 2,
+     "hit_train_10M": 7,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/rte.valid.jsonl": {
+     "items": 255,
+     "hit_synthetic": 0,
+     "hit_train_10M": 1,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 5,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/vqa_filtered/vqa_distractors_info.json": {
+     "items": 12417,
+     "hit_synthetic": 16,
+     "hit_train_10M": 20,
+     "hit_synthetic_only": 10
+    }
+   },
+   "synthetic_only_items": [
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "For example, it could be a"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "She said, \"I've had a"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "So, we don’t want to"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "I can’t even remember the"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "Trying to find a way to"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "What is the best way to"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "I would love to have a"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "He didn’t know how to"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "It’s easy for me to"
+    },
+    {
+     "file": "full_eval/comps/comps_base.jsonl",
+     "text": "is placed in the center of the room"
+    },
+    {
+     "file": "full_eval/comps/comps_base.jsonl",
+     "text": "is placed in the center of the room."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "It didn't seem like it. "
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "Go ahead, I have nothing to say to you."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "Why wouldn't you say so?"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I thought it was pretty good!"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I don't have a watch."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I don't know what that is about."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I knew a little bit about it."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I definitely don't want to."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "You have a message for me? "
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I've never seen that one."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "It's not what you need."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I have never heard of him."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "There is no point of view."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "What is it that you do?"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "You didn't do it, did you?"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "I'm sure they didn't."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "now that's a good idea"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "i don't know no i don't"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "I really don't like to."
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "She didn't have any money"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "She didn't go to school"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "Do you want to eat something?"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "At least one hundred and eighty"
+    },
+    {
+     "file": "full_eval/glue_filtered/qqp.train.jsonl",
+     "text": "What is the meaning of meaning?"
+    },
+    {
+     "file": "full_eval/glue_filtered/qqp.train.jsonl",
+     "text": "What do you love to do?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "How many cars can you see?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What kind of fruit is this?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What do you see in the water?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "How many wheels do you see?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "How many people are going to eat?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What does the green light mean?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "Is there a lot of people?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "Is the boat in the water?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What kind of dog is that?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What kind of phone is that?"
+    }
+   ]
+  },
+  "babylm/runs/a4_data/syn_n1a": {
+   "sha256": "ac9072e9593c7d4d49b2ce45be69fc4cc9562a030c4a93d3c76a5cd165d6078d",
+   "words": 29861487,
+   "items_hit": 22,
+   "items_hit_synthetic_only": 13,
+   "dev_13gram_share": 8.772268403341884e-07,
+   "dev_13gram_share_synthetic_only": 7.797571914081675e-07,
+   "per_file": {
+    "fast_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 1,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/aoa/cdi_childes.json": {
+     "items": 7328,
+     "hit_synthetic": 2,
+     "hit_train_10M": 12,
+     "hit_synthetic_only": 1
+    },
+    "full_eval/comps/comps_base.jsonl": {
+     "items": 602,
+     "hit_synthetic": 2,
+     "hit_train_10M": 0,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/comps/comps_wugs.jsonl": {
+     "items": 1990,
+     "hit_synthetic": 2,
+     "hit_train_10M": 0,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/comps/comps_wugs_dist-before.jsonl": {
+     "items": 22374,
+     "hit_synthetic": 2,
+     "hit_train_10M": 0,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/comps/comps_wugs_dist-in-between.jsonl": {
+     "items": 22374,
+     "hit_synthetic": 2,
+     "hit_train_10M": 0,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/glue_filtered/boolq.train.jsonl": {
+     "items": 17356,
+     "hit_synthetic": 0,
+     "hit_train_10M": 32,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/boolq.valid.jsonl": {
+     "items": 3174,
+     "hit_synthetic": 0,
+     "hit_train_10M": 8,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.train.jsonl": {
+     "items": 17851,
+     "hit_synthetic": 2,
+     "hit_train_10M": 47,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.valid.jsonl": {
+     "items": 6955,
+     "hit_synthetic": 0,
+     "hit_train_10M": 10,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/multirc.train.jsonl": {
+     "items": 12164,
+     "hit_synthetic": 3,
+     "hit_train_10M": 6,
+     "hit_synthetic_only": 3
+    },
+    "full_eval/glue_filtered/multirc.valid.jsonl": {
+     "items": 1598,
+     "hit_synthetic": 1,
+     "hit_train_10M": 2,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.train.jsonl": {
+     "items": 17926,
+     "hit_synthetic": 1,
+     "hit_train_10M": 4,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.valid.jsonl": {
+     "items": 35145,
+     "hit_synthetic": 1,
+     "hit_train_10M": 7,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/rte.valid.jsonl": {
+     "items": 255,
+     "hit_synthetic": 0,
+     "hit_train_10M": 1,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 1,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/vqa_filtered/vqa_distractors_info.json": {
+     "items": 12417,
+     "hit_synthetic": 2,
+     "hit_train_10M": 20,
+     "hit_synthetic_only": 1
+    }
+   },
+   "synthetic_only_items": [
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "Trying to find a way to"
+    },
+    {
+     "file": "full_eval/comps/comps_base.jsonl",
+     "text": "can be found in the wild"
+    },
+    {
+     "file": "full_eval/comps/comps_base.jsonl",
+     "text": "can be found in the wild."
+    },
+    {
+     "file": "full_eval/comps/comps_wugs.jsonl",
+     "text": "can be found in the wild"
+    },
+    {
+     "file": "full_eval/comps/comps_wugs.jsonl",
+     "text": "can be found in the wild."
+    },
+    {
+     "file": "full_eval/comps/comps_wugs_dist-before.jsonl",
+     "text": "can be found in the wild"
+    },
+    {
+     "file": "full_eval/comps/comps_wugs_dist-before.jsonl",
+     "text": "can be found in the wild."
+    },
+    {
+     "file": "full_eval/comps/comps_wugs_dist-in-between.jsonl",
+     "text": "can be found in the wild"
+    },
+    {
+     "file": "full_eval/comps/comps_wugs_dist-in-between.jsonl",
+     "text": "can be found in the wild."
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "She had to go to work"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "He did not have any money"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "Institute of Technology in New York"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What kind of motorcycle is this?"
+    }
+   ]
+  },
+  "babylm/runs/a4_data/syn_n2a": {
+   "sha256": "df01cb5cb5a6886562e04a3bbd3e1f222f89664004aaa511c6b3f06b71c20c4c",
+   "words": 29861325,
+   "items_hit": 0,
+   "items_hit_synthetic_only": 0,
+   "dev_13gram_share": 1.3645750849642929e-06,
+   "dev_13gram_share_synthetic_only": 1.267105436038272e-06,
+   "per_file": {
+    "fast_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 0,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/aoa/cdi_childes.json": {
+     "items": 7328,
+     "hit_synthetic": 0,
+     "hit_train_10M": 12,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/boolq.train.jsonl": {
+     "items": 17356,
+     "hit_synthetic": 0,
+     "hit_train_10M": 32,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/boolq.valid.jsonl": {
+     "items": 3174,
+     "hit_synthetic": 0,
+     "hit_train_10M": 8,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.train.jsonl": {
+     "items": 17851,
+     "hit_synthetic": 0,
+     "hit_train_10M": 47,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.valid.jsonl": {
+     "items": 6955,
+     "hit_synthetic": 0,
+     "hit_train_10M": 10,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/multirc.train.jsonl": {
+     "items": 12164,
+     "hit_synthetic": 0,
+     "hit_train_10M": 6,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/multirc.valid.jsonl": {
+     "items": 1598,
+     "hit_synthetic": 0,
+     "hit_train_10M": 2,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.train.jsonl": {
+     "items": 17926,
+     "hit_synthetic": 0,
+     "hit_train_10M": 4,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.valid.jsonl": {
+     "items": 35145,
+     "hit_synthetic": 0,
+     "hit_train_10M": 7,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/rte.valid.jsonl": {
+     "items": 255,
+     "hit_synthetic": 0,
+     "hit_train_10M": 1,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 0,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/vqa_filtered/vqa_distractors_info.json": {
+     "items": 12417,
+     "hit_synthetic": 0,
+     "hit_train_10M": 20,
+     "hit_synthetic_only": 0
+    }
+   },
+   "synthetic_only_items": []
+  },
+  "babylm/runs/a4_data/syn_a4b": {
+   "sha256": "18db2f6a7de85c775107f0c63c3d1a69a185256ba7dc5057ddeece774b959d92",
+   "words": 19907697,
+   "items_hit": 57,
+   "items_hit_synthetic_only": 26,
+   "dev_13gram_share": 1.7544536806683768e-06,
+   "dev_13gram_share_synthetic_only": 1.3645750849642929e-06,
+   "per_file": {
+    "fast_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 5,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 1
+    },
+    "full_eval/aoa/cdi_childes.json": {
+     "items": 7328,
+     "hit_synthetic": 9,
+     "hit_train_10M": 12,
+     "hit_synthetic_only": 4
+    },
+    "full_eval/glue_filtered/boolq.train.jsonl": {
+     "items": 17356,
+     "hit_synthetic": 0,
+     "hit_train_10M": 32,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/boolq.valid.jsonl": {
+     "items": 3174,
+     "hit_synthetic": 0,
+     "hit_train_10M": 8,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/mnli.train.jsonl": {
+     "items": 17851,
+     "hit_synthetic": 19,
+     "hit_train_10M": 47,
+     "hit_synthetic_only": 9
+    },
+    "full_eval/glue_filtered/mnli.valid.jsonl": {
+     "items": 6955,
+     "hit_synthetic": 7,
+     "hit_train_10M": 10,
+     "hit_synthetic_only": 6
+    },
+    "full_eval/glue_filtered/multirc.train.jsonl": {
+     "items": 12164,
+     "hit_synthetic": 2,
+     "hit_train_10M": 6,
+     "hit_synthetic_only": 2
+    },
+    "full_eval/glue_filtered/multirc.valid.jsonl": {
+     "items": 1598,
+     "hit_synthetic": 2,
+     "hit_train_10M": 2,
+     "hit_synthetic_only": 1
+    },
+    "full_eval/glue_filtered/qqp.train.jsonl": {
+     "items": 17926,
+     "hit_synthetic": 1,
+     "hit_train_10M": 4,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/qqp.valid.jsonl": {
+     "items": 35145,
+     "hit_synthetic": 1,
+     "hit_train_10M": 7,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/glue_filtered/rte.valid.jsonl": {
+     "items": 255,
+     "hit_synthetic": 0,
+     "hit_train_10M": 1,
+     "hit_synthetic_only": 0
+    },
+    "full_eval/reading/reading_data.csv": {
+     "items": 931,
+     "hit_synthetic": 5,
+     "hit_train_10M": 13,
+     "hit_synthetic_only": 1
+    },
+    "full_eval/vqa_filtered/vqa_distractors_info.json": {
+     "items": 12417,
+     "hit_synthetic": 6,
+     "hit_train_10M": 20,
+     "hit_synthetic_only": 2
+    }
+   },
+   "synthetic_only_items": [
+    {
+     "file": "fast_eval/reading/reading_data.csv",
+     "text": "Why don't you tell me what happened"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "If you want to use a"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "So, we don’t want to"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "While at the top of the"
+    },
+    {
+     "file": "full_eval/aoa/cdi_childes.json",
+     "text": "He didn’t know how to"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I don't know how that goes."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I was not surprised at all."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "It didn't seem like it. "
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I don't want anything to do with you. "
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I think that is a great idea."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I don't have a watch."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "I've never seen that one."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "And what shall we do then?"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.train.jsonl",
+     "text": "no i i don't think so"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "other side that's a good idea"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "I'm sure they didn't."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "I don't wanna see you again"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "i don't know no i don't"
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "I don't want to stop you."
+    },
+    {
+     "file": "full_eval/glue_filtered/mnli.valid.jsonl",
+     "text": "how do you like it well"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "They're in the same place"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.train.jsonl",
+     "text": "Do you want to eat something?"
+    },
+    {
+     "file": "full_eval/glue_filtered/multirc.valid.jsonl",
+     "text": "He was going to the beach"
+    },
+    {
+     "file": "full_eval/reading/reading_data.csv",
+     "text": "Why don't you tell me what happened"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "Is there a lot of people?"
+    },
+    {
+     "file": "full_eval/vqa_filtered/vqa_distractors_info.json",
+     "text": "What kind of meat is that?"
+    }
+   ]
+  }
+ }
+}

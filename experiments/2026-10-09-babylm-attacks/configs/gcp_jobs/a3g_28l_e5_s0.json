@@ -1,0 +1,25 @@
+{
+ "name": "a3g_28l_e5_s0",
+ "commit": "fd5fbea132565290305847acbc12fbd40895a908",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; T=/opt/babylm/ruler_tools_c09ef37ac16bbe0a9f3ab9def66ad000ea40cef5; mkdir -p $T; gsutil -q cp \"$RULER_TOOLS_URI\" /tmp/rt.tgz; tar -xzf /tmp/rt.tgz -C $T; python -m babylm.data.prepare --download; $T/babylm/eval/setup.sh /opt/babylm; cp babylm/configs/jobs_a3g_28l_e5_s0.json _logs/; gsutil -q cp __BUCKET__/code/dev_bpw_twin_ref-0026.py babylm/eval/dev_bpw_twin.py; mkdir -p babylm/moonshot; [ -f babylm/moonshot/__init__.py ] || touch babylm/moonshot/__init__.py; gsutil -q cp __BUCKET__/code/dev_bpw_dump_ref-0034.py babylm/moonshot/dev_bpw_dump.py",
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "outputs": [
+  "babylm/runs"
+ ],
+ "env": {
+  "RULER_TOOLS_URI": "__BUCKET__/code/ruler_tools_ref-0067_fetchfix_ref-0068.tar.gz"
+ },
+ "note": "DROPPED BY LEAD 00:56Z 10-11 (not failed): all A3g claim paths closed (critic ref-0013); slot goes to rep3/F4/ruler. | A3g second size (experimenter 22:31Z; A3 amendment 1, card @ref-0072): 28L/384d e5 s0 + a3a BPE-dropout 0.1x4,0x1, system torch 2.9.1, SOLO. Comparators 28L e5 s0 (menu F2 @ref-0073) and s1 (@ref-0074): train.py/data/models diff checked inactive without --bpe_dropout. Twin ref-0026 + dump ref-0034 -> runs/_dumps_v2/<run>.npz. LAUNCH ONLY after critic registers amendment 1; behind A4 b1.",
+ "jobs": [
+  {
+   "name": "a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_ann",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_a3g_28l_e5_s0.json --only a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal --device cuda; rc=$?; [ -f babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/result.json ] && { bash babylm/harness/score_trial.sh babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal /opt/babylm || echo '[a3g28] score a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal failed'; /opt/babylm/venv/bin/python babylm/eval/dev_bpw_twin.py babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --slice full --ws collapse --line_join newline --out babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/score/dev_bpw_twin.log 2>&1 || echo '[twin] a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal failed'; mkdir -p babylm/runs/_dumps_v2; /opt/babylm/venv/bin/python -m babylm.moonshot.dev_bpw_dump babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/score/hf /opt/babylm/osf/text_data/dev/dev --ws collapse --line_join newline --twin --temps 0.9,0.95,1.05,1.1,1.15,1.2 --out babylm/runs/_dumps_v2/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal.npz --check babylm/runs/a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal/score/dev_bpw_twin.json > _logs/dumpv2_a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal.log 2>&1 && echo '[dumpv2] ok a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal' || echo '[dumpv2] FAILED a3g_28L384d_e5_wd0p4_s0_a3a_all_p0p1_anneal'; }; exit $rc",
+   "timeout_s": 7200
+  }
+ ]
+}

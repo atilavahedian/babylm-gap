@@ -1,0 +1,1 @@
+{"job": "ftverify_pub_gptbert_causal", "torch": "2.7.0+cu126", "cuda": "12.6", "gpu": "NVIDIA A100-SXM4-40GB", "transformers": "4.51.3", "python": "3.12.3"}

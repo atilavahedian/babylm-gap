@@ -1,0 +1,57 @@
+{
+ "name": "lead_p2v2b",
+ "commit": "e059b101ff37216547ad87cb67cd3b15a1bf8d52",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; python3 -m venv /opt/p2venv; /opt/p2venv/bin/pip install -q torch==2.7.0 numpy tokenizers==0.21.1 transformers==4.51.3 safetensors matplotlib pytest; /opt/p2venv/bin/python -m babylm.data.prepare --download --splits train_10M,train_100M,dev; /opt/p2venv/bin/python -m pytest -q -x babylm/tests; if [ -n \"${RESTORE_URI:-}\" ]; then mkdir -p babylm/runs; gsutil -m -q rsync -r \"$RESTORE_URI\" babylm/runs; fi",
+ "env": {
+  "RESTORE_URI": ""
+ },
+ "jobs": [
+  {
+   "name": "v2_S_10M_e1_s0",
+   "timeout_s": 1800,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e1_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e2_s0",
+   "timeout_s": 1800,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e2_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e4_s0",
+   "timeout_s": 1800,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e4_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e5_s0",
+   "timeout_s": 1800,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e5_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_10M_e5_s1",
+   "timeout_s": 1800,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_10M_e5_s1; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_30M_e3p333_s0",
+   "timeout_s": 2700,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_30M_e3p333_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  },
+  {
+   "name": "v2_S_30M_e10_s0",
+   "timeout_s": 5400,
+   "cmd": "/opt/p2venv/bin/python -m babylm.harness.run_jobs babylm/configs/jobs_gpu_p2v2.json --only v2_S_30M_e10_s0; rc=$?; /opt/p2venv/bin/python -m babylm.analysis.post_runs --pt_runs v2_S_10M_e1_s0 v2_S_10M_e2_s0 v2_S_10M_e4_s0 v2_S_10M_e5_s0 v2_S_10M_e5_s1; exit $rc"
+  }
+ ],
+ "outputs": [
+  "babylm/runs",
+  "babylm/results_pack"
+ ],
+ "keep_checkpoints": true,
+ "continue_on_error": true,
+ "suggested_max_run_duration": "2h30m",
+ "note": "A100 spot. Pool: floor."
+}

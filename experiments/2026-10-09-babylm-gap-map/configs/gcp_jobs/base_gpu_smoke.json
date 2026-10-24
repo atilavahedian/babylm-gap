@@ -1,0 +1,21 @@
+{
+ "name": "base_gpu_smoke",
+ "commit": "4f8f2e3270102e367e24c8e4985dee1ff2747dff",
+ "paths": [
+  "babylm",
+  "sprint1"
+ ],
+ "setup": "set -e; pip install -q numpy tokenizers matplotlib transformers==4.51.3; python -m babylm.data.prepare --download",
+ "continue_on_error": true,
+ "keep_checkpoints": false,
+ "jobs": [
+  {
+   "name": "base_gpu_smoke",
+   "cmd": "python -m babylm.harness.run_jobs babylm/configs/jobs_base_gpu_smoke.json --device cuda",
+   "timeout_s": 2700
+  }
+ ],
+ "outputs": [
+  "babylm/runs"
+ ]
+}
